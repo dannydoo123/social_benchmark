@@ -1,0 +1,28 @@
+{
+  "hacker_news": [
+    {
+      "kind": "top",
+      "limit": 50,
+      "comments": 200,
+      "max_depth": 8
+    },
+    {
+      "kind": "new",
+      "limit": 50,
+      "comments": 200,
+      "max_depth": 8
+    },
+    {
+      "kind": "best",
+      "limit": 50,
+      "comments": 200,
+      "max_depth": 8
+    },
+    {
+      "kind": "ask",
+      "limit": 50,
+      "comments": 200,
+      "max_depth": 8
+    }
+  ]
+}

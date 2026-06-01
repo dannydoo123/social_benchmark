@@ -8,11 +8,9 @@ Traditional benchmarks often fail to answer the practical question: which model 
 
 ## MVP Data Sources
 
-- Reddit: AI and model-specific communities
-- GitHub: SDK repos, agent repos, issue discussions, release regressions
 - Hacker News: Ask HN, launch posts, model comparison discussions
-- Hugging Face: model and dataset discussions
-- Stack Exchange: LLM/API/developer workflow questions
+
+Current MVP scope is Hacker News only. Other sources remain future expansion candidates.
 
 ## Planned Tech Stack
 
@@ -41,10 +39,137 @@ Traditional benchmarks often fail to answer the practical question: which model 
 
 ## Current Status
 
-This repository currently contains the product description and planning documents. The next implementation step is to scaffold the application stack and define the initial database schema for observations, sources, models, evidence provenance, score snapshots, and confidence intervals.
+This repository contains the planning documents and the first Python implementation of the data pipeline.
+
+Implemented pipeline pieces:
+
+- Hacker News official Firebase API client
+- normalized raw item schema
+- model alias catalog and entity matching
+- provider/model/product/inference-profile taxonomy
+- local rule-based extraction baseline
+- observation schema with evidence spans, metric flags, and weights
+- weighted aspect scoring and overall scoring with contribution caps
+- effective sample size and confidence warnings
+- approximate confidence intervals and source mix in score output
+- manual labeling queue export
+- source-specific text cleanup for Hacker News
+- extraction quality reports
+- reviewed-label to training JSONL conversion
+- reviewed-label evaluation and application back to observations
+- firsthand evidence detection helper
+- score publishability gates and publication blockers
+- dependency-free local Naive Bayes classifier baseline
+- JSONL storage helpers
+- initial PostgreSQL/Supabase migration
 
 ## Repository Docs
 
 - `description.md`: original product and benchmark construction report
 - `plan.md`: actionable build plan
 - `claude.md`: compact project context and working instructions
+- `codex.md`: Codex-facing copy of the compact project guidance
+- `data-pipeline.md`: concrete pipeline, metric, extraction, scoring, and release-monitoring specification
+- `analysis/initial-signal-test.md`: first live-source signal quality report
+- `docs/labeling-guide.md`: human review instructions for exported label queues
+- `docs/review-workflow.md`: how to review rows using the React UI
+- `config/sources.json`: curated source collection seed
+- `config/model_registry.json`: provider, model, product, and inference-profile registry
+- `web/`: React workspace for label review and future benchmark dashboard
+
+## Local Pipeline Usage
+
+Run tests:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m unittest discover -s tests -v
+```
+
+Fetch Hacker News stories:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli fetch-hn --kind top --limit 50 --comments 100 --out data/raw/hn_top.jsonl
+```
+
+Fetch the curated source config:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli fetch-config --config config/sources.json --out data/raw/curated_sources.jsonl
+```
+
+Process raw JSONL into observations and scores:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli process-jsonl --raw data/raw/hn_top.jsonl --observations-out data/processed/observations.jsonl --scores-out data/processed/scores.json
+```
+
+Export uncertain or neutral observations for manual labeling:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli export-labels --observations data/processed/observations.jsonl --out data/processed/label_queue.csv --max-rows 200
+```
+
+Summarize extraction quality:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli report-observations --observations data/processed/observations.jsonl --out data/processed/observation_report.json
+```
+
+Convert a reviewed label CSV into training JSONL:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli build-training-data --labels data/processed/label_queue.csv --out data/training/extractor_training.jsonl
+```
+
+Evaluate reviewed labels against machine labels:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli evaluate-labels --labels data/processed/label_queue.csv --out data/processed/label_eval.json
+```
+
+Apply reviewed labels back to observations:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli apply-labels --observations data/processed/observations.jsonl --labels data/processed/label_queue.csv --out data/processed/observations_reviewed.jsonl
+```
+
+Train and evaluate the local baseline classifier:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli train-local-classifier --training data/training/extractor_training.jsonl --model-out data/training/local_nb_model.json
+python -m social_benchmark.pipeline.cli evaluate-local-classifier --training data/training/extractor_training.jsonl --out data/training/local_nb_eval.json
+```
+
+Scores include `publishable` and `publication_blockers`. A score can be computed for internal analysis but should not be shown on a public leaderboard while blockers are present.
+
+## Review UI
+
+The React UI starts with a labeling workspace and will also become the benchmark website shell.
+
+```powershell
+cd web
+npm install
+npm run dev
+```
+
+Then load a generated label queue CSV, review rows, and export the reviewed CSV. See `docs/review-workflow.md`.
+
+## Database
+
+The initial PostgreSQL/Supabase schema is in:
+
+```text
+db/migrations/001_initial_pipeline.sql
+```
+
+It defines source platforms, communities, providers, models, model aliases, products, raw source items, duplicate clusters, extraction runs, candidate features, observations, score snapshots, and release/update records.

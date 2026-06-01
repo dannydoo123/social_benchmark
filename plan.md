@@ -22,11 +22,9 @@ Build a human-perceived LLM benchmark and decision-support product that ranks an
 
 ## Priority Sources
 
-- Reddit: r/ChatGPT, r/OpenAI, r/ClaudeAI, r/Anthropic, r/LocalLLaMA.
-- GitHub: SDK repos, agent repos, issue discussions, release regressions.
 - Hacker News: Ask HN, launch posts, model comparison discussions.
-- Hugging Face: model and dataset discussions.
-- Stack Exchange: LLM/API/developer workflow questions.
+
+Current MVP source scope is Hacker News only. Other sources remain future expansion candidates.
 
 ## Initial Data Model
 
@@ -67,13 +65,13 @@ Build a human-perceived LLM benchmark and decision-support product that ranks an
 
 1. Repository scaffold: Next.js frontend, FastAPI backend, PostgreSQL/Supabase, shared types.
 2. Database schema and migration workflow.
-3. One end-to-end source collector, starting with GitHub or Hacker News because structure and legal/API clarity are strong.
+3. One end-to-end Hacker News collector because the source is structured, official, and currently in scope.
 4. Normalization and observation storage.
 5. Manual labeling workflow for early ground truth.
 6. Baseline classifier for model/task/aspect/evidence extraction.
 7. Scoring engine and confidence interval job.
 8. Minimal dashboard showing scores, sample counts, confidence, and evidence links.
-9. Add Reddit after the pipeline is working because volume and manipulation risk are higher.
+9. Add additional sources only after Hacker News extraction quality, labeling, and scoring are stable.
 10. Add paid decision-support features only after public scoring is credible.
 
 ## Current Task

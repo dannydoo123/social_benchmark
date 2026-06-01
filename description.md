@@ -12,8 +12,8 @@ In other words, your product hypothesis is academically well justified.
 
 The three most important product decisions are:
 
-1. The MVP data sources should begin with Reddit, GitHub, Hacker News, Hugging Face, and Stack Exchange.
-   This combination provides the best balance between API accessibility, legal clarity, technical user concentration, and long-term time-series observability.
+1. The MVP data source should begin with Hacker News only.
+   This keeps the initial pipeline narrow, high-signal, and easier to validate before any future source expansion.
 
 2. The scoring system should not produce only a single “universal score.”
    Instead, it should separate:
@@ -96,7 +96,7 @@ Communities like:
 
 contain long-term perception trends through megathreads and repeated discussions.
 
-GitHub, Hacker News, Stack Exchange, and Hugging Face contain more technical discussions:
+Hacker News, Stack Exchange, and Hugging Face contain more technical discussions:
 
 * regressions
 * agent workflows
@@ -109,7 +109,7 @@ These provide highly reproducible real-world failure evidence.
 | Priority | Platform       | Example Communities                                        | Weekly Usable Samples | Signal Quality | API/Legal Accessibility | Manipulation Risk | Technical Expertise | Long-Term Trend Value | Recommendation   |
 | -------- | -------------- | ---------------------------------------------------------- | --------------------- | -------------- | ----------------------- | ----------------- | ------------------- | --------------------- | ---------------- |
 | A        | Reddit         | r/ChatGPT, r/OpenAI, r/ClaudeAI, r/Anthropic, r/LocalLLaMA | 8k–25k                | Very High      | High                    | Medium            | Medium-High         | Very High             | MVP Core         |
-| A        | GitHub         | SDK repos, agent/tool discussions                          | 1k–4k                 | Very High      | Very High               | Low-Medium        | Very High           | Very High             | MVP Core         |
+| D        | GitHub         | SDK repos, agent/tool discussions                          | 1k–4k                 | Very High      | Very High               | Low-Medium        | Very High           | Very High             | Deferred         |
 | A        | Hacker News    | Ask HN, launch discussions                                 | 300–1.2k              | High           | Very High               | Low               | Very High           | High                  | MVP Core         |
 | A        | Hugging Face   | Model/data discussions                                     | 500–2k                | High           | High                    | Medium            | High                | High                  | MVP Core         |
 | A        | Stack Exchange | Stack Overflow LLM/API tags                                | 400–1.5k              | High           | High                    | Low               | Very High           | High                  | MVP Core         |
@@ -183,7 +183,7 @@ Where:
 Structured technical communities such as:
 
 * Reddit
-* GitHub
+* GitHub (deferred)
 * Hacker News
 * Stack Exchange
 * Hugging Face
