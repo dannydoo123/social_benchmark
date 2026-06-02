@@ -3,14 +3,6 @@ from __future__ import annotations
 import re
 
 
-FIRST_PERSON_RE = re.compile(
-    r"\b("
-    r"i|i've|i'd|i'm|me|my|mine|"
-    r"we|we've|we'd|we're|us|our|ours"
-    r")\b",
-    re.IGNORECASE,
-)
-
 USAGE_VERB_RE = re.compile(
     r"\b("
     r"use|used|using|tried|try|tested|test|ran|run|"
@@ -19,6 +11,13 @@ USAGE_VERB_RE = re.compile(
     r"paid|subscribed|cancelled|canceled|"
     r"found|find|got|get|see|saw"
     r")\b",
+    re.IGNORECASE,
+)
+
+FIRST_PERSON_USAGE_RE = re.compile(
+    r"\b(i|we|i've|we've|i'd|we'd|i'm|we're)\b"
+    r"(?:\W+\w+){0,8}?\W+"
+    + USAGE_VERB_RE.pattern,
     re.IGNORECASE,
 )
 
@@ -37,9 +36,4 @@ def is_firsthand_text(text: str) -> bool:
     lowered = text.lower()
     if FIRSTHAND_PHRASE_RE.search(lowered):
         return True
-    first_person = FIRST_PERSON_RE.search(lowered)
-    usage_verb = USAGE_VERB_RE.search(lowered)
-    if not first_person or not usage_verb:
-        return False
-    return abs(first_person.start() - usage_verb.start()) <= 80
-
+    return bool(FIRST_PERSON_USAGE_RE.search(lowered))

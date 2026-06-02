@@ -90,6 +90,30 @@ ASPECT_TERMS: dict[AspectCategory, tuple[str, ...]] = {
     AspectCategory.DEVELOPER_ERGONOMICS: ("api", "sdk", "docs", "latency", "rate limit", "timeout", "bug", "tooling"),
 }
 
+TASK_PRIORITY = (
+    TaskCategory.API_DEV_WORKFLOW,
+    TaskCategory.AGENTS,
+    TaskCategory.CODING,
+    TaskCategory.DATA_ANALYSIS,
+    TaskCategory.LONG_CONTEXT,
+    TaskCategory.MULTIMODAL,
+    TaskCategory.RESEARCH,
+    TaskCategory.WRITING,
+    TaskCategory.ROLEPLAY,
+    TaskCategory.GENERAL,
+)
+
+ASPECT_PRIORITY = (
+    AspectCategory.HALLUCINATION_SAFETY,
+    AspectCategory.REFUSAL_ACCEPTANCE,
+    AspectCategory.REGRESSION_STABILITY,
+    AspectCategory.TRUST_RELIABILITY,
+    AspectCategory.VALUE,
+    AspectCategory.DEVELOPER_ERGONOMICS,
+    AspectCategory.TASK_FIT,
+    AspectCategory.SATISFACTION,
+)
+
 POSITIVE_TERMS = (
     "best",
     "better",
@@ -264,8 +288,12 @@ class RuleBasedExtractor:
         evidence_types = self._evidence_types(firsthand, comparative, regression, value, release, benchmark, text)
         if not task_categories:
             task_categories = [TaskCategory.GENERAL]
+        else:
+            task_categories = [_primary_category(lowered, TASK_TERMS, TASK_PRIORITY)]
         if not aspect_categories:
             aspect_categories = [AspectCategory.SATISFACTION]
+        else:
+            aspect_categories = [_primary_category(lowered, ASPECT_TERMS, ASPECT_PRIORITY)]
         severity = min(1.0, abs(polarity) / 2 + 0.15 * len({*aspect_categories}))
         relevant = bool(mentions and not exclude_reason and (firsthand or comparative or regression or hallucination or refusal or value or release or abs(polarity) > 0))
         confidence = _confidence(mentions, matched_terms, firsthand, item)
@@ -419,6 +447,14 @@ def _matched_categories(
         if _contains_any(text, terms, matched_terms):
             matches.append(category)
     return matches
+
+
+def _primary_category(text: str, terms_by_category: dict, priority: tuple):
+    matched = {
+        category: sum(1 for term in terms if term in text)
+        for category, terms in terms_by_category.items()
+    }
+    return max(priority, key=lambda category: (matched.get(category, 0), -priority.index(category)))
 
 
 def _contains_any(text: str, terms: Iterable[str], matched_terms: list[str] | None = None) -> bool:

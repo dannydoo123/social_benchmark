@@ -1,0 +1,2 @@
+[console_scripts]
+sb-pipeline = social_benchmark.pipeline.cli:main

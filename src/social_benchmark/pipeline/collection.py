@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Any
 
@@ -46,6 +47,7 @@ def _collect_hn(client: HackerNewsClient, source: dict[str, Any]) -> list[RawIte
     limit = int(source.get("limit", 25))
     comments = int(source.get("comments", 0))
     max_depth = int(source.get("max_depth", 8))
+    workers = max(1, int(source.get("workers", 8)))
     id_getter = {
         "top": client.top_story_ids,
         "new": client.new_story_ids,
@@ -55,8 +57,12 @@ def _collect_hn(client: HackerNewsClient, source: dict[str, Any]) -> list[RawIte
     ids = id_getter()[:limit]
     raw_items: list[RawItem] = []
     if comments:
-        for story_id in ids:
-            raw_items.extend(client.fetch_story_with_comments(story_id, max_comments=comments, max_depth=max_depth))
+        def fetch_story(story_id: int) -> list[RawItem]:
+            return client.fetch_story_with_comments(story_id, max_comments=comments, max_depth=max_depth)
+
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            for story_items in executor.map(fetch_story, ids):
+                raw_items.extend(story_items)
     else:
         raw_items.extend(client.fetch_items(ids))
     return raw_items

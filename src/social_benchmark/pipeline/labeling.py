@@ -6,7 +6,7 @@ import uuid
 from pathlib import Path
 from typing import Any
 
-from social_benchmark.pipeline.local_classifier import LocalNaiveBayesClassifier
+from social_benchmark.pipeline.local_classifier import load_classifier
 from social_benchmark.pipeline.models import AspectCategory, EvidenceType, TaskCategory
 
 
@@ -74,7 +74,7 @@ def export_labeling_queue(
     excluded_review_csv_paths: list[str | Path] | None = None,
 ) -> int:
     observations = _read_jsonl(observations_path)
-    classifier = LocalNaiveBayesClassifier.load(classifier_model_path) if classifier_model_path else None
+    classifier = load_classifier(classifier_model_path) if classifier_model_path else None
     excluded_keys = _reviewed_observation_keys(excluded_review_csv_paths or [])
     raw_by_source_id = _raw_item_index(raw_items_path) if raw_items_path else {}
     candidates = [
@@ -216,7 +216,7 @@ def _priority_bucket(observation: dict[str, Any]) -> int:
 
 def _row_with_classifier_suggestions(
     observation: dict[str, Any],
-    classifier: LocalNaiveBayesClassifier | None,
+    classifier: Any | None,
     context_text: str = "",
 ) -> dict[str, Any]:
     row = dict(observation)
@@ -326,15 +326,15 @@ def _normalized_value(value: Any) -> str:
     return str(value or "").strip().lower()
 
 
-def _suggested_label(classifier: LocalNaiveBayesClassifier, field: str, value: str) -> str:
+def _suggested_label(classifier: Any, field: str, value: str) -> str:
     return value if _field_meets_quality_gate(classifier, field) else ""
 
 
-def _suggested_confidence(classifier: LocalNaiveBayesClassifier, field: str, value: Any) -> str:
+def _suggested_confidence(classifier: Any, field: str, value: Any) -> str:
     return _rounded_confidence(value) if _field_meets_quality_gate(classifier, field) else ""
 
 
-def _field_meets_quality_gate(classifier: LocalNaiveBayesClassifier, field: str) -> bool:
+def _field_meets_quality_gate(classifier: Any, field: str) -> bool:
     metrics = classifier.field_metrics.get(field)
     if not metrics:
         return True

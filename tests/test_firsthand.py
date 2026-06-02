@@ -12,8 +12,8 @@ class FirsthandDetectionTest(unittest.TestCase):
     def test_rejects_secondhand_or_release_language(self):
         self.assertFalse(is_firsthand_text("People say Claude is better now."))
         self.assertFalse(is_firsthand_text("The release notes claim GPT-5 improved coding."))
+        self.assertFalse(is_firsthand_text("You and me included have zero insight into how he used Claude."))
 
 
 if __name__ == "__main__":
     unittest.main()
-

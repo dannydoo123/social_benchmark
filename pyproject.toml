@@ -8,11 +8,12 @@ version = "0.1.0"
 description = "Human-perceived LLM benchmark data pipeline"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "scikit-learn>=1.5,<2",
+]
 
 [project.scripts]
 sb-pipeline = "social_benchmark.pipeline.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-

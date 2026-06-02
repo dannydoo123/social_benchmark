@@ -67,8 +67,16 @@ def train_classifier(training_jsonl: str | Path, output_path: str | Path) -> int
     return len(examples)
 
 
+def load_classifier(path: str | Path):
+    if Path(path).suffix == ".joblib":
+        from social_benchmark.pipeline.sklearn_classifier import SklearnTextClassifier
+
+        return SklearnTextClassifier.load(path)
+    return LocalNaiveBayesClassifier.load(path)
+
+
 def predict_jsonl(model_path: str | Path, input_jsonl: str | Path, output_path: str | Path) -> int:
-    classifier = LocalNaiveBayesClassifier.load(model_path)
+    classifier = load_classifier(model_path)
     rows = _read_jsonl(input_jsonl)
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)

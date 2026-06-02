@@ -19,6 +19,11 @@ from social_benchmark.pipeline.local_classifier import (
 )
 from social_benchmark.pipeline.models import RawItem, SourcePlatform, to_jsonable
 from social_benchmark.pipeline.scoring import ScoreAggregator
+from social_benchmark.pipeline.sklearn_classifier import (
+    train_sklearn_classifier,
+    write_sklearn_evaluation,
+    write_sklearn_variant_evaluation,
+)
 from social_benchmark.pipeline.storage import read_jsonl, write_jsonl
 from social_benchmark.pipeline.training_data import build_training_jsonl
 
@@ -94,6 +99,21 @@ def main() -> None:
     eval_classifier_parser.add_argument("--training", required=True)
     eval_classifier_parser.add_argument("--out", required=True)
 
+    train_sklearn_parser = subparsers.add_parser("train-sklearn-classifier", help="Train TF-IDF logistic field classifiers")
+    train_sklearn_parser.add_argument("--training", required=True)
+    train_sklearn_parser.add_argument("--model-out", required=True)
+    train_sklearn_parser.add_argument("--runs", type=int, default=8)
+
+    eval_sklearn_parser = subparsers.add_parser("evaluate-sklearn-classifier", help="Repeated holdout eval for TF-IDF logistic classifiers")
+    eval_sklearn_parser.add_argument("--training", required=True)
+    eval_sklearn_parser.add_argument("--out", required=True)
+    eval_sklearn_parser.add_argument("--runs", type=int, default=8)
+
+    eval_sklearn_variants_parser = subparsers.add_parser("evaluate-sklearn-variants", help="Compare TF-IDF feature representations")
+    eval_sklearn_variants_parser.add_argument("--training", required=True)
+    eval_sklearn_variants_parser.add_argument("--out", required=True)
+    eval_sklearn_variants_parser.add_argument("--runs", type=int, default=8)
+
     predict_parser = subparsers.add_parser("predict-local-classifier", help="Predict labels for JSONL rows with text/evidence_text")
     predict_parser.add_argument("--model", required=True)
     predict_parser.add_argument("--input", required=True)
@@ -124,6 +144,12 @@ def main() -> None:
         _train_local_classifier(args)
     elif args.command == "evaluate-local-classifier":
         _evaluate_local_classifier(args)
+    elif args.command == "train-sklearn-classifier":
+        _train_sklearn_classifier(args)
+    elif args.command == "evaluate-sklearn-classifier":
+        _evaluate_sklearn_classifier(args)
+    elif args.command == "evaluate-sklearn-variants":
+        _evaluate_sklearn_variants(args)
     elif args.command == "predict-local-classifier":
         _predict_local_classifier(args)
 
@@ -257,6 +283,21 @@ def _evaluate_local_classifier(args: argparse.Namespace) -> None:
 def _predict_local_classifier(args: argparse.Namespace) -> None:
     count = predict_jsonl(args.model, args.input, args.out)
     print(json.dumps({"predicted": count, "out": args.out}))
+
+
+def _train_sklearn_classifier(args: argparse.Namespace) -> None:
+    count = train_sklearn_classifier(args.training, args.model_out, runs=args.runs)
+    print(json.dumps({"examples": count, "model_out": args.model_out}))
+
+
+def _evaluate_sklearn_classifier(args: argparse.Namespace) -> None:
+    metrics = write_sklearn_evaluation(args.training, args.out, runs=args.runs)
+    print(json.dumps({"examples": metrics.get("examples", 0), "out": args.out}))
+
+
+def _evaluate_sklearn_variants(args: argparse.Namespace) -> None:
+    metrics = write_sklearn_variant_evaluation(args.training, args.out, runs=args.runs)
+    print(json.dumps({"examples": metrics.get("examples", 0), "out": args.out}))
 
 
 def _raw_item_from_record(record: dict) -> RawItem:

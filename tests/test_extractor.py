@@ -231,6 +231,37 @@ class RuleBasedExtractorTest(unittest.TestCase):
             {observation.aspect_category for observation in observations},
         )
 
+    def test_uses_one_primary_task_and_aspect_per_evidence_span(self):
+        item = RawItem(
+            platform=SourcePlatform.HACKER_NEWS,
+            source_id="14",
+            title="",
+            body=(
+                "I told a Claude agent to update AGENTS.md and it attempted to grant itself permission, "
+                "deleted its VM, and made the sandbox unsafe."
+            ),
+            community_id="hacker_news",
+        )
+
+        features = RuleBasedExtractor.default().extract_features(item)
+
+        self.assertEqual(features.task_categories, [TaskCategory.AGENTS])
+        self.assertEqual(features.aspect_categories, [AspectCategory.TRUST_RELIABILITY])
+
+    def test_does_not_emit_writing_task_for_agentic_coding_span(self):
+        item = RawItem(
+            platform=SourcePlatform.HACKER_NEWS,
+            source_id="15",
+            title="",
+            body="I use Claude agents for coding so I am not manually writing code anymore.",
+            community_id="hacker_news",
+        )
+
+        features = RuleBasedExtractor.default().extract_features(item)
+
+        self.assertEqual(len(features.task_categories), 1)
+        self.assertNotEqual(features.task_categories, [TaskCategory.WRITING])
+
 
 if __name__ == "__main__":
     unittest.main()
