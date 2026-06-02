@@ -27,6 +27,7 @@ class TrainingDataTest(unittest.TestCase):
                     "polarity_score",
                     "firsthand_flag",
                     "source_platform",
+                    "thread_id",
                     "source_item_id",
                     "url",
                     "human_polarity_score",
@@ -45,6 +46,7 @@ class TrainingDataTest(unittest.TestCase):
                     "polarity_score": "0",
                     "firsthand_flag": "false",
                     "source_platform": "hacker_news",
+                    "thread_id": "thread-1",
                     "source_item_id": "1",
                     "url": "https://news.ycombinator.com/item?id=1",
                     "human_polarity_score": "1",
@@ -59,6 +61,7 @@ class TrainingDataTest(unittest.TestCase):
         self.assertEqual(rows[0]["model_id"], "claude-opus-4.8")
         self.assertEqual(rows[0]["product_id"], "claude-code")
         self.assertEqual(rows[0]["inference_profile"], "ultracode")
+        self.assertEqual(rows[0]["thread_id"], "thread-1")
 
     def test_skips_excluded_rows(self):
         temp_dir = Path(".test_tmp") / f"training_skip_{uuid.uuid4().hex}"

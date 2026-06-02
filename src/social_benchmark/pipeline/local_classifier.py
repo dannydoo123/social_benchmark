@@ -69,6 +69,20 @@ def train_classifier(training_jsonl: str | Path, output_path: str | Path) -> int
 
 def load_classifier(path: str | Path):
     if Path(path).suffix == ".joblib":
+        try:
+            import joblib
+
+            payload = joblib.load(path)
+            if isinstance(payload, dict) and payload.get("backend") == "hf_embedding":
+                from social_benchmark.pipeline.hf_classifier import HFEmbeddingClassifier
+
+                return HFEmbeddingClassifier.load(path)
+            if isinstance(payload, dict) and payload.get("backend") == "high_precision_ensemble":
+                from social_benchmark.pipeline.high_precision_classifier import HighPrecisionClassifier
+
+                return HighPrecisionClassifier.load(path)
+        except Exception:
+            pass
         from social_benchmark.pipeline.sklearn_classifier import SklearnTextClassifier
 
         return SklearnTextClassifier.load(path)

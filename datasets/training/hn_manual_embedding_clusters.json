@@ -1,0 +1,2954 @@
+{
+  "clusters": [
+    {
+      "cluster_id": "emb_1",
+      "members": [
+        {
+          "index": 0,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48311843"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_2",
+      "members": [
+        {
+          "index": 1,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.531904,
+          "source_item_id": "48317842"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_3",
+      "members": [
+        {
+          "index": 2,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.344413,
+          "source_item_id": "48312067"
+        },
+        {
+          "index": 27,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48312067"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_4",
+      "members": [
+        {
+          "index": 3,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.453869,
+          "source_item_id": "48315239"
+        },
+        {
+          "index": 226,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.974494,
+          "source_item_id": "48315239"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_5",
+      "members": [
+        {
+          "index": 4,
+          "model_id": "gemini-3.1-pro",
+          "similarity_to_centroid": 0.525675,
+          "source_item_id": "48312500"
+        },
+        {
+          "index": 34,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.98909,
+          "source_item_id": "48312500"
+        },
+        {
+          "index": 35,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.997269,
+          "source_item_id": "48312500"
+        },
+        {
+          "index": 37,
+          "model_id": "gemini-3.1-pro",
+          "similarity_to_centroid": 0.995142,
+          "source_item_id": "48312500"
+        },
+        {
+          "index": 38,
+          "model_id": "gemini-3.5-flash",
+          "similarity_to_centroid": 0.996579,
+          "source_item_id": "48312500"
+        },
+        {
+          "index": 39,
+          "model_id": "gemini-3.5-flash",
+          "similarity_to_centroid": 0.997812,
+          "source_item_id": "48312500"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_6",
+      "members": [
+        {
+          "index": 5,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.599187,
+          "source_item_id": "48312609"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_7",
+      "members": [
+        {
+          "index": 6,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.68786,
+          "source_item_id": "48312333"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_8",
+      "members": [
+        {
+          "index": 7,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.381532,
+          "source_item_id": "48316718"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_9",
+      "members": [
+        {
+          "index": 8,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.72411,
+          "source_item_id": "48316540"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_10",
+      "members": [
+        {
+          "index": 9,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.639712,
+          "source_item_id": "48312231"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_11",
+      "members": [
+        {
+          "index": 10,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.49001,
+          "source_item_id": "48312859"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_12",
+      "members": [
+        {
+          "index": 11,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.728264,
+          "source_item_id": "48314830"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_13",
+      "members": [
+        {
+          "index": 12,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.848229,
+          "source_item_id": "48316016"
+        },
+        {
+          "index": 14,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48312132"
+        },
+        {
+          "index": 18,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48312274"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_14",
+      "members": [
+        {
+          "index": 13,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.854553,
+          "source_item_id": "48311823"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_15",
+      "members": [
+        {
+          "index": 15,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.581198,
+          "source_item_id": "48313915"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_16",
+      "members": [
+        {
+          "index": 16,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.914119,
+          "source_item_id": "48313121"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_17",
+      "members": [
+        {
+          "index": 17,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.888093,
+          "source_item_id": "48311730"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_18",
+      "members": [
+        {
+          "index": 19,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.837057,
+          "source_item_id": "48317534"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_19",
+      "members": [
+        {
+          "index": 20,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.746258,
+          "source_item_id": "48317908"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_20",
+      "members": [
+        {
+          "index": 21,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.530545,
+          "source_item_id": "48312255"
+        },
+        {
+          "index": 23,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48313299"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_21",
+      "members": [
+        {
+          "index": 22,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.592473,
+          "source_item_id": "48312224"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_22",
+      "members": [
+        {
+          "index": 24,
+          "model_id": "claude-opus",
+          "similarity_to_centroid": 0.466083,
+          "source_item_id": "48313915"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_23",
+      "members": [
+        {
+          "index": 25,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.408883,
+          "source_item_id": "48313098"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_24",
+      "members": [
+        {
+          "index": 26,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.492757,
+          "source_item_id": "4509196285"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_25",
+      "members": [
+        {
+          "index": 28,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.846692,
+          "source_item_id": "48312386"
+        },
+        {
+          "index": 29,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48312386"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_26",
+      "members": [
+        {
+          "index": 30,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.659317,
+          "source_item_id": "48312155"
+        },
+        {
+          "index": 253,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.949704,
+          "source_item_id": "48312155"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_27",
+      "members": [
+        {
+          "index": 31,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.634541,
+          "source_item_id": "48317506"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_28",
+      "members": [
+        {
+          "index": 32,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.503772,
+          "source_item_id": "48313432"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_29",
+      "members": [
+        {
+          "index": 33,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.77121,
+          "source_item_id": "48313915"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_30",
+      "members": [
+        {
+          "index": 36,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.881562,
+          "source_item_id": "48312274"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_31",
+      "members": [
+        {
+          "index": 40,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.571193,
+          "source_item_id": "48312380"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_32",
+      "members": [
+        {
+          "index": 41,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.513559,
+          "source_item_id": "4509196285"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_33",
+      "members": [
+        {
+          "index": 42,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.335092,
+          "source_item_id": "4509196285"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_34",
+      "members": [
+        {
+          "index": 43,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.511242,
+          "source_item_id": "4509196285"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_35",
+      "members": [
+        {
+          "index": 44,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.515379,
+          "source_item_id": "4507306045"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_36",
+      "members": [
+        {
+          "index": 45,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.769653,
+          "source_item_id": "48312215"
+        },
+        {
+          "index": 261,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.948162,
+          "source_item_id": "48312215"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_37",
+      "members": [
+        {
+          "index": 46,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.551618,
+          "source_item_id": "48311934"
+        },
+        {
+          "index": 47,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48311934"
+        },
+        {
+          "index": 48,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48311934"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_38",
+      "members": [
+        {
+          "index": 49,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.772285,
+          "source_item_id": "4509196285"
+        },
+        {
+          "index": 50,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "4509196285"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_39",
+      "members": [
+        {
+          "index": 51,
+          "model_id": "llama",
+          "similarity_to_centroid": 0.31814,
+          "source_item_id": "4542700772"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_40",
+      "members": [
+        {
+          "index": 52,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.649678,
+          "source_item_id": "4509196285"
+        },
+        {
+          "index": 53,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "4509196285"
+        },
+        {
+          "index": 54,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "4509196285"
+        },
+        {
+          "index": 55,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "4509196285"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_41",
+      "members": [
+        {
+          "index": 56,
+          "model_id": "llama",
+          "similarity_to_centroid": 0.588418,
+          "source_item_id": "4542700772"
+        },
+        {
+          "index": 57,
+          "model_id": "llama",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "4542700772"
+        },
+        {
+          "index": 58,
+          "model_id": "llama",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "4542700772"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_42",
+      "members": [
+        {
+          "index": 59,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.720634,
+          "source_item_id": "48312119"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_43",
+      "members": [
+        {
+          "index": 60,
+          "model_id": "claude-opus-4.5",
+          "similarity_to_centroid": 0.80318,
+          "source_item_id": "48311873"
+        },
+        {
+          "index": 61,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.999747,
+          "source_item_id": "48311873"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_44",
+      "members": [
+        {
+          "index": 62,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.725245,
+          "source_item_id": "4509196285"
+        },
+        {
+          "index": 63,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "4509196285"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_45",
+      "members": [
+        {
+          "index": 64,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.542558,
+          "source_item_id": "48313098"
+        },
+        {
+          "index": 65,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48313098"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_46",
+      "members": [
+        {
+          "index": 66,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.77412,
+          "source_item_id": "4509196285"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_47",
+      "members": [
+        {
+          "index": 67,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.694046,
+          "source_item_id": "4509196285"
+        },
+        {
+          "index": 68,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "4509196285"
+        },
+        {
+          "index": 69,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "4509196285"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_48",
+      "members": [
+        {
+          "index": 70,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.684533,
+          "source_item_id": "4509196285"
+        },
+        {
+          "index": 71,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "4509196285"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_49",
+      "members": [
+        {
+          "index": 72,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.272695,
+          "source_item_id": "48319975"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_50",
+      "members": [
+        {
+          "index": 73,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.589897,
+          "source_item_id": "48300410"
+        },
+        {
+          "index": 152,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.965205,
+          "source_item_id": "48300410"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_51",
+      "members": [
+        {
+          "index": 74,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.403101,
+          "source_item_id": "48318337"
+        },
+        {
+          "index": 76,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.97599,
+          "source_item_id": "48318337"
+        },
+        {
+          "index": 82,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.973464,
+          "source_item_id": "48318337"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_52",
+      "members": [
+        {
+          "index": 75,
+          "model_id": "grok",
+          "similarity_to_centroid": 0.327837,
+          "source_item_id": "48296911"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_53",
+      "members": [
+        {
+          "index": 77,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.51058,
+          "source_item_id": "48315012"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_54",
+      "members": [
+        {
+          "index": 78,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.580926,
+          "source_item_id": "48298029"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_55",
+      "members": [
+        {
+          "index": 79,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.377937,
+          "source_item_id": "48319718"
+        },
+        {
+          "index": 320,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.952091,
+          "source_item_id": "48319718"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_56",
+      "members": [
+        {
+          "index": 80,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.79563,
+          "source_item_id": "48318798"
+        },
+        {
+          "index": 81,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.999954,
+          "source_item_id": "48318798"
+        },
+        {
+          "index": 88,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.936887,
+          "source_item_id": "48318798"
+        },
+        {
+          "index": 89,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.971699,
+          "source_item_id": "48318798"
+        },
+        {
+          "index": 205,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.956154,
+          "source_item_id": "48318798"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_57",
+      "members": [
+        {
+          "index": 83,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.661756,
+          "source_item_id": "48312774"
+        },
+        {
+          "index": 129,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.97939,
+          "source_item_id": "48312774"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_58",
+      "members": [
+        {
+          "index": 84,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.428403,
+          "source_item_id": "48299980"
+        },
+        {
+          "index": 117,
+          "model_id": "gemini",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48299980"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_59",
+      "members": [
+        {
+          "index": 85,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.51575,
+          "source_item_id": "48308020"
+        },
+        {
+          "index": 219,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.932004,
+          "source_item_id": "48308020"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_60",
+      "members": [
+        {
+          "index": 86,
+          "model_id": "claude-opus-4.5",
+          "similarity_to_centroid": 0.400728,
+          "source_item_id": "48308255"
+        },
+        {
+          "index": 270,
+          "model_id": "claude-opus-4.5",
+          "similarity_to_centroid": 0.932304,
+          "source_item_id": "48308255"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_61",
+      "members": [
+        {
+          "index": 87,
+          "model_id": "qwen",
+          "similarity_to_centroid": 0.289368,
+          "source_item_id": "48298910"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_62",
+      "members": [
+        {
+          "index": 90,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.549211,
+          "source_item_id": "48307777"
+        },
+        {
+          "index": 143,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.973906,
+          "source_item_id": "48307777"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_63",
+      "members": [
+        {
+          "index": 91,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.42818,
+          "source_item_id": "48292888"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_64",
+      "members": [
+        {
+          "index": 92,
+          "model_id": "gemini-3.0-flash",
+          "similarity_to_centroid": 0.635357,
+          "source_item_id": "48313121"
+        },
+        {
+          "index": 188,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48313121"
+        },
+        {
+          "index": 192,
+          "model_id": "grok",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48313121"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_65",
+      "members": [
+        {
+          "index": 93,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.89896,
+          "source_item_id": "48313121"
+        },
+        {
+          "index": 94,
+          "model_id": "claude-sonnet-4.6",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48313121"
+        },
+        {
+          "index": 195,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48313121"
+        },
+        {
+          "index": 294,
+          "model_id": "gemini-3.0-flash",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48313121"
+        },
+        {
+          "index": 295,
+          "model_id": "grok",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48313121"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_66",
+      "members": [
+        {
+          "index": 95,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.452159,
+          "source_item_id": "48316416"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_67",
+      "members": [
+        {
+          "index": 96,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.562995,
+          "source_item_id": "48298141"
+        },
+        {
+          "index": 222,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.985571,
+          "source_item_id": "48298141"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_68",
+      "members": [
+        {
+          "index": 97,
+          "model_id": "kimi",
+          "similarity_to_centroid": 0.596692,
+          "source_item_id": "48298161"
+        },
+        {
+          "index": 225,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.998033,
+          "source_item_id": "48298161"
+        },
+        {
+          "index": 238,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.9442,
+          "source_item_id": "48298161"
+        },
+        {
+          "index": 245,
+          "model_id": "kimi",
+          "similarity_to_centroid": 0.974974,
+          "source_item_id": "48298161"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_69",
+      "members": [
+        {
+          "index": 98,
+          "model_id": "claude-opus-4.5",
+          "similarity_to_centroid": 0.64228,
+          "source_item_id": "48319955"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_70",
+      "members": [
+        {
+          "index": 99,
+          "model_id": "gpt-5",
+          "similarity_to_centroid": 0.450509,
+          "source_item_id": "48317744"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_71",
+      "members": [
+        {
+          "index": 100,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.69927,
+          "source_item_id": "48314609"
+        },
+        {
+          "index": 236,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.981112,
+          "source_item_id": "48314609"
+        },
+        {
+          "index": 240,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.989632,
+          "source_item_id": "48314609"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_72",
+      "members": [
+        {
+          "index": 101,
+          "model_id": "gpt-5.4",
+          "similarity_to_centroid": 0.602777,
+          "source_item_id": "48308820"
+        },
+        {
+          "index": 249,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.937838,
+          "source_item_id": "48308820"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_73",
+      "members": [
+        {
+          "index": 102,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.642485,
+          "source_item_id": "48311802"
+        },
+        {
+          "index": 124,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.927025,
+          "source_item_id": "48311802"
+        },
+        {
+          "index": 125,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.981587,
+          "source_item_id": "48311802"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_74",
+      "members": [
+        {
+          "index": 103,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.576058,
+          "source_item_id": "48312357"
+        },
+        {
+          "index": 108,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.925869,
+          "source_item_id": "48312357"
+        },
+        {
+          "index": 140,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.942435,
+          "source_item_id": "48312357"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_75",
+      "members": [
+        {
+          "index": 104,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.775286,
+          "source_item_id": "48319646"
+        },
+        {
+          "index": 131,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.941438,
+          "source_item_id": "48319646"
+        },
+        {
+          "index": 267,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.958868,
+          "source_item_id": "48319646"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_76",
+      "members": [
+        {
+          "index": 105,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.561921,
+          "source_item_id": "48301829"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_77",
+      "members": [
+        {
+          "index": 106,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.502813,
+          "source_item_id": "48317582"
+        },
+        {
+          "index": 149,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.92468,
+          "source_item_id": "48317582"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_78",
+      "members": [
+        {
+          "index": 107,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.453394,
+          "source_item_id": "48317487"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_79",
+      "members": [
+        {
+          "index": 109,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.646235,
+          "source_item_id": "48316806"
+        },
+        {
+          "index": 110,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48316806"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_80",
+      "members": [
+        {
+          "index": 111,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.533139,
+          "source_item_id": "48320316"
+        },
+        {
+          "index": 231,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.954309,
+          "source_item_id": "48320316"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_81",
+      "members": [
+        {
+          "index": 112,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.533017,
+          "source_item_id": "48313712"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_82",
+      "members": [
+        {
+          "index": 113,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.446623,
+          "source_item_id": "48316707"
+        },
+        {
+          "index": 274,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.926526,
+          "source_item_id": "48316707"
+        },
+        {
+          "index": 275,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.98146,
+          "source_item_id": "48316707"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_83",
+      "members": [
+        {
+          "index": 114,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.897095,
+          "source_item_id": "48320316"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_84",
+      "members": [
+        {
+          "index": 115,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.616928,
+          "source_item_id": "48312381"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_85",
+      "members": [
+        {
+          "index": 116,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.587253,
+          "source_item_id": "48313546"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_86",
+      "members": [
+        {
+          "index": 118,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.426855,
+          "source_item_id": "48300111"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_87",
+      "members": [
+        {
+          "index": 119,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.405666,
+          "source_item_id": "48310670"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_88",
+      "members": [
+        {
+          "index": 120,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.657198,
+          "source_item_id": "48320212"
+        },
+        {
+          "index": 193,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.922073,
+          "source_item_id": "48320212"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_89",
+      "members": [
+        {
+          "index": 121,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.524595,
+          "source_item_id": "48312221"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_90",
+      "members": [
+        {
+          "index": 122,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.535093,
+          "source_item_id": "48303838"
+        },
+        {
+          "index": 123,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48303838"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_91",
+      "members": [
+        {
+          "index": 126,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.127368,
+          "source_item_id": "48318228"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_92",
+      "members": [
+        {
+          "index": 127,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.896711,
+          "source_item_id": "48303838"
+        },
+        {
+          "index": 321,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.95203,
+          "source_item_id": "48303838"
+        },
+        {
+          "index": 322,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.987935,
+          "source_item_id": "48303838"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_93",
+      "members": [
+        {
+          "index": 128,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.62365,
+          "source_item_id": "48312763"
+        },
+        {
+          "index": 220,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.969526,
+          "source_item_id": "48312763"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_94",
+      "members": [
+        {
+          "index": 130,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.553026,
+          "source_item_id": "48309516"
+        },
+        {
+          "index": 132,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48309516"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_95",
+      "members": [
+        {
+          "index": 133,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.550331,
+          "source_item_id": "48313653"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_96",
+      "members": [
+        {
+          "index": 134,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.22413,
+          "source_item_id": "48306838"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_97",
+      "members": [
+        {
+          "index": 135,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.361619,
+          "source_item_id": "48310712"
+        },
+        {
+          "index": 147,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.960538,
+          "source_item_id": "48310712"
+        },
+        {
+          "index": 158,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.981657,
+          "source_item_id": "48310712"
+        },
+        {
+          "index": 173,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.957485,
+          "source_item_id": "48310712"
+        },
+        {
+          "index": 179,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.976054,
+          "source_item_id": "48310712"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_98",
+      "members": [
+        {
+          "index": 136,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.72345,
+          "source_item_id": "48313141"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_99",
+      "members": [
+        {
+          "index": 137,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.500987,
+          "source_item_id": "48320947"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_100",
+      "members": [
+        {
+          "index": 138,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.894051,
+          "source_item_id": "48317582"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_101",
+      "members": [
+        {
+          "index": 139,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.47572,
+          "source_item_id": "48295213"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_102",
+      "members": [
+        {
+          "index": 141,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.388663,
+          "source_item_id": "48313783"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_103",
+      "members": [
+        {
+          "index": 142,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.616223,
+          "source_item_id": "48314655"
+        },
+        {
+          "index": 159,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.982783,
+          "source_item_id": "48314655"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_104",
+      "members": [
+        {
+          "index": 144,
+          "model_id": "llama",
+          "similarity_to_centroid": 0.534103,
+          "source_item_id": "48321635"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_105",
+      "members": [
+        {
+          "index": 145,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.505442,
+          "source_item_id": "48316516"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_106",
+      "members": [
+        {
+          "index": 146,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.388385,
+          "source_item_id": "48320662"
+        },
+        {
+          "index": 233,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.972361,
+          "source_item_id": "48320662"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_107",
+      "members": [
+        {
+          "index": 148,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.443833,
+          "source_item_id": "48320401"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_108",
+      "members": [
+        {
+          "index": 150,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.500375,
+          "source_item_id": "48312729"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_109",
+      "members": [
+        {
+          "index": 151,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.483625,
+          "source_item_id": "48319836"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_110",
+      "members": [
+        {
+          "index": 153,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.514112,
+          "source_item_id": "48297470"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_111",
+      "members": [
+        {
+          "index": 154,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.706414,
+          "source_item_id": "48298675"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_112",
+      "members": [
+        {
+          "index": 155,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.641737,
+          "source_item_id": "48321506"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_113",
+      "members": [
+        {
+          "index": 156,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.421335,
+          "source_item_id": "48312558"
+        },
+        {
+          "index": 157,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48312558"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_114",
+      "members": [
+        {
+          "index": 160,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.736741,
+          "source_item_id": "48321274"
+        },
+        {
+          "index": 161,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48321274"
+        },
+        {
+          "index": 162,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48321274"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_115",
+      "members": [
+        {
+          "index": 163,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.611693,
+          "source_item_id": "48303883"
+        },
+        {
+          "index": 164,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48303883"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_116",
+      "members": [
+        {
+          "index": 165,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.557522,
+          "source_item_id": "48309986"
+        },
+        {
+          "index": 166,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48309986"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_117",
+      "members": [
+        {
+          "index": 167,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.460327,
+          "source_item_id": "48304239"
+        },
+        {
+          "index": 168,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48304239"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_118",
+      "members": [
+        {
+          "index": 169,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.515434,
+          "source_item_id": "48315227"
+        },
+        {
+          "index": 170,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48315227"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_119",
+      "members": [
+        {
+          "index": 171,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.822935,
+          "source_item_id": "48312934"
+        },
+        {
+          "index": 172,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.999954,
+          "source_item_id": "48312934"
+        },
+        {
+          "index": 248,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.970257,
+          "source_item_id": "48312934"
+        },
+        {
+          "index": 316,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.985611,
+          "source_item_id": "48312934"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_120",
+      "members": [
+        {
+          "index": 174,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.498223,
+          "source_item_id": "48312433"
+        },
+        {
+          "index": 186,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.933716,
+          "source_item_id": "48312433"
+        },
+        {
+          "index": 187,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.983289,
+          "source_item_id": "48312433"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_121",
+      "members": [
+        {
+          "index": 175,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.668655,
+          "source_item_id": "48313944"
+        },
+        {
+          "index": 176,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48313944"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_122",
+      "members": [
+        {
+          "index": 177,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.842664,
+          "source_item_id": "48312433"
+        },
+        {
+          "index": 178,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48312433"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_123",
+      "members": [
+        {
+          "index": 180,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.469108,
+          "source_item_id": "48312913"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_124",
+      "members": [
+        {
+          "index": 181,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.612421,
+          "source_item_id": "48312451"
+        },
+        {
+          "index": 182,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48312451"
+        },
+        {
+          "index": 183,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48312451"
+        },
+        {
+          "index": 189,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48312451"
+        },
+        {
+          "index": 190,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48312451"
+        },
+        {
+          "index": 191,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48312451"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_125",
+      "members": [
+        {
+          "index": 184,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.911289,
+          "source_item_id": "48313121"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_126",
+      "members": [
+        {
+          "index": 185,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.841405,
+          "source_item_id": "48316516"
+        },
+        {
+          "index": 196,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.973401,
+          "source_item_id": "48316516"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_127",
+      "members": [
+        {
+          "index": 194,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.542935,
+          "source_item_id": "48308595"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_128",
+      "members": [
+        {
+          "index": 197,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.839628,
+          "source_item_id": "48312763"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_129",
+      "members": [
+        {
+          "index": 198,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.644039,
+          "source_item_id": "48308603"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_130",
+      "members": [
+        {
+          "index": 199,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.493802,
+          "source_item_id": "48294272"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_131",
+      "members": [
+        {
+          "index": 200,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.48883,
+          "source_item_id": "48319324"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_132",
+      "members": [
+        {
+          "index": 201,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.917721,
+          "source_item_id": "48316707"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_133",
+      "members": [
+        {
+          "index": 202,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.699354,
+          "source_item_id": "48313590"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_134",
+      "members": [
+        {
+          "index": 203,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.466142,
+          "source_item_id": "48321249"
+        },
+        {
+          "index": 258,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.973711,
+          "source_item_id": "48321249"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_135",
+      "members": [
+        {
+          "index": 204,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.619655,
+          "source_item_id": "48303096"
+        },
+        {
+          "index": 210,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.992696,
+          "source_item_id": "48303096"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_136",
+      "members": [
+        {
+          "index": 206,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.62405,
+          "source_item_id": "48301742"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_137",
+      "members": [
+        {
+          "index": 207,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.660567,
+          "source_item_id": "48321475"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_138",
+      "members": [
+        {
+          "index": 208,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.808817,
+          "source_item_id": "48317823"
+        },
+        {
+          "index": 239,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.994276,
+          "source_item_id": "48317823"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_139",
+      "members": [
+        {
+          "index": 209,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.559786,
+          "source_item_id": "48320658"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_140",
+      "members": [
+        {
+          "index": 211,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.604813,
+          "source_item_id": "48299650"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_141",
+      "members": [
+        {
+          "index": 212,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.881257,
+          "source_item_id": "48307777"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_142",
+      "members": [
+        {
+          "index": 213,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.695239,
+          "source_item_id": "48311934"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_143",
+      "members": [
+        {
+          "index": 214,
+          "model_id": "grok",
+          "similarity_to_centroid": 0.429061,
+          "source_item_id": "48309773"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_144",
+      "members": [
+        {
+          "index": 215,
+          "model_id": "grok",
+          "similarity_to_centroid": 0.827568,
+          "source_item_id": "48309843"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_145",
+      "members": [
+        {
+          "index": 216,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.579526,
+          "source_item_id": "48310038"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_146",
+      "members": [
+        {
+          "index": 217,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.631709,
+          "source_item_id": "48321332"
+        },
+        {
+          "index": 254,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.977599,
+          "source_item_id": "48321332"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_147",
+      "members": [
+        {
+          "index": 218,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.597214,
+          "source_item_id": "48315398"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_148",
+      "members": [
+        {
+          "index": 221,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.449075,
+          "source_item_id": "48314523"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_149",
+      "members": [
+        {
+          "index": 223,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.818234,
+          "source_item_id": "48317143"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_150",
+      "members": [
+        {
+          "index": 224,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.648232,
+          "source_item_id": "48313543"
+        },
+        {
+          "index": 307,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.954629,
+          "source_item_id": "48313543"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_151",
+      "members": [
+        {
+          "index": 227,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.563306,
+          "source_item_id": "48320298"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_152",
+      "members": [
+        {
+          "index": 228,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.916187,
+          "source_item_id": "48316707"
+        },
+        {
+          "index": 229,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48316707"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_153",
+      "members": [
+        {
+          "index": 230,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.558448,
+          "source_item_id": "48319311"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_154",
+      "members": [
+        {
+          "index": 232,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.472833,
+          "source_item_id": "48317309"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_155",
+      "members": [
+        {
+          "index": 234,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.788341,
+          "source_item_id": "48312274"
+        },
+        {
+          "index": 235,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.999958,
+          "source_item_id": "48312274"
+        },
+        {
+          "index": 310,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.930154,
+          "source_item_id": "48312274"
+        },
+        {
+          "index": 311,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.968588,
+          "source_item_id": "48312274"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_156",
+      "members": [
+        {
+          "index": 237,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.676778,
+          "source_item_id": "48315007"
+        },
+        {
+          "index": 244,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.942829,
+          "source_item_id": "48315007"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_157",
+      "members": [
+        {
+          "index": 241,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.584229,
+          "source_item_id": "48302565"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_158",
+      "members": [
+        {
+          "index": 242,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.505793,
+          "source_item_id": "48309865"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_159",
+      "members": [
+        {
+          "index": 243,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.556023,
+          "source_item_id": "48309825"
+        },
+        {
+          "index": 251,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.95054,
+          "source_item_id": "48309825"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_160",
+      "members": [
+        {
+          "index": 246,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.911528,
+          "source_item_id": "48316540"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_161",
+      "members": [
+        {
+          "index": 247,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.818177,
+          "source_item_id": "48312280"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_162",
+      "members": [
+        {
+          "index": 250,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.751005,
+          "source_item_id": "48311843"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_163",
+      "members": [
+        {
+          "index": 252,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.597965,
+          "source_item_id": "48317508"
+        },
+        {
+          "index": 284,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.964203,
+          "source_item_id": "48317508"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_164",
+      "members": [
+        {
+          "index": 255,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.439377,
+          "source_item_id": "48300168"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_165",
+      "members": [
+        {
+          "index": 256,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.530682,
+          "source_item_id": "48316706"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_166",
+      "members": [
+        {
+          "index": 257,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.652143,
+          "source_item_id": "48313157"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_167",
+      "members": [
+        {
+          "index": 259,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.878588,
+          "source_item_id": "48301829"
+        },
+        {
+          "index": 262,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.975571,
+          "source_item_id": "48301829"
+        },
+        {
+          "index": 266,
+          "model_id": "deepseek",
+          "similarity_to_centroid": 0.993874,
+          "source_item_id": "48301829"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_168",
+      "members": [
+        {
+          "index": 260,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.638868,
+          "source_item_id": "48311907"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_169",
+      "members": [
+        {
+          "index": 263,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.773354,
+          "source_item_id": "48312609"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_170",
+      "members": [
+        {
+          "index": 264,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.799951,
+          "source_item_id": "48313915"
+        },
+        {
+          "index": 265,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48313915"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_171",
+      "members": [
+        {
+          "index": 268,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.545116,
+          "source_item_id": "48316726"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_172",
+      "members": [
+        {
+          "index": 269,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.481547,
+          "source_item_id": "48317479"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_173",
+      "members": [
+        {
+          "index": 271,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.638815,
+          "source_item_id": "48320046"
+        },
+        {
+          "index": 280,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.981373,
+          "source_item_id": "48320046"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_174",
+      "members": [
+        {
+          "index": 272,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.812446,
+          "source_item_id": "48312057"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_175",
+      "members": [
+        {
+          "index": 273,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.385816,
+          "source_item_id": "48319980"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_176",
+      "members": [
+        {
+          "index": 276,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.502378,
+          "source_item_id": "48314024"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_177",
+      "members": [
+        {
+          "index": 277,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.47092,
+          "source_item_id": "48292467"
+        },
+        {
+          "index": 283,
+          "model_id": "gemini",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48292467"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_178",
+      "members": [
+        {
+          "index": 278,
+          "model_id": "gpt-5.5",
+          "similarity_to_centroid": 0.844512,
+          "source_item_id": "48313098"
+        },
+        {
+          "index": 292,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.948323,
+          "source_item_id": "48313098"
+        },
+        {
+          "index": 293,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.986996,
+          "source_item_id": "48313098"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_179",
+      "members": [
+        {
+          "index": 279,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.741993,
+          "source_item_id": "48319669"
+        },
+        {
+          "index": 297,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.999941,
+          "source_item_id": "48319669"
+        },
+        {
+          "index": 299,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.947021,
+          "source_item_id": "48319669"
+        },
+        {
+          "index": 300,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.976037,
+          "source_item_id": "48319669"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_180",
+      "members": [
+        {
+          "index": 281,
+          "model_id": "claude-opus-4.5",
+          "similarity_to_centroid": 0.874063,
+          "source_item_id": "48311873"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_181",
+      "members": [
+        {
+          "index": 282,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.60885,
+          "source_item_id": "48313752"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_182",
+      "members": [
+        {
+          "index": 285,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.782184,
+          "source_item_id": "48318088"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_183",
+      "members": [
+        {
+          "index": 286,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.476015,
+          "source_item_id": "48301053"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_184",
+      "members": [
+        {
+          "index": 287,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.498453,
+          "source_item_id": "48312428"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_185",
+      "members": [
+        {
+          "index": 288,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.679637,
+          "source_item_id": "48309987"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_186",
+      "members": [
+        {
+          "index": 289,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.50722,
+          "source_item_id": "48293350"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_187",
+      "members": [
+        {
+          "index": 290,
+          "model_id": "deepseek-v4",
+          "similarity_to_centroid": 0.905578,
+          "source_item_id": "48303883"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_188",
+      "members": [
+        {
+          "index": 291,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.620614,
+          "source_item_id": "48315680"
+        },
+        {
+          "index": 318,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.949046,
+          "source_item_id": "48315680"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_189",
+      "members": [
+        {
+          "index": 296,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.597341,
+          "source_item_id": "48313608"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_190",
+      "members": [
+        {
+          "index": 298,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.601688,
+          "source_item_id": "48296743"
+        },
+        {
+          "index": 301,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.989936,
+          "source_item_id": "48296743"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_191",
+      "members": [
+        {
+          "index": 302,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.550582,
+          "source_item_id": "48305510"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_192",
+      "members": [
+        {
+          "index": 303,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.585537,
+          "source_item_id": "48313498"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_193",
+      "members": [
+        {
+          "index": 304,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.526136,
+          "source_item_id": "48317141"
+        },
+        {
+          "index": 305,
+          "model_id": "claude",
+          "similarity_to_centroid": 1.0,
+          "source_item_id": "48317141"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_194",
+      "members": [
+        {
+          "index": 306,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.749345,
+          "source_item_id": "48313432"
+        },
+        {
+          "index": 319,
+          "model_id": "claude-opus-4.8",
+          "similarity_to_centroid": 0.93388,
+          "source_item_id": "48313432"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_195",
+      "members": [
+        {
+          "index": 308,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.854811,
+          "source_item_id": "48316516"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_196",
+      "members": [
+        {
+          "index": 309,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.440518,
+          "source_item_id": "48316140"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_197",
+      "members": [
+        {
+          "index": 312,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.568255,
+          "source_item_id": "48313077"
+        },
+        {
+          "index": 323,
+          "model_id": "claude-opus-4.7",
+          "similarity_to_centroid": 0.964025,
+          "source_item_id": "48313077"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_198",
+      "members": [
+        {
+          "index": 313,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.913638,
+          "source_item_id": "48319975"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_199",
+      "members": [
+        {
+          "index": 314,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.898095,
+          "source_item_id": "48301829"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_200",
+      "members": [
+        {
+          "index": 315,
+          "model_id": "gemini",
+          "similarity_to_centroid": 0.598262,
+          "source_item_id": "48302901"
+        }
+      ]
+    },
+    {
+      "cluster_id": "emb_201",
+      "members": [
+        {
+          "index": 317,
+          "model_id": "claude",
+          "similarity_to_centroid": 0.721814,
+          "source_item_id": "48318266"
+        }
+      ]
+    }
+  ],
+  "threshold": 0.92
+}

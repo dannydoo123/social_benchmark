@@ -6,19 +6,31 @@ from datetime import datetime
 from pathlib import Path
 
 from social_benchmark.pipeline.analysis import write_observation_report
+from social_benchmark.pipeline.active_learning import export_active_learning_queue, write_threshold_report
 from social_benchmark.pipeline.clients.github import GitHubClient
 from social_benchmark.pipeline.clients.hackernews import HackerNewsClient
 from social_benchmark.pipeline.collection import collect_from_config, load_source_config
+from social_benchmark.pipeline.classifier_experiments import DEFAULT_EMBEDDING_MODELS, run_frozen_embedding_bakeoff
+from social_benchmark.pipeline.embeddings import cluster_embedding_jsonl, write_embeddings_jsonl
 from social_benchmark.pipeline.extractors.rules import RuleBasedExtractor
+from social_benchmark.pipeline.hf_classifier import train_hf_classifier, write_hf_evaluation
+from social_benchmark.pipeline.high_precision_classifier import (
+    PRECISION_FIRST_FIELD_CONFIDENCE,
+    train_high_precision_classifier,
+    write_high_precision_evaluation,
+)
 from social_benchmark.pipeline.label_feedback import apply_reviewed_labels, write_label_evaluation
 from social_benchmark.pipeline.labeling import export_labeling_queue
 from social_benchmark.pipeline.local_classifier import (
+    TARGET_FIELDS,
     predict_jsonl,
     train_classifier,
     write_classifier_evaluation,
 )
+from social_benchmark.pipeline.model_comparison import compare_classifier_backends
 from social_benchmark.pipeline.models import RawItem, SourcePlatform, to_jsonable
 from social_benchmark.pipeline.scoring import ScoreAggregator
+from social_benchmark.pipeline.setfit_experiments import parse_checkpoint_specs, run_setfit_bakeoff
 from social_benchmark.pipeline.sklearn_classifier import (
     train_sklearn_classifier,
     write_sklearn_evaluation,
@@ -114,6 +126,89 @@ def main() -> None:
     eval_sklearn_variants_parser.add_argument("--out", required=True)
     eval_sklearn_variants_parser.add_argument("--runs", type=int, default=8)
 
+    train_hf_parser = subparsers.add_parser("train-hf-classifier", help="Train embedding-backed field classifiers with a local Hugging Face model")
+    train_hf_parser.add_argument("--training", required=True)
+    train_hf_parser.add_argument("--model-out", required=True)
+    train_hf_parser.add_argument("--embedding-model", default="sentence-transformers/all-MiniLM-L6-v2")
+    train_hf_parser.add_argument("--runs", type=int, default=8)
+
+    eval_hf_parser = subparsers.add_parser("evaluate-hf-classifier", help="Evaluate embedding-backed field classifiers")
+    eval_hf_parser.add_argument("--training", required=True)
+    eval_hf_parser.add_argument("--out", required=True)
+    eval_hf_parser.add_argument("--embedding-model", default="sentence-transformers/all-MiniLM-L6-v2")
+    eval_hf_parser.add_argument("--runs", type=int, default=8)
+
+    embed_parser = subparsers.add_parser("embed-jsonl", help="Write local Hugging Face embeddings for JSONL rows")
+    embed_parser.add_argument("--input", required=True)
+    embed_parser.add_argument("--out", required=True)
+    embed_parser.add_argument("--embedding-model", default="sentence-transformers/all-MiniLM-L6-v2")
+    embed_parser.add_argument("--backend", default="auto", choices=["auto", "sentence-transformers", "transformers"])
+    embed_parser.add_argument("--batch-size", type=int, default=32)
+
+    cluster_parser = subparsers.add_parser("cluster-embeddings", help="Greedily cluster embedding JSONL rows by cosine similarity")
+    cluster_parser.add_argument("--embeddings", required=True)
+    cluster_parser.add_argument("--out", required=True)
+    cluster_parser.add_argument("--threshold", type=float, default=0.92)
+
+    compare_parser = subparsers.add_parser("compare-classifiers", help="Compare current classifier backends on the same reviewed training data")
+    compare_parser.add_argument("--training", required=True)
+    compare_parser.add_argument("--out", required=True)
+    compare_parser.add_argument("--runs", type=int, default=8)
+    compare_parser.add_argument("--embedding-model", default="sentence-transformers/all-MiniLM-L6-v2")
+    compare_parser.add_argument("--skip-hf", action="store_true")
+    compare_parser.add_argument("--skip-ensemble", action="store_true")
+    compare_parser.add_argument("--ensemble-min-confidence", type=float, default=0.62)
+    compare_parser.add_argument("--ensemble-min-agreement", type=int, default=2)
+
+    bakeoff_parser = subparsers.add_parser("run-frozen-embedding-bakeoff", help="Compare TF-IDF and frozen embedding checkpoints with grouped holdouts")
+    bakeoff_parser.add_argument("--training", required=True)
+    bakeoff_parser.add_argument("--out", required=True)
+    bakeoff_parser.add_argument("--runs", type=int, default=4)
+    bakeoff_parser.add_argument("--embedding-model", action="append", default=[])
+    bakeoff_parser.add_argument("--group-field", default="source_item_id", choices=["source_item_id", "thread_id"])
+    bakeoff_parser.add_argument("--embedding-cache-dir", help="Optional directory for reusable bake-off embedding vectors")
+
+    setfit_parser = subparsers.add_parser("run-setfit-bakeoff", help="Fine-tune top sentence-transformer checkpoints with SetFit on grouped holdouts")
+    setfit_parser.add_argument("--training", required=True)
+    setfit_parser.add_argument("--out", required=True)
+    setfit_parser.add_argument("--checkpoint", action="append", default=[], help="CHECKPOINT|evidence_only or CHECKPOINT|augmented")
+    setfit_parser.add_argument("--field", action="append", default=[])
+    setfit_parser.add_argument("--epochs", type=int, default=1)
+    setfit_parser.add_argument("--iterations", type=int, default=4)
+    setfit_parser.add_argument("--batch-size", type=int, default=16)
+    setfit_parser.add_argument("--max-steps", type=int, default=-1)
+
+    threshold_parser = subparsers.add_parser("threshold-report", help="Measure precision and coverage by confidence threshold")
+    threshold_parser.add_argument("--training", required=True)
+    threshold_parser.add_argument("--model", required=True)
+    threshold_parser.add_argument("--out", required=True)
+
+    active_parser = subparsers.add_parser("export-active-learning", help="Export rows prioritized by model disagreement and low confidence")
+    active_parser.add_argument("--input", required=True)
+    active_parser.add_argument("--model", action="append", required=True)
+    active_parser.add_argument("--out", required=True)
+    active_parser.add_argument("--max-rows", type=int, default=200)
+
+    train_ensemble_parser = subparsers.add_parser("train-high-precision-classifier", help="Train an agreement-gated ensemble for higher precision")
+    train_ensemble_parser.add_argument("--training", required=True)
+    train_ensemble_parser.add_argument("--model-out", required=True)
+    train_ensemble_parser.add_argument("--runs", type=int, default=8)
+    train_ensemble_parser.add_argument("--embedding-model", default="sentence-transformers/all-MiniLM-L6-v2")
+    train_ensemble_parser.add_argument("--skip-hf", action="store_true")
+    train_ensemble_parser.add_argument("--min-confidence", type=float, default=0.62)
+    train_ensemble_parser.add_argument("--min-agreement", type=int, default=2)
+    train_ensemble_parser.add_argument("--precision-first", action="store_true")
+
+    eval_ensemble_parser = subparsers.add_parser("evaluate-high-precision-classifier", help="Evaluate the agreement-gated ensemble")
+    eval_ensemble_parser.add_argument("--training", required=True)
+    eval_ensemble_parser.add_argument("--out", required=True)
+    eval_ensemble_parser.add_argument("--runs", type=int, default=8)
+    eval_ensemble_parser.add_argument("--embedding-model", default="sentence-transformers/all-MiniLM-L6-v2")
+    eval_ensemble_parser.add_argument("--skip-hf", action="store_true")
+    eval_ensemble_parser.add_argument("--min-confidence", type=float, default=0.62)
+    eval_ensemble_parser.add_argument("--min-agreement", type=int, default=2)
+    eval_ensemble_parser.add_argument("--precision-first", action="store_true")
+
     predict_parser = subparsers.add_parser("predict-local-classifier", help="Predict labels for JSONL rows with text/evidence_text")
     predict_parser.add_argument("--model", required=True)
     predict_parser.add_argument("--input", required=True)
@@ -150,6 +245,28 @@ def main() -> None:
         _evaluate_sklearn_classifier(args)
     elif args.command == "evaluate-sklearn-variants":
         _evaluate_sklearn_variants(args)
+    elif args.command == "train-hf-classifier":
+        _train_hf_classifier(args)
+    elif args.command == "evaluate-hf-classifier":
+        _evaluate_hf_classifier(args)
+    elif args.command == "embed-jsonl":
+        _embed_jsonl(args)
+    elif args.command == "cluster-embeddings":
+        _cluster_embeddings(args)
+    elif args.command == "compare-classifiers":
+        _compare_classifiers(args)
+    elif args.command == "run-frozen-embedding-bakeoff":
+        _run_frozen_embedding_bakeoff(args)
+    elif args.command == "run-setfit-bakeoff":
+        _run_setfit_bakeoff(args)
+    elif args.command == "threshold-report":
+        _threshold_report(args)
+    elif args.command == "export-active-learning":
+        _export_active_learning(args)
+    elif args.command == "train-high-precision-classifier":
+        _train_high_precision_classifier(args)
+    elif args.command == "evaluate-high-precision-classifier":
+        _evaluate_high_precision_classifier(args)
     elif args.command == "predict-local-classifier":
         _predict_local_classifier(args)
 
@@ -297,6 +414,111 @@ def _evaluate_sklearn_classifier(args: argparse.Namespace) -> None:
 
 def _evaluate_sklearn_variants(args: argparse.Namespace) -> None:
     metrics = write_sklearn_variant_evaluation(args.training, args.out, runs=args.runs)
+    print(json.dumps({"examples": metrics.get("examples", 0), "out": args.out}))
+
+
+def _train_hf_classifier(args: argparse.Namespace) -> None:
+    count = train_hf_classifier(args.training, args.model_out, model_name=args.embedding_model, runs=args.runs)
+    print(json.dumps({"examples": count, "model_out": args.model_out, "embedding_model": args.embedding_model}))
+
+
+def _evaluate_hf_classifier(args: argparse.Namespace) -> None:
+    metrics = write_hf_evaluation(args.training, args.out, model_name=args.embedding_model, runs=args.runs)
+    print(json.dumps({"examples": metrics.get("examples", 0), "out": args.out, "embedding_model": args.embedding_model}))
+
+
+def _embed_jsonl(args: argparse.Namespace) -> None:
+    count = write_embeddings_jsonl(
+        args.input,
+        args.out,
+        model_name=args.embedding_model,
+        backend=args.backend,
+        batch_size=args.batch_size,
+    )
+    print(json.dumps({"written": count, "out": args.out, "embedding_model": args.embedding_model}))
+
+
+def _cluster_embeddings(args: argparse.Namespace) -> None:
+    result = cluster_embedding_jsonl(args.embeddings, args.out, threshold=args.threshold)
+    print(json.dumps(result))
+
+
+def _compare_classifiers(args: argparse.Namespace) -> None:
+    comparison = compare_classifier_backends(
+        args.training,
+        args.out,
+        runs=args.runs,
+        hf_model_name=args.embedding_model,
+        include_hf=not args.skip_hf,
+        include_ensemble=not args.skip_ensemble,
+        ensemble_min_confidence=args.ensemble_min_confidence,
+        ensemble_min_agreement=args.ensemble_min_agreement,
+        ensemble_field_min_confidence=None,
+    )
+    print(json.dumps({"backends": list(comparison["backends"].keys()), "out": args.out}))
+
+
+def _run_frozen_embedding_bakeoff(args: argparse.Namespace) -> None:
+    result = run_frozen_embedding_bakeoff(
+        args.training,
+        args.out,
+        embedding_models=tuple(args.embedding_model) or DEFAULT_EMBEDDING_MODELS,
+        runs=args.runs,
+        group_field=args.group_field,
+        embedding_cache_dir=args.embedding_cache_dir,
+    )
+    print(json.dumps({"examples": result["examples"], "ranked": len(result["ranking"]), "out": args.out}))
+
+
+def _run_setfit_bakeoff(args: argparse.Namespace) -> None:
+    result = run_setfit_bakeoff(
+        args.training,
+        args.out,
+        checkpoints=parse_checkpoint_specs(args.checkpoint),
+        fields=tuple(args.field) or TARGET_FIELDS,
+        num_epochs=args.epochs,
+        num_iterations=args.iterations,
+        batch_size=args.batch_size,
+        max_steps=args.max_steps,
+    )
+    print(json.dumps({"examples": result["examples"], "ranked": len(result["ranking"]), "out": args.out}))
+
+
+def _threshold_report(args: argparse.Namespace) -> None:
+    report = write_threshold_report(args.training, args.model, args.out)
+    print(json.dumps({"examples": report["examples"], "out": args.out}))
+
+
+def _export_active_learning(args: argparse.Namespace) -> None:
+    count = export_active_learning_queue(args.input, args.model, args.out, max_rows=args.max_rows)
+    print(json.dumps({"written": count, "out": args.out}))
+
+
+def _train_high_precision_classifier(args: argparse.Namespace) -> None:
+    count = train_high_precision_classifier(
+        args.training,
+        args.model_out,
+        runs=args.runs,
+        min_confidence=args.min_confidence,
+        min_agreement=args.min_agreement,
+        include_hf=not args.skip_hf,
+        hf_model_name=args.embedding_model,
+        field_min_confidence=PRECISION_FIRST_FIELD_CONFIDENCE if args.precision_first else None,
+    )
+    print(json.dumps({"examples": count, "model_out": args.model_out}))
+
+
+def _evaluate_high_precision_classifier(args: argparse.Namespace) -> None:
+    metrics = write_high_precision_evaluation(
+        args.training,
+        args.out,
+        runs=args.runs,
+        min_confidence=args.min_confidence,
+        min_agreement=args.min_agreement,
+        include_hf=not args.skip_hf,
+        hf_model_name=args.embedding_model,
+        field_min_confidence=PRECISION_FIRST_FIELD_CONFIDENCE if args.precision_first else None,
+    )
     print(json.dumps({"examples": metrics.get("examples", 0), "out": args.out}))
 
 

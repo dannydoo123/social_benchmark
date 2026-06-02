@@ -1,0 +1,554 @@
+{
+  "backends": {
+    "hf_embedding_logistic": {
+      "backend": "hf_embedding",
+      "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+      "examples": 324,
+      "fields": {
+        "aspect_category": {
+          "accuracy": 0.5274390243902439,
+          "confusion": {
+            "developer_ergonomics -> developer_ergonomics": 24,
+            "developer_ergonomics -> regression_stability": 2,
+            "developer_ergonomics -> satisfaction": 4,
+            "developer_ergonomics -> task_fit": 3,
+            "developer_ergonomics -> trust_reliability": 6,
+            "developer_ergonomics -> value": 9,
+            "hallucination_safety -> hallucination_safety": 5,
+            "hallucination_safety -> refusal_acceptance": 2,
+            "hallucination_safety -> task_fit": 3,
+            "hallucination_safety -> trust_reliability": 2,
+            "refusal_acceptance -> refusal_acceptance": 4,
+            "regression_stability -> hallucination_safety": 3,
+            "regression_stability -> regression_stability": 3,
+            "regression_stability -> satisfaction": 2,
+            "satisfaction -> developer_ergonomics": 12,
+            "satisfaction -> hallucination_safety": 4,
+            "satisfaction -> regression_stability": 11,
+            "satisfaction -> satisfaction": 34,
+            "satisfaction -> task_fit": 6,
+            "satisfaction -> trust_reliability": 5,
+            "satisfaction -> value": 8,
+            "task_fit -> developer_ergonomics": 3,
+            "task_fit -> hallucination_safety": 5,
+            "task_fit -> refusal_acceptance": 3,
+            "task_fit -> regression_stability": 3,
+            "task_fit -> satisfaction": 4,
+            "task_fit -> task_fit": 30,
+            "task_fit -> trust_reliability": 6,
+            "task_fit -> value": 6,
+            "trust_reliability -> developer_ergonomics": 10,
+            "trust_reliability -> hallucination_safety": 4,
+            "trust_reliability -> refusal_acceptance": 3,
+            "trust_reliability -> satisfaction": 5,
+            "trust_reliability -> task_fit": 7,
+            "trust_reliability -> trust_reliability": 15,
+            "value -> developer_ergonomics": 1,
+            "value -> refusal_acceptance": 1,
+            "value -> regression_stability": 1,
+            "value -> satisfaction": 2,
+            "value -> task_fit": 4,
+            "value -> trust_reliability": 5,
+            "value -> value": 58
+          },
+          "evaluated": 328,
+          "macro_f1": 0.4559216636929522,
+          "run_accuracy_max": 0.5609756097560976,
+          "run_accuracy_min": 0.4878048780487805,
+          "runs": 4
+        },
+        "evidence_type": {
+          "accuracy": 0.5401234567901234,
+          "confusion": {
+            "benchmark_anecdote -> benchmark_anecdote": 13,
+            "benchmark_anecdote -> bug_regression_report": 1,
+            "benchmark_anecdote -> comparative_evaluation": 4,
+            "benchmark_anecdote -> firsthand_usage": 4,
+            "benchmark_anecdote -> hearsay": 1,
+            "benchmark_anecdote -> release_update_reaction": 1,
+            "bug_regression_report -> firsthand_usage": 3,
+            "bug_regression_report -> integration_failure": 1,
+            "comparative_evaluation -> comparative_evaluation": 6,
+            "comparative_evaluation -> firsthand_usage": 4,
+            "comparative_evaluation -> hearsay": 1,
+            "comparative_evaluation -> pricing_value_comment": 5,
+            "firsthand_usage -> benchmark_anecdote": 5,
+            "firsthand_usage -> comparative_evaluation": 10,
+            "firsthand_usage -> firsthand_usage": 53,
+            "firsthand_usage -> hearsay": 17,
+            "firsthand_usage -> integration_failure": 1,
+            "firsthand_usage -> pricing_value_comment": 11,
+            "firsthand_usage -> release_update_reaction": 3,
+            "hearsay -> benchmark_anecdote": 4,
+            "hearsay -> comparative_evaluation": 11,
+            "hearsay -> firsthand_usage": 15,
+            "hearsay -> hearsay": 28,
+            "hearsay -> integration_failure": 2,
+            "hearsay -> pricing_value_comment": 9,
+            "hearsay -> release_update_reaction": 11,
+            "integration_failure -> bug_regression_report": 1,
+            "integration_failure -> comparative_evaluation": 5,
+            "integration_failure -> hearsay": 4,
+            "integration_failure -> integration_failure": 26,
+            "pricing_value_comment -> comparative_evaluation": 2,
+            "pricing_value_comment -> firsthand_usage": 3,
+            "pricing_value_comment -> hearsay": 4,
+            "pricing_value_comment -> integration_failure": 1,
+            "pricing_value_comment -> pricing_value_comment": 38,
+            "release_update_reaction -> bug_regression_report": 1,
+            "release_update_reaction -> firsthand_usage": 1,
+            "release_update_reaction -> hearsay": 2,
+            "release_update_reaction -> pricing_value_comment": 1,
+            "release_update_reaction -> release_update_reaction": 11
+          },
+          "evaluated": 324,
+          "macro_f1": 0.46924175820722297,
+          "run_accuracy_max": 0.5679012345679012,
+          "run_accuracy_min": 0.5061728395061729,
+          "runs": 4
+        },
+        "firsthand_flag": {
+          "accuracy": 0.7746913580246914,
+          "confusion": {
+            "false -> false": 144,
+            "false -> true": 36,
+            "true -> false": 37,
+            "true -> true": 107
+          },
+          "evaluated": 324,
+          "macro_f1": 0.7717142664105707,
+          "run_accuracy_max": 0.7901234567901234,
+          "run_accuracy_min": 0.7530864197530864,
+          "runs": 4
+        },
+        "polarity_score": {
+          "accuracy": 0.5524691358024691,
+          "confusion": {
+            "-1 -> -1": 36,
+            "-1 -> -2": 9,
+            "-1 -> 0": 17,
+            "-1 -> 1": 25,
+            "-1 -> 2": 9,
+            "-2 -> -1": 3,
+            "-2 -> -2": 8,
+            "-2 -> 1": 3,
+            "-2 -> 2": 2,
+            "0 -> -1": 21,
+            "0 -> -2": 2,
+            "0 -> 0": 70,
+            "0 -> 1": 9,
+            "0 -> 2": 2,
+            "1 -> -1": 17,
+            "1 -> -2": 7,
+            "1 -> 0": 5,
+            "1 -> 1": 43,
+            "1 -> 2": 8,
+            "2 -> -1": 2,
+            "2 -> 1": 4,
+            "2 -> 2": 22
+          },
+          "evaluated": 324,
+          "macro_f1": 0.5301550440856521,
+          "run_accuracy_max": 0.6172839506172839,
+          "run_accuracy_min": 0.4567901234567901,
+          "runs": 4
+        },
+        "task_category": {
+          "accuracy": 0.5339506172839507,
+          "confusion": {
+            "agents -> agents": 21,
+            "agents -> api_developer_workflow": 3,
+            "agents -> coding": 13,
+            "agents -> data_analysis": 3,
+            "agents -> long_context": 1,
+            "agents -> research": 2,
+            "agents -> writing": 1,
+            "api_developer_workflow -> agents": 4,
+            "api_developer_workflow -> api_developer_workflow": 11,
+            "api_developer_workflow -> coding": 4,
+            "api_developer_workflow -> general": 2,
+            "api_developer_workflow -> long_context": 1,
+            "api_developer_workflow -> research": 3,
+            "api_developer_workflow -> roleplay": 2,
+            "api_developer_workflow -> writing": 1,
+            "coding -> agents": 15,
+            "coding -> api_developer_workflow": 14,
+            "coding -> coding": 58,
+            "coding -> data_analysis": 1,
+            "coding -> general": 12,
+            "coding -> long_context": 1,
+            "coding -> research": 2,
+            "coding -> roleplay": 5,
+            "coding -> writing": 4,
+            "data_analysis -> data_analysis": 4,
+            "general -> agents": 3,
+            "general -> api_developer_workflow": 9,
+            "general -> coding": 12,
+            "general -> general": 59,
+            "general -> research": 8,
+            "general -> roleplay": 1,
+            "research -> agents": 1,
+            "research -> general": 4,
+            "research -> long_context": 2,
+            "research -> research": 13,
+            "research -> roleplay": 3,
+            "research -> writing": 1,
+            "writing -> agents": 1,
+            "writing -> coding": 5,
+            "writing -> general": 3,
+            "writing -> long_context": 3,
+            "writing -> research": 1,
+            "writing -> writing": 7
+          },
+          "evaluated": 324,
+          "macro_f1": 0.403782558190473,
+          "run_accuracy_max": 0.5925925925925926,
+          "run_accuracy_min": 0.4691358024691358,
+          "runs": 4
+        }
+      },
+      "runs_requested": 4
+    },
+    "naive_bayes": {
+      "examples": 324,
+      "fields": {
+        "aspect_category": {
+          "accuracy": 0.6172839506172839,
+          "correct": 200,
+          "total": 324
+        },
+        "evidence_type": {
+          "accuracy": 0.6203703703703703,
+          "correct": 201,
+          "total": 324
+        },
+        "firsthand_flag": {
+          "accuracy": 0.8333333333333334,
+          "correct": 270,
+          "total": 324
+        },
+        "polarity_score": {
+          "accuracy": 0.558641975308642,
+          "correct": 181,
+          "total": 324
+        },
+        "task_category": {
+          "accuracy": 0.5185185185185185,
+          "correct": 168,
+          "total": 324
+        }
+      }
+    },
+    "sklearn_tfidf_logistic": {
+      "config": {
+        "use_char_features": true,
+        "use_context": false,
+        "use_metadata": false
+      },
+      "examples": 324,
+      "fields": {
+        "aspect_category": {
+          "accuracy": 0.6371951219512195,
+          "confusion": {
+            "developer_ergonomics -> developer_ergonomics": 29,
+            "developer_ergonomics -> satisfaction": 2,
+            "developer_ergonomics -> task_fit": 7,
+            "developer_ergonomics -> trust_reliability": 6,
+            "developer_ergonomics -> value": 4,
+            "hallucination_safety -> hallucination_safety": 5,
+            "hallucination_safety -> task_fit": 4,
+            "hallucination_safety -> trust_reliability": 3,
+            "refusal_acceptance -> refusal_acceptance": 4,
+            "regression_stability -> hallucination_safety": 3,
+            "regression_stability -> regression_stability": 3,
+            "regression_stability -> satisfaction": 2,
+            "satisfaction -> developer_ergonomics": 4,
+            "satisfaction -> regression_stability": 3,
+            "satisfaction -> satisfaction": 50,
+            "satisfaction -> task_fit": 12,
+            "satisfaction -> trust_reliability": 5,
+            "satisfaction -> value": 6,
+            "task_fit -> developer_ergonomics": 1,
+            "task_fit -> satisfaction": 5,
+            "task_fit -> task_fit": 43,
+            "task_fit -> trust_reliability": 8,
+            "task_fit -> value": 3,
+            "trust_reliability -> developer_ergonomics": 4,
+            "trust_reliability -> hallucination_safety": 3,
+            "trust_reliability -> satisfaction": 8,
+            "trust_reliability -> task_fit": 7,
+            "trust_reliability -> trust_reliability": 19,
+            "trust_reliability -> value": 3,
+            "value -> developer_ergonomics": 1,
+            "value -> satisfaction": 2,
+            "value -> task_fit": 10,
+            "value -> trust_reliability": 3,
+            "value -> value": 56
+          },
+          "evaluated": 328,
+          "macro_f1": 0.626519525565703,
+          "run_accuracy_max": 0.6585365853658537,
+          "run_accuracy_min": 0.5975609756097561,
+          "runs": 4
+        },
+        "evidence_type": {
+          "accuracy": 0.6728395061728395,
+          "confusion": {
+            "benchmark_anecdote -> benchmark_anecdote": 13,
+            "benchmark_anecdote -> bug_regression_report": 1,
+            "benchmark_anecdote -> firsthand_usage": 4,
+            "benchmark_anecdote -> hearsay": 6,
+            "bug_regression_report -> benchmark_anecdote": 2,
+            "bug_regression_report -> firsthand_usage": 1,
+            "bug_regression_report -> release_update_reaction": 1,
+            "comparative_evaluation -> comparative_evaluation": 6,
+            "comparative_evaluation -> firsthand_usage": 5,
+            "comparative_evaluation -> hearsay": 2,
+            "comparative_evaluation -> pricing_value_comment": 2,
+            "comparative_evaluation -> release_update_reaction": 1,
+            "firsthand_usage -> benchmark_anecdote": 2,
+            "firsthand_usage -> comparative_evaluation": 3,
+            "firsthand_usage -> firsthand_usage": 80,
+            "firsthand_usage -> hearsay": 9,
+            "firsthand_usage -> pricing_value_comment": 6,
+            "hearsay -> benchmark_anecdote": 1,
+            "hearsay -> comparative_evaluation": 4,
+            "hearsay -> firsthand_usage": 23,
+            "hearsay -> hearsay": 43,
+            "hearsay -> pricing_value_comment": 5,
+            "hearsay -> release_update_reaction": 4,
+            "integration_failure -> bug_regression_report": 1,
+            "integration_failure -> firsthand_usage": 1,
+            "integration_failure -> hearsay": 3,
+            "integration_failure -> integration_failure": 31,
+            "pricing_value_comment -> firsthand_usage": 6,
+            "pricing_value_comment -> hearsay": 1,
+            "pricing_value_comment -> pricing_value_comment": 41,
+            "release_update_reaction -> bug_regression_report": 1,
+            "release_update_reaction -> firsthand_usage": 3,
+            "release_update_reaction -> hearsay": 7,
+            "release_update_reaction -> integration_failure": 1,
+            "release_update_reaction -> release_update_reaction": 4
+          },
+          "evaluated": 324,
+          "macro_f1": 0.5429055647220918,
+          "run_accuracy_max": 0.7037037037037037,
+          "run_accuracy_min": 0.654320987654321,
+          "runs": 4
+        },
+        "firsthand_flag": {
+          "accuracy": 0.8333333333333334,
+          "confusion": {
+            "false -> false": 150,
+            "false -> true": 30,
+            "true -> false": 24,
+            "true -> true": 120
+          },
+          "evaluated": 324,
+          "macro_f1": 0.8318920788654445,
+          "run_accuracy_max": 0.8888888888888888,
+          "run_accuracy_min": 0.7530864197530864,
+          "runs": 4
+        },
+        "polarity_score": {
+          "accuracy": 0.6018518518518519,
+          "confusion": {
+            "-1 -> -1": 56,
+            "-1 -> -2": 2,
+            "-1 -> 0": 17,
+            "-1 -> 1": 17,
+            "-1 -> 2": 4,
+            "-2 -> -1": 3,
+            "-2 -> -2": 8,
+            "-2 -> 1": 4,
+            "-2 -> 2": 1,
+            "0 -> -1": 22,
+            "0 -> 0": 69,
+            "0 -> 1": 10,
+            "0 -> 2": 3,
+            "1 -> -1": 24,
+            "1 -> -2": 2,
+            "1 -> 0": 9,
+            "1 -> 1": 45,
+            "2 -> -1": 8,
+            "2 -> 0": 1,
+            "2 -> 1": 2,
+            "2 -> 2": 17
+          },
+          "evaluated": 324,
+          "macro_f1": 0.6016886852039015,
+          "run_accuracy_max": 0.654320987654321,
+          "run_accuracy_min": 0.5308641975308642,
+          "runs": 4
+        },
+        "task_category": {
+          "accuracy": 0.5925925925925926,
+          "confusion": {
+            "agents -> agents": 17,
+            "agents -> api_developer_workflow": 3,
+            "agents -> coding": 12,
+            "agents -> data_analysis": 3,
+            "agents -> general": 4,
+            "agents -> research": 4,
+            "agents -> writing": 1,
+            "api_developer_workflow -> agents": 4,
+            "api_developer_workflow -> api_developer_workflow": 9,
+            "api_developer_workflow -> coding": 4,
+            "api_developer_workflow -> general": 5,
+            "api_developer_workflow -> research": 3,
+            "api_developer_workflow -> roleplay": 2,
+            "api_developer_workflow -> writing": 1,
+            "coding -> agents": 10,
+            "coding -> api_developer_workflow": 6,
+            "coding -> coding": 79,
+            "coding -> general": 8,
+            "coding -> long_context": 1,
+            "coding -> research": 2,
+            "coding -> roleplay": 3,
+            "coding -> writing": 3,
+            "data_analysis -> data_analysis": 4,
+            "general -> agents": 3,
+            "general -> coding": 20,
+            "general -> general": 68,
+            "general -> research": 1,
+            "research -> agents": 4,
+            "research -> api_developer_workflow": 1,
+            "research -> coding": 1,
+            "research -> general": 8,
+            "research -> research": 10,
+            "writing -> agents": 2,
+            "writing -> api_developer_workflow": 1,
+            "writing -> coding": 8,
+            "writing -> general": 3,
+            "writing -> research": 1,
+            "writing -> writing": 5
+          },
+          "evaluated": 324,
+          "macro_f1": 0.40863424339503196,
+          "run_accuracy_max": 0.6666666666666666,
+          "run_accuracy_min": 0.5308641975308642,
+          "runs": 4
+        }
+      },
+      "runs_requested": 4
+    }
+  },
+  "runs": 4,
+  "summary": {
+    "hf_embedding_logistic": {
+      "available": true,
+      "error": null,
+      "examples": 324,
+      "fields": {
+        "aspect_category": {
+          "accuracy": 0.5274390243902439,
+          "coverage": null,
+          "evaluated": 328,
+          "macro_f1": 0.4559216636929522
+        },
+        "evidence_type": {
+          "accuracy": 0.5401234567901234,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": 0.46924175820722297
+        },
+        "firsthand_flag": {
+          "accuracy": 0.7746913580246914,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": 0.7717142664105707
+        },
+        "polarity_score": {
+          "accuracy": 0.5524691358024691,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": 0.5301550440856521
+        },
+        "task_category": {
+          "accuracy": 0.5339506172839507,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": 0.403782558190473
+        }
+      },
+      "mean_macro_f1": 0.5261630581173742
+    },
+    "naive_bayes": {
+      "available": true,
+      "error": null,
+      "examples": 324,
+      "fields": {
+        "aspect_category": {
+          "accuracy": 0.6172839506172839,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": null
+        },
+        "evidence_type": {
+          "accuracy": 0.6203703703703703,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": null
+        },
+        "firsthand_flag": {
+          "accuracy": 0.8333333333333334,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": null
+        },
+        "polarity_score": {
+          "accuracy": 0.558641975308642,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": null
+        },
+        "task_category": {
+          "accuracy": 0.5185185185185185,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": null
+        }
+      },
+      "mean_macro_f1": null
+    },
+    "sklearn_tfidf_logistic": {
+      "available": true,
+      "error": null,
+      "examples": 324,
+      "fields": {
+        "aspect_category": {
+          "accuracy": 0.6371951219512195,
+          "coverage": null,
+          "evaluated": 328,
+          "macro_f1": 0.626519525565703
+        },
+        "evidence_type": {
+          "accuracy": 0.6728395061728395,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": 0.5429055647220918
+        },
+        "firsthand_flag": {
+          "accuracy": 0.8333333333333334,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": 0.8318920788654445
+        },
+        "polarity_score": {
+          "accuracy": 0.6018518518518519,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": 0.6016886852039015
+        },
+        "task_category": {
+          "accuracy": 0.5925925925925926,
+          "coverage": null,
+          "evaluated": 324,
+          "macro_f1": 0.40863424339503196
+        }
+      },
+      "mean_macro_f1": 0.6023280195504346
+    }
+  },
+  "training": "datasets\\training\\hn_manual_training.jsonl"
+}

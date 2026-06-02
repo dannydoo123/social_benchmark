@@ -12,6 +12,16 @@ dependencies = [
     "scikit-learn>=1.5,<2",
 ]
 
+[project.optional-dependencies]
+hf = [
+    "sentence-transformers>=3.0,<4",
+    "torch>=2.3,<3",
+    "transformers>=4.42,<5",
+]
+setfit = [
+    "setfit>=1.1,<2",
+]
+
 [project.scripts]
 sb-pipeline = "social_benchmark.pipeline.cli:main"
 

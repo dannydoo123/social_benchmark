@@ -1,1 +1,6 @@
 scikit-learn<2,>=1.5
+
+[hf]
+sentence-transformers<4,>=3.0
+torch<3,>=2.3
+transformers<5,>=4.42

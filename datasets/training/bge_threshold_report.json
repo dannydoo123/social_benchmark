@@ -1,0 +1,191 @@
+{
+  "examples": 324,
+  "model": "datasets\\training\\bge_small_augmented_model.joblib",
+  "thresholds": {
+    "0.50": {
+      "aspect_category": {
+        "answered": 22,
+        "coverage": 0.06790123456790123,
+        "mean_confidence": 0.5564635181474002,
+        "precision": 0.8181818181818182,
+        "threshold": 0.5
+      },
+      "evidence_type": {
+        "answered": 29,
+        "coverage": 0.08950617283950617,
+        "mean_confidence": 0.5902964690179667,
+        "precision": 0.896551724137931,
+        "threshold": 0.5
+      },
+      "firsthand_flag": {
+        "answered": 324,
+        "coverage": 1.0,
+        "mean_confidence": 0.6224548541144675,
+        "precision": 0.8425925925925926,
+        "threshold": 0.5
+      },
+      "polarity_score": {
+        "answered": 16,
+        "coverage": 0.04938271604938271,
+        "mean_confidence": 0.5309624029323651,
+        "precision": 1.0,
+        "threshold": 0.5
+      },
+      "task_category": {
+        "answered": 15,
+        "coverage": 0.046296296296296294,
+        "mean_confidence": 0.595605740006479,
+        "precision": 0.6,
+        "threshold": 0.5
+      }
+    },
+    "0.60": {
+      "aspect_category": {
+        "answered": 5,
+        "coverage": 0.015432098765432098,
+        "mean_confidence": 0.6374309937314571,
+        "precision": 1.0,
+        "threshold": 0.6
+      },
+      "evidence_type": {
+        "answered": 14,
+        "coverage": 0.043209876543209874,
+        "mean_confidence": 0.6267620349888617,
+        "precision": 0.9285714285714286,
+        "threshold": 0.6
+      },
+      "firsthand_flag": {
+        "answered": 186,
+        "coverage": 0.5740740740740741,
+        "mean_confidence": 0.6749160778900662,
+        "precision": 0.946236559139785,
+        "threshold": 0.6
+      },
+      "polarity_score": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.6
+      },
+      "task_category": {
+        "answered": 10,
+        "coverage": 0.030864197530864196,
+        "mean_confidence": 0.6299537554709438,
+        "precision": 0.5,
+        "threshold": 0.6
+      }
+    },
+    "0.70": {
+      "aspect_category": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.7
+      },
+      "evidence_type": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.7
+      },
+      "firsthand_flag": {
+        "answered": 52,
+        "coverage": 0.16049382716049382,
+        "mean_confidence": 0.7384490562191443,
+        "precision": 1.0,
+        "threshold": 0.7
+      },
+      "polarity_score": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.7
+      },
+      "task_category": {
+        "answered": 1,
+        "coverage": 0.0030864197530864196,
+        "mean_confidence": 0.7377282259622215,
+        "precision": 1.0,
+        "threshold": 0.7
+      }
+    },
+    "0.80": {
+      "aspect_category": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.8
+      },
+      "evidence_type": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.8
+      },
+      "firsthand_flag": {
+        "answered": 1,
+        "coverage": 0.0030864197530864196,
+        "mean_confidence": 0.813795583418107,
+        "precision": 1.0,
+        "threshold": 0.8
+      },
+      "polarity_score": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.8
+      },
+      "task_category": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.8
+      }
+    },
+    "0.90": {
+      "aspect_category": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.9
+      },
+      "evidence_type": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.9
+      },
+      "firsthand_flag": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.9
+      },
+      "polarity_score": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.9
+      },
+      "task_category": {
+        "answered": 0,
+        "coverage": 0.0,
+        "mean_confidence": 0.0,
+        "precision": 0.0,
+        "threshold": 0.9
+      }
+    }
+  }
+}

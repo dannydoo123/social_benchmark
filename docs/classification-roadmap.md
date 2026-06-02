@@ -58,6 +58,43 @@ Turn the current weak Naive Bayes helper into a context-aware, review-driven lab
 - Any replacement should preserve the same review artifacts, labels, and extraction pipeline so prior work remains reusable.
 - Model comparisons should be run against the same reviewed HN slices before swapping the active backend.
 
+## Current Hugging Face Path
+
+- `embed-jsonl` writes local embedding vectors for reviewed training rows or extracted observations.
+- `cluster-embeddings` groups near-duplicate rows by cosine similarity for deduplication and manipulation review.
+- `train-hf-classifier` trains one logistic classifier head per target field on local Hugging Face embeddings.
+- `evaluate-hf-classifier` evaluates the embedding backend with the same repeated holdout style used by the sklearn baseline.
+- `compare-classifiers` writes a single report comparing the current Naive Bayes baseline, the sklearn TF-IDF baseline, and the Hugging Face embedding backend when available.
+- `train-high-precision-classifier --precision-first --skip-hf` trains the selected agreement-gated production candidate. It uses Naive Bayes plus sklearn consensus and abstains when confidence is insufficient.
+
+The first recommended model remains `sentence-transformers/all-MiniLM-L6-v2` because it is small enough for local iteration. Larger encoder models should only replace it after the comparison report shows a measurable gain on the same reviewed HN slices.
+
+## Reviewed HN Experiment
+
+The first local comparison used `datasets/training/hn_manual_training.jsonl` with 324 reviewed examples.
+
+- The sklearn TF-IDF logistic backend was the strongest standalone classifier.
+- `sentence-transformers/all-MiniLM-L6-v2` added a different signal but was weaker as a standalone classifier on this dataset.
+- Adding MiniLM to the ensemble reduced precision and coverage on most fields, so it remains experimental.
+- The selected production candidate is a Naive Bayes plus sklearn consensus model with field-specific thresholds:
+  - `task_category`: `0.62`
+  - `aspect_category`: `0.68`
+  - `evidence_type`: `0.68`
+  - `polarity_score`: `0.78`
+  - `firsthand_flag`: `0.78`
+
+The selected ensemble is intentionally precision-first. It should abstain and send uncertain rows to review rather than force labels.
+
+## Grouped Frozen-Embedding Bake-Off
+
+The stricter source-item-grouped bake-off is documented in:
+
+```text
+analysis/extractor-bakeoff-report-2026-06-01.md
+```
+
+The strongest completed frozen checkpoint is `BAAI/bge-small-en-v1.5` with augmented evidence input. `sentence-transformers/all-mpnet-base-v2` with evidence-only input is the secondary candidate. A bounded GPU SetFit pilot ran successfully but did not beat frozen embeddings, so the current production candidate is the frozen BGE Small augmented classifier.
+
 ## Operating Rule
 
 - Extract better.

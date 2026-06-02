@@ -1,0 +1,109 @@
+{
+  "backend": "high_precision_ensemble",
+  "examples": 324,
+  "fields": {
+    "aspect_category": {
+      "abstained": 302,
+      "answered": 26,
+      "confusion": {
+        "developer_ergonomics -> developer_ergonomics": 3,
+        "hallucination_safety -> hallucination_safety": 3,
+        "refusal_acceptance -> refusal_acceptance": 4,
+        "regression_stability -> regression_stability": 2,
+        "satisfaction -> regression_stability": 2,
+        "satisfaction -> satisfaction": 4,
+        "task_fit -> task_fit": 1,
+        "value -> task_fit": 1,
+        "value -> value": 6
+      },
+      "coverage": 0.07926829268292683,
+      "precision": 0.8846153846153846,
+      "run_precision_max": 1.0,
+      "run_precision_min": 0.7142857142857143,
+      "runs": 4,
+      "total": 328
+    },
+    "evidence_type": {
+      "abstained": 273,
+      "answered": 51,
+      "confusion": {
+        "benchmark_anecdote -> benchmark_anecdote": 6,
+        "comparative_evaluation -> comparative_evaluation": 2,
+        "firsthand_usage -> benchmark_anecdote": 1,
+        "hearsay -> hearsay": 4,
+        "hearsay -> release_update_reaction": 2,
+        "integration_failure -> integration_failure": 18,
+        "pricing_value_comment -> pricing_value_comment": 15,
+        "release_update_reaction -> bug_regression_report": 1,
+        "release_update_reaction -> release_update_reaction": 2
+      },
+      "coverage": 0.1574074074074074,
+      "precision": 0.9215686274509803,
+      "run_precision_max": 1.0,
+      "run_precision_min": 0.75,
+      "runs": 4,
+      "total": 324
+    },
+    "firsthand_flag": {
+      "abstained": 73,
+      "answered": 251,
+      "confusion": {
+        "false -> false": 123,
+        "false -> true": 17,
+        "true -> false": 9,
+        "true -> true": 102
+      },
+      "coverage": 0.7746913580246914,
+      "precision": 0.896414342629482,
+      "run_precision_max": 0.9365079365079365,
+      "run_precision_min": 0.8461538461538461,
+      "runs": 4,
+      "total": 324
+    },
+    "polarity_score": {
+      "abstained": 259,
+      "answered": 65,
+      "confusion": {
+        "-1 -> -1": 8,
+        "-1 -> 1": 5,
+        "-1 -> 2": 2,
+        "-2 -> -2": 8,
+        "-2 -> 2": 1,
+        "0 -> 0": 22,
+        "1 -> -2": 2,
+        "1 -> 1": 7,
+        "2 -> 2": 10
+      },
+      "coverage": 0.2006172839506173,
+      "precision": 0.8461538461538461,
+      "run_precision_max": 0.8823529411764706,
+      "run_precision_min": 0.7692307692307693,
+      "runs": 4,
+      "total": 324
+    },
+    "task_category": {
+      "abstained": 310,
+      "answered": 14,
+      "confusion": {
+        "agents -> agents": 1,
+        "agents -> data_analysis": 3,
+        "api_developer_workflow -> api_developer_workflow": 2,
+        "api_developer_workflow -> roleplay": 2,
+        "coding -> roleplay": 2,
+        "data_analysis -> data_analysis": 3,
+        "writing -> writing": 1
+      },
+      "coverage": 0.043209876543209874,
+      "precision": 0.5,
+      "run_precision_max": 1.0,
+      "run_precision_min": 0.4,
+      "runs": 4,
+      "total": 324
+    }
+  },
+  "hf_model_name": null,
+  "include_hf": false,
+  "min_agreement": 2,
+  "min_confidence": 0.78,
+  "runs_requested": 4
+}

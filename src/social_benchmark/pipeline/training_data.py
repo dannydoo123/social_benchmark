@@ -19,6 +19,7 @@ TRAINING_FIELDS = [
     "polarity_score",
     "firsthand_flag",
     "source_platform",
+    "thread_id",
     "source_item_id",
     "url",
 ]
@@ -59,6 +60,7 @@ def _training_example(row: dict[str, str], context_row: dict[str, Any] | None = 
         "polarity_score": _int_or_default(row.get("human_polarity_score"), row.get("polarity_score")),
         "firsthand_flag": _bool_or_default(row.get("human_firsthand_flag"), row.get("firsthand_flag")),
         "source_platform": row.get("source_platform", ""),
+        "thread_id": row.get("thread_id", ""),
         "source_item_id": row.get("source_item_id", ""),
         "url": row.get("url", ""),
     }

@@ -60,6 +60,8 @@ Implemented pipeline pieces:
 - firsthand evidence detection helper
 - score publishability gates and publication blockers
 - dependency-free local Naive Bayes classifier baseline
+- local Hugging Face embedding pipeline and embedding-backed classifier hooks
+- classifier comparison report across Naive Bayes, sklearn, and Hugging Face embedding backends
 - JSONL storage helpers
 - initial PostgreSQL/Supabase migration
 
@@ -148,6 +150,61 @@ Train and evaluate the local baseline classifier:
 $env:PYTHONPATH='src'
 python -m social_benchmark.pipeline.cli train-local-classifier --training data/training/extractor_training.jsonl --model-out data/training/local_nb_model.json
 python -m social_benchmark.pipeline.cli evaluate-local-classifier --training data/training/extractor_training.jsonl --out data/training/local_nb_eval.json
+```
+
+Train and evaluate the current sklearn baseline:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli train-sklearn-classifier --training data/training/extractor_training.jsonl --model-out data/training/sklearn_model.joblib
+python -m social_benchmark.pipeline.cli evaluate-sklearn-classifier --training data/training/extractor_training.jsonl --out data/training/sklearn_eval.json
+```
+
+Generate local Hugging Face embeddings and cluster likely duplicate/campaign-like rows:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli embed-jsonl --input data/training/extractor_training.jsonl --out data/training/embeddings.jsonl --embedding-model sentence-transformers/all-MiniLM-L6-v2
+python -m social_benchmark.pipeline.cli cluster-embeddings --embeddings data/training/embeddings.jsonl --out data/training/embedding_clusters.json
+```
+
+Train and evaluate the Hugging Face embedding-backed classifier:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli train-hf-classifier --training data/training/extractor_training.jsonl --model-out data/training/hf_embedding_model.joblib --embedding-model sentence-transformers/all-MiniLM-L6-v2
+python -m social_benchmark.pipeline.cli evaluate-hf-classifier --training data/training/extractor_training.jsonl --out data/training/hf_embedding_eval.json --embedding-model sentence-transformers/all-MiniLM-L6-v2
+```
+
+Compare the new backend with the current models on the same reviewed labels:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli compare-classifiers --training data/training/extractor_training.jsonl --out data/training/classifier_comparison.json --embedding-model sentence-transformers/all-MiniLM-L6-v2
+```
+
+Train the high-precision ensemble. It accepts confident agreement across local backends and abstains on uncertain rows:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli train-high-precision-classifier --training data/training/extractor_training.jsonl --model-out data/training/high_precision_ensemble.joblib --skip-hf --precision-first
+```
+
+The current reviewed HN slice performs best when MiniLM stays available as an experimental comparison backend but is excluded from the production consensus ensemble.
+
+Run the stricter source-item-grouped frozen checkpoint bake-off:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli run-frozen-embedding-bakeoff --training datasets/training/hn_manual_training.jsonl --out datasets/training/frozen_embedding_bakeoff_grouped.json
+```
+
+See `analysis/extractor-bakeoff-report-2026-06-01.md` for the latest grouped results. BGE Small currently leads the frozen sentence-transformer matrix. A bounded GPU SetFit pilot completed but did not beat frozen embeddings, so the current production candidate is the frozen BGE Small augmented classifier.
+
+The Hugging Face commands require optional local model dependencies:
+
+```powershell
+pip install -e ".[hf]"
 ```
 
 Scores include `publishable` and `publication_blockers`. A score can be computed for internal analysis but should not be shown on a public leaderboard while blockers are present.

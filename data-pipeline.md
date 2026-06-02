@@ -96,6 +96,12 @@ Use this staged extraction approach:
 
 Current local tooling supports exporting uncertain/neutral observations to CSV and converting reviewed labels into supervised training JSONL.
 
+Current model backends:
+
+- dependency-free Naive Bayes baseline
+- sklearn TF-IDF logistic baseline
+- Hugging Face embedding-backed logistic classifiers using local embeddings
+
 Use `docs/labeling-guide.md` when reviewing exported rows.
 
 Reviewed-label workflow:
@@ -373,6 +379,18 @@ Apply these stages before scoring:
 4. Local embedding similarity clustering
 5. Author/thread/community caps
 6. Burst detection for campaign-like behavior
+
+The implementation includes an initial embedding sidecar flow:
+
+```text
+training or observation JSONL
+  -> embed-jsonl
+  -> embeddings.jsonl
+  -> cluster-embeddings
+  -> embedding_clusters.json
+```
+
+These clusters should feed duplicate review and campaign detection before any public scoring use.
 
 Strong regression claims should require corroboration across at least two platform families.
 
