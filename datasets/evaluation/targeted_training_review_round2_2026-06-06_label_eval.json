@@ -1,0 +1,175 @@
+{
+  "fields": {
+    "aspect_category": {
+      "accuracy": 0.22164948453608246,
+      "confusion": {
+        "developer_ergonomics -> task_fit": 17,
+        "developer_ergonomics -> value": 4,
+        "hallucination_safety -> trust_reliability": 2,
+        "refusal_acceptance -> value": 1,
+        "regression_stability -> regression_stability": 1,
+        "regression_stability -> task_fit": 11,
+        "regression_stability -> trust_reliability": 1,
+        "regression_stability -> value": 2,
+        "satisfaction -> developer_ergonomics": 2,
+        "satisfaction -> regression_stability": 2,
+        "satisfaction -> satisfaction": 13,
+        "satisfaction -> task_fit": 70,
+        "satisfaction -> trust_reliability": 14,
+        "satisfaction -> value": 9,
+        "task_fit -> task_fit": 5,
+        "trust_reliability -> task_fit": 6,
+        "trust_reliability -> trust_reliability": 3,
+        "value -> developer_ergonomics": 4,
+        "value -> task_fit": 3,
+        "value -> value": 20
+      },
+      "correct": 43,
+      "labeled": 194
+    },
+    "evidence_type": {
+      "accuracy": 0.5103092783505154,
+      "confusion": {
+        "bug_regression_report -> bug_regression_report": 2,
+        "bug_regression_report -> firsthand_usage": 4,
+        "comparative_evaluation -> comparative_evaluation": 2,
+        "comparative_evaluation -> firsthand_usage": 6,
+        "comparative_evaluation -> hearsay": 3,
+        "comparative_evaluation -> release_update_reaction": 4,
+        "firsthand_usage -> comparative_evaluation": 8,
+        "firsthand_usage -> firsthand_usage": 53,
+        "firsthand_usage -> hearsay": 5,
+        "hearsay -> firsthand_usage": 11,
+        "hearsay -> hearsay": 18,
+        "hearsay -> pricing_value_comment": 6,
+        "integration_failure -> comparative_evaluation": 5,
+        "integration_failure -> firsthand_usage": 9,
+        "integration_failure -> integration_failure": 3,
+        "integration_failure -> pricing_value_comment": 4,
+        "pricing_value_comment -> pricing_value_comment": 15,
+        "release_update_reaction -> comparative_evaluation": 3,
+        "release_update_reaction -> firsthand_usage": 5,
+        "release_update_reaction -> release_update_reaction": 4
+      },
+      "correct": 99,
+      "labeled": 194
+    },
+    "firsthand_flag": {
+      "accuracy": 0.7989690721649485,
+      "confusion": {
+        "false -> false": 53,
+        "false -> true": 24,
+        "true -> false": 15,
+        "true -> true": 102
+      },
+      "correct": 155,
+      "labeled": 194
+    },
+    "inference_profile": {
+      "labeled": 0
+    },
+    "model_id": {
+      "accuracy": 1.0,
+      "confusion": {
+        "claude -> claude": 99,
+        "claude-opus -> claude-opus": 1,
+        "claude-opus-4.7 -> claude-opus-4.7": 3,
+        "claude-opus-4.8 -> claude-opus-4.8": 8,
+        "claude-sonnet-4.6 -> claude-sonnet-4.6": 2,
+        "deepseek -> deepseek": 12,
+        "gemini -> gemini": 16,
+        "gpt-5.5 -> gpt-5.5": 5,
+        "grok -> grok": 4,
+        "kimi -> kimi": 4,
+        "llama -> llama": 2,
+        "mistral -> mistral": 1,
+        "qwen -> qwen": 10
+      },
+      "correct": 167,
+      "labeled": 167
+    },
+    "polarity_score": {
+      "accuracy": 0.38144329896907214,
+      "confusion": {
+        "-1 -> -1": 10,
+        "-1 -> -2": 1,
+        "-1 -> 1": 4,
+        "-1 -> 2": 1,
+        "-2 -> -1": 1,
+        "-2 -> -2": 7,
+        "0 -> -1": 28,
+        "0 -> -2": 15,
+        "0 -> 0": 10,
+        "0 -> 1": 25,
+        "0 -> 2": 14,
+        "1 -> -1": 4,
+        "1 -> -2": 3,
+        "1 -> 0": 5,
+        "1 -> 1": 35,
+        "1 -> 2": 6,
+        "2 -> -1": 3,
+        "2 -> -2": 1,
+        "2 -> 1": 8,
+        "2 -> 2": 12
+      },
+      "correct": 74,
+      "labeled": 194
+    },
+    "product_id": {
+      "accuracy": 0.3448275862068966,
+      "confusion": {
+        " -> claude-code": 16,
+        " -> notebooklm": 3,
+        "claude-code -> claude-code": 6,
+        "cursor -> cursor": 3,
+        "openai-api -> openai-api": 1
+      },
+      "correct": 10,
+      "labeled": 29
+    },
+    "provider_id": {
+      "accuracy": 1.0,
+      "confusion": {
+        "alibaba -> alibaba": 10,
+        "anthropic -> anthropic": 136,
+        "deepseek -> deepseek": 12,
+        "google -> google": 19,
+        "meta -> meta": 2,
+        "mistral -> mistral": 1,
+        "moonshot -> moonshot": 4,
+        "openai -> openai": 6,
+        "xai -> xai": 4
+      },
+      "correct": 194,
+      "labeled": 194
+    },
+    "task_category": {
+      "accuracy": 0.5824742268041238,
+      "confusion": {
+        "agents -> agents": 18,
+        "agents -> coding": 6,
+        "api_developer_workflow -> api_developer_workflow": 7,
+        "api_developer_workflow -> coding": 3,
+        "api_developer_workflow -> general": 2,
+        "api_developer_workflow -> writing": 4,
+        "coding -> api_developer_workflow": 4,
+        "coding -> coding": 48,
+        "coding -> writing": 4,
+        "general -> agents": 5,
+        "general -> api_developer_workflow": 4,
+        "general -> coding": 8,
+        "general -> data_analysis": 5,
+        "general -> general": 28,
+        "general -> long_context": 6,
+        "general -> writing": 3,
+        "long_context -> coding": 2,
+        "long_context -> long_context": 4,
+        "writing -> coding": 7,
+        "writing -> writing": 6
+      },
+      "correct": 113,
+      "labeled": 194
+    }
+  },
+  "rows": 300
+}

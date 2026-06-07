@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 
 from social_benchmark.pipeline.analysis import write_observation_report
-from social_benchmark.pipeline.active_learning import export_active_learning_queue, write_threshold_report
+from social_benchmark.pipeline.active_learning import export_active_learning_queue, write_fixed_model_evaluation, write_threshold_report
 from social_benchmark.pipeline.clients.github import GitHubClient
 from social_benchmark.pipeline.clients.hackernews import HackerNewsClient
 from social_benchmark.pipeline.collection import collect_from_config, load_source_config
@@ -30,6 +30,8 @@ from social_benchmark.pipeline.local_classifier import (
 from social_benchmark.pipeline.model_comparison import compare_classifier_backends
 from social_benchmark.pipeline.models import RawItem, SourcePlatform, to_jsonable
 from social_benchmark.pipeline.scoring import ScoreAggregator
+from social_benchmark.pipeline.routed_classifier import run_routed_rubric_bakeoff, train_routed_rubric_classifier
+from social_benchmark.pipeline.publication_readiness import write_publication_readiness
 from social_benchmark.pipeline.setfit_experiments import parse_checkpoint_specs, run_setfit_bakeoff
 from social_benchmark.pipeline.sklearn_classifier import (
     train_sklearn_classifier,
@@ -37,7 +39,7 @@ from social_benchmark.pipeline.sklearn_classifier import (
     write_sklearn_variant_evaluation,
 )
 from social_benchmark.pipeline.storage import read_jsonl, write_jsonl
-from social_benchmark.pipeline.training_data import build_training_jsonl
+from social_benchmark.pipeline.training_data import build_training_jsonl, merge_training_jsonl
 
 
 def main() -> None:
@@ -94,6 +96,11 @@ def main() -> None:
     training_parser.add_argument("--out", required=True)
     training_parser.add_argument("--context", help="Optional review-context JSONL matched by review_id")
 
+    merge_training_parser = subparsers.add_parser("merge-training-data", help="Merge and deduplicate training JSONL files")
+    merge_training_parser.add_argument("--input", action="append", required=True)
+    merge_training_parser.add_argument("--out", required=True)
+    merge_training_parser.add_argument("--exclude-thread-id", action="append", default=[])
+
     eval_labels_parser = subparsers.add_parser("evaluate-labels", help="Compare machine labels with reviewed CSV labels")
     eval_labels_parser.add_argument("--labels", required=True)
     eval_labels_parser.add_argument("--out", required=True)
@@ -131,12 +138,14 @@ def main() -> None:
     train_hf_parser.add_argument("--model-out", required=True)
     train_hf_parser.add_argument("--embedding-model", default="sentence-transformers/all-MiniLM-L6-v2")
     train_hf_parser.add_argument("--runs", type=int, default=8)
+    train_hf_parser.add_argument("--text-mode", default="augmented", choices=["evidence_only", "augmented"])
 
     eval_hf_parser = subparsers.add_parser("evaluate-hf-classifier", help="Evaluate embedding-backed field classifiers")
     eval_hf_parser.add_argument("--training", required=True)
     eval_hf_parser.add_argument("--out", required=True)
     eval_hf_parser.add_argument("--embedding-model", default="sentence-transformers/all-MiniLM-L6-v2")
     eval_hf_parser.add_argument("--runs", type=int, default=8)
+    eval_hf_parser.add_argument("--text-mode", default="augmented", choices=["evidence_only", "augmented"])
 
     embed_parser = subparsers.add_parser("embed-jsonl", help="Write local Hugging Face embeddings for JSONL rows")
     embed_parser.add_argument("--input", required=True)
@@ -168,6 +177,21 @@ def main() -> None:
     bakeoff_parser.add_argument("--group-field", default="source_item_id", choices=["source_item_id", "thread_id"])
     bakeoff_parser.add_argument("--embedding-cache-dir", help="Optional directory for reusable bake-off embedding vectors")
 
+    routed_bakeoff_parser = subparsers.add_parser("run-routed-rubric-bakeoff", help="Evaluate specialized per-field encoders and rubric features")
+    routed_bakeoff_parser.add_argument("--training", required=True)
+    routed_bakeoff_parser.add_argument("--out", required=True)
+    routed_bakeoff_parser.add_argument("--runs", type=int, default=8)
+    routed_bakeoff_parser.add_argument("--group-field", default="thread_id", choices=["source_item_id", "thread_id"])
+    routed_bakeoff_parser.add_argument("--embedding-cache-dir")
+
+    routed_train_parser = subparsers.add_parser("train-routed-rubric-classifier", help="Train the selected specialized per-field classifier")
+    routed_train_parser.add_argument("--training", required=True)
+    routed_train_parser.add_argument("--model-out", required=True)
+
+    publication_parser = subparsers.add_parser("assess-publication-readiness", help="Apply minimum publication-quality gates to an evaluation")
+    publication_parser.add_argument("--evaluation", required=True)
+    publication_parser.add_argument("--out", required=True)
+
     setfit_parser = subparsers.add_parser("run-setfit-bakeoff", help="Fine-tune top sentence-transformer checkpoints with SetFit on grouped holdouts")
     setfit_parser.add_argument("--training", required=True)
     setfit_parser.add_argument("--out", required=True)
@@ -177,11 +201,17 @@ def main() -> None:
     setfit_parser.add_argument("--iterations", type=int, default=4)
     setfit_parser.add_argument("--batch-size", type=int, default=16)
     setfit_parser.add_argument("--max-steps", type=int, default=-1)
+    setfit_parser.add_argument("--group-field", default="source_item_id", choices=["source_item_id", "thread_id"])
 
     threshold_parser = subparsers.add_parser("threshold-report", help="Measure precision and coverage by confidence threshold")
     threshold_parser.add_argument("--training", required=True)
     threshold_parser.add_argument("--model", required=True)
     threshold_parser.add_argument("--out", required=True)
+
+    gold_eval_parser = subparsers.add_parser("evaluate-fixed-classifier", help="Evaluate a trained classifier on untouched labeled JSONL")
+    gold_eval_parser.add_argument("--evaluation", required=True)
+    gold_eval_parser.add_argument("--model", required=True)
+    gold_eval_parser.add_argument("--out", required=True)
 
     active_parser = subparsers.add_parser("export-active-learning", help="Export rows prioritized by model disagreement and low confidence")
     active_parser.add_argument("--input", required=True)
@@ -231,6 +261,8 @@ def main() -> None:
         _report_observations(args)
     elif args.command == "build-training-data":
         _build_training_data(args)
+    elif args.command == "merge-training-data":
+        _merge_training_data(args)
     elif args.command == "evaluate-labels":
         _evaluate_labels(args)
     elif args.command == "apply-labels":
@@ -257,10 +289,18 @@ def main() -> None:
         _compare_classifiers(args)
     elif args.command == "run-frozen-embedding-bakeoff":
         _run_frozen_embedding_bakeoff(args)
+    elif args.command == "run-routed-rubric-bakeoff":
+        _run_routed_rubric_bakeoff(args)
+    elif args.command == "train-routed-rubric-classifier":
+        _train_routed_rubric_classifier(args)
+    elif args.command == "assess-publication-readiness":
+        _assess_publication_readiness(args)
     elif args.command == "run-setfit-bakeoff":
         _run_setfit_bakeoff(args)
     elif args.command == "threshold-report":
         _threshold_report(args)
+    elif args.command == "evaluate-fixed-classifier":
+        _evaluate_fixed_classifier(args)
     elif args.command == "export-active-learning":
         _export_active_learning(args)
     elif args.command == "train-high-precision-classifier":
@@ -377,6 +417,11 @@ def _build_training_data(args: argparse.Namespace) -> None:
     print(json.dumps({"written": count, "out": args.out}))
 
 
+def _merge_training_data(args: argparse.Namespace) -> None:
+    count = merge_training_jsonl(args.input, args.out, excluded_thread_ids=set(args.exclude_thread_id))
+    print(json.dumps({"written": count, "out": args.out, "inputs": args.input}))
+
+
 def _evaluate_labels(args: argparse.Namespace) -> None:
     metrics = write_label_evaluation(args.labels, args.out)
     print(json.dumps({"rows": metrics.get("rows", 0), "out": args.out}))
@@ -418,13 +463,25 @@ def _evaluate_sklearn_variants(args: argparse.Namespace) -> None:
 
 
 def _train_hf_classifier(args: argparse.Namespace) -> None:
-    count = train_hf_classifier(args.training, args.model_out, model_name=args.embedding_model, runs=args.runs)
-    print(json.dumps({"examples": count, "model_out": args.model_out, "embedding_model": args.embedding_model}))
+    count = train_hf_classifier(
+        args.training,
+        args.model_out,
+        model_name=args.embedding_model,
+        runs=args.runs,
+        text_mode=args.text_mode,
+    )
+    print(json.dumps({"examples": count, "model_out": args.model_out, "embedding_model": args.embedding_model, "text_mode": args.text_mode}))
 
 
 def _evaluate_hf_classifier(args: argparse.Namespace) -> None:
-    metrics = write_hf_evaluation(args.training, args.out, model_name=args.embedding_model, runs=args.runs)
-    print(json.dumps({"examples": metrics.get("examples", 0), "out": args.out, "embedding_model": args.embedding_model}))
+    metrics = write_hf_evaluation(
+        args.training,
+        args.out,
+        model_name=args.embedding_model,
+        runs=args.runs,
+        text_mode=args.text_mode,
+    )
+    print(json.dumps({"examples": metrics.get("examples", 0), "out": args.out, "embedding_model": args.embedding_model, "text_mode": args.text_mode}))
 
 
 def _embed_jsonl(args: argparse.Namespace) -> None:
@@ -470,6 +527,27 @@ def _run_frozen_embedding_bakeoff(args: argparse.Namespace) -> None:
     print(json.dumps({"examples": result["examples"], "ranked": len(result["ranking"]), "out": args.out}))
 
 
+def _run_routed_rubric_bakeoff(args: argparse.Namespace) -> None:
+    result = run_routed_rubric_bakeoff(
+        args.training,
+        args.out,
+        runs=args.runs,
+        group_field=args.group_field,
+        embedding_cache_dir=args.embedding_cache_dir,
+    )
+    print(json.dumps({"examples": result["examples"], "mean_macro_f1": result["mean_macro_f1"], "out": args.out}))
+
+
+def _train_routed_rubric_classifier(args: argparse.Namespace) -> None:
+    count = train_routed_rubric_classifier(args.training, args.model_out)
+    print(json.dumps({"examples": count, "model_out": args.model_out}))
+
+
+def _assess_publication_readiness(args: argparse.Namespace) -> None:
+    result = write_publication_readiness(args.evaluation, args.out)
+    print(json.dumps({"ready": result["ready"], "failures": result["failures"], "out": args.out}))
+
+
 def _run_setfit_bakeoff(args: argparse.Namespace) -> None:
     result = run_setfit_bakeoff(
         args.training,
@@ -480,6 +558,7 @@ def _run_setfit_bakeoff(args: argparse.Namespace) -> None:
         num_iterations=args.iterations,
         batch_size=args.batch_size,
         max_steps=args.max_steps,
+        group_field=args.group_field,
     )
     print(json.dumps({"examples": result["examples"], "ranked": len(result["ranking"]), "out": args.out}))
 
@@ -487,6 +566,11 @@ def _run_setfit_bakeoff(args: argparse.Namespace) -> None:
 def _threshold_report(args: argparse.Namespace) -> None:
     report = write_threshold_report(args.training, args.model, args.out)
     print(json.dumps({"examples": report["examples"], "out": args.out}))
+
+
+def _evaluate_fixed_classifier(args: argparse.Namespace) -> None:
+    report = write_fixed_model_evaluation(args.evaluation, args.model, args.out)
+    print(json.dumps({"examples": report["examples"], "mean_macro_f1": report["mean_macro_f1"], "out": args.out}))
 
 
 def _export_active_learning(args: argparse.Namespace) -> None:

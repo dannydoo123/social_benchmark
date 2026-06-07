@@ -1,0 +1,55 @@
+{
+  "backend": "rubric_conditioned_embedding",
+  "embedding_model": "bert-base-uncased-transformers-mean-pool",
+  "evaluation": {
+    "group_field": "thread_id",
+    "runs": 8
+  },
+  "examples": 547,
+  "field_strategies": {
+    "aspect_category": "flat",
+    "evidence_type": "flat",
+    "firsthand_flag": "flat",
+    "polarity_score": "ordinal",
+    "task_category": "flat"
+  },
+  "variants": {
+    "field_selected": {
+      "field_rubric_scales": {
+        "aspect_category": 1.0,
+        "evidence_type": 0.0,
+        "firsthand_flag": 0.0,
+        "polarity_score": 3.0,
+        "task_category": 10.0
+      },
+      "fields": {
+        "aspect_category": {
+          "accuracy": 0.3314814814814815,
+          "evaluated": 1080,
+          "macro_f1": 0.23862398387386657
+        },
+        "evidence_type": {
+          "accuracy": 0.4740740740740741,
+          "evaluated": 1080,
+          "macro_f1": 0.3278556732641311
+        },
+        "firsthand_flag": {
+          "accuracy": 0.7694444444444445,
+          "evaluated": 1080,
+          "macro_f1": 0.7647225568705265
+        },
+        "polarity_score": {
+          "accuracy": 0.3101851851851852,
+          "evaluated": 1080,
+          "macro_f1": 0.24228863296927447
+        },
+        "task_category": {
+          "accuracy": 0.33425925925925926,
+          "evaluated": 1080,
+          "macro_f1": 0.23035310066414028
+        }
+      },
+      "mean_macro_f1": 0.3607687895283878
+    }
+  }
+}

@@ -4,7 +4,7 @@ import unittest
 import uuid
 from pathlib import Path
 
-from social_benchmark.pipeline.training_data import build_training_jsonl
+from social_benchmark.pipeline.training_data import build_training_jsonl, merge_training_jsonl
 
 
 class TrainingDataTest(unittest.TestCase):
@@ -162,6 +162,71 @@ class TrainingDataTest(unittest.TestCase):
 
         self.assertEqual(written, 1)
         self.assertEqual(rows[0]["context_text"], "I used Claude in production and it felt unsafe.")
+
+    def test_accepts_utf8_bom_context_sidecar(self):
+        temp_dir = Path(".test_tmp") / f"training_context_bom_{uuid.uuid4().hex}"
+        temp_dir.mkdir(parents=True, exist_ok=True)
+        labels = temp_dir / "labels.csv"
+        context = temp_dir / "context.jsonl"
+        output = temp_dir / "training.jsonl"
+        labels.write_text(
+            "review_id,evidence_text,model_id,task_category,aspect_category,evidence_type,polarity_score,firsthand_flag,human_model_id\n"
+            "review-1,Claude worked,claude,coding,task_fit,firsthand_usage,1,true,claude\n",
+            encoding="utf-8",
+        )
+        context.write_text(
+            json.dumps({"review_id": "review-1", "raw_full_text": "Full context"}) + "\n",
+            encoding="utf-8-sig",
+        )
+
+        written = build_training_jsonl(labels, output, context_jsonl=context)
+        rows = [json.loads(line) for line in output.read_text(encoding="utf-8").splitlines()]
+
+        self.assertEqual(written, 1)
+        self.assertEqual(rows[0]["context_text"], "Full context")
+
+    def test_preserves_intentionally_blank_reviewed_model(self):
+        temp_dir = Path(".test_tmp") / f"training_blank_model_{uuid.uuid4().hex}"
+        temp_dir.mkdir(parents=True, exist_ok=True)
+        labels = temp_dir / "labels.csv"
+        output = temp_dir / "training.jsonl"
+        labels.write_text(
+            "reviewed_flag,evidence_text,model_id,product_id,task_category,aspect_category,evidence_type,polarity_score,firsthand_flag,human_model_id,human_product_id,human_task_category\n"
+            "true,Claude Code worked,claude,claude-code,coding,task_fit,firsthand_usage,1,true,,claude-code,coding\n",
+            encoding="utf-8",
+        )
+
+        written = build_training_jsonl(labels, output)
+        rows = [json.loads(line) for line in output.read_text(encoding="utf-8").splitlines()]
+
+        self.assertEqual(written, 1)
+        self.assertEqual(rows[0]["model_id"], "")
+        self.assertEqual(rows[0]["product_id"], "claude-code")
+
+    def test_merges_deduplicates_and_excludes_threads(self):
+        temp_dir = Path(".test_tmp") / f"training_merge_{uuid.uuid4().hex}"
+        temp_dir.mkdir(parents=True, exist_ok=True)
+        first = temp_dir / "first.jsonl"
+        second = temp_dir / "second.jsonl"
+        output = temp_dir / "merged.jsonl"
+        first.write_text(
+            json.dumps({"source_item_id": "1", "thread_id": "train", "model_id": "claude", "text": "same", "polarity_score": 0})
+            + "\n"
+            + json.dumps({"source_item_id": "2", "thread_id": "gold", "model_id": "gpt", "text": "held out"})
+            + "\n",
+            encoding="utf-8",
+        )
+        second.write_text(
+            json.dumps({"source_item_id": "1", "thread_id": "train", "model_id": "claude", "text": "same", "polarity_score": 1})
+            + "\n",
+            encoding="utf-8",
+        )
+
+        written = merge_training_jsonl([first, second], output, excluded_thread_ids={"gold"})
+        rows = [json.loads(line) for line in output.read_text(encoding="utf-8").splitlines()]
+
+        self.assertEqual(written, 1)
+        self.assertEqual(rows[0]["polarity_score"], 1)
 
 
 if __name__ == "__main__":

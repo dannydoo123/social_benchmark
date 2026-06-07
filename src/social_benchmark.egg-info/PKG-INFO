@@ -9,6 +9,8 @@ Provides-Extra: hf
 Requires-Dist: sentence-transformers<4,>=3.0; extra == "hf"
 Requires-Dist: torch<3,>=2.3; extra == "hf"
 Requires-Dist: transformers<5,>=4.42; extra == "hf"
+Provides-Extra: setfit
+Requires-Dist: setfit<2,>=1.1; extra == "setfit"
 
 # Social Benchmark
 
@@ -194,6 +196,24 @@ Compare the new backend with the current models on the same reviewed labels:
 $env:PYTHONPATH='src'
 python -m social_benchmark.pipeline.cli compare-classifiers --training data/training/extractor_training.jsonl --out data/training/classifier_comparison.json --embedding-model sentence-transformers/all-MiniLM-L6-v2
 ```
+
+Train the high-precision ensemble. It accepts confident agreement across local backends and abstains on uncertain rows:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli train-high-precision-classifier --training data/training/extractor_training.jsonl --model-out data/training/high_precision_ensemble.joblib --skip-hf --precision-first
+```
+
+The current reviewed HN slice performs best when MiniLM stays available as an experimental comparison backend but is excluded from the production consensus ensemble.
+
+Run the stricter source-item-grouped frozen checkpoint bake-off:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli run-frozen-embedding-bakeoff --training datasets/training/hn_manual_training.jsonl --out datasets/training/frozen_embedding_bakeoff_grouped.json
+```
+
+See `analysis/extractor-bakeoff-report-2026-06-01.md` for the latest grouped results. BGE Small currently leads the frozen sentence-transformer matrix. A bounded GPU SetFit pilot completed but did not beat frozen embeddings, so the current production candidate is the frozen BGE Small augmented classifier.
 
 The Hugging Face commands require optional local model dependencies:
 

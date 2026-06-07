@@ -1,0 +1,104 @@
+{
+  "examples": 46,
+  "fields": {
+    "aspect_category": {
+      "accuracy": 0.43478260869565216,
+      "confusion": {
+        "developer_ergonomics -> developer_ergonomics": 1,
+        "hallucination_safety -> hallucination_safety": 6,
+        "refusal_acceptance -> trust_reliability": 1,
+        "satisfaction -> hallucination_safety": 1,
+        "task_fit -> developer_ergonomics": 6,
+        "task_fit -> hallucination_safety": 11,
+        "task_fit -> task_fit": 3,
+        "task_fit -> trust_reliability": 1,
+        "task_fit -> value": 1,
+        "trust_reliability -> developer_ergonomics": 1,
+        "trust_reliability -> trust_reliability": 5,
+        "value -> developer_ergonomics": 4,
+        "value -> value": 5
+      },
+      "evaluated": 46,
+      "macro_f1": 0.3328205128205128,
+      "mean_confidence": 0.2597549536299521
+    },
+    "evidence_type": {
+      "accuracy": 0.41304347826086957,
+      "confusion": {
+        "comparative_evaluation -> benchmark_anecdote": 6,
+        "comparative_evaluation -> firsthand_usage": 7,
+        "firsthand_usage -> benchmark_anecdote": 2,
+        "firsthand_usage -> comparative_evaluation": 1,
+        "firsthand_usage -> firsthand_usage": 14,
+        "firsthand_usage -> hearsay": 2,
+        "firsthand_usage -> pricing_value_comment": 1,
+        "hearsay -> bug_regression_report": 2,
+        "hearsay -> hearsay": 1,
+        "pricing_value_comment -> hearsay": 3,
+        "pricing_value_comment -> integration_failure": 2,
+        "pricing_value_comment -> pricing_value_comment": 4,
+        "release_update_reaction -> hearsay": 1
+      },
+      "evaluated": 46,
+      "macro_f1": 0.18179442508710802,
+      "mean_confidence": 0.24128185731229634
+    },
+    "firsthand_flag": {
+      "accuracy": 0.7608695652173914,
+      "confusion": {
+        "false -> false": 5,
+        "false -> true": 5,
+        "true -> false": 6,
+        "true -> true": 30
+      },
+      "evaluated": 46,
+      "macro_f1": 0.6606304493628437,
+      "mean_confidence": 0.6122775883278714
+    },
+    "polarity_score": {
+      "accuracy": 0.30434782608695654,
+      "confusion": {
+        "-1 -> -1": 4,
+        "-1 -> 1": 1,
+        "-2 -> -1": 13,
+        "-2 -> -2": 4,
+        "-2 -> 0": 2,
+        "-2 -> 2": 2,
+        "1 -> -1": 7,
+        "1 -> 0": 2,
+        "1 -> 1": 4,
+        "1 -> 2": 4,
+        "2 -> 1": 1,
+        "2 -> 2": 2
+      },
+      "evaluated": 46,
+      "macro_f1": 0.26146490391168054,
+      "mean_confidence": 0.30129285931689403
+    },
+    "task_category": {
+      "accuracy": 0.5,
+      "confusion": {
+        "agents -> agents": 11,
+        "agents -> api_developer_workflow": 3,
+        "agents -> coding": 2,
+        "agents -> research": 2,
+        "coding -> api_developer_workflow": 4,
+        "coding -> coding": 3,
+        "general -> api_developer_workflow": 1,
+        "general -> general": 1,
+        "general -> research": 2,
+        "general -> writing": 1,
+        "long_context -> research": 3,
+        "research -> research": 4,
+        "writing -> agents": 1,
+        "writing -> research": 4,
+        "writing -> writing": 4
+      },
+      "evaluated": 46,
+      "macro_f1": 0.36559255281059794,
+      "mean_confidence": 0.28465831253483304
+    }
+  },
+  "mean_macro_f1": 0.3604605687985486,
+  "model": "datasets/training/bge_small_evidence_only_2026-06-06_merged_model.joblib"
+}

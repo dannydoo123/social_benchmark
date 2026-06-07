@@ -1,0 +1,141 @@
+{
+  "fields": {
+    "aspect_category": {
+      "accuracy": 0.2826086956521739,
+      "confusion": {
+        "hallucination_safety -> hallucination_safety": 2,
+        "regression_stability -> hallucination_safety": 2,
+        "regression_stability -> trust_reliability": 1,
+        "satisfaction -> developer_ergonomics": 1,
+        "satisfaction -> hallucination_safety": 1,
+        "satisfaction -> refusal_acceptance": 1,
+        "satisfaction -> satisfaction": 1,
+        "satisfaction -> task_fit": 17,
+        "satisfaction -> trust_reliability": 4,
+        "trust_reliability -> trust_reliability": 1,
+        "value -> hallucination_safety": 1,
+        "value -> task_fit": 5,
+        "value -> value": 9
+      },
+      "correct": 13,
+      "labeled": 46
+    },
+    "evidence_type": {
+      "accuracy": 0.43478260869565216,
+      "confusion": {
+        "bug_regression_report -> firsthand_usage": 2,
+        "comparative_evaluation -> comparative_evaluation": 2,
+        "firsthand_usage -> comparative_evaluation": 9,
+        "firsthand_usage -> firsthand_usage": 10,
+        "firsthand_usage -> hearsay": 1,
+        "hearsay -> firsthand_usage": 3,
+        "hearsay -> hearsay": 2,
+        "integration_failure -> pricing_value_comment": 3,
+        "integration_failure -> release_update_reaction": 1,
+        "pricing_value_comment -> comparative_evaluation": 2,
+        "pricing_value_comment -> firsthand_usage": 3,
+        "pricing_value_comment -> pricing_value_comment": 6,
+        "release_update_reaction -> firsthand_usage": 2
+      },
+      "correct": 20,
+      "labeled": 46
+    },
+    "firsthand_flag": {
+      "accuracy": 0.8043478260869565,
+      "confusion": {
+        "false -> false": 8,
+        "false -> true": 7,
+        "true -> false": 2,
+        "true -> true": 29
+      },
+      "correct": 37,
+      "labeled": 46
+    },
+    "inference_profile": {
+      "accuracy": 0.0,
+      "confusion": {
+        " -> fast": 1
+      },
+      "correct": 0,
+      "labeled": 1
+    },
+    "model_id": {
+      "accuracy": 0.8181818181818182,
+      "confusion": {
+        "claude -> claude": 13,
+        "claude -> claude-4.8": 2,
+        "claude -> claude-opus": 1,
+        "claude-opus-4.8 -> claude-opus-4.8": 5,
+        "claude-sonnet-4.6 -> claude-sonnet-4.6": 1,
+        "deepseek -> deepseek": 1,
+        "gemini -> gemini": 7,
+        "gemini -> gemini-pro": 2,
+        "qwen -> qwen-3.7-27b": 1
+      },
+      "correct": 27,
+      "labeled": 33
+    },
+    "polarity_score": {
+      "accuracy": 0.043478260869565216,
+      "confusion": {
+        "-1 -> -2": 6,
+        "-2 -> -2": 2,
+        "0 -> -1": 4,
+        "0 -> -2": 11,
+        "0 -> 1": 17,
+        "0 -> 2": 3,
+        "1 -> -1": 1,
+        "1 -> -2": 2
+      },
+      "correct": 2,
+      "labeled": 46
+    },
+    "product_id": {
+      "accuracy": 0.7692307692307693,
+      "confusion": {
+        " -> claude-code": 1,
+        " -> quillbot": 2,
+        "claude-code -> claude-code": 10
+      },
+      "correct": 10,
+      "labeled": 13
+    },
+    "provider_id": {
+      "accuracy": 0.9090909090909091,
+      "confusion": {
+        "alibaba -> alibaba": 1,
+        "anthropic -> anthropic": 29,
+        "anthropic -> quillbot": 1,
+        "deepseek -> anthropic": 2,
+        "deepseek -> deepseek": 1,
+        "google -> google": 9,
+        "google -> quillbot": 1
+      },
+      "correct": 40,
+      "labeled": 44
+    },
+    "task_category": {
+      "accuracy": 0.41304347826086957,
+      "confusion": {
+        "agents -> agents": 8,
+        "api_developer_workflow -> agents": 1,
+        "api_developer_workflow -> coding": 2,
+        "coding -> agents": 5,
+        "coding -> coding": 3,
+        "coding -> writing": 1,
+        "general -> agents": 4,
+        "general -> coding": 2,
+        "general -> general": 4,
+        "general -> research": 4,
+        "general -> writing": 6,
+        "long_context -> long_context": 3,
+        "long_context -> writing": 1,
+        "writing -> general": 1,
+        "writing -> writing": 1
+      },
+      "correct": 19,
+      "labeled": 46
+    }
+  },
+  "rows": 60
+}

@@ -103,3 +103,25 @@ The strongest completed frozen checkpoint is `BAAI/bge-small-en-v1.5` with augme
 - Predict fields separately.
 - Abstain when unsure.
 - Retrain on disagreements.
+
+## Routed Rubric Architecture
+
+The current selected experimental candidate is the routed rubric classifier:
+
+- MPNet plus strong task-label rubric features for `task_category`.
+- BGE Small plus light rubric features for `aspect_category`.
+- BGE Small without rubric features for `evidence_type`.
+- BGE Small plus an ordinal threshold head for `polarity_score`.
+- Raw BERT mean-pooled embeddings for the specialized `firsthand_flag` head.
+
+This improved eight-run thread-grouped mean macro F1 from `0.3954` to `0.4169`.
+Hierarchical routing and hard constraint overrides were tested but rejected as
+active prediction behavior because they propagated upstream mistakes.
+
+Use:
+
+```powershell
+python -m social_benchmark.pipeline.cli run-routed-rubric-bakeoff --training TRAINING.jsonl --out EVAL.json --group-field thread_id --embedding-cache-dir datasets/training/embedding_cache
+python -m social_benchmark.pipeline.cli train-routed-rubric-classifier --training TRAINING.jsonl --model-out MODEL.joblib
+python -m social_benchmark.pipeline.cli assess-publication-readiness --evaluation EVAL.json --out READINESS.json
+```

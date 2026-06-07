@@ -83,3 +83,214 @@ The product should answer practical questions such as which model fits a workflo
 - Keep `provider_id`, `model_id`, `product_id`, and `inference_profile` separate. Products such as Claude Code or ChatGPT are not model IDs when the base model is known.
 - LLM API calls are allowed for monitoring official model releases, update notes, pricing/limit changes, alias discovery, and aggregate shift analysis.
 - Release/update records should help explain why satisfaction or dissatisfaction changes after provider announcements or model behavior changes.
+
+## Current Classifier Handoff - 2026-06-07
+
+This section is the authoritative starting point for the next Codex session.
+It supersedes the older `Current Task` and `Next Task Recording` sections above
+for classifier and benchmark-quality work.
+
+### Current State
+
+- Active source scope remains Hacker News only.
+- CUDA is available on an NVIDIA RTX 3070 with 8 GB VRAM.
+- Current isolated reviewed training set:
+  `datasets/training/hn_manual_training_threaded_round2_2026-06-07_merged.jsonl`
+- Training set size: `547` accepted observations across `69` threads.
+- The five permanently held-out gold threads have zero overlap with training.
+- Do not merge the gold set into training or repeatedly tune against it.
+- Full test suite status: `69` tests passed.
+
+### Accuracy Progress
+
+The original round-two frozen BGE evidence-only classifier reached:
+
+```text
+strict thread-grouped mean macro F1: 0.3954
+```
+
+The selected routed rubric architecture reached:
+
+```text
+strict thread-grouped mean macro F1: 0.4169
+absolute improvement: +0.0215
+relative improvement: approximately +5.4%
+```
+
+Selected routed field results:
+
+| Field | Encoder and head | Macro F1 |
+|---|---|---:|
+| task category | MPNet plus strong rubric features | `0.3396` |
+| aspect category | BGE Small plus light rubric features | `0.3078` |
+| evidence type | BGE Small flat head | `0.3675` |
+| polarity | BGE Small plus ordinal threshold head | `0.3048` |
+| firsthand | raw BERT specialized binary head | `0.7647` |
+
+The routed model is better but is not publication-ready. The publication gate
+currently fails because there are only `69` thread groups and task, aspect,
+evidence, and polarity remain below `0.60` macro F1.
+
+### Current Candidate And Commands
+
+Selected trained candidate:
+
+```text
+datasets/training/routed_rubric_round2_2026-06-07_model.joblib
+```
+
+Strict evaluation:
+
+```text
+datasets/training/routed_rubric_thread_grouped_2026-06-07.json
+```
+
+Publication assessment:
+
+```text
+datasets/evaluation/routed_rubric_publication_readiness_2026-06-07.json
+```
+
+Reproduce the selected evaluation:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli run-routed-rubric-bakeoff --training datasets/training/hn_manual_training_threaded_round2_2026-06-07_merged.jsonl --out datasets/training/routed_rubric_thread_grouped_2026-06-07.json --runs 8 --group-field thread_id --embedding-cache-dir datasets/training/embedding_cache
+```
+
+Train the selected routed candidate:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli train-routed-rubric-classifier --training datasets/training/hn_manual_training_threaded_round2_2026-06-07_merged.jsonl --model-out datasets/training/routed_rubric_round2_2026-06-07_model.joblib
+```
+
+Run all tests:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m unittest discover -s tests -v
+```
+
+### Experiments Already Tried
+
+Do not repeat these without a materially different design:
+
+- Hierarchical routing for task, aspect, and evidence regressed to `0.3773`.
+- Hard dependency constraints regressed because evidence mistakes propagated
+  into otherwise correct fields. Keep constraints audit-only.
+- Raw BERT across every field reached only `0.3608`, but BERT was best for the
+  specialized firsthand field.
+- MPNet across every field reached only `0.3815`, but MPNet was best for task.
+- Broad SetFit pilots did not beat frozen embeddings.
+- Adding broad reviewed batches without targeted selection produced nearly flat
+  accuracy.
+
+Keep only changes that improve the same strict eight-run thread-grouped
+evaluation or provide required correctness infrastructure.
+
+### Next Architectural Experiments
+
+Implement and benchmark changes one at a time. Run focused tests after each
+code step and the strict thread-grouped evaluation after each behavior change.
+Revert or leave experimental-only anything that worsens results.
+
+Recommended order:
+
+1. Soft classifier chain.
+   - Use out-of-fold probability vectors from earlier fields as features for
+     later fields.
+   - Suggested order: firsthand, evidence, aspect, task, polarity.
+   - Do not use ground-truth upstream labels at evaluation or inference time.
+   - Compare multiple chain orders or an ensemble of chains.
+
+2. Retrieval-augmented classification.
+   - Retrieve nearest reviewed examples using cached embeddings.
+   - Add neighbor label distributions, similarity, and disagreement as model
+     features.
+   - Preserve thread-grouped evaluation so neighbors from held-out threads do
+     not leak into training.
+
+3. Evidence-to-rubric cross-encoder.
+   - Start with evidence type and aspect because they remain weak.
+   - Convert every reviewed row into positive evidence/rubric pairs plus hard
+     negative pairs from commonly confused labels.
+   - Test a small NLI-trained DeBERTa or ModernBERT-sized encoder using CUDA,
+     mixed precision, small batches, and gradient accumulation.
+
+4. Shared multi-task encoder.
+   - One encoder with five specialized heads.
+   - Keep polarity ordinal.
+   - Prefer partially frozen layers or parameter-efficient fine-tuning because
+     the dataset is small and VRAM is limited.
+
+5. Mixture-of-experts confidence router.
+   - Assemble only experts that improve held-out results.
+   - Easy/high-confidence rows can use cheap heads.
+   - Ambiguous rows can use the cross-encoder or abstain for review.
+
+### Next Data Work
+
+Architecture alone will not reach publication quality. After the next two
+cheap architecture experiments, generate targeted review queues for:
+
+- `long_context`, `multimodal`, and `data_analysis`
+- `regression_stability`, `hallucination_safety`, and `refusal_acceptance`
+- `integration_failure`, `bug_regression_report`, and
+  `release_update_reaction`
+- hard-negative contrasts:
+  task fit versus satisfaction, firsthand usage versus comparative evaluation,
+  regression report versus ordinary complaint, and neutral versus mild
+  positive/negative polarity
+
+Build a new representative locked holdout with at least `300` accepted
+observations across at least `75` threads. Never use that holdout for training.
+
+### Publication Gates
+
+Use `assess-publication-readiness`. Do not call an automatic classifier
+publication-ready until all required gates pass:
+
+- representative locked holdout with at least `300` accepted observations
+- at least `75` independent thread groups
+- target mean macro F1 at least `0.70`
+- no scored field below `0.60` macro F1
+- high-confidence automatic predictions calibrated to at least `90%` precision
+- no tuning against the permanently locked holdout
+
+### Files To Read First
+
+Read these before making classifier decisions:
+
+- `analysis/architecture-upgrade-report-2026-06-07.md`
+  - authoritative experiment results and retained/rejected architecture choices
+- `analysis/round2-review-processing-report-2026-06-07.md`
+  - latest reviewed batch composition and accuracy movement
+- `analysis/gold-evaluation-report-2026-06-06.md`
+  - locked gold-set weaknesses and handling rules
+- `docs/classification-roadmap.md`
+  - classifier workflow and selected routed architecture
+- `docs/labeling-guide.md`
+  - authoritative label meanings
+- `src/social_benchmark/pipeline/routed_classifier.py`
+  - selected routed rubric model
+- `src/social_benchmark/pipeline/rubric_classifier.py`
+  - label definitions and rubric feature experiments
+- `src/social_benchmark/pipeline/structured_classifier.py`
+  - ordinal polarity and rejected hierarchy experiment infrastructure
+- `src/social_benchmark/pipeline/constraint_resolver.py`
+  - optional consistency audit; do not enable hard overrides by default
+- `src/social_benchmark/pipeline/publication_readiness.py`
+  - publication-quality gates
+
+### Working Rules For The Next Session
+
+- Preserve all user changes in the dirty worktree.
+- Do not delete or overwrite reviewed CSVs.
+- Do not train on or repeatedly evaluate the permanently isolated gold set.
+- Always group evaluation by `thread_id`.
+- Use the cached embeddings in `datasets/training/embedding_cache`.
+- Use CUDA when it materially accelerates encoder work.
+- Test after each implementation step instead of coding the entire experiment
+  before verification.
+- Report per-field changes, not only aggregate mean macro F1.

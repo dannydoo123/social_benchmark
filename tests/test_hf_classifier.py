@@ -5,6 +5,7 @@ import uuid
 from pathlib import Path
 
 from social_benchmark.pipeline.hf_classifier import HFEmbeddingClassifier, evaluate_hf_examples
+from social_benchmark.pipeline.embeddings import HuggingFaceTextEmbedder
 from social_benchmark.pipeline.model_comparison import compare_classifier_backends
 
 
@@ -12,6 +13,7 @@ class FakeEmbedder:
     model_name = "fake-local-embeddings"
 
     def encode(self, texts):
+        self.texts = list(texts)
         return [self._vector(text.lower()) for text in texts]
 
     @staticmethod
@@ -25,6 +27,11 @@ class FakeEmbedder:
 
 
 class HFClassifierTest(unittest.TestCase):
+    def test_embedder_accepts_explicit_device(self):
+        embedder = HuggingFaceTextEmbedder(model_name="unused", backend="transformers", device="cpu")
+
+        self.assertEqual(embedder.device, "cpu")
+
     @unittest.skipUnless(importlib.util.find_spec("sklearn"), "scikit-learn is not installed")
     def test_trains_and_predicts_with_injected_embedder(self):
         examples = [
@@ -62,6 +69,27 @@ class HFClassifierTest(unittest.TestCase):
         self.assertNotIn("hf_embedding_logistic", comparison["backends"])
         self.assertIn("available", comparison["summary"]["sklearn_tfidf_logistic"])
         self.assertTrue(output.exists())
+
+    @unittest.skipUnless(importlib.util.find_spec("sklearn"), "scikit-learn is not installed")
+    def test_evidence_only_mode_excludes_context_and_metadata(self):
+        embedder = FakeEmbedder()
+        examples = [
+            {
+                **self._example("Evidence one", "coding", "satisfaction", "firsthand_usage", 1, True),
+                "context_text": "Context one",
+                "model_id": "claude",
+            },
+            {
+                **self._example("Evidence two", "general", "value", "hearsay", 0, False),
+                "context_text": "Context two",
+                "model_id": "gpt",
+            },
+        ]
+        classifier = HFEmbeddingClassifier(embedder=embedder, text_mode="evidence_only")
+
+        classifier.fit(examples, target_fields=("firsthand_flag",))
+
+        self.assertEqual(embedder.texts, ["Evidence one", "Evidence two"])
 
     @staticmethod
     def _example(text, task, aspect, evidence, polarity, firsthand):

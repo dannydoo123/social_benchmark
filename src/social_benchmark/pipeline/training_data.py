@@ -46,14 +46,41 @@ def build_training_jsonl(
     return len(examples)
 
 
+def merge_training_jsonl(
+    input_paths: list[str | Path],
+    output_path: str | Path,
+    *,
+    excluded_thread_ids: set[str] | None = None,
+) -> int:
+    excluded = excluded_thread_ids or set()
+    examples_by_key: dict[tuple[str, str, str], dict[str, Any]] = {}
+    for input_path in input_paths:
+        with Path(input_path).open("r", encoding="utf-8") as handle:
+            for line in handle:
+                if not line.strip():
+                    continue
+                example = json.loads(line)
+                if str(example.get("thread_id") or "") in excluded:
+                    continue
+                examples_by_key[_training_key(example)] = example
+
+    output = Path(output_path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    with output.open("w", encoding="utf-8") as handle:
+        for example in examples_by_key.values():
+            handle.write(json.dumps(example, ensure_ascii=False, sort_keys=True))
+            handle.write("\n")
+    return len(examples_by_key)
+
+
 def _training_example(row: dict[str, str], context_row: dict[str, Any] | None = None) -> dict[str, Any]:
     return {
         "text": row.get("evidence_text", ""),
         "context_text": _context_text(context_row),
-        "provider_id": row.get("human_provider_id") or row.get("provider_id") or "",
-        "model_id": row.get("human_model_id") or row.get("model_id"),
-        "product_id": row.get("human_product_id") or row.get("product_id") or "",
-        "inference_profile": row.get("human_inference_profile") or row.get("inference_profile") or "",
+        "provider_id": _reviewed_identity_value(row, "human_provider_id", "provider_id"),
+        "model_id": _reviewed_identity_value(row, "human_model_id", "model_id"),
+        "product_id": _reviewed_identity_value(row, "human_product_id", "product_id"),
+        "inference_profile": _reviewed_identity_value(row, "human_inference_profile", "inference_profile"),
         "task_category": row.get("human_task_category") or row.get("task_category"),
         "aspect_category": row.get("human_aspect_category") or row.get("aspect_category"),
         "evidence_type": row.get("human_evidence_type") or row.get("evidence_type"),
@@ -87,7 +114,7 @@ def _read_csv(path: str | Path) -> list[dict[str, str]]:
 
 
 def _context_index(path: str | Path) -> dict[str, dict[str, Any]]:
-    with Path(path).open("r", encoding="utf-8") as handle:
+    with Path(path).open("r", encoding="utf-8-sig") as handle:
         rows = [json.loads(line) for line in handle if line.strip()]
     return {str(row.get("review_id") or ""): row for row in rows if row.get("review_id")}
 
@@ -113,3 +140,17 @@ def _bool_or_default(value: str | None, default: str | None) -> bool:
 
 def _is_truthy(value: str | None) -> bool:
     return str(value or "").strip().lower() in {"1", "true", "yes", "y"}
+
+
+def _reviewed_identity_value(row: dict[str, str], human_field: str, machine_field: str) -> str:
+    if _is_truthy(row.get("reviewed_flag")):
+        return str(row.get(human_field) or "").strip()
+    return str(row.get(human_field) or row.get(machine_field) or "").strip()
+
+
+def _training_key(example: dict[str, Any]) -> tuple[str, str, str]:
+    return (
+        str(example.get("source_item_id") or "").strip(),
+        str(example.get("model_id") or "").strip(),
+        str(example.get("text") or "").strip(),
+    )

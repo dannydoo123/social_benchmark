@@ -1,0 +1,178 @@
+{
+  "fields": {
+    "aspect_category": {
+      "accuracy": 0.28654970760233917,
+      "confusion": {
+        "developer_ergonomics -> developer_ergonomics": 3,
+        "developer_ergonomics -> task_fit": 3,
+        "developer_ergonomics -> trust_reliability": 1,
+        "developer_ergonomics -> value": 1,
+        "regression_stability -> regression_stability": 2,
+        "regression_stability -> task_fit": 2,
+        "satisfaction -> developer_ergonomics": 16,
+        "satisfaction -> regression_stability": 7,
+        "satisfaction -> satisfaction": 8,
+        "satisfaction -> task_fit": 68,
+        "satisfaction -> trust_reliability": 7,
+        "satisfaction -> value": 2,
+        "task_fit -> value": 1,
+        "trust_reliability -> task_fit": 3,
+        "trust_reliability -> trust_reliability": 3,
+        "trust_reliability -> value": 2,
+        "value -> developer_ergonomics": 3,
+        "value -> task_fit": 4,
+        "value -> trust_reliability": 1,
+        "value -> value": 33
+      },
+      "correct": 49,
+      "labeled": 171
+    },
+    "evidence_type": {
+      "accuracy": 0.49707602339181284,
+      "confusion": {
+        "benchmark_anecdote -> benchmark_anecdote": 5,
+        "bug_regression_report -> firsthand_usage": 1,
+        "comparative_evaluation -> benchmark_anecdote": 2,
+        "comparative_evaluation -> comparative_evaluation": 7,
+        "comparative_evaluation -> firsthand_usage": 2,
+        "firsthand_usage -> bug_regression_report": 3,
+        "firsthand_usage -> comparative_evaluation": 8,
+        "firsthand_usage -> firsthand_usage": 28,
+        "firsthand_usage -> hearsay": 2,
+        "hearsay -> bug_regression_report": 5,
+        "hearsay -> comparative_evaluation": 11,
+        "hearsay -> firsthand_usage": 21,
+        "hearsay -> hearsay": 20,
+        "integration_failure -> firsthand_usage": 2,
+        "integration_failure -> integration_failure": 2,
+        "integration_failure -> pricing_value_comment": 3,
+        "pricing_value_comment -> comparative_evaluation": 7,
+        "pricing_value_comment -> firsthand_usage": 4,
+        "pricing_value_comment -> hearsay": 2,
+        "pricing_value_comment -> pricing_value_comment": 22
+      },
+      "correct": 85,
+      "labeled": 171
+    },
+    "firsthand_flag": {
+      "accuracy": 0.7192982456140351,
+      "confusion": {
+        "false -> false": 62,
+        "false -> true": 40,
+        "true -> false": 8,
+        "true -> true": 61
+      },
+      "correct": 123,
+      "labeled": 171
+    },
+    "inference_profile": {
+      "labeled": 0
+    },
+    "model_id": {
+      "accuracy": 0.9941520467836257,
+      "confusion": {
+        "claude -> claude": 98,
+        "claude -> claude-opus": 1,
+        "claude-opus -> claude-opus": 3,
+        "claude-opus-4.5 -> claude-opus-4.5": 1,
+        "claude-opus-4.7 -> claude-opus-4.7": 8,
+        "claude-opus-4.8 -> claude-opus-4.8": 9,
+        "claude-sonnet -> claude-sonnet": 2,
+        "claude-sonnet-4.6 -> claude-sonnet-4.6": 1,
+        "deepseek -> deepseek": 14,
+        "gemini -> gemini": 9,
+        "gemini-3.5-flash -> gemini-3.5-flash": 1,
+        "gpt-5 -> gpt-5": 1,
+        "gpt-5.5 -> gpt-5.5": 9,
+        "grok -> grok": 1,
+        "kimi -> kimi": 4,
+        "llama -> llama": 3,
+        "qwen -> qwen": 6
+      },
+      "correct": 170,
+      "labeled": 171
+    },
+    "polarity_score": {
+      "accuracy": 0.23391812865497075,
+      "confusion": {
+        "-1 -> -1": 3,
+        "-1 -> -2": 2,
+        "-1 -> 0": 1,
+        "-1 -> 1": 5,
+        "-1 -> 2": 1,
+        "0 -> -1": 25,
+        "0 -> -2": 8,
+        "0 -> 0": 4,
+        "0 -> 1": 34,
+        "0 -> 2": 12,
+        "1 -> -1": 18,
+        "1 -> -2": 3,
+        "1 -> 0": 1,
+        "1 -> 1": 33,
+        "1 -> 2": 11,
+        "2 -> -1": 4,
+        "2 -> 1": 6
+      },
+      "correct": 40,
+      "labeled": 171
+    },
+    "product_id": {
+      "accuracy": 0.48484848484848486,
+      "confusion": {
+        " -> claude-code": 6,
+        " -> claude-desktop": 1,
+        " -> codex": 2,
+        " -> github-copilot": 3,
+        " -> moonshot-service": 1,
+        " -> openrouter": 4,
+        "claude-code -> claude-code": 15,
+        "github-copilot -> github-copilot": 1
+      },
+      "correct": 16,
+      "labeled": 33
+    },
+    "provider_id": {
+      "accuracy": 1.0,
+      "confusion": {
+        "alibaba -> alibaba": 6,
+        "anthropic -> anthropic": 123,
+        "deepseek -> deepseek": 14,
+        "google -> google": 10,
+        "meta -> meta": 3,
+        "moonshot -> moonshot": 4,
+        "openai -> openai": 10,
+        "xai -> xai": 1
+      },
+      "correct": 171,
+      "labeled": 171
+    },
+    "task_category": {
+      "accuracy": 0.6900584795321637,
+      "confusion": {
+        "agents -> agents": 12,
+        "agents -> research": 1,
+        "api_developer_workflow -> api_developer_workflow": 4,
+        "api_developer_workflow -> coding": 2,
+        "coding -> api_developer_workflow": 2,
+        "coding -> coding": 57,
+        "data_analysis -> data_analysis": 2,
+        "general -> agents": 4,
+        "general -> api_developer_workflow": 10,
+        "general -> coding": 20,
+        "general -> general": 37,
+        "general -> multimodal": 1,
+        "general -> research": 3,
+        "multimodal -> writing": 1,
+        "research -> research": 5,
+        "writing -> api_developer_workflow": 2,
+        "writing -> coding": 1,
+        "writing -> general": 1,
+        "writing -> research": 1,
+        "writing -> writing": 1
+      },
+      "correct": 118,
+      "labeled": 171
+    }
+  },
+  "rows": 240
+}

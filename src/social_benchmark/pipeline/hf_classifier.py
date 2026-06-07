@@ -19,14 +19,16 @@ class HFEmbeddingClassifier:
         *,
         model_name: str = DEFAULT_EMBEDDING_MODEL,
         embedder: TextEmbedder | None = None,
+        text_mode: str = "augmented",
     ) -> None:
         self.models = models or {}
         self.field_metrics = field_metrics or {}
         self.model_name = model_name
         self.embedder = embedder or HuggingFaceTextEmbedder(model_name=model_name)
+        self.text_mode = text_mode
 
     def fit(self, examples: list[dict[str, Any]], target_fields: tuple[str, ...] = TARGET_FIELDS) -> None:
-        texts = [model_text(example) for example in examples]
+        texts = [_text_for_mode(example, self.text_mode) for example in examples]
         vectors = self.embedder.encode(texts)
         self.models = {field: _fit_field(vectors, examples, field) for field in target_fields}
 
@@ -34,7 +36,7 @@ class HFEmbeddingClassifier:
         return self.predict_row({"text": text})
 
     def predict_row(self, row: dict[str, Any]) -> dict[str, Any]:
-        vectors = self.embedder.encode([model_text(row)])
+        vectors = self.embedder.encode([_text_for_mode(row, self.text_mode)])
         vector = vectors[0] if vectors else []
         return {field: _predict_field(model, vector) for field, model in self.models.items()}
 
@@ -43,7 +45,13 @@ class HFEmbeddingClassifier:
         output = Path(path)
         output.parent.mkdir(parents=True, exist_ok=True)
         joblib.dump(
-            {"backend": "hf_embedding", "model_name": self.model_name, "field_metrics": self.field_metrics, "models": self.models},
+            {
+                "backend": "hf_embedding",
+                "model_name": self.model_name,
+                "text_mode": self.text_mode,
+                "field_metrics": self.field_metrics,
+                "models": self.models,
+            },
             output,
         )
 
@@ -54,6 +62,7 @@ class HFEmbeddingClassifier:
             models=payload["models"],
             field_metrics=payload.get("field_metrics") or {},
             model_name=payload.get("model_name") or DEFAULT_EMBEDDING_MODEL,
+            text_mode=payload.get("text_mode") or "augmented",
         )
 
 
@@ -63,11 +72,12 @@ def train_hf_classifier(
     *,
     model_name: str = DEFAULT_EMBEDDING_MODEL,
     runs: int = 8,
+    text_mode: str = "augmented",
 ) -> int:
     examples = _read_jsonl(training_jsonl)
-    classifier = HFEmbeddingClassifier(model_name=model_name)
+    classifier = HFEmbeddingClassifier(model_name=model_name, text_mode=text_mode)
     classifier.fit(examples)
-    classifier.field_metrics = evaluate_hf_examples(examples, model_name=model_name, runs=runs).get("fields", {})
+    classifier.field_metrics = evaluate_hf_examples(examples, model_name=model_name, runs=runs, text_mode=text_mode).get("fields", {})
     classifier.save(output_path)
     return len(examples)
 
@@ -77,8 +87,9 @@ def evaluate_hf_classifier(
     *,
     model_name: str = DEFAULT_EMBEDDING_MODEL,
     runs: int = 8,
+    text_mode: str = "augmented",
 ) -> dict[str, Any]:
-    return evaluate_hf_examples(_read_jsonl(training_jsonl), model_name=model_name, runs=runs)
+    return evaluate_hf_examples(_read_jsonl(training_jsonl), model_name=model_name, runs=runs, text_mode=text_mode)
 
 
 def write_hf_evaluation(
@@ -87,8 +98,9 @@ def write_hf_evaluation(
     *,
     model_name: str = DEFAULT_EMBEDDING_MODEL,
     runs: int = 8,
+    text_mode: str = "augmented",
 ) -> dict[str, Any]:
-    metrics = evaluate_hf_classifier(training_jsonl, model_name=model_name, runs=runs)
+    metrics = evaluate_hf_classifier(training_jsonl, model_name=model_name, runs=runs, text_mode=text_mode)
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(metrics, indent=2, sort_keys=True), encoding="utf-8")
@@ -101,9 +113,10 @@ def evaluate_hf_examples(
     model_name: str = DEFAULT_EMBEDDING_MODEL,
     runs: int = 8,
     embedder: TextEmbedder | None = None,
+    text_mode: str = "augmented",
 ) -> dict[str, Any]:
     resolved_embedder = embedder or HuggingFaceTextEmbedder(model_name=model_name)
-    texts = [model_text(example) for example in examples]
+    texts = [_text_for_mode(example, text_mode) for example in examples]
     vectors = resolved_embedder.encode(texts)
     fields: dict[str, Any] = {}
     for field in TARGET_FIELDS:
@@ -129,7 +142,22 @@ def evaluate_hf_examples(
             "evaluated": len(aggregate_actual),
             "confusion": _confusion(aggregate_actual, aggregate_predicted),
         }
-    return {"backend": "hf_embedding", "embedding_model": model_name, "examples": len(examples), "fields": fields, "runs_requested": runs}
+    return {
+        "backend": "hf_embedding",
+        "embedding_model": model_name,
+        "text_mode": text_mode,
+        "examples": len(examples),
+        "fields": fields,
+        "runs_requested": runs,
+    }
+
+
+def _text_for_mode(row: dict[str, Any], mode: str) -> str:
+    if mode == "evidence_only":
+        return model_text(row, use_context=False, use_metadata=False)
+    if mode == "augmented":
+        return model_text(row, use_context=True, use_metadata=True)
+    raise ValueError(f"Unsupported text mode: {mode}")
 
 
 def _fit_field(vectors: list[list[float]], examples: list[dict[str, Any]], field: str) -> Any:

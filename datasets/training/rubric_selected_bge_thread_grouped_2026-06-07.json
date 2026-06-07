@@ -1,0 +1,55 @@
+{
+  "backend": "rubric_conditioned_embedding",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "evaluation": {
+    "group_field": "thread_id",
+    "runs": 8
+  },
+  "examples": 547,
+  "field_strategies": {
+    "aspect_category": "flat",
+    "evidence_type": "flat",
+    "firsthand_flag": "flat",
+    "polarity_score": "ordinal",
+    "task_category": "flat"
+  },
+  "variants": {
+    "field_selected": {
+      "field_rubric_scales": {
+        "aspect_category": 1.0,
+        "evidence_type": 0.0,
+        "firsthand_flag": 0.0,
+        "polarity_score": 3.0,
+        "task_category": 10.0
+      },
+      "fields": {
+        "aspect_category": {
+          "accuracy": 0.43148148148148147,
+          "evaluated": 1080,
+          "macro_f1": 0.30778639366600063
+        },
+        "evidence_type": {
+          "accuracy": 0.4888888888888889,
+          "evaluated": 1080,
+          "macro_f1": 0.3675152053446598
+        },
+        "firsthand_flag": {
+          "accuracy": 0.7203703703703703,
+          "evaluated": 1080,
+          "macro_f1": 0.7142546756892196
+        },
+        "polarity_score": {
+          "accuracy": 0.35462962962962963,
+          "evaluated": 1080,
+          "macro_f1": 0.30656415498441053
+        },
+        "task_category": {
+          "accuracy": 0.4361111111111111,
+          "evaluated": 1080,
+          "macro_f1": 0.31535997800445975
+        }
+      },
+      "mean_macro_f1": 0.4022960815377501
+    }
+  }
+}

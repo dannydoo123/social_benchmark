@@ -81,6 +81,10 @@ def load_classifier(path: str | Path):
                 from social_benchmark.pipeline.high_precision_classifier import HighPrecisionClassifier
 
                 return HighPrecisionClassifier.load(path)
+            if isinstance(payload, dict) and payload.get("backend") == "routed_rubric":
+                from social_benchmark.pipeline.routed_classifier import RoutedRubricClassifier
+
+                return RoutedRubricClassifier.load(path)
         except Exception:
             pass
         from social_benchmark.pipeline.sklearn_classifier import SklearnTextClassifier

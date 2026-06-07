@@ -1,0 +1,55 @@
+{
+  "backend": "rubric_conditioned_embedding",
+  "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+  "evaluation": {
+    "group_field": "thread_id",
+    "runs": 8
+  },
+  "examples": 547,
+  "field_strategies": {
+    "aspect_category": "flat",
+    "evidence_type": "flat",
+    "firsthand_flag": "flat",
+    "polarity_score": "ordinal",
+    "task_category": "flat"
+  },
+  "variants": {
+    "field_selected": {
+      "field_rubric_scales": {
+        "aspect_category": 1.0,
+        "evidence_type": 0.0,
+        "firsthand_flag": 0.0,
+        "polarity_score": 3.0,
+        "task_category": 10.0
+      },
+      "fields": {
+        "aspect_category": {
+          "accuracy": 0.4444444444444444,
+          "evaluated": 1080,
+          "macro_f1": 0.29514900213575623
+        },
+        "evidence_type": {
+          "accuracy": 0.4777777777777778,
+          "evaluated": 1080,
+          "macro_f1": 0.3404106219506478
+        },
+        "firsthand_flag": {
+          "accuracy": 0.6620370370370371,
+          "evaluated": 1080,
+          "macro_f1": 0.6580235635818519
+        },
+        "polarity_score": {
+          "accuracy": 0.30925925925925923,
+          "evaluated": 1080,
+          "macro_f1": 0.2742536037075042
+        },
+        "task_category": {
+          "accuracy": 0.45,
+          "evaluated": 1080,
+          "macro_f1": 0.3396140975484451
+        }
+      },
+      "mean_macro_f1": 0.38149017778484107
+    }
+  }
+}

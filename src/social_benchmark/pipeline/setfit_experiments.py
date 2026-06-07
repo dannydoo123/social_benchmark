@@ -27,15 +27,21 @@ def run_setfit_bakeoff(
     num_iterations: int = 4,
     batch_size: int = 16,
     max_steps: int = -1,
+    group_field: str = "source_item_id",
 ) -> dict[str, Any]:
     examples = _read_jsonl(training_jsonl)
     output = Path(output_path)
     output.parent.mkdir(parents=True, exist_ok=True)
-    train_indexes, test_indexes = grouped_holdout_indexes(examples, runs=1, test_fraction=test_fraction)[0]
+    train_indexes, test_indexes = grouped_holdout_indexes(
+        examples,
+        runs=1,
+        test_fraction=test_fraction,
+        group_field=group_field,
+    )[0]
     result: dict[str, Any] = {
         "examples": len(examples),
         "evaluation": {
-            "group_field": "source_item_id",
+            "group_field": group_field,
             "runs": 1,
             "test_fraction": test_fraction,
             "train_examples": len(train_indexes),

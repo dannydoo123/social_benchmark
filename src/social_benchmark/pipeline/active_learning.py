@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -29,6 +30,33 @@ def write_threshold_report(
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
     return report
+
+
+def write_fixed_model_evaluation(
+    evaluation_jsonl: str | Path,
+    model_path: str | Path,
+    output_path: str | Path,
+) -> dict[str, Any]:
+    rows = _read_jsonl(evaluation_jsonl)
+    classifier = load_classifier(model_path)
+    predictions = _batch_predictions(classifier, rows)
+    result = {
+        "examples": len(rows),
+        "model": str(model_path),
+        "fields": {
+            field: _fixed_field_metrics(rows, predictions, field)
+            for field in TARGET_FIELDS
+        },
+    }
+    result["mean_macro_f1"] = (
+        sum(metrics["macro_f1"] for metrics in result["fields"].values()) / len(result["fields"])
+        if result["fields"]
+        else 0.0
+    )
+    output = Path(output_path)
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(result, indent=2, sort_keys=True), encoding="utf-8")
+    return result
 
 
 def export_active_learning_queue(
@@ -94,6 +122,23 @@ def _field_threshold_metrics(
     }
 
 
+def _fixed_field_metrics(
+    rows: list[dict[str, Any]],
+    predictions: list[dict[str, Any]],
+    field: str,
+) -> dict[str, Any]:
+    actual = [label_value(row.get(field)) for row in rows]
+    predicted = [str(prediction.get(field, {}).get("label") or "") for prediction in predictions]
+    confidences = [float(prediction.get(field, {}).get("confidence") or 0.0) for prediction in predictions]
+    return {
+        "accuracy": _accuracy(actual, predicted),
+        "macro_f1": _macro_f1(actual, predicted),
+        "evaluated": len(actual),
+        "mean_confidence": sum(confidences) / len(confidences) if confidences else 0.0,
+        "confusion": dict(sorted(Counter(f"{left} -> {right}" for left, right in zip(actual, predicted)).items())),
+    }
+
+
 def _active_learning_row(row: dict[str, Any], classifiers: list[tuple[str, Any]]) -> dict[str, Any]:
     predictions = {name: classifier.predict_row(row) for name, classifier in classifiers}
     disagreement_fields = []
@@ -127,9 +172,9 @@ def _active_learning_row(row: dict[str, Any], classifiers: list[tuple[str, Any]]
 def _batch_predictions(classifier: Any, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     if classifier.__class__.__name__ == "HFEmbeddingClassifier":
         from social_benchmark.pipeline.hf_classifier import _predict_field
-        from social_benchmark.pipeline.text_features import model_text
+        from social_benchmark.pipeline.hf_classifier import _text_for_mode
 
-        vectors = classifier.embedder.encode([model_text(row) for row in rows])
+        vectors = classifier.embedder.encode([_text_for_mode(row, classifier.text_mode) for row in rows])
         return [
             {field: _predict_field(model, vector) for field, model in classifier.models.items()}
             for vector in vectors
@@ -140,3 +185,19 @@ def _batch_predictions(classifier: Any, rows: list[dict[str, Any]]) -> list[dict
 def _read_jsonl(path: str | Path) -> list[dict[str, Any]]:
     with Path(path).open("r", encoding="utf-8") as handle:
         return [json.loads(line) for line in handle if line.strip()]
+
+
+def _accuracy(actual: list[str], predicted: list[str]) -> float:
+    return sum(left == right for left, right in zip(actual, predicted)) / len(actual) if actual else 0.0
+
+
+def _macro_f1(actual: list[str], predicted: list[str]) -> float:
+    labels = sorted(set(actual) | set(predicted))
+    scores = []
+    for label in labels:
+        true_positive = sum(left == label and right == label for left, right in zip(actual, predicted))
+        false_positive = sum(left != label and right == label for left, right in zip(actual, predicted))
+        false_negative = sum(left == label and right != label for left, right in zip(actual, predicted))
+        denominator = 2 * true_positive + false_positive + false_negative
+        scores.append((2 * true_positive / denominator) if denominator else 0.0)
+    return sum(scores) / len(scores) if scores else 0.0

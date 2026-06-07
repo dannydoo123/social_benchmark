@@ -27,11 +27,13 @@ class HuggingFaceTextEmbedder:
         backend: str = "auto",
         batch_size: int = 32,
         normalize: bool = True,
+        device: str | None = None,
     ) -> None:
         self.model_name = model_name
         self.backend = backend
         self.batch_size = batch_size
         self.normalize = normalize
+        self.device = device
         self._sentence_model: Any | None = None
         self._tokenizer: Any | None = None
         self._transformer_model: Any | None = None
@@ -76,6 +78,9 @@ class HuggingFaceTextEmbedder:
             self._torch = torch
             self._tokenizer = AutoTokenizer.from_pretrained(self.model_name)
             self._transformer_model = AutoModel.from_pretrained(self.model_name)
+            resolved_device = self.device or ("cuda" if torch.cuda.is_available() else "cpu")
+            self.device = resolved_device
+            self._transformer_model.to(resolved_device)
             self._transformer_model.eval()
 
         output: list[list[float]] = []
@@ -83,7 +88,8 @@ class HuggingFaceTextEmbedder:
         for start in range(0, len(texts), self.batch_size):
             batch = texts[start : start + self.batch_size]
             encoded = self._tokenizer(batch, padding=True, truncation=True, return_tensors="pt")
-            with torch.no_grad():
+            encoded = {key: value.to(self.device) for key, value in encoded.items()}
+            with torch.inference_mode():
                 model_output = self._transformer_model(**encoded)
             token_embeddings = model_output.last_hidden_state
             attention_mask = encoded["attention_mask"].unsqueeze(-1).expand(token_embeddings.size()).float()
