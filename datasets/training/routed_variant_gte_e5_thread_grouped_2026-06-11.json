@@ -1,0 +1,69 @@
+{
+  "backend": "routed_rubric",
+  "evaluation": {
+    "group_field": "thread_id",
+    "groups": 69,
+    "runs": 8
+  },
+  "examples": 547,
+  "field_config": {
+    "aspect_category": {
+      "backend": "auto",
+      "embedding_model": "thenlper/gte-base",
+      "rubric_scale": 1.0,
+      "strategy": "flat"
+    },
+    "evidence_type": {
+      "backend": "auto",
+      "embedding_model": "intfloat/e5-base-v2",
+      "rubric_scale": 0.0,
+      "strategy": "flat"
+    },
+    "firsthand_flag": {
+      "backend": "transformers",
+      "embedding_model": "bert-base-uncased",
+      "rubric_scale": 0.0,
+      "strategy": "flat"
+    },
+    "polarity_score": {
+      "backend": "auto",
+      "embedding_model": "thenlper/gte-base",
+      "rubric_scale": 3.0,
+      "strategy": "ordinal"
+    },
+    "task_category": {
+      "backend": "auto",
+      "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+      "rubric_scale": 10.0,
+      "strategy": "flat"
+    }
+  },
+  "fields": {
+    "aspect_category": {
+      "accuracy": 0.43796296296296294,
+      "evaluated": 1080,
+      "macro_f1": 0.3151454748745124
+    },
+    "evidence_type": {
+      "accuracy": 0.5111111111111111,
+      "evaluated": 1080,
+      "macro_f1": 0.3799076408785423
+    },
+    "firsthand_flag": {
+      "accuracy": 0.7694444444444445,
+      "evaluated": 1080,
+      "macro_f1": 0.7647225568705265
+    },
+    "polarity_score": {
+      "accuracy": 0.35462962962962963,
+      "evaluated": 1080,
+      "macro_f1": 0.3150713545548597
+    },
+    "task_category": {
+      "accuracy": 0.45,
+      "evaluated": 1080,
+      "macro_f1": 0.3396140975484451
+    }
+  },
+  "mean_macro_f1": 0.4228922249453772
+}

@@ -53,19 +53,41 @@ The product should answer practical questions such as which model fits a workflo
 - Read `plan.md` when choosing build order, MVP scope, milestones, or next implementation tasks.
 - Read `data-pipeline.md` before designing schema, collectors, extraction models, scoring jobs, confidence intervals, deduplication, or release/update monitoring.
 - Read `config/model_registry.json` before changing model/provider aliases, product/interface mappings, or inference profile labels.
+- Read `docs/web-dashboard.md` before changing the web dashboard, the score-snapshot shape, model identity/provider rollup, tier thresholds, or the Supabase schema/loader.
 - Read `description.md` only when deeper product/research rationale is needed.
 - Keep `codex.md` synchronized with this file so Codex sessions can load the same guidance.
 
 ## Current Task
 
-- Maintain planning docs and convert product decisions into implementable schema, pipeline, and scoring specifications.
+- Grow the reviewed Hacker News corpus (1,114 observations as of
+  2026-06-12, rounds 5-8 merged): fetch fresh data, pipeline-label with the
+  trained routed rubric classifier, review labels with LLM evaluation, and
+  merge reviewed rows into training. All five fields now have an >=80%
+  calibrated gated-precision operating point; the multi-task fine-tuned
+  encoder (`run-finetuned-encoder-bakeoff`) ties the frozen stack with a
+  single model.
+- Re-run thread-grouped classifier experiments and calibrated gated
+  precision (`run-gated-precision-bakeoff --calibrated`) on each expanded
+  corpus; assess publication readiness after each round.
+- The selected candidate is the multi-encoder stacked routed rubric
+  classifier with a flat polarity head
+  (`datasets/training/routed_variant_stacked_polflat_2026-06-12.json`,
+  mean macro F1 `0.4700`; trained model
+  `routed_stacked_polflat_round5_2026-06-12_model.joblib`). Firsthand,
+  aspect, evidence, and 3-class sign polarity clear the 80% gated-precision
+  bar; task does not yet. See
+  `analysis/round5-polarity-iteration-report-2026-06-12.md`.
+- Next: fine-tuned shared encoder at ~1,200 examples, polarity hard
+  negatives in review rounds, locked 300-observation holdout.
 
 ## Next Task Recording
 
-- Scaffold the repo with Next.js, FastAPI, PostgreSQL/Supabase, and shared project conventions.
-- Define the first database schema for sources, communities, authors, threads, evidence items, models, observations, duplicate clusters, score snapshots, and confidence intervals.
-- Implement the first official-API collector on Hacker News before considering any other sources.
-- Add a small manual labeling flow to validate model, task, aspect, evidence type, and score extraction.
+- When the classifier passes publication-readiness gates, build the scoring
+  engine snapshot job and scaffold the dashboard stack (Next.js, FastAPI,
+  PostgreSQL/Supabase) with the observation schema in migrations.
+- Architecture options if data growth stalls: evidence-to-rubric
+  cross-encoder, stronger instruction-tuned embedding checkpoints, or
+  per-field data augmentation.
 
 ## Key Scoring Notes
 

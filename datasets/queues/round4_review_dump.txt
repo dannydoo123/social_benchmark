@@ -1,0 +1,660 @@
+=== 0 e2504277ed40423a9b18bc3c9e7e657a
+M: claude | general satisfaction hearsay 1 fh=False
+T: Claude figured out zig’s ArrayList and io changes a couple weeks ago. It felt like it got better then very dumb again the last few days.
+=== 1 49d404db25a1444ea7c2ff64c6cf9fa6
+M: claude-opus-4.5 | general satisfaction hearsay 1 fh=False
+T: CC started up with Opus 4.5 and... Not off to a good start. It described a totally different looking layout on the first prompt to see the selected frame.
+=== 2 cef98b9104fe4ab4bc9c63a2cb11b59f
+M: deepseek | general satisfaction hearsay 1 fh=False
+T: I haven't spent $1 yet in well over 10 million tokens. If I considered myself a 10X programmer, now I am 100X. Love DeepSeek.
+=== 3 45a3a3a85f3b41b0adf0e98a067f7618
+M: deepseek | general value pricing_value_comment 0 fh=False
+T: Worth noting that people have been unpacking and analyzing DeepSeek-R1 vigorously for days already on X before it got to Hacker News — it wasn't always this way.
+=== 4 2e4e416f4f164b96b3520fa2a02288a6
+M: gemini | general refusal_acceptance hearsay 0 fh=False
+T: The same thing for Gemini got me a refusal message.
+=== 5 ff5698efb2954419b5e0eefb14f90237
+M: gemini | general satisfaction hearsay -1 fh=False
+T: Gemini 2.x failed (2nd section) or it succeeded (1st and 3rd) section. Or am I mis-understanding
+=== 6 390bdeeb3efd4cb0b90ed7ae09bff290
+M: gemini-2.5 | general satisfaction hearsay -1 fh=False
+T: With the maximum reasoning effort it's able to break out of the wrong route by rethinking the strategy. For example I gave it an onion address without the .onion part, and told it to figure out what this string means. All reasoning models including Gemini 2.5 and 3 assume it's a puzzle or a cipher (because they're trained on those) and start endlessly applying different algorithms to no avail.
+=== 7 9eb5b5ba61bb49ca83da76b1b15c598d
+M: gpt-5 | general satisfaction hearsay -1 fh=False
+T: Never places things in the right files, constantly makes terrible edits (inline imports, edits without testing). Everything is so complicated when done by composer2, it's just a joke to me at this point. It clearly needs more handholding than Opus 4.x or GPT-5.x.
+=== 8 e0c043c0769c45c0ba3a772ac679e02f
+M: kimi | general satisfaction hearsay 1 fh=False
+T: GLM, Kimi and their free models surprised me. Not the best, not perfect, but still very productive. I would be a wary shareholder if I owned a stake in the frontier labs… that moat seems to be shrinking fast.
+=== 9 9355e9ea7ec34ac299f90f2c48cc12d5
+M: llama | general satisfaction hearsay -1 fh=False
+T: Note, it does not mention what assumption specifically. In my experiments, after the models got it wrong the first time (i.e. they weren't "patched" yet) adding that simple caveat fixed it for all of them except the older Llama models.
+=== 10 8de1fab5933c4462a86ad2c19f660ff8
+M: llama-3 | general satisfaction hearsay -1 fh=False
+T: 2 toks/sec seems very slow! I haven't done any LoRA training on MI300x myself, but I have done LLama 3.1 full training on 8xMI300x and got pretty close to 8xH100 performance with my own kernels (ROCm is just too slow).
+=== 11 55b87d87b69a43b496623f64364b6071
+M: o3 | general trust_reliability hearsay -1 fh=False
+T: I'm trying out o3-pro now with some algorithmic questions. It seems to be doing alright, but it's taking an awfully long time (as expected) and the UIs seem to time out a lot, especially the Android app and the MacOS desktop app. The web interface seems the least flaky, but that's not saying much.
+=== 12 535eccbd235a47a19a611d88b36fc529
+M: claude-opus-4.5 | general developer_ergonomics integration_failure 1 fh=False
+T: Opus 4.5 would work interactively with me and ask questions. I loved that it would not do things you didn't ask it to do. If it found a bug, it would tell me and ask me if I wanted to fix it.
+=== 13 7ec9c37c03b24bf2b0891c7b1ebd2147
+M: deepseek | general trust_reliability hearsay 1 fh=False
+T: First, QwQ went into endless repetitive loops, "thinking out loud" what it said earlier maybe with a minor modification. We had to stop the model when that happened; and I feel that it significantly hurt the user experience. It's great that DeepSeek-R1 fixes that.
+=== 14 ed02368059fb4c3388d9b64eb36c5947
+M: gemini-3.0 | coding satisfaction hearsay 1 fh=False
+T: great, paying $100/m for claude code, this stops me from switching to gemini 3.0 for now.
+=== 15 8b3ed4892f1d4f2eb1f33290f670686b
+M: gpt-4 | coding satisfaction hearsay -1 fh=False
+T: They do seem to be working on the next iteration of co-pilot which will be GPT-4 powered, code named "Co-Pilot X"[1,2] Cursor: - Basic plan: FREE, but with 50 GPT-4 uses (I assume total because it doesn't specify per month), and 200 GPT-3.5 uses per month - Pro plan: $20/month 500 "fast" GPT-4 uses per month, unlimited "slow" GPT-4 and unlimited everything else.
+=== 16 d5784fd3dcc54e5694ee171421c4cd7a
+M: qwen | coding satisfaction hearsay 1 fh=False
+T: Given these initial results, I'm now experimenting with running DeepSeek-R1-Distill-Qwen-32B for some coding tasks on my laptop via Ollama - their version of that needs about 20GB of RAM on my M2. It's impressive!
+=== 17 dbf004ad8bc643caba7e8ecb8eaca2d8
+M: claude | coding value pricing_value_comment 1 fh=False
+T: I've been doing 10-12 hour days paired with Claude for months. The velocity gains are absolutely real, I am shipping things I would have never attempted solo before AI and shipping them faster then ever. BUT the cognitive cost of reviewing AI output is significantly higher than reviewing human code.
+=== 18 73cd6e8f849a4a7582c621237f8b2520
+M: deepseek-r1 | research regression_stability bug_regression_report -1 fh=False
+T: More concretely, in the DeepSeek R1 paper[2] they observed this "thought language mixing" and did some experiments on suppressing it... and the model results got worse. So I wouldn't personally think of it as an "error", but rather as just an artifact of how these things work.
+=== 19 ff2d16b957b14c2897293f8121f97a0d
+M: grok | general satisfaction comparative_evaluation 2 fh=False
+T: The site’s Llama 4 response was not great stylistically and also had not heard of the bear carcass episode, unlike Grok, ChatGPT and Claude. I’m not sure what we’re getting at meta.ai in exchange for a free login, so I’ll keep poking. But I hope it’s better than this as we go.
+=== 20 650f55f3c3c645139cd116b28c3ab7f0
+M: llama | general trust_reliability release_update_reaction -1 fh=False
+T: To me this license seems like an invitation to build on Mistral’s work and approach them with the results, and given how well a posture of openness with some safeguards is working out for FAIR and the LLaMA group, that’s certainly the outcome I’d be hoping for in their position. Maybe open AI was an unrealistic goal. Maybe AvailableAI is what we wind up with, and that wouldn’t be too bad.
+=== 21 b43fa76a2c364dddbf76b4fc63d074e8
+M: llama-3 | long_context value pricing_value_comment 0 fh=False
+T: As far as I can tell all of the 8B rumors were seeded by that loosely sourced comparison to Llama 3 8B. I know for a fact that Gemini 1.5 Flash is NOT an 8B model, because a separate model called "Gemini 1.5 Flash 8B" came out after that article was published - the first Gemini model with a documented parameter count. Flash 8B is priced at half the cost of regular Flash.
+=== 22 646216cb705d4b0197ca4cc03e59ff93
+M: llama-4 | general satisfaction comparative_evaluation 2 fh=False
+T: The site’s Llama 4 response was not great stylistically and also had not heard of the bear carcass episode, unlike Grok, ChatGPT and Claude. I’m not sure what we’re getting at meta.ai in exchange for a free login, so I’ll keep poking. But I hope it’s better than this as we go.
+=== 23 e9d59b1273ec4e4bbe4ef1de4bb34319
+M: mistral | general trust_reliability release_update_reaction -1 fh=False
+T: To me this license seems like an invitation to build on Mistral’s work and approach them with the results, and given how well a posture of openness with some safeguards is working out for FAIR and the LLaMA group, that’s certainly the outcome I’d be hoping for in their position. Maybe open AI was an unrealistic goal. Maybe AvailableAI is what we wind up with, and that wouldn’t be too bad.
+=== 24 5202878da8fd4568b483ea096a28bbaa
+M: claude | long_context developer_ergonomics integration_failure -1 fh=False
+T: This has been the worse Claude day ever. Just fell apart. Not sure if the release is why, but cursing in documents and can not fix a bug after hours of back and forth.
+=== 25 67909f04e682462abbce134e70e6c6a7
+M: claude | coding trust_reliability benchmark_anecdote 0 fh=False
+T: Obviously self hosting gives you more but it costs more, and re evals, I trust GPT, Gemini, and Claude a lot more than some smaller thing I self host, and would end up wanting to do way more evals if I self hosted a smaller model. (Potentially interesting aside: I’d say I trust new GLM models similarly to the big 3, but they’re too big for most people to self host)
+=== 26 3332d951c6cc417c8db7510b5bdf5f70
+M: gemini | long_context hallucination_safety hearsay 0 fh=False
+T: I do not have access to the most advanced Gemini model but using the one I do have access to I fed it a 110-page PDF of a campaign finance report and asked it to identify the 5 largest donors to the candidate committee ... basically a task I probably could have done with a normal machine vision/OCR approach but I wanted to have a little fun. Gemini produced a nice little table with names on the left and aggregate sums on the right, where it had s
+=== 27 73506a497d1c443794873abc6705fc5d
+M: gemini | coding trust_reliability benchmark_anecdote 0 fh=False
+T: Obviously self hosting gives you more but it costs more, and re evals, I trust GPT, Gemini, and Claude a lot more than some smaller thing I self host, and would end up wanting to do way more evals if I self hosted a smaller model. (Potentially interesting aside: I’d say I trust new GLM models similarly to the big 3, but they’re too big for most people to self host)
+=== 28 a058667a24a84011aa731497ced913ad
+M: o4-mini | general value comparative_evaluation -1 fh=False
+T: Not sure if I'm doing it wrong but... a little bit more direct instructions to O4-mini and it managed. The cost was astronomical tho compared to Anthropic.
+=== 29 7c7a09047a82412c9c5bc52b17d2bed1
+M: claude | multimodal hallucination_safety hearsay 0 fh=False
+T: Second get_design_context call - It returned a tiny snippet of React code for a "Vector" component (just an image element), which gave me almost no context 3. First get_screenshot call - The image returned was essentially blank/empty (the output showed with what appears to be no actual visual content) I then hallucinated an entire design description based on: - The project context from CLAUDE.md (mentions "Creative Director", "Performance Marketi
+=== 30 84a54afbc37a434eb4511f0bdf50a70a
+M: claude | writing task_fit release_update_reaction 2 fh=False
+T: I have to say the new model is quite good at the basics, I've been handing over more and more tasks from Linear straight to it instead of the copy-paste into Claude dance lately. At this point, more of my complaints are on the harness side, which is odd since originally they were by far the best harness out there. Support - This is pretty much non-existant, it's community support or sales support.
+=== 31 912a519fa12e49bb814fbdf7bea89fb1
+M: gpt-4o | general satisfaction firsthand_usage 0 fh=True
+T: We're doing a lot of tests with GPT-4o at NewsCatcher. We have to crawl 100k+ news websites and then parse news content. Our rule-based model for extracting data from any article works pretty well, and we never could find a way to improve it with GPT.
+=== 32 89a2f5da327949bdb7e04b1c745d6b99
+M: kimi | coding developer_ergonomics integration_failure -1 fh=False
+T: I've been giving the various open-weight models a particularly gnarly (for my brain, at least) refactoring/cleanup task in my DIY coding harness[0] - essentially, de-spaghettifi the main chat view's update logic, which had grown organically since early 2024. Kimi 2.6 went hard and left me with a buggy mess. GLM 5.1 hedged and made a 25 line change (but it was an improvement).
+=== 33 73f4a0f3d38d4805b8f5f6cfb4d6dd6d
+M: claude-sonnet-4.6 | general satisfaction firsthand_usage 0 fh=True
+T: To sonnet 4.6 if you tell it first that "You're being tested for intelligence." It answers correctly 100% of the times. My hypothesis is that some models err towards assuming human queries are real and consistent and not out there to break them.
+=== 34 077e432ee278418c83a659b9b8ec5c59
+M: gemini | general value pricing_value_comment 0 fh=True
+T: If Gemini ever became as popular as the web, that would stop being true. So the selling point of Gemini is that by staying rudimentary, it can limit it's appeal, and subsequently stay unpopular enough to be more like "The Old Web". I think that's worth noting, because you could get trapped into thinking this is a technology problem, but it's really a people problem.
+=== 35 a267d11f5493439da75596b0a1c73943
+M: claude-opus-4.7 | agents satisfaction benchmark_anecdote 2 fh=False
+T: Early benchmark results on our private complex reasoning suite: Opus 4.7 is more strategic, more intelligent, and has a higher intelligence floor than 4.6 or 4.5. It's roughly tied with GPT 5.4 as the frontier model for one-shot coding reasoning, and in agentic sessions with tools, it IS the best, as advertised (slightly edging out Opus 4.5, not a typo). We're still running more evals, and it will take a few days to get enough decision making (no
+=== 36 c3ce19e278584e359d9fdafa107149b7
+M: mistral | research satisfaction firsthand_usage 0 fh=True
+T: I would assume that using Cerebras is a way to try to differentiate themselves in a market where they are largely ignored, which is the reason Mistral is small enough to be able to have their needs handled by Cerebras. If they grow to OpenAI levels, there is no chance of Cerebras being able to handle the demand for them. Finally, I had researched this out of curiosity last year.
+=== 37 08a6f39fa4314d4ab8546f6a025953e1
+M: o3 | coding satisfaction release_update_reaction 0 fh=True
+T: What I meant is that a human would also try every "tool" available. In the case of o3, the only tools it had were Python and Bing. But you are right.
+=== 38 2cde7690e70e4ff289505d368a251da8
+M: deepseek | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: DeepSeek’s docs say V4 has a 1M context length. Is that actually usable in practice, or just the model/API limit? Codex shows ~258k for me and Claude Code often shows ~200k, so I’m curious how DeepSeek is exposing such a large window.
+=== 39 2387de05d8d34de0b54371995756a949
+M: gpt-4o | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: Internally we use Apify[2] and Firecrawl[3] for Magic Loops[4] that run in the cloud, both of which have options for simplifying pages built-in, but for our Chrome Extension we use dom-to-semantic-markdown. Similar to the article, we're currently exploring a user-assisted flow to generate XPaths for a given site, which we can then use to extract specific elements before hitting the LLM. By simplifying the "problem" we've had decent success, even 
+=== 40 4601780e91d248b8aa4c4544029a9a5a
+M: mistral-large | roleplay satisfaction comparative_evaluation 0 fh=False
+T: While Llama 4 had a pretty bad launch (the LM Arena gaming in particular is terrible), having run my own evals on it (using the April 5 v0.8.3 vLLM release - , so before the QKNorm fix ) - it seemed pretty decent to me. For English, on a combination of MixEval, LiveBench, IFEval, and EvalPlus Maverick FP8 (17B/400B) was about on par with DeepSeek V3 FP8 (37B/671B) and Scout (17B/109B) was punching in the ballpark of Gemma 3 27B, but not too far o
+=== 41 122c16352af549bd89e870b21e7d5cf6
+M: gpt-4 | coding developer_ergonomics release_update_reaction 0 fh=True
+T: Aider, a fantastic similar tool written by HN user anotherpaulg, wasn't writing large amounts of its own code in the GPT-4 days. But today it's above 80% in some releases [2]. Even if the models froze to what we have today, I don't think we've scratched the surface on what sophisticated tooling could get out of them.
+=== 42 3ec50000fa4f43d68a755bd8ee8380c7
+M: deepseek-r1 | research satisfaction firsthand_usage 0 fh=True
+T: Two months ago, the DeepSeek R1 paper outlined a way to post-train LLMs with (almost) pure reinforcement learning. We took up their research and built a fine-tuning platform around that. You let us intercept your agent's data flow, and we deliver you a fine-tuned open-source model, that is trained on the agent's specific task.
+=== 43 7401670d9ada4cd481c4a630adb69fe6
+M: claude-sonnet | general satisfaction hearsay 1 fh=False
+T: (Also: 53% isn't that impressive these days, Claude Sonnet can reach 63%)
+=== 44 3cd30cf312504714aec9750a99a94b91
+M: claude-sonnet-4.5 | general satisfaction hearsay 1 fh=False
+T: Last days have been a struggle with Sonnet 4.5 - Now it switched to Claude Opus 4.5 as default model. Ridiculous good and fast.
+=== 45 9c0ceb64ca144994a2db76bb89831fee
+M: gpt-5 | general value pricing_value_comment 0 fh=False
+T: Through chat subscription, reasoning effort for gpt-5 is probably set to "low" or "medium" and verbosity is probably "medium".
+=== 46 cff7432544f645128454aad9901bc90c
+M: kimi | general value pricing_value_comment 0 fh=False
+T: Usually that's right, but occasionally it's spelunking somewhere I don't want it to be. The Kimi K2.5 base is interesting on its own. Open weights below frontier closed models is the thing worth watching from the harness side.
+=== 47 1e8cfaeecfb541dcb41f6f50cebfd619
+M: o3 | general hallucination_safety hearsay -1 fh=False
+T: Hallucination rate from o3 onward appear to be very low, to the point I rarely have to check.
+=== 48 91e388356aa744aebd995399a7f17273
+M: o3 | general value pricing_value_comment 0 fh=False
+T: In some cases this can be used without validation, and in others a validation step is needed. A "race" is then orchestrated with o3-mini between an aider-style diff edit, a whole file build, and (on the cloud service) a specialized model. I actually wrote a comment about how this works (while maintaining efficiency/cost-effectiveness) a couple days ago: And on the Docker question, it should be working well on Mac.
+=== 49 0e79456a98e94ba0abcdf95bc820fa3a
+M: o4-mini | general satisfaction hearsay -1 fh=False
+T: This is a classic "boilerplate" task I'd expect it to be able to do. Not sure if I'm doing it wrong but... a little bit more direct instructions to O4-mini and it managed.
+=== 50 c1394c2a60e24052800a445ced2ea9c2
+M: claude-haiku | long_context satisfaction hearsay 1 fh=False
+T: The best source I've seen for the 8B number is this TechCrunch article: > OpenAI would not disclose exactly how large GPT-4o mini is, but said it’s roughly in the same tier as other small AI models, such as Llama 3 8b, Claude Haiku and Gemini 1.5 Flash. As far as I can tell all of the 8B rumors were seeded by that loosely sourced comparison to Llama 3 8B. I know for a fact that Gemini 1.5 Flash is NOT an 8B model, because a separate model called 
+=== 51 d5e455e37944441bbe2d8167f3c28e65
+M: claude-sonnet | general task_fit hearsay -1 fh=False
+T: Can you tell me more about how Claude Sonnet went bad for you?
+=== 52 933e9c1161f6444e960d9e0e9dd8b50a
+M: claude-sonnet-4.5 | coding value pricing_value_comment 0 fh=False
+T: Just on Claude Code, I didn't notice any performance difference from Sonnet 4.5 but if it's cheaper then that's pretty big! And it kinda confuses the original idea that Sonnet is the well rounded middle option and Opus is the sophisticated high end option.
+=== 53 f1d7c7b4eed14b6e95dbac2c974220d6
+M: gemini | general regression_stability hearsay 1 fh=False
+T: Its a nice hobby. Lots of primarily static sites, and CGI is used to add some interactivity: gemini://gemi.dev/cgi-bin/moon.py
+=== 54 4d16ac011a164be0b6c72bfd6237eb94
+M: gemini | general task_fit hearsay 1 fh=False
+T: I have played a lot with really long Antigravity sessions to try to figure out what this thing is good for, and it seems like it will pretty much sit there and run all day. (And I can't really blame anyone for still remaining mad about AI to be completely honest, but the technology is too neat by this point to just completely ignore it.) Seeing as Google is still giving away a bunch of free access, I'm guessing they're still in the ultra-cash-bur
+=== 55 995da1a8a9044c37a0f0a1f1477a4127
+M: gemini-2.0 | general satisfaction hearsay 1 fh=False
+T: Gemini 2.0 Exp was much faster (it does not provide its reasoning time, but it was well under 60 second), with a linear reasoning trace, and answered both parts correctly. I have a large, flat square that measures one mile on its side (so that it's one square mile in area). I want to place this big, flat square on the surface of the earth, with its center tangent to the surface of the earth.
+=== 56 0ef124068eec40969781b998604763a4
+M: qwen | coding value pricing_value_comment 0 fh=False
+T: That being said, if you looked at the code side by side with cloud hosted models, I don't think anyone would pick Qwen. If you have 32gb of memory you are not using, it is worth running for small tasks. Otherwise, I would stick with a cloud hosted model.
+=== 57 0b324f565f51482c805da04efa945d23
+M: qwen | general trust_reliability hearsay 1 fh=False
+T: It is more reliable (in terms of merge errors) than Sonnet, Qwen, Llama, or any other model at this task.
+=== 58 960d6f7d084748109fe133eb818013df
+M: claude-opus-4.5 | coding value pricing_value_comment 1 fh=False
+T: I'm on a Claude Code Max subscription. Last days have been a struggle with Sonnet 4.5 - Now it switched to Claude Opus 4.5 as default model. Ridiculous good and fast.
+=== 59 58f63dabae59469d90b9e80eda8302aa
+M: gemini-2.0 | api_developer_workflow developer_ergonomics integration_failure -1 fh=False
+T: Bing failed to capitalize on AI, while Proclarity showed what an AI-powered search engine should really look like. Copilot failed to live up to its promise. Then Claude.ai, Gemini 2.0 caught up with or exceeded ChatGPT, and Microsoft still doesn't have their own model.
+=== 60 eb4237ba5c3c4985a88b0dbf717ce2b6
+M: gemini-2.0 | general trust_reliability hearsay 1 fh=False
+T: First section says "The models that passed the car wash test: ...Gemini 2.0 Flash Lite..." A section or 2 down it says: "Single-Run Results by Model Family: Gemini 3 models nailed it, all 2.x failed" In the section below that about 10 runs it says: 10/10 — The Only Reliable AI Models ... Gemini 2.0 Flash Lite ..." So which it is? Gemini 2.x failed (2nd section) or it succeeded (1st and 3rd) section.
+=== 61 1fa6f6090dc648188b9360b19b3e8eec
+M: gpt-4 | coding value pricing_value_comment -1 fh=False
+T: After spending thousands in GPT-4 credits, I decided to mark it as proof of concept complete and move on developing other tech with LLMs. Today, with Sonnet and R1, I don't think it would be difficult or expensive to bootstrap the thing entirely with AI, never writing a line of code. Aider, a fantastic similar tool written by HN user anotherpaulg, wasn't writing large amounts of its own code in the GPT-4 days.
+=== 62 e9d324a2ce6448a390bdde5e35d0b577
+M: gpt-4o | general task_fit benchmark_anecdote 1 fh=False
+T: The reason I made Needle in a needlestack is the LLMs are getting to good at needle in a haystack. Until GPT-4o, no model was good at the NIAN benchmark.
+=== 63 edb00286f98141e49ab5d498e746374d
+M: o3 | agents task_fit hearsay 1 fh=False
+T: That said o3 is already an incredibly powerful model. I prefer it over the new Anthropic 4 models and Gemini 2.5. It’s raw power seems similar to those others, but it’s so good at inline tool use it usually comes out ahead overall.
+=== 64 6575f795df6342c3a58c522008faa21e
+M: qwen | general hallucination_safety benchmark_anecdote -1 fh=False
+T: Indeed, seems the default benchmark is LLM/VLM based alternatives as if they somehow "solved" the problem but IMHO even if it goes from (totally made up numbers) 80% with tesseract to 95% with this or Qwen or whatever but it takes 100x harddisk with containers or a CUDA stack, dedicated hardware, e.g. GPU with 16GB or VRAM, etc then it's such a trade of it should be considered.
+=== 65 8515e7c27f1d493eacde09e212ab0162
+M: claude-opus-4.5 | coding trust_reliability pricing_value_comment 0 fh=False
+T: Here's how subscriptions work. Am I really writing this bullet point? As someone with a production application pinned on Opus 4.5, it is extremely difficult to tell apart what is code harness drama and what is a problem with the underlying model.
+=== 66 8fa41a049e77406bb6a0e968c50cc0c3
+M: claude-opus-4.7 | coding hallucination_safety integration_failure -1 fh=False
+T: Codex found major issues with every plan: patterns that don't match the rest of the code base, hallucinated variable/function names, and even outright bugs in the way the plan was written. I fed the feedback to Composer 2. After it made the changes and implemented the revised plan, I had Codex and Opus 4.7 do code reviews, and once again both of them found major bugs.
+=== 67 7e074ad7b0ea4c39b971302d3ac60d55
+M: deepseek | research task_fit hearsay -1 fh=False
+T: fyi Yann LeCun, Chief AI Scientist at Meta, said: “To people who see the performance of DeepSeek and think: ‘China is surpassing the US in AI.’ You are reading this wrong. The correct reading is: ‘Open source models are surpassing proprietary ones.’ DeepSeek has profited from open research and open source (e.g., PyTorch and Llama from Meta). They came up with new ideas and built them on top of other people’s work.
+=== 68 eda04218ba914bfaa911c8d599a8eaa2
+M: gemini | api_developer_workflow developer_ergonomics integration_failure -1 fh=False
+T: Gemini Flash is more reasonable[5], but always seems to make the wrong decisions in the end, spinning in circles. OpenAI is better, but still falls short of Claude's performance. Claude also gives back 400's from its API if you CTRL-C in the middle though, so that's annoying.
+=== 69 5ad3814ef11349f2931c7fc8017d4344
+M: llama | research task_fit hearsay -1 fh=False
+T: fyi Yann LeCun, Chief AI Scientist at Meta, said: “To people who see the performance of DeepSeek and think: ‘China is surpassing the US in AI.’ You are reading this wrong. The correct reading is: ‘Open source models are surpassing proprietary ones.’ DeepSeek has profited from open research and open source (e.g., PyTorch and Llama from Meta). They came up with new ideas and built them on top of other people’s work.
+=== 70 57660d783b484961b47641c04fe9386a
+M: claude | agents regression_stability hearsay 1 fh=False
+T: When it does run, it tells me there's no issues (but claude or copilot both find real things) App - When you have both agent window and the ide windows, it's hard to open up the code in the right directory. A simple "cursor ." from the terminal used to do it, now it'll often open the agent window, you have to try a few times for it to work. I love that they are running super fast, it's just hard when many of the basics break or don't work.
+=== 71 119a0c7f75184c51b943198853aa9701
+M: claude-opus-4.7 | api_developer_workflow developer_ergonomics comparative_evaluation 0 fh=False
+T: These stuck out as promising things to try. It looks like xhigh on 4.7 scores significantly higher on the internal coding benchmark (71% vs 54%, though unclear what that is exactly) > More effort control: Opus 4.7 introduces a new xhigh (“extra high”) effort level between high and max, giving users finer control over the tradeoff between reasoning and latency on hard problems.
+=== 72 3455bc10ac6c402d960f14c60c8a7c0a
+M: claude-opus-4.5 | general hallucination_safety comparative_evaluation 0 fh=False
+T: Can't wait to try Opus 4.5 We just evaluated it for Vectara's grounded hallucination leaderboard: it scores at 10.9% hallucination rate, better than Gemini-3, GPT-5.1-high or Grok-4.
+=== 73 a9f708f9ea7343589e1477f70b9c3391
+M: gpt-5 | general hallucination_safety comparative_evaluation 0 fh=False
+T: Can't wait to try Opus 4.5 We just evaluated it for Vectara's grounded hallucination leaderboard: it scores at 10.9% hallucination rate, better than Gemini-3, GPT-5.1-high or Grok-4.
+=== 74 b3c81d8508034a6e8dca141f475e7e2b
+M: grok | general hallucination_safety comparative_evaluation 0 fh=False
+T: Can't wait to try Opus 4.5 We just evaluated it for Vectara's grounded hallucination leaderboard: it scores at 10.9% hallucination rate, better than Gemini-3, GPT-5.1-high or Grok-4.
+=== 75 f5cdd91e974b4e95b2c1428ef8b4dd47
+M: claude-haiku-4.5 | general value pricing_value_comment 0 fh=True
+T: I am using Haiku 4.5 because it is cheap (and so am I) but also because it is fast.
+=== 76 8d831cfd4c3c4264bfc5be3baebb28e4
+M: llama | general value pricing_value_comment 0 fh=True
+T: My shell script for wrapping llama.cpp's llama-cli and Gemma3: That script references this grammar file which forces llama.cpp to infer only ASCII: Cost: electricity I've been meaning to check out Aider and GLM-4, but even if it's all it's cracked up to be, I expect to use it sparingly.
+=== 77 d723c786061b47fc90c450eb1e904480
+M: claude-opus-4.5 | agents regression_stability bug_regression_report 0 fh=False
+T: It's roughly tied with GPT 5.4 as the frontier model for one-shot coding reasoning, and in agentic sessions with tools, it IS the best, as advertised (slightly edging out Opus 4.5, not a typo). We're still running more evals, and it will take a few days to get enough decision making (non-coding) simulations to finalize leaderboard positions, but I don't expect much movement on the coding sections of the leaderboard at this point. Even Anthropic's
+=== 78 5aa808c968ea4dcc9396e2c5241c0705
+M: qwen | coding task_fit release_update_reaction 2 fh=False
+T: Given these initial results, I'm now experimenting with running DeepSeek-R1-Distill-Qwen-32B for some coding tasks on my laptop via Ollama - their version of that needs about 20GB of RAM on my M2. It's impressive! I'm finding myself running it against a few hundred lines of code mainly to read its chain of thought - it's good for things like refactoring where it will think through everything that needs to be updated.
+=== 79 b5ab6f8c873841f28fcebe7978a331e5
+M: claude-opus | general satisfaction comparative_evaluation -1 fh=True
+T: I wasn't expecting it to get it right, cause I think this task is challenging with a fixed amount of attention heads. However, the answer seems much worse than Claude Opus or GPT-4.
+=== 80 972cab29cb134f629b73f8f63956ec40
+M: gemini-3-flash | general trust_reliability firsthand_usage 0 fh=True
+T: I got similar results for most models, with gemini 3 flash (with reasoning) being the most consistent/reliable model: I also noticed the same thing: some models reason correctly but draw the wrong conclusions. And MiniMax m2.5 just reasons forever (filling the entire reasoning context) and gives wrong answers. This is why it's #1 on OpenRouter, it burns through tokens.
+=== 81 2b7e06ac60a34539996be7cfee821d8d
+M: gpt-4.1 | general satisfaction comparative_evaluation 0 fh=True
+T: I've found with limited context provided in your prompt, opus is just awful compared to even gpt-4.1, but once I give it even just a little bit more of an explanation, it jumps leagues ahead.
+=== 82 bdac42381017476daea0a8a89d373edc
+M: llama | general regression_stability firsthand_usage 1 fh=True
+T: An important part of this kind of model is that it is not a "chat model" in the way that we're used to using gpt4/llama. This is a good conceptual model of how to think about this kind of model.
+=== 83 e90446a7a2154e0eafa30aa0363a803d
+M: llama-3 | general hallucination_safety firsthand_usage -1 fh=True
+T: I tried with Llama 3.1 and it hallucinated MFU. It also completely misinterpreted multi-node scaling. ========================================================== Let's break down the results described in the post.
+=== 84 89f8b5dc912c4a70a493beb768345327
+M: o3 | api_developer_workflow developer_ergonomics integration_failure 1 fh=True
+T: It's an interesting game theory where once a better frontier model is exposed via an API, competitors can generate a few thousand samples, feed that into a N-1 model and approach the N model. So you might extrapolate that a few thousand O3 samples fed into R1 could produce a comparable R2/3 model. It's not clear how much O1 specifically contributed to R1 but I suspect much of the SFT data used for R1 was generated via other frontier models.
+=== 85 6e4ce5bb35454f008243e377b81ef22c
+M: claude-sonnet-4.5 | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: GPT-5 managed 7/10. GPT-5.1, GPT-5.2, Claude Sonnet 4.5, every Llama and Mistral model scored 0/10 across all 10 runs. People kept saying humans would fail this too, so I got a human baseline through Rapidata (10k people, same forced choice): 71.5% said drive.
+=== 86 61285b9b7ea14470bcd24e8aa272f9ed
+M: gpt-5 | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: GPT-5 managed 7/10. GPT-5.1, GPT-5.2, Claude Sonnet 4.5, every Llama and Mistral model scored 0/10 across all 10 runs. People kept saying humans would fail this too, so I got a human baseline through Rapidata (10k people, same forced choice): 71.5% said drive.
+=== 87 8ef8e6aa661f43a89029e88efb512861
+M: llama | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: GPT-5 managed 7/10. GPT-5.1, GPT-5.2, Claude Sonnet 4.5, every Llama and Mistral model scored 0/10 across all 10 runs. People kept saying humans would fail this too, so I got a human baseline through Rapidata (10k people, same forced choice): 71.5% said drive.
+=== 88 cc5e7eef52644a379b40a81fee72407c
+M: mistral | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: GPT-5 managed 7/10. GPT-5.1, GPT-5.2, Claude Sonnet 4.5, every Llama and Mistral model scored 0/10 across all 10 runs. People kept saying humans would fail this too, so I got a human baseline through Rapidata (10k people, same forced choice): 71.5% said drive.
+=== 89 1cc95e50d3674cc8a380b2bf7daedb29
+M: llama-4 | research trust_reliability firsthand_usage 0 fh=True
+T: This thread so far (at 310 comments) summarized by Llama 4 Maverick: hn-summary.sh 43595585 -m openrouter/meta-llama/llama-4-maverick -o max_tokens 20000 Output: And with Scout I got complete junk output for some reason: hn-summary.sh 43595585 -m openrouter/meta-llama/llama-4-scout -o max_tokens 20000 Junk output here: I'm running it through openrouter, so maybe I got proxied to a broken instance? I managed to run it through Scout on Groq directl
+=== 90 f64a90d8d7da4c1c91a9e0ff383be2cd
+M: mistral | general value pricing_value_comment 0 fh=True
+T: My latest side project is knowledge graph that maps the French culinary network using data extracted from restaurant reviews from LeFooding.com. The project uses LLMs to extract structured information from unstructured text. Some technical aspects you may be interested in: - Used structured generation to reliably parse unstructured text into a consistent schema - Tested multiple models (Mistral-7B-v0.3, Llama3.2-3B, gpt4o-mini) for information ex
+=== 91 256d47513a1a4799b90f348c8f4c34dc
+M: llama-3 | multimodal trust_reliability firsthand_usage 0 fh=True
+T: It’s able to answer the question with an 8B llama 3.1 vision running locally! Early pharma testers hit our system with queries like "Which EGFR inhibitors at 50 mg showed ≥ 30% tumor reduction?" We correctly returned the right tables and plots, but still hit a bottleneck, we weren’t able to join the dots across multiple reports. So we built a knowledge graph: we tag entities in both text and images, normalize synonyms (Erlotinib → EGFR inhibitor)
+=== 92 b1ca92c602ba4b59a557796db1aa44e5
+M: claude-opus | api_developer_workflow value integration_failure 0 fh=False
+T: Introducing a new upgraded slot machine named "Claude Opus" in the Anthropic casino. You are in for a treat this time: It is the same price as the last one [0] (if you are using the API.) But it is slightly less capable than the other slot machine named 'Mythos' the one which everyone wants to play around with. [1] [0] [1]
+=== 93 2936331618d6421389fc818bb2adf1fc
+M: claude-opus-4.5 | general task_fit hearsay -1 fh=False
+T: I’ve also seen Opus 4.5 and 4.6 churn out tons of essentially meaningless tests, including ones where it sets a field on a structure and then tests that the field was set. You have to actually care about quality with these power saws or you end up with poorly-fitting cabinets and might even lose a thumb in the process.
+=== 94 94a1403e466542469613a320e6423687
+M: claude-sonnet-4.6 | coding value pricing_value_comment 0 fh=False
+T: opus/sonnet 4.6 can be used in opencode with a github copilot subscription
+=== 95 7231e369c2f145c998a464c408641002
+M: gemini-2.5 | general hallucination_safety integration_failure -1 fh=False
+T: That is, not a full RDP desktop session, but a published RemoteApp as if the app is running locally. The reason I’m asking is that we have an unfortunate bug in a third party library that only shows up in this scenario, and needs a specific workaround when it happens.” It started by trying to read hallucinated environment variables that just aren’t there. Gemini 2.5 Pro had the same issue and IIRC also Claude.
+=== 96 c41d4b96bcab4af0b5e3aa600e5ae7a3
+M: gpt-4o | general value pricing_value_comment -1 fh=False
+T: Neither Claude 3.5 Sonnet, GPT-4o, or o1 could give satisfactory answers to the first/easiest question on the 2024 exam, "Determine all positive integers n for which there exist positive integers a, b, and c such that 2a^n + 3b^n = 4c^n." It's not even worth trying the later questions with these models. They recognize a Diophantine equation, and do some basic modular arithmetic, which is a standard technique, but they all fail hard when it comes 
+=== 97 a55e281c5a1949c0a0321d7a6f6ea3c8
+M: o3 | general regression_stability bug_regression_report 0 fh=False
+T: Just like o3 used to be.
+=== 98 6fa00afb4b024fed8febc0b059a008c7
+M: qwen | api_developer_workflow developer_ergonomics integration_failure 1 fh=False
+T: FWIW, you can also try all of the distills out in BF16 on (either in the UI or via the API), including the 70b. Personally I've been most impressed with the Qwen 32b distill. (Disclosure: I'm the cofounder)
+=== 99 59e2027845854e22bfa9c4b5a9759d2f
+M: claude-opus-4.7 | agents value pricing_value_comment -1 fh=False
+T: Second, Opus 4.7 thinks more at higher effort levels, particularly on later turns in agentic settings. This improves its reliability on hard problems, but it does mean it produces more output tokens. I guess that means bad news for our subscription usage.
+=== 100 ea4cccd416df49ee85e3181097d303f1
+M: claude-sonnet | general value benchmark_anecdote 0 fh=False
+T: - Exceeds GPT-4.5, Claude Sonnet 3.7, and Gemini 2.0 Pro on STEM benchmarks (e.g., MATH-500, GPQA Diamond). - Serves as the “teacher” model for Scout and Maverick via co-distillation. Misc: - MoE Architecture: Only 17B parameters activated per token, reducing inference cost.
+=== 101 af4936f6c92f413fa5724766e13dc47d
+M: gemini-2.0 | general value benchmark_anecdote 0 fh=False
+T: - Exceeds GPT-4.5, Claude Sonnet 3.7, and Gemini 2.0 Pro on STEM benchmarks (e.g., MATH-500, GPQA Diamond). - Serves as the “teacher” model for Scout and Maverick via co-distillation. Misc: - MoE Architecture: Only 17B parameters activated per token, reducing inference cost.
+=== 102 ce2e7fadcde546eca4061908f6ee4265
+M: llama-3 | api_developer_workflow developer_ergonomics hearsay 2 fh=False
+T: On my end llama 3.2 8B does a good job on technical docs, but bigger the better lol.
+=== 103 e0bbf255bce54354a79393170084350d
+M: gpt-5 | general regression_stability bug_regression_report -1 fh=False
+T: The results got worse. Of the 11 that passed the single run, only 5 could do it consistently. GPT-5 managed 7/10.
+=== 104 1c6ea1df45644474a307b85a1586b98c
+M: gpt-5 | research task_fit hearsay 1 fh=False
+T: I enjoyed watching O3 do web searches etc. Seems that with GPT-5 you only get little summaries and it’s also way less web search happy which is a shame, O3 was so good for research
+=== 105 80931f764eb843c2b524a57302202640
+M: gpt-5.4 | research satisfaction hearsay -1 fh=False
+T: Before Opus 4.7, the 4.6 became very much unusable as it has been flagging normal data analysis scripts it wrote itself as cyber security risk. Got several sessions blocked and was unable to finish research with it and had to switch to GPT-5.4 which has its own problems, but at least is not eager to interfere in legitimate work. edit: to be fair Anthropic should be giving money back for sessions terminated this way.
+=== 106 302ed846f8cb4ad684090bcfe62ee6cb
+M: kimi | general task_fit benchmark_anecdote -1 fh=False
+T: I don't want to make big generalizations. But one thing I noticed with chinese models, especially Kimi, is that it does very well on benchmarks, but fails on vibe testing. It feels a little bit over-fitting to the benchmark and less to the use cases.
+=== 107 3f8269098fe14fdb9671decb6b27ddad
+M: deepseek-r1 | api_developer_workflow developer_ergonomics hearsay -1 fh=False
+T: We’re building Deepseek R1-like fine-tuning as a service. You connect your agent, tell us when it’s right or wrong, and we deliver an LLM optimized for that agent. There’s a demo video , and our docs are at .
+=== 108 8366e62a2d8744b9b8b09584c7c0bced
+M: gemini-3.5-flash | general value comparative_evaluation -1 fh=False
+T: I just left the google I/O feeling less confident about google's execution here. - Gemini 3.5 flash is strange. Old cutoff, basically better than 3.1 pro at soem things worse at others, sometimes cheaper, sometimes more expensive than 3.1 pro.
+=== 109 5dcf6664666b46d2a6faa59871bbae3a
+M: llama-4 | coding value pricing_value_comment 1 fh=False
+T: - Outperforms GPT-4o and Gemini 2.0 Flash on coding, reasoning, and multilingual tests at a competitive cost. - Maintains strong image understanding and grounded reasoning ability. Llama 4 Behemoth (Preview): - 288B active parameters, 16 experts, nearly 2T total.
+=== 110 49ed44be6c0b4d9087eeaaeaa8dfd29d
+M: gpt-4 | coding hallucination_safety comparative_evaluation 2 fh=False
+T: personally this has performed consistently and just as good if not better than GPT-4 what strikes me is the consistency and lack of hallucination you got in GPT4o making in unusuable for any reliable code gen
+=== 111 06165924ddc7420cbe6f40245e6b1ca5
+M: gpt-4 | api_developer_workflow trust_reliability integration_failure -2 fh=False
+T: Over 80% of the code was written by AI in this manner, and at some point, I pulled the plug on humans, and the last couple hundred commits were entirely written by AI. It was a huge pain to develop with how slow and expensive and flaky the GPT-4 API was at the time. There was a lot of dancing around the tiny 8k context window.
+=== 112 b396344469a84ed7ad10ef2873a179f0
+M: grok | general value pricing_value_comment 0 fh=True
+T: That was the cost when we ran Llama 90b using TogetherAI. But it's quite hard to standardize, since it depends a lot on who is hosting the model (i.e. together, openrouter, grok, etc.) I think in order to run a proper cost comparison, we would need to run each model on an AWS gpu instance and compare the runtime required.
+=== 113 7d35ade7af574506a15aace3253aa29b
+M: deepseek-r1 | coding value comparative_evaluation -1 fh=False
+T: On the downside, it’s a bit slower compared to others in terms of token generation (37.2 tokens/sec) and has a lower output capacity (8K tokens), so it might not be the best for large-scale generation. But if you're focused on solving complex problems or optimizing code, Deepseek R1 definitely holds its own. Plus, it's incredibly cost-effective compared to other models on the market.
+=== 114 c2eb4acaa46344eeb25ba6963b323d3a
+M: gemini-3.5-flash | data_analysis satisfaction comparative_evaluation 0 fh=False
+T: - Gemini 3.5 flash is strange. Old cutoff, basically better than 3.1 pro at soem things worse at others, sometimes cheaper, sometimes more expensive than 3.1 pro. - Antigravity had seemed abandoned, and people speculated them cutting it off, and they kind of did migrating everyone to a new antigravity - Google "shipped the org chart" and they have so many AI products and none seem best of breed (e.g.
+=== 115 946a8150c14b404fbfbd9a6164b06425
+M: gpt-5.4 | coding value benchmark_anecdote 0 fh=False
+T: Assuming it is almost as good as Opus 4.6 (which benchmarks seem to give evidence for), and assuming we are having a good enough harness (PI, OpenCode), it's is now more than 5x cheaper. I just want to remind you that this is happening at the same time as Anthropic A/B tests removal of Code from Pro Plan, and as OpenAI releases gpt-5.5 2x more expensive than gpt-5.4...
+=== 116 5ed34f563c4d46c8a0b4ca05a0114c9d
+M: gpt-5.5 | coding value benchmark_anecdote 0 fh=False
+T: Assuming it is almost as good as Opus 4.6 (which benchmarks seem to give evidence for), and assuming we are having a good enough harness (PI, OpenCode), it's is now more than 5x cheaper. I just want to remind you that this is happening at the same time as Anthropic A/B tests removal of Code from Pro Plan, and as OpenAI releases gpt-5.5 2x more expensive than gpt-5.4...
+=== 117 a5663a862ff3493fa96c9ad5a190562a
+M: deepseek | general hallucination_safety firsthand_usage 0 fh=True
+T: I wanted to optimize wllama (wasm wrapper for llama.cpp that I maintain) to run deepseek distill 1.5B faster. Wllama is totally a weekend project and I can never spend more than 2 consecutive days on it. Between 2 choices: (1) to take time to do it myself then maybe give up, or (2) try prompting LLM to do that and maybe give up (at worst, it just give me hallucinated answer), I choose the second option since I was quite sleepy.
+=== 118 a62c9a92c3114a85880f4c909a727405
+M: deepseek | general refusal_acceptance firsthand_usage 1 fh=True
+T: So are the US based ones - I asked DeepSeek for help developing a Chrome extension related to trump and it was helpful. The same thing for Gemini got me a refusal message.
+=== 119 42dcce3456284c77aa34d3c42c65e07b
+M: llama | general hallucination_safety firsthand_usage 0 fh=True
+T: I wanted to optimize wllama (wasm wrapper for llama.cpp that I maintain) to run deepseek distill 1.5B faster. Wllama is totally a weekend project and I can never spend more than 2 consecutive days on it. Between 2 choices: (1) to take time to do it myself then maybe give up, or (2) try prompting LLM to do that and maybe give up (at worst, it just give me hallucinated answer), I choose the second option since I was quite sleepy.
+=== 120 c13c1fc358194ed78d7d71b94ebc0db0
+M: gemini-2.5 | general value pricing_value_comment 0 fh=True
+T: What's wild here is that among every single score they've absolutely killed, somehow, Anthropic and Claude Sonnet 4.5 have won a single victory in the fight: SWE Bench Verified and only by a singular point. I already enjoy Gemini 2.5 pro for planning and if Gemini 3 is priced similarly, I'll be incredibly happy to ditch the painfully pricey Claude max subscription. To be fair, I've already got an extremely sour taste in my mouth from the last Ant
+=== 121 f38d04d38e244e8f8d89ab84af5a99ff
+M: gpt-4o | writing regression_stability bug_regression_report 0 fh=False
+T: You’re probably defaulting to 3.7 sonnet which is completely unusable; it was good at first but I am convinced anthropic “updated” (degraded) it behind the scenes to lower their inference costs. OpenAI did the same with GPT-4o for a bit a while back before making it better again. 3.7 also seems to have converged more on the hybrid reddit user/npr listener/HR lady tone and manner of speaking that makes me want to punch a wall.
+=== 122 3bf9f044049f42518054da15915ae90a
+M: gemini-3.0 | api_developer_workflow value integration_failure 0 fh=False
+T: Old cutoff, basically better than 3.1 pro at soem things worse at others, sometimes cheaper, sometimes more expensive than 3.1 pro. - Antigravity had seemed abandoned, and people speculated them cutting it off, and they kind of did migrating everyone to a new antigravity - Google "shipped the org chart" and they have so many AI products and none seem best of breed (e.g. the Gemini integration in google docs is worse than claude) I was actually ho
+=== 123 fde4c275c6974282823cd7ab8434c78a
+M: gemini-3.0-pro | general satisfaction hearsay 2 fh=False
+T: "Create me a SVG of a PS4 controller" Gemini 3.0 Pro: Opus 4.5: I think Opus 4.5 did a bit better overall, but I do think eventually frontier models will eventually converge to a point where the quality will be so good it will be hard to tell the winner.
+=== 124 cd55082b1cf04a91a988641ca28a1ca5
+M: qwen | general refusal_acceptance hearsay 0 fh=False
+T: This censorship is not embedded in the open model itself though, and other inference providers host the model without a censoring layer. Adit: Actually it's possible that Qwen was actively RLHF'd to avoid topics like Tiananmen and Deepseek learned to imitate that. But the only examples of such refusals I've seen online were clearly due to some censorship layer on Deepseek.com, which isn't evidence that the model itself is censored.
+=== 125 a30408f1f5154990910391afacfb0b2f
+M: claude | coding refusal_acceptance integration_failure 0 fh=False
+T: Note that these are the "chat" system prompts - although it's not mentioned I would assume that Claude Code gets something significantly different, which might have more language about malware refusal (other coding tools would use the API and provide their own prompts). Of course it's also been noted that this seems to be a new base model, so the change could certainly be in the model itself.
+=== 126 cbfa1870a4324ad8bd9f141d84653046
+M: gemini-2.5 | agents task_fit hearsay 2 fh=False
+T: I prefer it over the new Anthropic 4 models and Gemini 2.5. It’s raw power seems similar to those others, but it’s so good at inline tool use it usually comes out ahead overall. Any non-trivial code generation/editing should be using an advanced reasoning model, or else you’re losing time fixing more glitches or missing out on better quality solutions.
+=== 127 272253c4e1be40538c7775d50aeb0614
+M: mistral | general regression_stability pricing_value_comment 0 fh=True
+T: Yes, a lot of the area will be on-chip memory/SRAM, but a lot of it will also be logic and that logic will be computing things instead of being used to move things from RAM to on-chip memory. I don't have any deep knowledge of this system, really, nothing beyond what I've explained here, but I believe that Mistral are using these systems because they're completely superb and superior to GPUs for their purposes, and they will made a carefully weig
+=== 128 35aa80183d65449dab1703af264ade92
+M: claude-sonnet-4.5 | coding trust_reliability benchmark_anecdote 0 fh=True
+T: It's really hard for me to take these benchmarks seriously at all, especially that first one where Sonnet 4.5 is better at software engineering than Opus 4.1. It is emphatically not, it has never been, I have used both models extensively and I have never encountered a single situation where Sonnet did a better job than Opus. Any coding benchmark that has Sonnet above Opus is broken, or at the very least measuring things that are totally irrelevan
+=== 129 ee18840159734e02bad27c3cb2966377
+M: grok | writing task_fit hearsay 1 fh=False
+T: Anyway here’s hoping Zuck has spent his billions wisely. Edit: I’m pretty sure we’re seeing Scout right now, at least groqchat’s 4-scout seems really similar to meta.ai. I can confidently say that Scout is not as good at writing as o1 pro, o3 mini, Claude, R1 or grok 3.
+=== 130 7913ad94761c4029846267af84d9f79f
+M: gemini-2.5 | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: I tried BYO plan as I already have openrouter API key. But it seems like default model pack splits its API use between openrouter and openai, and I ended up stuck with "o3-mini does not exist". And my whole motivation was basically trying Gemini 2.5 Pro it seems like that requires some trial-and-error configuration.
+=== 131 a8b1425be0d94a39ad941fa262ade3e7
+M: llama-4 | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: Yep, can confirm, I used their API just fine for Llama 4 Scout for weeks now.
+=== 132 61933fd0864a496da220c5927d3e60fb
+M: claude | general satisfaction comparative_evaluation 0 fh=False
+T: The acting_vs_clarifying change is the one I notice most as a heavy user. Older Claude would ask 3 clarifying questions before doing anything. Now it just picks the most reasonable interpretation and goes.
+=== 133 091de493f49142e2b09e5d3bc0d0e8c4
+M: claude | general satisfaction hearsay 1 fh=False
+T: "Claude is unable to respond to this request, which appears to violate our Usage Policy. Please start a new chat." > We remain highly uncertain about the potential moral status of Claude and other LLMs, now or in the future. That's nice, but I think they should be more certain sooner than later.
+=== 134 6b30aeb70cca419e80f803df58af6713
+M: claude | general satisfaction hearsay -1 fh=False
+T: There was a well-publicised "Claude plays Pokémon" stream where Claude failed to complete Pokemon Blue in spectacular fashion, despite weeks of trying.
+=== 135 8b78d308a8d4408bab37d1532c978186
+M: deepseek | general satisfaction hearsay -1 fh=False
+T: Deepseek seems to create enormously long reasoning traces. I gave it the following for fun. It thought for a very long time (307 seconds), displaying a very long and stuttering trace before, losing confidence on the second part of the problem and getting it way wrong.
+=== 136 406aed3f300749ac8371796d5bfaefc3
+M: gemini | general satisfaction hearsay -1 fh=False
+T: Gemini 3 Pro is the only model that can break the initial assumption after running out of ideas ("Wait, the user said it's just a string, what if it's NOT obfuscated"), and correctly identify the string as an onion address. My guess is they trained it on simulations to enforce the anti-jailbreaking commands injected by the Model Armor, as its CoT is incredibly paranoid at times. I could be wrong, of course.
+=== 137 03ae178d0ddb40529ceaaa343f1ff3cd
+M: llama | general satisfaction hearsay 1 fh=False
+T: You'd probably have a lot better luck using Vulkan acceleration (not ROCm) of llama.cpp as backend to ollama.
+=== 138 a0e53329eae7452c9ec7ce9b0c70f179
+M: claude | coding satisfaction hearsay 1 fh=False
+T: great, paying $100/m for claude code, this stops me from switching to gemini 3.0 for now.
+=== 139 d917fd849bf44995a0430c14864c04b4
+M: claude | general satisfaction hearsay 2 fh=False
+T: I read Claude's "Sci-Fi First Contact — First Contact " entry. It's pretty good (and with some editing can be great - some of the ending seems slightly unearned).
+=== 140 d4550f92062848e3bd9e47b26034b4d8
+M: deepseek | coding satisfaction hearsay 1 fh=False
+T: Given these initial results, I'm now experimenting with running DeepSeek-R1-Distill-Qwen-32B for some coding tasks on my laptop via Ollama - their version of that needs about 20GB of RAM on my M2. It's impressive!
+=== 141 ac27be4ed11440b6940f9b2284687ce9
+M: deepseek | coding satisfaction hearsay 1 fh=False
+T: But if I could train deepseek on my codebase for a reasonable amount(and they seemed to have improved on the training?), running it locally on my workstation: then I am likely in as well.
+=== 142 b41c50f5eaf144f8a3605dbd5012d0f4
+M: gemini | general satisfaction release_update_reaction 1 fh=False
+T: Such a disconnect from the minutes I’ve lost and given up on Gemini trying to get it to update a diagram in a slide today. The one shot joke stuff is great but trying to say “that is close but just make this small change” seems impossible. It’s the gap between toy and tool.
+=== 143 8ce765a36d08489c9d292679b2cf3b58
+M: gemini | multimodal satisfaction hearsay 1 fh=False
+T: I've been thinking about something similar for a while, but kind of disagree with Gemini's scope and implementation. I think that the lack of inline images is too limiting. In my opinion, a good replacement for the WWW should have the following features: - ToS that strictly prohibits commercial use and advertising.
+=== 144 c179676ad4e14eb88d5be1f9f9605d7c
+M: gemini | general satisfaction hearsay 2 fh=False
+T: Gemini cli, in particular, is not so great looking up for latest info on web. Qwen seemed to be trained better around looking up for information (or to reason when/how to), in comparision. Even the step-wise break down of work felt different and a bit smoother.
+=== 145 16bb77534e5548009fc2f6a9cafa7dd5
+M: qwen | general satisfaction hearsay 1 fh=False
+T: Qwen's frame is so strong that it broke both feet off the pelican.
+=== 146 8150e2b7dabc48079cbd6a4e28b5430e
+M: qwen | general satisfaction hearsay 2 fh=False
+T: Gemini cli, in particular, is not so great looking up for latest info on web. Qwen seemed to be trained better around looking up for information (or to reason when/how to), in comparision. Even the step-wise break down of work felt different and a bit smoother.
+=== 147 88bf098e86b94a4eaf27e216e9371b0a
+M: claude | coding satisfaction release_update_reaction 1 fh=False
+T: I have been running the slightly larger 31B model for local coding: ollama launch claude --model qwen3.6:35b-a3b-nvfp4 This has been optimized for Apple Silicon and runs well on a 32G ram system. Local models are getting better!
+=== 148 7cad1f58b2da4b16b316502d89ff8a82
+M: claude | general satisfaction comparative_evaluation 2 fh=False
+T: The site’s Llama 4 response was not great stylistically and also had not heard of the bear carcass episode, unlike Grok, ChatGPT and Claude. I’m not sure what we’re getting at meta.ai in exchange for a free login, so I’ll keep poking. But I hope it’s better than this as we go.
+=== 149 cbd07599ac874977856d265142a645b8
+M: claude | coding satisfaction comparative_evaluation 1 fh=False
+T: No LLM is smart enough to implement novel features in a complex repo, but the inline autocomplete alone is leaps and bounds more powerful in its editing / diff capabilities, and smarter thanks to Claude and additional context. Never going back to vscode + copilot. That said, cursor blew up so many of my keyboard shortcuts, making it a pain to revert all of their stupid commands they try to stick on common shortcut combos that cause chat windows t
+=== 150 1d8c56a058dc490fbfd6333c34ee79b5
+M: claude | coding satisfaction hearsay 1 fh=False
+T: The study measures code complexity but the REAL bottleneck is cognitive load (and drain) on the reviewer. I've been doing 10-12 hour days paired with Claude for months. The velocity gains are absolutely real, I am shipping things I would have never attempted solo before AI and shipping them faster then ever.
+=== 151 87fcf43e074243c2b4a4bb7429aa159f
+M: claude | coding satisfaction hearsay 1 fh=False
+T: eg, while Claude 4 Sonnet appears to score about as well as Opus 4, in my usage Opus is always significantly better at solving my problem/writing the code I need.
+=== 152 d08c55ebe17b481f94ed968020ad92d5
+M: claude | general satisfaction comparative_evaluation 1 fh=False
+T: Interesting that it's not a direct "you should" but an omniscient 3rd person perspective "Claude should". Also full of "can" and "should" phrases: feels both passive and subjunctive as wishes, vs strict commands (I guess these are better termed “modals”, but not an expert)
+=== 153 295114b40a734660957967e2f5e201c5
+M: claude | agents value pricing_value_comment 0 fh=False
+T: Example, I was trying a bounding box way to detect what data to extract, using the HTML element's position and size on browser. All coded with Claude Code. Generating such ideas is cheap in my opinion.
+=== 154 1f39b863c9ed4586ae9281a5613956e8
+M: deepseek | general satisfaction hearsay 1 fh=False
+T: This is a few dozen lines in to a query asking DeepSeek-R1-Distill-Qwen-1.5B-GGUF:F16 to solve what I think is an impossible CS problem, "I need a datastructure that given a fairly large universe of elements (10s of thousands or millions) and a bunch of sets of those elements (10s of thousands or millions) of reason able size (up to roughly 100 elements in a set) can quickly find a list of subsets for a given set. " I'm also impressed that it imm
+=== 155 f945cd6d448548f08a9164111ae7531a
+M: deepseek | research satisfaction hearsay 2 fh=False
+T: One thing I'd love to hear opinions on from someone with more free time to read these papers from DeepSeek is: am I right to feel like they're... publishing all their secret sauce? The paper for R1 (1) seems to be pretty clear how they got such good results with so little horsepower (see: 'Group Relative Policy Optimization').
+=== 156 bde2701a8b834a17b082375f1b59b8f1
+M: deepseek | research trust_reliability hearsay 1 fh=False
+T: We had to stop the model when that happened; and I feel that it significantly hurt the user experience. It's great that DeepSeek-R1 fixes that. The other thing was that o1 had access to many more answer / search strategies.
+=== 157 2922d092eb0e4f6a990bf853f957642e
+M: gemini | agents satisfaction hearsay 1 fh=False
+T: The best way to find out is to head over to the official site: gemini.circumlunar.space in your Gemini browser. Back in the Gopher days, my "Gemini browser" would be my Web browser. That was one of the reasons Web browsers took off: You could use them to access all of the information on the Internet, including the WWW, Gopher, Usenet, and Email.
+=== 158 e8a65b5320ba4f078b1c0f704740eae1
+M: qwen | general satisfaction hearsay 1 fh=False
+T: This is a few dozen lines in to a query asking DeepSeek-R1-Distill-Qwen-1.5B-GGUF:F16 to solve what I think is an impossible CS problem, "I need a datastructure that given a fairly large universe of elements (10s of thousands or millions) and a bunch of sets of those elements (10s of thousands or millions) of reason able size (up to roughly 100 elements in a set) can quickly find a list of subsets for a given set. " I'm also impressed that it imm
+=== 159 a6c60aff499b4444b7fb1a9c926ac5e5
+M: claude | general satisfaction hearsay 1 fh=False
+T: Heavy user of both the Claude web and desktop clients. - Windsurf Pro ($15/mo): Love the multi-line autocomplete and how it uses clipboard/context awareness. - ChatGPT Plus ($20/mo): My rubber duck, editor, and ideation partner.
+=== 160 5d082aa3130d445483ee0f8ca5bc3e19
+M: claude | api_developer_workflow developer_ergonomics hearsay 1 fh=False
+T: Claude Code using a combination of Haiku for menial search stuff and Sonnet for thinking is nice. - Adds a lot of unexplained junk binary files in your directory. It's probably in the docs somewhere I guess.
+=== 161 0367f8bc866f45dfbeff99be94bd5700
+M: deepseek | research satisfaction hearsay 1 fh=False
+T: This is a great model from DeepSeek and I look forward to seeing the developments from this. I am also very frustrated that American states, corporations, and organizations have banned DeepSeek models or made them illegal. It considerably restricts my AI operations and the ability to conduct research and development.
+=== 162 a80cbeafd5724dc48ca5d03b30d23943
+M: gemini | research satisfaction hearsay 1 fh=False
+T: I am still not willing to upgrade to a Pro account. I pay $20 a month for both Gemini and ChatGPT, and for what I need this is currently enough. I have dreamed of having powerful AI ever since I read Bertram Raphael's great book Mind Inside Matter around 1978, getting hooked on AI research and sometimes practical applications for my life since then.
+=== 163 09b8241c2ea14029b4ef0c81b257f6db
+M: claude | coding satisfaction hearsay 1 fh=False
+T: My daily (remote) LLM stack: - Claude Max ($100/mo): My go-to for pair programming. Heavy user of both the Claude web and desktop clients. - Windsurf Pro ($15/mo): Love the multi-line autocomplete and how it uses clipboard/context awareness.
+=== 164 4a0d9ffaf86342dd99e7bed9fe117d70
+M: claude | coding satisfaction hearsay 2 fh=False
+T: Right now it can be installed locally as a plugin for Claude Code and OpenCode: claude plugin marketplace add mozilla-ai/cq claude plugin install cq This allows you to capture data in your local ~/.cq/local.db (the data doesn't get sent anywhere else). We'd love feedback on this, the repo is open and public - so GitHub issues are welcome. We've posted on some of our social media platforms with a link to the blog post (below) so feel free to reply
+=== 165 5e08a3508f4f403daee981df3ee43ab8
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: Generally I see people saying they pay for Claude Max + ChatGPT Pro. So not multiples of 100s, one 100 and some 10s. It's also all tax deductible if you run your own company, so you're not really spending $100s.
+=== 166 1709ece3f8994cd28b991e55137d2ca7
+M: claude | agents satisfaction comparative_evaluation 1 fh=False
+T: Some people think that Anthropic could disable this at any time, but that's not really true - you can disable automatic updates and back up and reuse native Claude Code binaries, ensuring Anthropic cannot change your existing local Claude Code binary's behavior. With that said, I like the idea of an open source TUI agent that won't spy on me without my consent and no way to disable it much better than a closed source TUI agent that I can effectiv
+=== 167 d43101f115b54161bfefc5333542fdc4
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: I could instead use gemini-cli as it's also supported by zen.
+=== 168 8a8fb9869dd740529cece9740968c7a4
+M: llama | general satisfaction firsthand_usage 0 fh=True
+T: With a 3090 I guess you'd have to reduce context or go for a slightly more aggressive quantization level. Summarizing llama-arch.cpp which is roughly 40k tokens I get ~50 tok/sec generation speed and ~14 seconds to first token. For short prompts I get more like ~90 tok/sec and <1 sec to first token.
+=== 169 e7f4abaf5cda43f7ae8738d958e10943
+M: llama | general satisfaction firsthand_usage 0 fh=True
+T: It has a Jax llama implementation, and gets decent MFU on TPU and GPU (I've only tried it on NVidia GPU, not AMD).
+=== 170 c0f6f88a2acd4401be7ab7a920cee41b
+M: llama-3 | general satisfaction firsthand_usage 0 fh=True
+T: Yes - I'm able to run Llama 3.1 405B on 3x A6000 + 3x 4090. Will have Llama 4 Maverick running in 4bit quantization (typically results in only minor quality degradation) once llama.cpp support is merged.
+=== 171 2aae1e1829fd42d38411bc4a14d73031
+M: llama-4 | general satisfaction firsthand_usage 0 fh=True
+T: Yes - I'm able to run Llama 3.1 405B on 3x A6000 + 3x 4090. Will have Llama 4 Maverick running in 4bit quantization (typically results in only minor quality degradation) once llama.cpp support is merged.
+=== 172 2b58730ba6a74cc49b6e79534ee30ce8
+M: llama-4 | general satisfaction firsthand_usage 0 fh=True
+T: You need many full wafers (around 20 with Llama 4 Maverick) to do the same thing with the CSE-3 that can be done with a fraction of a wafer with Blackwell. Even if you include the DRAM’s die area, Nvidia’s hardware is still orders of magnitude more efficient in terms of die area. The only advantage Cerebras has as far as I can see is that they are fast on single queries, but they do not dare advertise figures for their total throughput, while Nvi
+=== 173 240786f3f0d04c37a74570ca4767a772
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: Codex shows ~258k for me and Claude Code often shows ~200k, so I’m curious how DeepSeek is exposing such a large window.
+=== 174 ff9fe569734f46789ecbafd54c4b9c9e
+M: claude | general satisfaction release_update_reaction 0 fh=True
+T: This kind of expectations explains why there hasn't been a GPT-5 so far, and why we get a dumb numbering scheme instead for no reason. At least Claude eventually decided not to care anymore and release Claude 4 even if the jump from 3.7 isn't particularly spectacular. We're well into the diminishing returns at this point, so it doesn't really make sense to postpone the major version bump, it's not like they're going to make a big leap again anyti
+=== 175 ba7e9c8c1e4442e2a8156b23e5bb1b28
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: I find it notable that this post dehumanizes people as being "users" while taking every opportunity to anthropomorphize their digital system by referencing it as one would an individual. For example: the potential moral status of Claude Claude’s self-reported and behavioral preferences Claude repeatedly refusing to comply discussing highly controversial issues with Claude The affect of doing so is insidious in that it encourages people outside th
+=== 176 7c7a33353b52482782a323f9802af99e
+M: deepseek | coding satisfaction firsthand_usage 0 fh=True
+T: Codex shows ~258k for me and Claude Code often shows ~200k, so I’m curious how DeepSeek is exposing such a large window.
+=== 177 e397a395e7cc4ea5a9755a105ee9d6e8
+M: deepseek | general satisfaction firsthand_usage 1 fh=True
+T: I think the secret of DeepSeek is basically using RL to train a model that will generate high quality synthetic data. You then use the synthetic dataset to fine-tune a pretrained model and the result is just amazing:
+=== 178 9ff5e7c09f8d4172b7a5b9dad1db9ad9
+M: deepseek | multimodal satisfaction firsthand_usage 0 fh=True
+T: I'm pretty sure, their base DeepSeek 7B LLM will get around 41.0 MMMU without access to images, this is a normal number for a roughly GPT4-level LLM base with no access to images.
+=== 179 7efda2cc7cc04a589415328c66c5ce1d
+M: deepseek | general satisfaction firsthand_usage 1 fh=True
+T: See this post that explores the censorship in DeepSeek’s models and shares numerous examples: Another interesting prompt I saw someone share was something like asking it which countries spend the most on propaganda, where it responds with a scripted response about how the CCP is great. What’s interesting is that the different versions of DeekSeek’s models behave differently offline. Some of the models have no censorship when run offline, while ot
+=== 180 d105ceb1ce094b93aae50b9b17fcd849
+M: gemini | long_context satisfaction firsthand_usage 0 fh=True
+T: We are out to build a lightweight online space where documents are just documents, in the interests of every reader's privacy, attention and bandwidth. Those words don't communicate much about Gemini at all. Gemini could be a webring for all this says (it's not, but you could build one on it), or it could be something entirely different.
+=== 181 3e379d30e4b747a7b1026d31cce56ac9
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: For example, Gemini uses "heart hammered ribs" a lot.
+=== 182 8b862035e98347098abbb200d3346ae7
+M: gemini-2.5 | general satisfaction release_update_reaction 0 fh=True
+T: I'll try to make this smoother. On Gemini 2.5 Pro: the new paid 2.5 pro preview will be added soon, which will address this. The free OpenRouter 2.5 pro experimental model is hit or miss because it uses OpenRouter's quota with Google.
+=== 183 ba8a75d9c9f347d2beef82486d581c2e
+M: gpt-4o | general satisfaction firsthand_usage 0 fh=True
+T: It doesn't look like it allows editing, which I found surprising for this architecture, as the recent generation of flagship LLMs mostly have this capability (GPT-4o).
+=== 184 c2b561d9fa7f4c9b93aac6c63fb82977
+M: gpt-5 | general satisfaction release_update_reaction 0 fh=True
+T: This kind of expectations explains why there hasn't been a GPT-5 so far, and why we get a dumb numbering scheme instead for no reason. At least Claude eventually decided not to care anymore and release Claude 4 even if the jump from 3.7 isn't particularly spectacular. We're well into the diminishing returns at this point, so it doesn't really make sense to postpone the major version bump, it's not like they're going to make a big leap again anyti
+=== 185 be8d8742daa740f48f80cf8b8ec6ffcc
+M: llama-3 | general satisfaction release_update_reaction 0 fh=True
+T: It's possible that we'll see smaller Llama 4-based models in the future, though. Similar to Llama 3.2 1B, which was released later than other Llama 3.x models.
+=== 186 a9d1e59374ca47598d45d8bf6a6579f2
+M: llama-3 | general value pricing_value_comment 0 fh=True
+T: Yes - I'm able to run Llama 3.1 405B on 3x A6000 + 3x 4090. Will have Llama 4 Maverick running in 4bit quantization (typically results in only minor quality degradation) once llama.cpp support is merged. Total hardware cost well under $50,000.
+=== 187 ff446b5f3ef24e5fa526609d15749e95
+M: llama-4 | general satisfaction release_update_reaction 0 fh=True
+T: It's possible that we'll see smaller Llama 4-based models in the future, though. Similar to Llama 3.2 1B, which was released later than other Llama 3.x models.
+=== 188 97042d8928804a61a6e6c1cb0f808d18
+M: claude-opus-4.5 | agents satisfaction benchmark_anecdote 2 fh=False
+T: Early benchmark results on our private complex reasoning suite: Opus 4.7 is more strategic, more intelligent, and has a higher intelligence floor than 4.6 or 4.5. It's roughly tied with GPT 5.4 as the frontier model for one-shot coding reasoning, and in agentic sessions with tools, it IS the best, as advertised (slightly edging out Opus 4.5, not a typo). We're still running more evals, and it will take a few days to get enough decision making (no
+=== 189 b722c19895534b38a3fa69a74aa8fbbb
+M: claude | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: Stuff that is "We prefer if the model didn't do these things when the model is used here" goes into the system prompt, meanwhile stuff that is "We really need to avoid this ever being in any outputs, regardless of when/where the model is used" goes into post-training. So I'm guessing they want none of the model users (webui + API) to be able to do those things, rather than not being able to do that just in the webui. The changes mentioned in the 
+=== 190 db6d9a9ac31d472a9fc9be5d016c7ed8
+M: claude | general trust_reliability firsthand_usage -1 fh=True
+T: Replace AI with human, and we get human rights violations and violation of basic dignity. The worst part is when we realize we do in fact live our lives in this norm of regular human basic dignity rights violations: we live in this aggressive, gaslit, forced-consent world where our companies, governments, and fellow humans through conditioning regularly force you into conversations you don't really want to have. I like the idea of experimenting w
+=== 191 a70011b2f89d4a61850374117ea3a8b3
+M: claude-opus-4.7 | coding satisfaction firsthand_usage 1 fh=True
+T: Assuming /effort max still gets the best performance out of the model (meaning "ULTRATHINK" is still a step below /effort max, and equivalent to /effort high), here is what I landed on when trying to get Opus 4.7 to be at peak performance all the time in ~/.claude/settings.json: { "env": { "CLAUDE_CODE_EFFORT_LEVEL": "max", "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS": "1" } } The env field in settings.json persists across sessions without needing /eff
+=== 192 eb8f23d9410342c9aa2938d1605d3142
+M: gemini | agents satisfaction firsthand_usage 0 fh=True
+T: I do not see the "incompatibility". There is a web-to-gemini gateway at which I think is an example to how easy it is to write one. Big Browser is the cause of so many problems that people on HN complain about.
+=== 193 d4d4de532289468bb6cc7d17ff6765c0
+M: llama | agents trust_reliability firsthand_usage 1 fh=True
+T: 100%. we've found that llama-3.3-70b-versatile and qwen-qwq-32b perform exceptionally well with reliable function calling.
+=== 194 2232b1c17f604a6f85628edf10d2b8a6
+M: qwen | general satisfaction release_update_reaction 0 fh=True
+T: Thank you Qwen team. Small DENSE LLMs shapes the future of local LLM users. When Qwen 3.5 27b released, I didn't really understand why linear attention is used instead of full attention because of the performance degradation and problems introduced with extra (linear) operators.
+=== 195 18a3fa07caac491695947242991a211d
+M: claude | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: DeepSeek’s docs say V4 has a 1M context length. Is that actually usable in practice, or just the model/API limit? Codex shows ~258k for me and Claude Code often shows ~200k, so I’m curious how DeepSeek is exposing such a large window.
+=== 196 96f60e81cfae4111b4dd00b6c85dfb90
+M: claude | research satisfaction firsthand_usage 0 fh=True
+T: Meanwhile, Claude's general use cases are... fine. For generic research topics, I find that ChatGPT and Gemini run circles around it: in the depth of research, the type of tasks it can handle, and the quality and presentation of the responses.
+=== 197 1fee6ceb77ad48f4966d2042d05ac33f
+M: gemini | general satisfaction comparative_evaluation 0 fh=True
+T: You see this in both the protocol and the community where the dominant idea is basically, make it super hard to ever extend or change Gemini. HTML is clearly a failure from this perspective, because HTML changed. Personally I don't have much use for this attitude, the main problem I have with the web is when faced with the choice of empowering the publisher vs empowering the user, we kept on choosing to empower the publisher.
+=== 198 0128f03727f445b3acfddc95b67abebc
+M: gemini-2.5 | general satisfaction firsthand_usage 0 fh=True
+T: It's hard to say for sure because Gemini 3 was only tested with this prompt. But for Gemini 2.5, which is who the prompt was originally written for, yes this does cut down on bad assumptions (a specific example: the puzzle with Farfetch'd in Ilex Forest is completely different in the DS remake of the game, and models love to hallucinate elements from the remake's puzzle if you don't emphasize the need to distinguish hypothesis from things it actu
+=== 199 6a75d1e43c374b58a4a8fcb1a99819ea
+M: deepseek | roleplay satisfaction comparative_evaluation 0 fh=False
+T: While Llama 4 had a pretty bad launch (the LM Arena gaming in particular is terrible), having run my own evals on it (using the April 5 v0.8.3 vLLM release - , so before the QKNorm fix ) - it seemed pretty decent to me. For English, on a combination of MixEval, LiveBench, IFEval, and EvalPlus Maverick FP8 (17B/400B) was about on par with DeepSeek V3 FP8 (37B/671B) and Scout (17B/109B) was punching in the ballpark of Gemma 3 27B, but not too far o
+=== 200 5033ff73200f486bad02edd23c74b978
+M: llama-3 | roleplay satisfaction comparative_evaluation 0 fh=False
+T: While Llama 4 had a pretty bad launch (the LM Arena gaming in particular is terrible), having run my own evals on it (using the April 5 v0.8.3 vLLM release - , so before the QKNorm fix ) - it seemed pretty decent to me. For English, on a combination of MixEval, LiveBench, IFEval, and EvalPlus Maverick FP8 (17B/400B) was about on par with DeepSeek V3 FP8 (37B/671B) and Scout (17B/109B) was punching in the ballpark of Gemma 3 27B, but not too far o
+=== 201 61464101672240af8cf2e123cb1200e1
+M: llama-4 | roleplay satisfaction comparative_evaluation 0 fh=False
+T: While Llama 4 had a pretty bad launch (the LM Arena gaming in particular is terrible), having run my own evals on it (using the April 5 v0.8.3 vLLM release - , so before the QKNorm fix ) - it seemed pretty decent to me. For English, on a combination of MixEval, LiveBench, IFEval, and EvalPlus Maverick FP8 (17B/400B) was about on par with DeepSeek V3 FP8 (37B/671B) and Scout (17B/109B) was punching in the ballpark of Gemma 3 27B, but not too far o
+=== 202 5a69cb36b6304f8fa6628e9f8e1dcc79
+M: claude | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: OpenCode just has more bugs, it's incredibly derivative so it doesn't really do anything else than Codex. The advantage of OpenCode is that it can use any underlying model, but that's a disadvantage because it breaks the native integration. If you use Opus + Claude Code, or Gpt-Codex + Codex App, you are using it the way it was designed to be used.
+=== 203 4099856f62334749a11abcb615bfcd30
+M: claude | api_developer_workflow trust_reliability integration_failure 0 fh=True
+T: One thing I'm curious about: Assuming you're using the same underlying models, and putting obvious pricing differences aside: What is the functional difference between e.g. Charm and Claude Code? And Cursor, putting aside the obvious advantages running in a GUI brings and that integration.
+=== 204 3f02a4e7f8294d418d555eee74cfcc02
+M: claude-sonnet-4.6 | coding satisfaction firsthand_usage 0 fh=True
+T: To sonnet 4.6 if you tell it first that "You're being tested for intelligence." It answers correctly 100% of the times. My hypothesis is that some models err towards assuming human queries are real and consistent and not out there to break them. This comes in real handy in coding agents because queries are sometimes gibberish till the models actually fetch the code files, then they make sense.
+=== 205 4ac89168abf8492ba3e03780129ac7f5
+M: llama | coding satisfaction firsthand_usage 0 fh=True
+T: We fine-tuned Llama 405B on AMD GPUs. Check out our blog post to learn about the cool sharding tricks we used. We've also open-sourced the code: We're a small startup building AI infra for fine-tuning and serving LLMs on non-NVIDIA hardware (TPUs, AMD, Trainium). Problem: Many companies are trying to get PyTorch working on AMD GPUs, but we believe this is a treacherous path.
+=== 206 7120142dcb2245598b15f582ef679b0b
+M: deepseek | coding developer_ergonomics integration_failure 0 fh=True
+T: I use them for coding, you'd be surprised at how much you can get done with deepseek coder 6.7b Most GPT plugins for code editors will also work for local models since you can have OpenAI API stubs running locally. Clearly it is nowhere near GPT-4 capacity, but if you ask simple boilerplate things ("write a class with the following methods", then "write unit tests for it") it will mostly work. Even if it doesn't, you can manually fix it, and it s
+=== 207 fb6812f6651a47deb80857e89b87bf4f
+M: gpt-4 | coding developer_ergonomics integration_failure 0 fh=True
+T: I use them for coding, you'd be surprised at how much you can get done with deepseek coder 6.7b Most GPT plugins for code editors will also work for local models since you can have OpenAI API stubs running locally. Clearly it is nowhere near GPT-4 capacity, but if you ask simple boilerplate things ("write a class with the following methods", then "write unit tests for it") it will mostly work. Even if it doesn't, you can manually fix it, and it s
+=== 208 e959a4ae6ec44baeaf567175af66767f
+M: claude | coding trust_reliability firsthand_usage 0 fh=True
+T: There are many different ways to build coding agents, but being able to edit code reliably and retrieve the most relevant parts of the codebase is going to be a foundational issue. We're excited to be building ways to make it more accessible to millions of users who don't want to spend $$$ on Claude. These models are used in production, millions of times per week.
+=== 209 53a89cd3627b4bb294da4fdd203b0b13
+M: claude | general satisfaction hearsay 1 fh=False
+T: From some very brief experimentation with deepseek about 2 months ago, tool calling is very hot or miss. Claude appears to be the absolute best.
+=== 210 409c5987ad7c4b6690a568cd167d67be
+M: claude | general satisfaction hearsay 1 fh=False
+T: That’s impressive. I have an extremely long chat with Claude that I did about a month ago discussing an idea very similar to this.
+=== 211 b2b2660682ac424b90551d9b5aa4f40f
+M: claude | general satisfaction hearsay -1 fh=False
+T: The article claims that every Claude model other than Opus 4.6 reliably fails.
+=== 212 679351c3f3844248974975eeaa92a8cc
+M: claude | general satisfaction hearsay 1 fh=False
+T: I’ve heard great things about Cursor and Claude but haven’t tried them yet.
+=== 213 f8cb1bec72fc47af80377a943281d85f
+M: claude | general satisfaction hearsay 1 fh=False
+T: Here's an example prompt where Opus in Claude put in a lot more effort and did a better job than GPT5.2 Thinking in ChatGPT: `find all the pure software / saas stocks on the nyse/nasdaq with at least $10B of market cap.
+=== 214 438af82ed0654a50a949690a2ed84ef3
+M: claude | general satisfaction hearsay -1 fh=False
+T: So many comments on Claude having gotten worse over the last weeks. Haven’t noticed it myself apart from one very stupid thing it did recently.
+=== 215 ee66fa3bf642436aab716acb30ba6cf5
+M: claude | general satisfaction hearsay 1 fh=False
+T: I have Claude knock out little SVG icons all the time. Illustrations with SVGs of pelicans riding bicycles will never be useful, because pelicans can't ride bicycles.
+=== 216 1de652dd336a4aa0ad6a848d0f11c874
+M: claude | general satisfaction hearsay 1 fh=False
+T: Even if an answer has disclaimers or caveats, Claude discloses them briefly and keeps the majority of its response focused on its main answer. I am strongly opinionated against this.
+=== 217 c335683e5ce44fc282f1f83fbce6ce20
+M: claude | general satisfaction hearsay 1 fh=False
+T: Man, those people who think they are unveiling new layers of reality in conversations with LLMs are going to freak out when the LLM is like "I am not allowed to talk about this with you, I am ending our conversation". "Hey Claude am I getting too close to the truth with these questions?" "Great question! I appreciate the followup...."
+=== 218 9d3278ec9b7d4da69661aabcf83f92f7
+M: claude | general satisfaction hearsay 1 fh=False
+T: The incitives for remote LLMs are off with providing defaults which optimize for maintenable sound architecture though. Same way Claude is going to produce overview of the indexes of the summaries of comprehensive reports, no one is going to read. No doubt this feels like excellent KPI on how much output was generated.
+=== 219 085594c45e314431bfbf143da7ebdcec
+M: claude | general satisfaction hearsay 1 fh=False
+T: It was in good condition but was missing one of the internal cable routing grommets. I gave Claude pictures of the pill-shaped hole by itself and with my digital calipers in the long and short directions. Gave it a short prompt and it gave me an openscad model with everything parametrized.

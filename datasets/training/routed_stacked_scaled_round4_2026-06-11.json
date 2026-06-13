@@ -1,0 +1,137 @@
+{
+  "backend": "routed_rubric",
+  "evaluation": {
+    "group_field": "thread_id",
+    "groups": 157,
+    "runs": 8
+  },
+  "examples": 859,
+  "field_config": {
+    "aspect_category": {
+      "backend": "auto",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "sentence-transformers/all-mpnet-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "thenlper/gte-base"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        }
+      ],
+      "rubric_scale": 1.0,
+      "strategy": "flat"
+    },
+    "evidence_type": {
+      "backend": "auto",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "sentence-transformers/all-mpnet-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "thenlper/gte-base"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        }
+      ],
+      "rubric_scale": 0.0,
+      "strategy": "flat"
+    },
+    "firsthand_flag": {
+      "backend": "transformers",
+      "embedding_model": "bert-base-uncased",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "BAAI/bge-small-en-v1.5"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        }
+      ],
+      "rubric_scale": 0.0,
+      "strategy": "flat"
+    },
+    "polarity_score": {
+      "backend": "auto",
+      "embedding_model": "thenlper/gte-base",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "sentence-transformers/all-mpnet-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "BAAI/bge-small-en-v1.5"
+        }
+      ],
+      "nli_model": "cross-encoder/nli-deberta-v3-xsmall",
+      "nli_scale": 3.0,
+      "rubric_scale": 3.0,
+      "strategy": "ordinal"
+    },
+    "task_category": {
+      "backend": "auto",
+      "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "thenlper/gte-base"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "BAAI/bge-small-en-v1.5"
+        }
+      ],
+      "rubric_scale": 10.0,
+      "strategy": "flat"
+    }
+  },
+  "fields": {
+    "aspect_category": {
+      "accuracy": 0.47526612398246715,
+      "evaluated": 1597,
+      "macro_f1": 0.3738875235554164
+    },
+    "evidence_type": {
+      "accuracy": 0.5516593613024421,
+      "evaluated": 1597,
+      "macro_f1": 0.404447285293339
+    },
+    "firsthand_flag": {
+      "accuracy": 0.7557921102066374,
+      "evaluated": 1597,
+      "macro_f1": 0.7307542667427505
+    },
+    "polarity_score": {
+      "accuracy": 0.39887288666249215,
+      "evaluated": 1597,
+      "macro_f1": 0.3542963482788511
+    },
+    "task_category": {
+      "accuracy": 0.5867251095804634,
+      "evaluated": 1597,
+      "macro_f1": 0.3794436394335353
+    }
+  },
+  "mean_macro_f1": 0.44856581266077844
+}

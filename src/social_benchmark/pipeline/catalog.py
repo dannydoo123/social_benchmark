@@ -177,6 +177,7 @@ class ModelCatalog:
                     )
                 )
                 occupied.append(span)
+        mentions = [mention for mention in mentions if _mention_context_allows(text, mention)]
         return _drop_generic_mentions(sorted(mentions, key=lambda item: item.start))
 
     def detect_product_id(self, text: str) -> str | None:
@@ -194,6 +195,36 @@ class ModelCatalog:
 
 
 GENERIC_MODEL_IDS = {"claude", "claude-opus", "claude-sonnet", "claude-haiku", "gemini", "deepseek", "llama", "mistral"}
+
+# Text-level signals that a matched alias is not the LLM at all.
+GEMINI_PROTOCOL_SIGNALS = (
+    "gemini://",
+    "geminispace",
+    "gemini protocol",
+    "circumlunar.space",
+    "gemini browser",
+    "gemini capsule",
+)
+GROQ_HOSTING_SIGNALS = (
+    "openrouter",
+    "hosting the model",
+    "hosted on",
+    "hosted model",
+    "hosting provider",
+    "inference provider",
+)
+
+
+def _mention_context_allows(text: str, mention: "ModelMention") -> bool:
+    lowered = text.lower()
+    if mention.provider_id == "google" and mention.model_id.startswith("gemini"):
+        if any(signal in lowered for signal in GEMINI_PROTOCOL_SIGNALS):
+            return False
+    if mention.model_id.startswith("grok"):
+        window = lowered[max(0, mention.start - 80) : mention.end + 80]
+        if any(signal in window for signal in GROQ_HOSTING_SIGNALS):
+            return False
+    return True
 
 
 def _drop_generic_mentions(mentions: list[ModelMention]) -> list[ModelMention]:

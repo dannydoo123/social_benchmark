@@ -1,0 +1,287 @@
+{
+  "backend": "routed_rubric_gated_calibrated",
+  "evaluation": {
+    "calibrated": true,
+    "group_field": "thread_id",
+    "groups": 208,
+    "runs": 8
+  },
+  "examples": 1023,
+  "field_config": {
+    "aspect_category": {
+      "backend": "auto",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "sentence-transformers/all-mpnet-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "thenlper/gte-base"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        }
+      ],
+      "rubric_scale": 1.0,
+      "strategy": "flat"
+    },
+    "evidence_type": {
+      "backend": "auto",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "sentence-transformers/all-mpnet-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "thenlper/gte-base"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        }
+      ],
+      "rubric_scale": 0.0,
+      "strategy": "flat"
+    },
+    "firsthand_flag": {
+      "backend": "transformers",
+      "embedding_model": "bert-base-uncased",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "BAAI/bge-small-en-v1.5"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        }
+      ],
+      "rubric_scale": 0.0,
+      "strategy": "flat"
+    },
+    "polarity_score": {
+      "backend": "auto",
+      "embedding_model": "thenlper/gte-base",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "sentence-transformers/all-mpnet-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "BAAI/bge-small-en-v1.5"
+        }
+      ],
+      "nli_model": "cross-encoder/nli-deberta-v3-xsmall",
+      "nli_scale": 3.0,
+      "rubric_scale": 3.0,
+      "strategy": "flat"
+    },
+    "task_category": {
+      "backend": "auto",
+      "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "thenlper/gte-base"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "BAAI/bge-small-en-v1.5"
+        }
+      ],
+      "rubric_scale": 10.0,
+      "strategy": "flat"
+    }
+  },
+  "fields": {
+    "aspect_category": {
+      "evaluated": 2084,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.30134357005758156,
+          "covered": 628,
+          "precision": 0.6210191082802548
+        },
+        "0.60": {
+          "coverage": 0.19385796545105566,
+          "covered": 404,
+          "precision": 0.6757425742574258
+        },
+        "0.70": {
+          "coverage": 0.1362763915547025,
+          "covered": 284,
+          "precision": 0.7535211267605634
+        },
+        "0.80": {
+          "coverage": 0.10460652591170826,
+          "covered": 218,
+          "precision": 0.8165137614678899
+        },
+        "0.90": {
+          "coverage": 0.07341650671785029,
+          "covered": 153,
+          "precision": 0.8496732026143791
+        },
+        "0.95": {
+          "coverage": 0.04894433781190019,
+          "covered": 102,
+          "precision": 0.9215686274509803
+        }
+      }
+    },
+    "evidence_type": {
+      "evaluated": 2084,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.4995201535508637,
+          "covered": 1041,
+          "precision": 0.6551392891450528
+        },
+        "0.60": {
+          "coverage": 0.3565259117082534,
+          "covered": 743,
+          "precision": 0.6944818304172274
+        },
+        "0.70": {
+          "coverage": 0.2375239923224568,
+          "covered": 495,
+          "precision": 0.7373737373737373
+        },
+        "0.80": {
+          "coverage": 0.11852207293666027,
+          "covered": 247,
+          "precision": 0.7651821862348178
+        },
+        "0.90": {
+          "coverage": 0.053742802303262956,
+          "covered": 112,
+          "precision": 0.8482142857142857
+        },
+        "0.95": {
+          "coverage": 0.01871401151631478,
+          "covered": 39,
+          "precision": 0.8974358974358975
+        }
+      }
+    },
+    "firsthand_flag": {
+      "evaluated": 2084,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.9884836852207294,
+          "covered": 2060,
+          "precision": 0.7946601941747573
+        },
+        "0.60": {
+          "coverage": 0.9078694817658349,
+          "covered": 1892,
+          "precision": 0.8113107822410148
+        },
+        "0.70": {
+          "coverage": 0.7322456813819578,
+          "covered": 1526,
+          "precision": 0.8525557011795544
+        },
+        "0.80": {
+          "coverage": 0.5292706333973128,
+          "covered": 1103,
+          "precision": 0.8848594741613781
+        },
+        "0.90": {
+          "coverage": 0.3008637236084453,
+          "covered": 627,
+          "precision": 0.9282296650717703
+        },
+        "0.95": {
+          "coverage": 0.16026871401151632,
+          "covered": 334,
+          "precision": 0.9281437125748503
+        }
+      }
+    },
+    "polarity_score": {
+      "evaluated": 2084,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.710172744721689,
+          "covered": 1480,
+          "precision": 0.6108108108108108
+        },
+        "0.60": {
+          "coverage": 0.4740882917466411,
+          "covered": 988,
+          "precision": 0.6609311740890689
+        },
+        "0.70": {
+          "coverage": 0.2317658349328215,
+          "covered": 483,
+          "precision": 0.7060041407867494
+        },
+        "0.80": {
+          "coverage": 0.041746641074856046,
+          "covered": 87,
+          "precision": 0.7701149425287356
+        },
+        "0.90": {
+          "coverage": 0.025911708253358926,
+          "covered": 54,
+          "precision": 0.8333333333333334
+        },
+        "0.95": {
+          "coverage": 0.014395393474088292,
+          "covered": 30,
+          "precision": 1.0
+        }
+      }
+    },
+    "task_category": {
+      "evaluated": 2084,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.5043186180422264,
+          "covered": 1051,
+          "precision": 0.6365366317792579
+        },
+        "0.60": {
+          "coverage": 0.31957773512476007,
+          "covered": 666,
+          "precision": 0.6501501501501501
+        },
+        "0.70": {
+          "coverage": 0.15738963531669867,
+          "covered": 328,
+          "precision": 0.6859756097560976
+        },
+        "0.80": {
+          "coverage": 0.02399232245681382,
+          "covered": 50,
+          "precision": 0.76
+        },
+        "0.90": {
+          "coverage": 0.013915547024952015,
+          "covered": 29,
+          "precision": 0.7241379310344828
+        },
+        "0.95": {
+          "coverage": 0.012476007677543186,
+          "covered": 26,
+          "precision": 0.7692307692307693
+        }
+      }
+    }
+  }
+}

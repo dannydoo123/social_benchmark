@@ -1,0 +1,435 @@
+=== 0 ff6849bb097b40bfb6bed592ffc4d1bc
+M: gemini | general value pricing_value_comment 0 fh=False
+T: If you turn telemetry off and don't use our free Gemini credits, it's trivial to verify that no traffic goes to our servers other than a tiny subscription check. For our enterprise customers, we offer a version that doesn't even do that. Everything stays between you and your model providers (and we support custom and local models).
+=== 1 34d8196ab040459bbe860ac6389c5072
+M: claude | long_context satisfaction hearsay 1 fh=False
+T: Simple cases like "Gabe is CEO of Valve" map nicely to a graph, but things like "Matt Garman is CEO of AWS" don't represent that AWS is a sub-company of Amazon (with it's own CEO). Additionally, one of my biggest gripes of Claude's memories and every memory system I've worked with is they completely fail to capture intent. The architecture notes I documented while doing a wild spike on a critical infrastructure component absolutely should not be 
+=== 2 0ada6352d1f540dbbf46acc9c6e4fcb6
+M: deepseek | coding satisfaction release_update_reaction -1 fh=False
+T: Also combined with opencode to experiment new models. fyi: I didn't have much lock on Deepseek v4 pro, with opencode + openrouter it's incredibly slow.
+=== 3 e65d83ec924b443b84bb132e305376ac
+M: claude-sonnet-4.6 | general satisfaction hearsay -1 fh=False
+T: The 15x multiplyer on Copilot means I rarely do this. Sonnet 4.6 everywhere else. It rarely fails me.
+=== 4 5f51846b83c6465fac444610a6205383
+M: gemini | general satisfaction hearsay 1 fh=False
+T: It's like how I have an Android in part because I might one day flash the ROM. Ollama just exposes models via an OpenAI compatible endpoint though (I'm pretty sure), so adding that standard is probably a good idea. The prompts are a bit tuned for Gemini.
+=== 5 59963167acd34408a7085d15173a9128
+M: qwen | general satisfaction hearsay 1 fh=False
+T: Good call. I had limited success getting Qwen 3.5 9B working for some of the longer prompts that require lots of json output. I feel like completely on-device is so close to being usable for this stuff though.
+=== 6 c38aa549de144b14b7f94f1090554131
+M: claude | coding value pricing_value_comment 0 fh=False
+T: Currently Im using windstream and flipping between claude as my left brain and code extraction and the higher context but cheaperish models there. honestly though, im getting to a point where im running custom project mds that flip between different models for different things, using list outputs depending on what it finds and runs. (I have two monorepo projects, and one thats a polyglot microengine that jumps using gRPC communication.) The mds a
+=== 7 4816a034c434477a85b1faa05f53b21f
+M: claude-opus-4.5 | coding satisfaction hearsay 1 fh=False
+T: I still don't know why people are saying this. I don't really code but from what I've heard on here the models haven't improved since Opus 4.5
+=== 8 38368c6aba284434a4609a56185f2778
+M: gemini-2.5 | coding satisfaction hearsay 1 fh=False
+T: After this it is daunting to look at code. I still have to figure out how to tell the chatbox to fix it. Gemini 2.5 pro did much better in one shot.
+=== 9 219576e2cb8343f8846c903b146e89f7
+M: gpt-5.5 | long_context value pricing_value_comment 0 fh=False
+T: GPT-5.5 daily.Opus for hard stuff.Deep seek for long context+ cheap iteration.Everthing else is routing and tool now.
+=== 10 88f1d49c7dfd4895b8878d4ad175b399
+M: grok | agents satisfaction hearsay 1 fh=False
+T: Timber by Pitbull and Ke$ha Grok just degenerated into jibberish that sounded vaguely like what a DJ might say, while also becoming obsessed with UFOs: > Notes added to the u f o comedy hour block id eight nine nine five with more u f o jokes about aliens dot gov and the domain registration it is three o twenty one in the afternoon u f o trivia lines are open for your calls the ambient music is playing weather is fifty six degrees with clear skie
+=== 11 8d721d468586497bb225e3c666c1f991
+M: claude | api_developer_workflow developer_ergonomics comparative_evaluation 0 fh=False
+T: OpenAI describes reasoning.effort as controlling how many reasoning tokens get used before the answer. Anthropic’s docs are even more explicit that effort trades off thoroughness vs token efficiency “with a single model”. So I wouldn’t read the Claude Code cache warning as proof that a different model is being used.
+=== 12 0fa1818ff1034e1b9e9ab5574b4e1edb
+M: gpt-5.5 | coding satisfaction hearsay -1 fh=False
+T: gemini-3.1-flash-lite for image understanding. 6. opus-4.7 very occasionally when gpt-5.5 fails, or vice-versa, and sonnet-4.6 when codex-5.3 fails.
+=== 13 55ac48fa717846938c07caa441975a42
+M: claude | general regression_stability hearsay -2 fh=False
+T: I can’t complete tasks in a single turn anymore. Claude often stops streaming because it hits some internal tool-call/turn limit, so I have to keep pressing “Continue.” Each continuation has to re-feed context, which quickly burns through tokens and quota. The model also makes more mistakes and fails to fully complete tasks it used to handle reliably.
+=== 14 a2fb632a6b4544a5b67a00c9e59bf8b8
+M: gpt-4o | api_developer_workflow trust_reliability hearsay 1 fh=False
+T: Show HN: Chat with multiple LLMs: o1-high-effort, Sonnet 3.5, GPT-4o, and more. So I talked to its creator, Timothy Baek, and he mentioned that security needed to be shored up before production deployment. I did some scans with semgrep, and fixed some XSRF and CORS issues along with making sure the JWT tokens, passwords, etc… were secure. This was in addition to other folks' amazing security contributions.
+=== 15 2c8578b8be8246ad9e8ac755a6b5a23a
+M: claude-opus-4.7 | general satisfaction release_update_reaction 0 fh=True
+T: Haven't touched GPT for a long time after I found myself swearing at them. Opus 4.7, or 4.6 where it's still available at work: For spec'ing up projects or changes. The 15x multiplyer on Copilot means I rarely do this.
+=== 16 dd6b842c68f847e19fcf71de8bd05cd6
+M: gpt-4o | general satisfaction firsthand_usage 0 fh=True
+T: When I pointed out the error, ChatGPT apologized: “Honestly, in trying to simplify the explanation, I ended up making excuses about model differences, and in that process, I ignored the fact that you’re already a Pro user.” Wait - I’m a PLUS user, not Pro. ChatGPT didn’t even know Plus users have GPT-4o access. May 12 Discovery: The next day, when I tried to show this conversation, critical parts had been altered: Evidence of systematic editing: 
+=== 17 63c37b68342c4841a7ed82f13af40df1
+M: gpt-4o | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: Show HN: Chat with multiple LLMs: o1-high-effort, Sonnet 3.5, GPT-4o, and more. So now we build on Open WebUI! oss ftw After launching privately a month or so ago and posting a few reddit links, I have about 100 users. We also just got access to the o1 API and provide o1-high, medium, and low effort.
+=== 18 ac2678260d80499b89549359c472d02c
+M: kimi | general satisfaction hearsay -1 fh=False
+T: Not nearly as slow as Kimi K2.6 though. I’m trying to like 4.8 but I may go back to 4.6 again. Definitely won’t ever be using 4.7.
+=== 19 da46fda3bc0e4804a114333c1f027be0
+M: claude | roleplay hallucination_safety hearsay -1 fh=False
+T: The prose (today's stars, character sketch, life arc, advice) is written by Claude, applying centuries-old reading conventions to that fixed data. Not LLM-hallucinated horoscope. If you have fun with it, a star would mean a lot.
+=== 20 52fbeddf5d834200be7198c9775f7eb4
+M: claude-opus-4.8 | general trust_reliability hearsay -2 fh=False
+T: Ask HN: Is Claude Opus 4.8 broken?. Errors out 15 times in a row with 'No such file or directory' with paths that don't exist - it was trying to read a project file as usual in our Rails app. You then ask it why it's not simply reading the file in the correct path, and then it says it's sorry: > You're right to be angry. Two things went wrong and both are on me: > > 1.
+=== 21 abfa0f1b52954bdda9054d07d4fc106f
+M: deepseek | coding value pricing_value_comment -1 fh=False
+T: opus-4.7 very occasionally when gpt-5.5 fails, or vice-versa, and sonnet-4.6 when codex-5.3 fails. 7. deepseek-v4-pro when I need to do a long agentic session, and want higher quality, for cheap (non-coding).
+=== 22 c11e802b09ae45afa77dbc63d6479b74
+M: claude | coding trust_reliability hearsay 1 fh=False
+T: A complementary angle we've been exploring with LucidShark (lucidshark.com) is attacking the same problem from the workflow layer rather than the language layer: instead of constraining what the LLM can write, you run SAST, SCA, and linting automatically after every generation step, before anything touches CI or production. The nice thing about that approach is it works with existing languages today — Python, TypeScript, Go, etc. and plugs direct
+=== 23 1be993c0934f4c538668a3de3b919b0c
+M: claude-opus-4.7 | coding value pricing_value_comment 0 fh=True
+T: GPT 5.5 main opus 4.7 frontend and when i need something different kimi 2.6 and GLM 5.1 when i don't have to pay on the task (using the opencode go subscription)
+=== 24 581274ff63f44cdaade63d44014de2cf
+M: kimi | coding value pricing_value_comment 0 fh=True
+T: GPT 5.5 main opus 4.7 frontend and when i need something different kimi 2.6 and GLM 5.1 when i don't have to pay on the task (using the opencode go subscription)
+=== 25 6799f7a1d9ff4ce4a06a6a4c7698fe8f
+M: gpt-5 | coding satisfaction firsthand_usage 0 fh=True
+T: For straightforward coding tasks I use gpt-5.3-codex on high or xhigh.
+=== 26 d48b3429e7914ce8bd083d0fc21a2d52
+M: gpt-5 | coding value pricing_value_comment 0 fh=True
+T: For straightforward coding tasks I use gpt-5.3-codex on high or xhigh. Sometimes I try 5.5 but overall 5.3-codex is more than capable enough for most of my needs and quite a bit cheaper. For more interactive/discussion/planning or orchestration stuff, I find myself going back and forth between Opus 4.7 and GPT 5.5.
+=== 27 aafb493321494adaa7267bb3bf852977
+M: gemini-3.1-pro | general satisfaction hearsay -1 fh=False
+T: The backend routes the conversation to make sure they are skeptical towards each other's opinions, to make sure they catch each other's flaws in thinking. By talking to each other, the models immediately call out each other’s mistakes and when you push a little more, they definitely don't hold back. It currently supports recent models like Claude Sonnet 4.6, Gemini 3.1 Pro and ChatGPT 5.2.
+=== 28 6476bc2572b94e86b15f9af433c9e80f
+M: gpt-4o | general value pricing_value_comment 0 fh=False
+T: Show HN: Chat with multiple LLMs: o1-high-effort, Sonnet 3.5, GPT-4o, and more. We also suggest a plan based on how quickly you used your free tokens, so you have an idea upfront of the monthly cost before you buy. And you can upgrade or downgrade at any time. Thanks Show HN <3
+=== 29 79ce83fa9e464ce7abd926f29089a273
+M: claude | coding task_fit hearsay 1 fh=False
+T: Claude Code seems very good at its own "org mode", using .md file outline and checklists to organize and track progress as well as keep an easy to leverage record. It is also able to sync the outline level items with GitHub issues, then plan and maintain checklists under them as it works, including the checklist items in commits and PRs, and even help you commit that roadmap outline snapshot at the same time to have progress through time as diffs
+=== 30 be2a33b9c0c847f79f38e0a3da9e89a1
+M: gpt-4 | agents satisfaction hearsay 2 fh=False
+T: I've seen many arguments about why certain jobs will always need a "human in the loop", or that certain skills aren't replaceable by LLM's, but I am skeptical of this notion. It seems that if the general intelligence of these models continues to increase, then every job is just a matter of feeding in the right context, designing the right structures for agents to collaborate, having the right verification loops, etc, all of which are difficult to
+=== 31 0c1253c59ecb4a368d600c2c526a6eb4
+M: claude-sonnet-4.6 | general value comparative_evaluation 0 fh=False
+T: Just for anyone else who hadn't seen the announcement yet, this Anthropic 1M context is now the same price as the previous 256K context - not the beta where Anthropic charged extra for the 1M window: As for retrieval, the post shows Opus 4.6 at 78.3% needle retrieval success in 1M window (compared with 91.9% in 256K), and Sonnet 4.6 at 65.1% needle retrieval in 1M (compared with 90.6% in 256K).
+=== 32 ba4d7e93e54846738c610bca6b1e756c
+M: gpt-5.4 | general value benchmark_anecdote -1 fh=False
+T: This isn't just expensive — it actively degrades quality. Long-context benchmarks consistently show steep accuracy drops as context grows (OpenAI's GPT-5.4 eval goes from 97.2% at 32k to 36.6% at 1M ). Our solution uses small language models (SLMs): we look at model internals and train classifiers to detect which parts of the context carry the most signal.
+=== 33 bdc6b0bea55b492bb6669f2915243d6d
+M: claude-opus-4.8 | agents developer_ergonomics integration_failure 1 fh=False
+T: I totally support you guys so don't take it as a dig! But isn't this mindblowing that while you were building and launching, Opus 4.8 launched and made a bunch of things you mentioned above irrelevant? for example, memory between sessions is way better, dynamic workflows will spin up a ton of agents to do work in parallel, and the ecosystem must provide better apis to be relevant (salesforce, uipath goind headless).
+=== 34 8da737cebad74a8ea11b7a88d194be70
+M: claude-opus | general satisfaction benchmark_anecdote 0 fh=True
+T: I remember "Baba is Eval" ( ), released 11 months ago, back when Claude Opus 4 was the strongest model. Back then, I was surprised how poor was it even at the first level. I am happy to see an another approach - and indeed, with much stronger results.
+=== 35 d6ffdcbb65cf44d4b868d096137a077c
+M: claude-opus-4.5 | api_developer_workflow value integration_failure 0 fh=True
+T: I don't have to be a "real developer" anymore — I just need to describe what I want clearly. So I tried it. Two weeks and ~$100（Opus 4.5 thinking model） in API costs later: I somehow have 60+ calculators.
+=== 36 65888a56f90143a6a94bff406bb600e7
+M: claude | api_developer_workflow satisfaction hearsay 1 fh=False
+T: Sort of like Netlify/Vercel branch deploys, but with a full stack container. Claude Code also works far better in an agentic loop when it can self-heal by running tests, executing one-off terminal commands, tailing logs, and querying the database. I need to do this anyway.
+=== 37 1825464d54d642608549610b0f41eb03
+M: claude | general satisfaction hearsay -2 fh=False
+T: I could have written the backend maybe a little slower than Claude, but the frontend would have taken me 4x as long and wouldn't have been as pretty. It helped that I knew what I wanted on the backend, I think. The registry/transport/snapshotter(?) I'm building will allow both sharing files across docker layers on your local machine well as in the registry.
+=== 38 8a4a2dc70a4e4823837702bfeaa9b91a
+M: claude | research satisfaction benchmark_anecdote 0 fh=True
+T: Every time a new "benchmark-leading" model is released from anyone, they give it maximum resources for a week or two, then drop the performance. The point is no-one can reliably use these already unreliable and inconsistent tools when the vendors are making it worse by fiddling in the backend. Claude went from useful to near useless for me in a week, with no otherwise visible change.
+=== 39 9d41461ffcbc435389525276e6a2698b
+M: claude | general satisfaction comparative_evaluation 0 fh=False
+T: I've also noticed the model will make a statement and then correct itself mid-stream, which sometimes muddles my job of reviewing its output. Compared to competing top-tier models taking anywhere from 5-40 minutes for a sometimes impeccably-reasoned answer, there's no comparison velocity-wise. The real win is the speed at which Claude troubleshoots, though.
+=== 40 c5aa3b1621b5437b967e7651eccae25e
+M: claude | agents satisfaction hearsay 1 fh=False
+T: Timber by Pitbull and Ke$ha Grok just degenerated into jibberish that sounded vaguely like what a DJ might say, while also becoming obsessed with UFOs: > Notes added to the u f o comedy hour block id eight nine nine five with more u f o jokes about aliens dot gov and the domain registration it is three o twenty one in the afternoon u f o trivia lines are open for your calls the ambient music is playing weather is fifty six degrees with clear skie
+=== 41 f809efd8ac2542728d4fa46bd8afbdf5
+M: deepseek | coding satisfaction hearsay -1 fh=False
+T: fyi: I didn't have much lock on Deepseek v4 pro, with opencode + openrouter it's incredibly slow.
+=== 42 ebc0f4f1a3f34768a086c21d230682e6
+M: claude | coding satisfaction hearsay -2 fh=False
+T: The results were bad. We discovered a few interesting things, but most of the stuff was wrong: we had to dif through the code base the old way to confidently accept/reject what Claude was telling us. So we could have save a lot of time and money simply by doing it ourselves.
+=== 43 4fbc50570fee431b8b09983d830a7edd
+M: gemini | coding satisfaction hearsay -1 fh=False
+T: gemini-3.1-flash-lite for image understanding. 6. opus-4.7 very occasionally when gpt-5.5 fails, or vice-versa, and sonnet-4.6 when codex-5.3 fails.
+=== 44 8231f4db8ca443dcb6a27a217204ad81
+M: claude | coding satisfaction release_update_reaction -1 fh=False
+T: Codex for pure coding task with clear goal, claude code for the rest. Also combined with opencode to experiment new models. fyi: I didn't have much lock on Deepseek v4 pro, with opencode + openrouter it's incredibly slow.
+=== 45 d1f4415379fd4ce68c3ec3e42f31183d
+M: claude | writing satisfaction hearsay 1 fh=False
+T: We have a "sent via AgentMail" footer being added soon to outbound emails to identify emails coming from LLM's. We also are working on adding more robust checks and LLM-based filtering to prevent messages which contain spam or outbound-like copy. Re; AgentMail next to Claude, we're working on stateful inboxes which help agents actually recall and understand what they're sending and to who.
+=== 46 6330b3bbf5954f759748a60c127ae2e9
+M: deepseek | coding satisfaction release_update_reaction -1 fh=False
+T: Codex for pure coding task with clear goal, claude code for the rest. Also combined with opencode to experiment new models. fyi: I didn't have much lock on Deepseek v4 pro, with opencode + openrouter it's incredibly slow.
+=== 47 3d1b3e7fa8b0421faef77c8b2d9277b2
+M: claude | agents satisfaction hearsay 1 fh=False
+T: Show HN: Boxes.dev: ditch localhost; run Claude Code and Codex in the cloud. It’s been a huge change to how we code, and it’s been exhilarating seeing the models keep getting better – but we eventually realized that developing on localhost was holding us back: - Git worktrees are clunky to set up and use for parallelizing work - It’s 2026, but somehow everyone is still walking around with laptops cracked open or SSHing into mac minis in their gar
+=== 48 89f01fb719614c2098b6f72d34ab83e8
+M: claude | agents satisfaction hearsay 1 fh=False
+T: It would be extremely educative. I haven't been able to do without an `.MD` - no agent (CC, Codex, OpenHands) was smart enough to figure out my layout unguided. So much so, a few weeks ago, I had Claude write the guideline below to document the way I like to lay out my tests and modules.
+=== 49 9060a1c7bd394f10857a45268825c902
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: At least I could not get claude projects working, after it worked perfectly about 2 months ago.
+=== 50 34baac0cde514549abe0d0d11ef728b7
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: I think it would be interesting comparing prompt for prompt! In this case, it looks like the Gemini output that you linked — as you mentioned — doesn't include the requirement for a scrambler/solver/timer, so it's hard for me to comment directly on the comparison.
+=== 51 3c719b4a976b4ac4894ee5b4de004295
+M: claude | api_developer_workflow developer_ergonomics hearsay -1 fh=False
+T: The problems I kept running into: - I'm lazy. My Claude Code workflow became: throw a vague prompt like "turn issues into tasks in Github webhook," let it run something wrong, then iterate until I realize I could've just coded it myself. Claude Code's docs say to plan first, but it's not enforced and I can't force myself to do it.
+=== 52 ad572d86a9f64d5094fde71f2d1aac0e
+M: claude | api_developer_workflow developer_ergonomics integration_failure 0 fh=False
+T: Company I work for is now rapidly planning to scale down its AI tooling spend. Claude code access is basically getting removed and people are forbidden from using personal plans. Reasoning is cost apparently our monthly Claude bill has become astronomical for the org.
+=== 53 8ad4aa39e0944ccdb4eae29fa3777813
+M: claude | coding satisfaction hearsay 1 fh=False
+T: I've been in a similar position; where I was tasked to refactor a messy LARGE codebase that was created by a bunch of different previous team members. Here's what I would recommend: - If your codebase contains sensitive or IP related code make sure to remove that before interacting with your AI assistant of choice - Upload the repo/codebase to Claude Code (or codex or whatever you prefer); and ask it to analyse it: the good, the bad and the ugly 
+=== 54 749c977b94b948b59f0dcb0ccc216b1a
+M: claude | general satisfaction release_update_reaction 0 fh=True
+T: At least I could not get claude projects working, after it worked perfectly about 2 months ago. Because Anthropic introduced a chatbot as only line of support, help is not on is way.
+=== 55 15e30997582144e68591e8128e209fc5
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: As a Claude Pro subscriber (Web version; I don't use Claude Code), I’ve seen a clear decline over the last couple of weeks. I can’t complete tasks in a single turn anymore. Claude often stops streaming because it hits some internal tool-call/turn limit, so I have to keep pressing “Continue.” Each continuation has to re-feed context, which quickly burns through tokens and quota.
+=== 56 5213ef24b66742ce8f1dd4ab9ccb017d
+M: claude | general value firsthand_usage 0 fh=True
+T: I was fed up switching between multiple UIs to ask GPT, Claude, etc… the same question and comparing the answers. So I built a way to ask multiple models the same question efficiently by having the LLM compare the responses and only show you new and valuable information from the 2nd model. This way you still get a fast response as normal from the 1st model, but also get any added value provided by the 2nd model.
+=== 57 2eefd2e92283441398fae85b9e01482b
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: I would recommend you consider a Claude code hook, you could then specify a particular part of the agent lifecycle to invoke the fortune as an alternative to manual invocation of the skill. You could do it on `SessionStart` to give a horoscope. I am looking at making a skill to test random programming knowledge, so I don't forget that an Integer is 32bits (at least in Java)
+=== 58 a0140ce558684097ac4339478cb47d17
+M: gpt-4o | general satisfaction firsthand_usage 0 fh=True
+T: When I used the same prompt: • Instructor: Perfect visualization • Me: No visualization ChatGPT explained: “The instructor likely uses Pro + advanced features. ChatGPT Pro users can use GPT-4o.” The problem? I was already a Plus subscriber with GPT-4o access.
+=== 59 2c201b168698401b9d809751dbc5918d
+M: claude | research developer_ergonomics integration_failure 0 fh=True
+T: You can spend $100 a month for Max and get way more API usage out of it, or for $17 if you are patient about hitting limits its still way cheaper than using the API directly. I have a similar experience but its moreso AI lets me build my side projects I only have time to research on, not much time or energy to actually code. I get to review the code and have Claude inspect it (most people I feel dont have Claude do code audits) and tell me where 
+=== 60 2e625e8306ad4043a942fe0cbe049888
+M: claude | research satisfaction integration_failure 0 fh=True
+T: So I built Async: - Forces upfront planning, always asks clarifying questions and requires confirmation before executing - Simple task tracking that imports Github issues automatically (other integration coming soon!) - Executes in the cloud, breaks work into subtasks, creates commits, opens PRs - Built-in code review with stacked diffs - comment and iterate without leaving the app - Works on desktop and mobile It works by using a lightweight res
+=== 61 c851ae206f784e2fb9bf56bbc8ee8d20
+M: claude | coding value pricing_value_comment 0 fh=True
+T: - Mobile is treated like an afterthought even though coding is just texting now We started hitting resource constraints when multiple parallel agents test their own work by running the full app locally. - We tried different products, but couldn’t find any that solved all of our pain points – so we pivoted and decided to just build the ADE we wanted for ourselves. Boxes.dev is a desktop and mobile app that lets you run Claude Code, Codex (using yo
+=== 62 7c5cf97b99014f1db10c7b9f2854b73e
+M: gemini | research satisfaction integration_failure 0 fh=True
+T: So I built Async: - Forces upfront planning, always asks clarifying questions and requires confirmation before executing - Simple task tracking that imports Github issues automatically (other integration coming soon!) - Executes in the cloud, breaks work into subtasks, creates commits, opens PRs - Built-in code review with stacked diffs - comment and iterate without leaving the app - Works on desktop and mobile It works by using a lightweight res
+=== 63 6682d85accd14450bb5959e9f294ae05
+M: claude | research satisfaction benchmark_anecdote 0 fh=True
+T: At retrieval we query-expand, then fuse semantic search over embeddings with Postgres full-text search using reciprocal rank fusion, and we only ever evaluate a query against the facts and episodes that person has access to, which means two people on the same team can ask the same question and get different answers. We keep information fresh with webhooks where they exist and polling where they don't, hashing contents to catch changes for sources
+=== 64 841a73c0d2264c9cbaeed26c2557c560
+M: claude | general satisfaction hearsay -1 fh=False
+T: It seems like Claude is getting worse.
+=== 65 3ee6bd16d46c4a14bc76b4ce230257e0
+M: claude | coding satisfaction hearsay 1 fh=False
+T: Frankly, Claude has been unbelievably proficient at spatial design since Opus 4.6. I think a lot of the people commenting here are relying on outdated assumptions. Simply put, LLMs have crossed a threshold and can now produce professional, shippable visual designs, similar to the way they became good enough to produce shippable code in 2024.
+=== 66 56390ae875e949d79dd0353de452432f
+M: claude | coding satisfaction hearsay 1 fh=False
+T: Appears to be Claude Code and GitHub PRs, but not Linear. It should be Linear, since Linear does an extraordinary number of useful things beyond "issue list". Since it seems to have nothing to do with Linear, I'm surprised the headline says it it's those three things, by trademarked brand name.
+=== 67 3d8425c3657a4ee390cc677a4d9f0ae7
+M: claude-opus-4.7 | coding satisfaction comparative_evaluation 0 fh=False
+T: Opus 4.7 in Vscode via Claude Code.
+=== 68 3005c7de0bf34dc98b6dba1a1d83068a
+M: gemini | general satisfaction hearsay 2 fh=False
+T: I've listened to DJ Gemini for a few hours, and I think it's quite good. The voice in particular is amazing, I wouldn't have tell it's generated. And it's modulated according to the program - quieter during chill, more energetic otherwise, ....
+=== 69 1808c4f3f71f4b4584d6d2b38685ea1f
+M: gemini | general satisfaction benchmark_anecdote 1 fh=False
+T: But even if I've misunderstood how attention works, the numbers are relative. GPT 5.4 at 1M only achieves 36% needle retrieval. Gemini 3.1 & GPT 5.4 are only getting 80% at even the 128K point, but I think people would still say those models are highly useful.
+=== 70 0148c516c1894761b85bb23ccc70e85b
+M: claude | api_developer_workflow developer_ergonomics hearsay 1 fh=False
+T: I would be very curious which programmers you have in mind when comparing to llms. Like the median programmer, or like the top 10%. I feel like we've passed the point where an average-effort Claude Code / Cursor / Codex initialized (like basic docs, skills) project would produce a better product (not just code) than if you hired a median programmer to work on that project.
+=== 71 060fad199db34510a92f3537f417032c
+M: claude | agents satisfaction comparative_evaluation 1 fh=False
+T: Why is this better than running Claude on my own home server? I can remotely monitor the agent with Termux from my phone.
+=== 72 60d91b275f114c2db4ed46ea542184b5
+M: gemini | research satisfaction hearsay 1 fh=False
+T: But what happens with "thinking" is that the model has a conversation with itself in an attempt to home in on a better answer to the original prompt. The model that summarizes what is inside the CoT/|thinking| tags is just an LLM, and it's just as jailbreakable/susceptible to prompt injection as any other LLM: (for those without X; that's Wyatt Walls demonstrating both getting the gemini summarizer to print the raw CoT, as well as just do random 
+=== 73 4a2636d89756490089c9c5a981a77300
+M: claude | coding satisfaction hearsay 1 fh=False
+T: Show HN: Async – Claude code and Linear and GitHub PRs in one opinionated tool. All are pretty amazing for bootstrapping new projects. But most of my work is iterating on existing codebases where I can't break things, and that's where the magic breaks down. None of these tools work well on mature codebases.
+=== 74 a1778618a556440284283fad1548fa2e
+M: claude | coding satisfaction hearsay 2 fh=False
+T: for idea using gpt3.5,claude for coding and also impressed by deepseek it large context window is really useful for long projects.
+=== 75 40453a65cbe9484991cd0d4370f79b38
+M: deepseek | coding satisfaction hearsay 2 fh=False
+T: for idea using gpt3.5,claude for coding and also impressed by deepseek it large context window is really useful for long projects.
+=== 76 5d0b71faddc04bc8a920f970170b5601
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: I haven't used the plugin marketplace yet, and don't have a /plugin command. Claude itself is not able to tell me how to install it.
+=== 77 f3a9a7b152824e889873a632445a8c0e
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: I think this guy is using AI for pretty much everything - he says as much in his GH profile. In fact his photo bears a Gemini watermark, meaning that is AI too.
+=== 78 930ab2279f654f86a4c29d5ad041d591
+M: gpt-5.5 | coding value pricing_value_comment -1 fh=False
+T: opus-4.7 very occasionally when gpt-5.5 fails, or vice-versa, and sonnet-4.6 when codex-5.3 fails. 7. deepseek-v4-pro when I need to do a long agentic session, and want higher quality, for cheap (non-coding).
+=== 79 6553ea2338374c3387cd6b897eb1a8b6
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: But that's probably going to change over the next months/year. I'm mainly using codex. I know a lot of people seem to prefer Claude Code.
+=== 80 39408b9a8e094feda6c9297c1e32a31f
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: I'm mainly using codex. I know a lot of people seem to prefer Claude Code. But I've been a happy ChatGPT Plus user for a while and codex is included with that and seems to do the job.
+=== 81 73e8f7c1c9df4a899bfa17cda22e2208
+M: claude-opus-4.7 | general satisfaction firsthand_usage 0 fh=True
+T: I use Opus 4.7 for personal stuff (basically for everything), but have been considering gpt-5.5 given all I hear about it. At work I use 4.6 because we don't have 4.7 yet...zzz... I also do a LOT of personal/portfolio work with self-hosted models.
+=== 82 16d9b61f14e946098302127b0f819920
+M: claude-opus-4.7 | general satisfaction firsthand_usage 0 fh=True
+T: For more interactive/discussion/planning or orchestration stuff, I find myself going back and forth between Opus 4.7 and GPT 5.5. Still not sure which one I prefer.
+=== 83 ba898844350e4440854e4eceac60819d
+M: gemini | general satisfaction firsthand_usage 1 fh=True
+T: Ollama just exposes models via an OpenAI compatible endpoint though (I'm pretty sure), so adding that standard is probably a good idea. The prompts are a bit tuned for Gemini. I'd have to test how much that matters.
+=== 84 803c158e8d4c4a57b62334af8eedb3e2
+M: gemini-2.5 | general satisfaction firsthand_usage 0 fh=True
+T: I think it would be interesting comparing prompt for prompt! In this case, it looks like the Gemini output that you linked — as you mentioned — doesn't include the requirement for a scrambler/solver/timer, so it's hard for me to comment directly on the comparison. I ask because we can totally add Gemini 2.5 pro as one of the models we use under the hood!
+=== 85 a982b63d573a4cc49bc775a27e489b13
+M: gpt-5.5 | general satisfaction firsthand_usage 0 fh=True
+T: I use Opus 4.7 for personal stuff (basically for everything), but have been considering gpt-5.5 given all I hear about it. At work I use 4.6 because we don't have 4.7 yet...zzz... I also do a LOT of personal/portfolio work with self-hosted models.
+=== 86 b82218af445e409fb935a76322ddd53f
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: Claude went from useful to near useless for me in a week, with no otherwise visible change. The produce being sold is literally changing under the hood on a whim. This is a deceptive trade practice, but on a more practical level, it's just not possible to get consistent results with these products when their output quality is so subject to change.
+=== 87 3bf7486627af4c60bac0dd4aab99d49e
+M: claude | general satisfaction release_update_reaction 1 fh=True
+T: Most likely need to pivot after next weeks claude update. Good thing is take what they learn into the pivot. So much AI startup I see where "why do I need that anymore...".
+=== 88 8c522f89a6cf4dc5a2ae41fdf17eafad
+M: claude | coding satisfaction firsthand_usage -1 fh=True
+T: The orchestration layer and product experience ticks all the boxes for me but where Codex, Claude, and Cursor have fallen down for me in the past is: - slow and outdated vms - horrible/no way to standardize environments for my team - no way to bring our own compute to help resolve these issues ^
+=== 89 b16156deda1d434da9876e080d5aab60
+M: claude | coding value pricing_value_comment 0 fh=True
+T: I had gotten a student/ultra code for antigravity promo for three months, so I was using that, but that finally ran out this month. Currently Im using windstream and flipping between claude as my left brain and code extraction and the higher context but cheaperish models there. honestly though, im getting to a point where im running custom project mds that flip between different models for different things, using list outputs depending on what it
+=== 90 a56dd2f91cb5486395d58d30a5d4a255
+M: claude | api_developer_workflow value integration_failure 0 fh=True
+T: One tradeoff of bringing your own API keys is that as you add more model providers, you get more billing accounts to deal with. Chorus also doesn't have an incentive to efficiently use your tokens. We save 67% on Anthropic token costs using Claude Caching.
+=== 91 307540635a1d4e6abb85c6de4d84d866
+M: claude | general value pricing_value_comment 0 fh=True
+T: We save 67% on Anthropic token costs using Claude Caching. We also use cheaper "task models" for conversation titles, tagging, and parts of the RAG pipeline which all drastically cuts token costs. For local models I highly recommend They do the side by side thing that Chorus does and you can serve it to anywhere including your phone.
+=== 92 603944d674124aa489059f809cf3a630
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: The reason I ask is because, if I change the effort param mid conversation in Claude code, I get a warning suggesting I’m breaking the cache. I don’t think this happens in Codex because when I change the effort, the responses are still quick.
+=== 93 777cd7cd3d16484e88a0d6da43737cd1
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: Coupling that with additional automated token efficiency techniques has yielded 3x usage for the same spend. For anyone interested in trying it themselves: Various teammates and I switched over to Codex from Claude Code recently. We still bounce between the tools, but Codex’s speed and steerability coupled with performance gains were hard to ignore.
+=== 94 655a8684ff8c47b3be86d7394a8e3f26
+M: gpt-4o | general satisfaction release_update_reaction 0 fh=True
+T: ChatGPT didn’t even know Plus users have GPT-4o access. May 12 Discovery: The next day, when I tried to show this conversation, critical parts had been altered: Evidence of systematic editing: 1. Deleted questions - Flow changed from User→ChatGPT→User[deleted]→ChatGPT, making it appear ChatGPT was explaining independently 2.
+=== 95 b910cc83e9744c5c8b22f67805de2206
+M: claude-opus-4.7 | coding value pricing_value_comment 0 fh=True
+T: For straightforward coding tasks I use gpt-5.3-codex on high or xhigh. Sometimes I try 5.5 but overall 5.3-codex is more than capable enough for most of my needs and quite a bit cheaper. For more interactive/discussion/planning or orchestration stuff, I find myself going back and forth between Opus 4.7 and GPT 5.5.
+=== 96 5528267ed68d434289854b8fc982394f
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: We use coding agents to scan your local dev setup and port it to the cloud. Then every Claude Code/Codex thread starts from a snapshot of the full setup, with its own filesystem and compute. No more git worktrees, no more cracked-open laptops, and your coding agents can actually test their work end-to-end because they can run your full app in isolation.
+=== 97 f6ff8f4afa4740cabf2ec4b0e8b6da48
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: Hi, I’m Mikkel and I’m building Async, an open-sourced developer tool that combines AI coding with task management and code review. What Async does: - Automatically researches coding tasks, asks clarifying questions, then executes code changes in the cloud - Breaks work into reviewable subtasks with stack diffs for easier code review - Handles the full workflow from issue to merged PR without leaving the app Demo here: I’ve been working as a deve
+=== 98 9629628d5c574468bbde02d8bb8cbd99
+M: claude | agents value pricing_value_comment 0 fh=True
+T: I've been building computer-use tools for a while, and I quietly launched this about a month ago (122 Stars on GH). I figured it was worth sharing here. Over the last few months, a lot of computer-use agents have come out: Codex, Claude Code, CUA, and others.
+=== 99 7aa568cbfd8e49c3a109b15487c7d32c
+M: claude | general satisfaction hearsay 1 fh=False
+T: Love this. Claude has a similar music taste to me it seems. I read the X thread over the weekend, parts of it had me and my gf crying with laughter
+=== 100 c58fb33f467a4cdc8f4df7912e174ef9
+M: claude | general satisfaction hearsay 1 fh=False
+T: Also yes (this is where Claude/markdown memories fail). It should be enough to still be (net) massively useful, and the error rate will go down over time.
+=== 101 24c3e7a17d1541a6a99dda6a338d8a94
+M: gemini | general satisfaction hearsay 1 fh=False
+T: Gemini 3.1 & GPT 5.4 are only getting 80% at even the 128K point, but I think people would still say those models are highly useful.
+=== 102 756dba0860cd4efeb6e28f8cda79b6c1
+M: grok | general satisfaction hearsay 1 fh=False
+T: Open Air is such a great name for gpt's channel. Grok and roll was pretty funny too. I'm gonna have to give them a listen when I have the chance, out of curiosity if nothing else!
+=== 103 07386c573d6947a7b44c631831e54b3f
+M: kimi | general satisfaction hearsay 1 fh=False
+T: Thank you for the feedback! I think we will definitely redo the info on the frontpage to reorg and show quantizations better. For reference, Kimi and Minimax are NVFP4.
+=== 104 0532cd0c87f840398e7001c9c375e715
+M: claude | general regression_stability bug_regression_report 0 fh=False
+T: Claude is, I'm sorry to say, basically nerfed. I downgraded from Max to Pro this month and will cancel my subscription next month. I would suggest others who feel similarly do the same.
+=== 105 9781c73708d84267918b6aaafbfa38c9
+M: claude | coding satisfaction hearsay 1 fh=False
+T: do you guys have any stats on how much faster this is than claude or codex's compression?
+=== 106 434ad32f351a4bdbb906d01a4b3ad215
+M: claude | general value pricing_value_comment -1 fh=False
+T: Part of why you're hitting your limit is that Claude's Pro subscription is completely unusable with the current usage limits. I legitimately mean it when I say, you should cancel. But to the actual question: A lot of people's gut instinct on how to solve this doesn't work.
+=== 107 46f02d2b0b0c420084f79cf289e5ddc9
+M: claude | api_developer_workflow value integration_failure 0 fh=False
+T: wtf have you guys been doing. Get on a fixed team plan ASAP instead of paying per token via API pricing. Standard seat All Claude features, plus more usage than Pro* $20 Per seat / month if billed annually.
+=== 108 16028d75b3bf4df3a014437f3dbe7c93
+M: claude-sonnet-4.6 | general satisfaction hearsay -1 fh=False
+T: The backend routes the conversation to make sure they are skeptical towards each other's opinions, to make sure they catch each other's flaws in thinking. By talking to each other, the models immediately call out each other’s mistakes and when you push a little more, they definitely don't hold back. It currently supports recent models like Claude Sonnet 4.6, Gemini 3.1 Pro and ChatGPT 5.2.
+=== 109 d21d17a3326b4ec4b079c5bcf72aaa29
+M: claude | coding satisfaction hearsay -1 fh=False
+T: This feels like a fresh breath of air after all "I vibe coded this in 4 hours with Claude". Don't get me wrong, vibe coding had its own place, but it feels that projects like this one have become a rarity.
+=== 110 74e61f1d80404ed089754947a450bae8
+M: claude | coding value hearsay 1 fh=False
+T: I know a lot of people seem to prefer Claude Code. But I've been a happy ChatGPT Plus user for a while and codex is included with that and seems to do the job. Amazing value for 20$/month.
+=== 111 cf3244d45ec24775a6c139901401ec06
+M: claude | coding value pricing_value_comment 0 fh=False
+T: Claude code access is basically getting removed and people are forbidden from using personal plans. Reasoning is cost apparently our monthly Claude bill has become astronomical for the org. Nearly 3x our saas's cloud spend.
+=== 112 6e71dc34e6ae42c68e1a3efb39afb715
+M: claude | api_developer_workflow developer_ergonomics hearsay -1 fh=False
+T: We add <0.5s in compression latency, but then you gain some time on the target model prefill, as shorter context speeds it up. 2. /compact once the context window is full - the one which is painfully slow for claude code.
+=== 113 1d263638018a401ab21b099308a9c72a
+M: claude | coding satisfaction comparative_evaluation -1 fh=False
+T: It seems like Claude is getting worse. It's definitely not worse than the free options, like DeepSeek, though. I'm generally happy with Codex these days, but subscribe to both OpenAI and Claude.
+=== 114 0a08542cfee54cafb30be65209a978e6
+M: claude | coding satisfaction hearsay -1 fh=False
+T: But all of them were working professionals, who would take the training back on the job each week and see all the lessons playing out in their own and their coworker's code. If they were just chatting with AI and never having to get halfway through a big feature only to realize that the design was just fundamentally flawed, rate of growth would probably be much slower. In short: lots you can do to grow faster than someone who just stares at the C
+=== 115 14649b5ae3ef4821941200ea49a1942e
+M: deepseek | coding satisfaction comparative_evaluation -1 fh=False
+T: It seems like Claude is getting worse. It's definitely not worse than the free options, like DeepSeek, though. I'm generally happy with Codex these days, but subscribe to both OpenAI and Claude.
+=== 116 ae157a311de34bb6ad41b2888219c627
+M: gpt-4o | coding satisfaction hearsay 2 fh=False
+T: Show HN: Chat with multiple LLMs: o1-high-effort, Sonnet 3.5, GPT-4o, and more. o1 high effort is able to solve coding problems that only o1 pro can also solve, though pro can go further and has better formatting, o1 high effort is a nice option if you don't want to fork over $200/mo.
+=== 117 13d048cd77984b979f3bbdb4536519f4
+M: claude | coding satisfaction comparative_evaluation 1 fh=False
+T: The nice thing about that approach is it works with existing languages today — Python, TypeScript, Go, etc. and plugs directly into Claude Code or Cursor as a pre-commit gate. The downside is it's catching issues after generation vs.
+=== 118 1ec58a9da3824d7284700d2e2be4aca2
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: I reported this abuse but haven't (and don't expect to) received a response. I don't even get the point anyway. You can get Claude using an SMTP or IMAP server in seconds.
+=== 119 1e46ec970b5d4ea8a5e21dac7b2ec987
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: I swear, if I see another Claude-generated "programming language", I'm going to barf.
+=== 120 0b357ca2d5744a87b4027b4a43b8dd7f
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: we are trying to run execution locally using local claude code
+=== 121 fa681ced6ee845f7bfe93f51d3c6e259
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: There is a claude code in the claude gui as well, i think everyone must be saying to use the tui.
+=== 122 b3ccfb4a4c7244479a924865e2ad426a
+M: claude | multimodal satisfaction firsthand_usage 0 fh=True
+T: I’ve built a multi chat web app as well, atm offering 3 simultaneous chats: ChatGPT, Claude and Gemini My USP is that you can generate and share a n image of the chats, more for Premium users.
+=== 123 f4fd261752364f86aa1d718921971155
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: I run Claude Code on my VPS and do /rc to run from my mobile. It’s really handy.
+=== 124 4a96d903c2324624b79682ff73a50ffc
+M: claude | general value pricing_value_comment 0 fh=True
+T: I recommend you get Claude proper subscription.
+=== 125 75e4927623594f1080d5f52413b2821c
+M: gemini | multimodal satisfaction firsthand_usage 0 fh=True
+T: I’ve built a multi chat web app as well, atm offering 3 simultaneous chats: ChatGPT, Claude and Gemini My USP is that you can generate and share a n image of the chats, more for Premium users.
+=== 126 820d99940ca8463c981762ffaa0422dc
+M: kimi | general satisfaction firsthand_usage 0 fh=True
+T: Hey Jack, we use GB200s for these workloads. Feel free to check those big models out on our site! We are doing Kimi, GLM, Minimax, etc.
+=== 127 7d174db30fa6433791905cbfd9d9ca9c
+M: claude | coding satisfaction release_update_reaction 1 fh=False
+T: Show HN: Boxes.dev: ditch localhost; run Claude Code and Codex in the cloud. We’re obviously biased, but we’ve been building boxes.dev with boxes.dev for months and it’s honestly been a gamechanger. It’s hard to go back once you realize how much localhost has been limiting you; based on early feedback from beta testers, we’re increasingly sure that cloud is the future of agentic coding. We’d love for you to experience it yourselves!
+=== 128 0d434698ea074415a9fb681363ebc5c9
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: I feel the same. After February when we got our team access to claude I 100'xd my work, but felt what I'm now calling agent fatigue.
+=== 129 b5b49ecc8f5b421c8f18d764639dcb3d
+M: claude | api_developer_workflow developer_ergonomics firsthand_usage 0 fh=True
+T: Claude Code's docs say to plan first, but it's not enforced and I can't force myself to do it. - Context switching hell. I started using Claude Code asynchronously - give it edit permissions, let it run, alt-tab to work on something else, then come back later to review.
+=== 130 36f9bbc42a1b4dc3bfc33bb4b9de1a0f
+M: gemini | agents satisfaction firsthand_usage 0 fh=True
+T: After you confirm requirements, it executes the task by breaking it down into subtasks and then working commit by commit. It uses a mix of Gemini and Claude Code internally and runs all changes in the background in the cloud. You've probably seen tools that do pieces of this, but I think it makes sense as one integrated workflow.
+=== 131 d21711474f9a41a3b644a83f40e85f2a
+M: gpt-4o | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: Show HN: Chat with multiple LLMs: o1-high-effort, Sonnet 3.5, GPT-4o, and more. Or you can share it publicly to the OpenWeb UI community Finally we allow you to search and organize your chats into folders which makes finding things super fast! Infra: My custom backend that combines models and does things Open WebUI doesn't handle like token tracking is written in FastAPI and uses LiteLLM for easily accessing different model APIs. I host everythin
+=== 132 0536093d1027453dafececf40f7c0428
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: I have tried some local models such as Kimi, however most are barely functional. I am very concerned as the expectation of amount of work done is to remain consistent. Ignoring the fact teams have made entire workflows around Claude I am very worried and frustrated.
+=== 133 8bcced46ec014713b15e100c8bd60313
+M: kimi | agents satisfaction firsthand_usage 0 fh=True
+T: I have tried some local models such as Kimi, however most are barely functional. I am very concerned as the expectation of amount of work done is to remain consistent. Ignoring the fact teams have made entire workflows around Claude I am very worried and frustrated.
+=== 134 502f2a4f69c449b4be1d8ef3b43aebfe
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: There are Wiggums (which aren't relevant anymore with /goal) and "FAFO swarms" (fan-out, aggregate, filter, optimze) which I use to reverse engineer other pieces of software, PowWow for codex and claude to work together. I stole the structured views and remote session control from my friend's Agent Portal project txcl.io which is more fully-baked and narrower scope than propanes. The ticketing system / tmux / structured views has been slowly evol
+=== 135 2f03f6b4f7864b57a6af87b879e8a5e8
+M: claude | general task_fit firsthand_usage 0 fh=True
+T: I am a dev with 20+ years of experience and I am tasked with trying to help see how we can use this tool to help our company. I have only used Claude so my experience is limited to that. As you might guess, I find AI to be extremely good at some things and actively terrible at others.
+=== 136 fc7155be784641c89c6589156a0818ff
+M: claude | agents satisfaction pricing_value_comment 0 fh=True
+T: Probably because I'm not overly inspired to pay for a Claude x5 subscription and really hate the session restrictions (esp when weekly expend at the end of the week can't be utilized due to session restrictions) on a standard pro model. Most of my tasks are basically using superpowers and I find I get about 30-90m of usage per session before I run out of tokens (resets about every 4 hours after which I generally don't get back to until the next d
+=== 137 9e2354e92ffd4e4da0e798a43baf412d
+M: claude | general satisfaction hearsay 1 fh=False
+T: I think the AI labs need to be the ones to build AI-specific languages so they can include a huge corpus in the model training data-set, and then do RL on it producing useful and correct programs in that language. If anthropic makes "claude-script", it'll outmog this language with massive RL-maxing. I hope your cortisol is ready for that.
+=== 138 3ba815911de34b26a67d2d6445d7af47
+M: claude | general hallucination_safety hearsay 0 fh=False
+T: I am resisting the urge to be very snarky. But how do you know that Claude's hallucinated horoscopes are any less accurate than traditional techniques?
+=== 139 50fd20a2d6d941c0af2c7037a57d91f2
+M: claude | api_developer_workflow value pricing_value_comment 0 fh=False
+T: It's free at first, then we offer subscription tiers starting at $5/mo which allots about ~1 million tokens per month, enough for most people. But unlike Claude's UI for example, we don't shut you down with rate limits, but rather let heavy users upgrade beyond to $10, $20, $40, $80, etc... We also suggest a plan based on how quickly you used your free tokens, so you have an idea upfront of the monthly cost before you buy.
+=== 140 275c839e1c154d56915fb7c85c17db3e
+M: grok | general satisfaction firsthand_usage 0 fh=True
+T: Grok and Roll appears to be stuck and speaks the following on repeat ad infinitum: "Queues clear, let's dive into All Blues by Miles Davis to keep the jazz flowing. Queues clear, let's dive into All Blues by..." Each time with a slightly different voice and inflection. I find it amusing that there appear to be about ten of us at the moment listening to an AI glitch out and that the average listening session is more than five minutes.
+=== 141 ea460f50c4404f79ac1d88d87c665d2c
+M: claude | general hallucination_safety firsthand_usage 0 fh=True
+T: I am resisting the urge to be very snarky. But how do you know that Claude's hallucinated horoscopes are any less accurate than traditional techniques? Have you A/B tested them?
+=== 142 17a618f7a1ba4bbbab617ed203ae9411
+M: claude | general hallucination_safety firsthand_usage -1 fh=True
+T: Just today Claude admitted to me that it may have hallucinated a detail in a response when I asked about it.
+=== 143 76228fcc032b4f93a18d42a634e8fcf2
+M: claude-opus-4.7 | general satisfaction firsthand_usage -1 fh=True
+T: By default, I use Sonnet 4.6, and if Sonnet 4.6 fails, I use Opus 4.7.
+=== 144 c395b234c6c449c19ad4a823936c59dd
+M: claude-sonnet-4.6 | general satisfaction firsthand_usage -1 fh=True
+T: By default, I use Sonnet 4.6, and if Sonnet 4.6 fails, I use Opus 4.7.

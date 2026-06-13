@@ -1,0 +1,79 @@
+{
+  "checkpoints": {
+    "BAAI/bge-small-en-v1.5": {
+      "checkpoint": "BAAI/bge-small-en-v1.5",
+      "fields": {
+        "task_category": {
+          "accuracy": 0.6835443037974683,
+          "classes_in_train": [
+            "agents",
+            "api_developer_workflow",
+            "coding",
+            "data_analysis",
+            "general",
+            "long_context",
+            "multimodal",
+            "research",
+            "roleplay",
+            "writing"
+          ],
+          "classes_only_in_test": [],
+          "confusion": {
+            "agents -> agents": 5,
+            "agents -> coding": 20,
+            "agents -> general": 6,
+            "api_developer_workflow -> coding": 15,
+            "api_developer_workflow -> general": 9,
+            "coding -> agents": 6,
+            "coding -> api_developer_workflow": 2,
+            "coding -> coding": 139,
+            "coding -> general": 32,
+            "data_analysis -> research": 2,
+            "general -> agents": 3,
+            "general -> coding": 7,
+            "general -> data_analysis": 1,
+            "general -> general": 122,
+            "general -> multimodal": 1,
+            "general -> writing": 1,
+            "long_context -> coding": 1,
+            "long_context -> general": 2,
+            "multimodal -> coding": 2,
+            "multimodal -> general": 3,
+            "research -> coding": 1,
+            "research -> general": 5,
+            "research -> research": 1,
+            "writing -> coding": 1,
+            "writing -> general": 4,
+            "writing -> multimodal": 1,
+            "writing -> writing": 3
+          },
+          "evaluated": 395,
+          "macro_f1": 0.26807779076237764
+        }
+      },
+      "mean_macro_f1": 0.26807779076237764,
+      "text_mode": "evidence_only"
+    }
+  },
+  "evaluation": {
+    "group_field": "thread_id",
+    "runs": 1,
+    "test_examples": 395,
+    "test_fraction": 0.25,
+    "train_examples": 628
+  },
+  "examples": 1023,
+  "ranking": [
+    {
+      "checkpoint": "BAAI/bge-small-en-v1.5",
+      "mean_macro_f1": 0.26807779076237764,
+      "text_mode": "evidence_only"
+    }
+  ],
+  "training": {
+    "batch_size": 16,
+    "max_steps": 300,
+    "num_epochs": 1,
+    "num_iterations": 4
+  }
+}

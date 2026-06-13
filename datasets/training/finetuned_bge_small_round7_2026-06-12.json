@@ -1,0 +1,118 @@
+{
+  "backend": "finetuned_shared_encoder",
+  "checkpoint": "BAAI/bge-small-en-v1.5",
+  "evaluation": {
+    "group_field": "thread_id",
+    "runs": 4,
+    "test_fraction": 0.25
+  },
+  "examples": 1054,
+  "fields": {
+    "aspect_category": {
+      "accuracy": 0.30710659898477155,
+      "confusion": {
+        "developer_ergonomics -> satisfaction": 12,
+        "developer_ergonomics -> task_fit": 72,
+        "developer_ergonomics -> value": 1,
+        "hallucination_safety -> satisfaction": 3,
+        "hallucination_safety -> task_fit": 18,
+        "hallucination_safety -> value": 3,
+        "refusal_acceptance -> satisfaction": 5,
+        "refusal_acceptance -> task_fit": 4,
+        "regression_stability -> satisfaction": 6,
+        "regression_stability -> task_fit": 40,
+        "satisfaction -> satisfaction": 70,
+        "satisfaction -> task_fit": 230,
+        "satisfaction -> value": 2,
+        "task_fit -> satisfaction": 73,
+        "task_fit -> task_fit": 280,
+        "task_fit -> value": 1,
+        "trust_reliability -> satisfaction": 15,
+        "trust_reliability -> task_fit": 114,
+        "value -> satisfaction": 35,
+        "value -> task_fit": 185,
+        "value -> value": 13
+      },
+      "evaluated": 1182,
+      "macro_f1": 0.10040580286103194
+    },
+    "evidence_type": {
+      "accuracy": 0.3697123519458545,
+      "confusion": {
+        "benchmark_anecdote -> firsthand_usage": 87,
+        "bug_regression_report -> firsthand_usage": 49,
+        "comparative_evaluation -> firsthand_usage": 199,
+        "firsthand_usage -> firsthand_usage": 437,
+        "firsthand_usage -> hearsay": 1,
+        "hearsay -> firsthand_usage": 185,
+        "integration_failure -> firsthand_usage": 22,
+        "pricing_value_comment -> firsthand_usage": 148,
+        "release_update_reaction -> firsthand_usage": 54
+      },
+      "evaluated": 1182,
+      "macro_f1": 0.06747992588017294
+    },
+    "firsthand_flag": {
+      "accuracy": 0.6692047377326565,
+      "confusion": {
+        "false -> false": 6,
+        "false -> true": 387,
+        "true -> false": 4,
+        "true -> true": 785
+      },
+      "evaluated": 1182,
+      "macro_f1": 0.4151943038126848
+    },
+    "polarity_score": {
+      "accuracy": 0.4035532994923858,
+      "confusion": {
+        "-1 -> -1": 61,
+        "-1 -> 1": 287,
+        "-2 -> -1": 22,
+        "-2 -> 1": 74,
+        "0 -> -1": 20,
+        "0 -> 1": 112,
+        "1 -> -1": 51,
+        "1 -> 1": 416,
+        "2 -> -1": 12,
+        "2 -> 1": 127
+      },
+      "evaluated": 1182,
+      "macro_f1": 0.15967580700599004
+    },
+    "task_category": {
+      "accuracy": 0.4509306260575296,
+      "confusion": {
+        "agents -> coding": 84,
+        "agents -> general": 28,
+        "api_developer_workflow -> coding": 28,
+        "api_developer_workflow -> general": 23,
+        "coding -> coding": 323,
+        "coding -> general": 106,
+        "data_analysis -> coding": 10,
+        "data_analysis -> general": 9,
+        "general -> coding": 202,
+        "general -> general": 210,
+        "long_context -> coding": 21,
+        "long_context -> general": 9,
+        "multimodal -> coding": 9,
+        "multimodal -> general": 20,
+        "research -> coding": 17,
+        "research -> general": 24,
+        "roleplay -> general": 1,
+        "writing -> coding": 36,
+        "writing -> general": 22
+      },
+      "evaluated": 1182,
+      "macro_f1": 0.10434881602914389
+    }
+  },
+  "mean_macro_f1": 0.1694209311178047,
+  "training": {
+    "batch_size": 16,
+    "epochs": 3,
+    "learning_rate": 2e-05,
+    "max_length": 256,
+    "unfrozen_layers": 2
+  }
+}

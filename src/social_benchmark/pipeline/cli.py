@@ -30,7 +30,8 @@ from social_benchmark.pipeline.local_classifier import (
 from social_benchmark.pipeline.model_comparison import compare_classifier_backends
 from social_benchmark.pipeline.models import RawItem, SourcePlatform, to_jsonable
 from social_benchmark.pipeline.scoring import ScoreAggregator
-from social_benchmark.pipeline.routed_classifier import run_routed_rubric_bakeoff, train_routed_rubric_classifier
+from social_benchmark.pipeline.routed_classifier import run_gated_precision_bakeoff, run_routed_rubric_bakeoff, train_routed_rubric_classifier
+from social_benchmark.pipeline.soft_chain_classifier import run_soft_chain_bakeoff
 from social_benchmark.pipeline.publication_readiness import write_publication_readiness
 from social_benchmark.pipeline.setfit_experiments import parse_checkpoint_specs, run_setfit_bakeoff
 from social_benchmark.pipeline.sklearn_classifier import (
@@ -52,6 +53,16 @@ def main() -> None:
     hn_parser.add_argument("--comments", type=int, default=0, help="Fetch up to this many comments per story")
     hn_parser.add_argument("--max-depth", type=int, default=8, help="Maximum comment depth to fetch")
     hn_parser.add_argument("--out", required=True)
+
+    hn_search_parser = subparsers.add_parser("fetch-hn-search", help="Search Hacker News stories via the official Algolia API and fetch threads")
+    hn_search_parser.add_argument("--query", action="append", required=True, help="Search query; may be passed multiple times")
+    hn_search_parser.add_argument("--limit", type=int, default=10, help="Stories per query")
+    hn_search_parser.add_argument("--comments", type=int, default=120, help="Fetch up to this many comments per story")
+    hn_search_parser.add_argument("--max-depth", type=int, default=8, help="Maximum comment depth to fetch")
+    hn_search_parser.add_argument("--min-comments", type=int, default=10, help="Skip stories with fewer comments")
+    hn_search_parser.add_argument("--sort-by-date", action="store_true", help="Use recency ordering instead of relevance")
+    hn_search_parser.add_argument("--exclude-thread-ids", help="Optional file with one thread ID per line to skip")
+    hn_search_parser.add_argument("--out", required=True)
 
     gh_search_parser = subparsers.add_parser("fetch-github-search", help="Search GitHub issues")
     gh_search_parser.add_argument("--query", required=True)
@@ -183,10 +194,30 @@ def main() -> None:
     routed_bakeoff_parser.add_argument("--runs", type=int, default=8)
     routed_bakeoff_parser.add_argument("--group-field", default="thread_id", choices=["source_item_id", "thread_id"])
     routed_bakeoff_parser.add_argument("--embedding-cache-dir")
+    routed_bakeoff_parser.add_argument("--field-config", help="Optional JSON file overriding per-field encoder/rubric/strategy settings")
 
     routed_train_parser = subparsers.add_parser("train-routed-rubric-classifier", help="Train the selected specialized per-field classifier")
     routed_train_parser.add_argument("--training", required=True)
     routed_train_parser.add_argument("--model-out", required=True)
+    routed_train_parser.add_argument("--field-config", help="Optional JSON file overriding per-field encoder/rubric/strategy settings")
+
+    gated_parser = subparsers.add_parser("run-gated-precision-bakeoff", help="Measure out-of-fold precision/coverage of confidence-gated routed predictions")
+    gated_parser.add_argument("--training", required=True)
+    gated_parser.add_argument("--out", required=True)
+    gated_parser.add_argument("--runs", type=int, default=8)
+    gated_parser.add_argument("--group-field", default="thread_id", choices=["source_item_id", "thread_id"])
+    gated_parser.add_argument("--embedding-cache-dir")
+    gated_parser.add_argument("--field-config", help="Optional JSON file overriding per-field encoder/rubric/strategy settings")
+    gated_parser.add_argument("--calibrated", action="store_true", help="Apply leakage-safe isotonic confidence calibration before gating")
+
+    chain_bakeoff_parser = subparsers.add_parser("run-soft-chain-bakeoff", help="Evaluate leakage-safe soft classifier chains")
+    chain_bakeoff_parser.add_argument("--training", required=True)
+    chain_bakeoff_parser.add_argument("--out", required=True)
+    chain_bakeoff_parser.add_argument("--runs", type=int, default=8)
+    chain_bakeoff_parser.add_argument("--inner-runs", type=int, default=4)
+    chain_bakeoff_parser.add_argument("--group-field", default="thread_id", choices=["source_item_id", "thread_id"])
+    chain_bakeoff_parser.add_argument("--embedding-cache-dir")
+    chain_bakeoff_parser.add_argument("--field-config", help="Optional JSON file overriding per-field encoder/rubric/strategy settings")
 
     publication_parser = subparsers.add_parser("assess-publication-readiness", help="Apply minimum publication-quality gates to an evaluation")
     publication_parser.add_argument("--evaluation", required=True)
@@ -202,6 +233,37 @@ def main() -> None:
     setfit_parser.add_argument("--batch-size", type=int, default=16)
     setfit_parser.add_argument("--max-steps", type=int, default=-1)
     setfit_parser.add_argument("--group-field", default="source_item_id", choices=["source_item_id", "thread_id"])
+
+    snapshot_parser = subparsers.add_parser("build-score-snapshot", help="Build a gate-filtered score snapshot for the dashboard")
+    snapshot_parser.add_argument("--training", required=True, help="Reviewed training corpus JSONL")
+    snapshot_parser.add_argument("--observations", action="append", required=True, help="Processed observation JSONL; may be passed multiple times")
+    snapshot_parser.add_argument("--reviewed", action="append", default=[], help="Filled review CSV; may be passed multiple times")
+    snapshot_parser.add_argument("--out", required=True)
+    snapshot_parser.add_argument("--field-config", help="Optional JSON file overriding per-field encoder settings")
+    snapshot_parser.add_argument("--gates", help="Optional JSON file overriding per-field calibrated gate thresholds")
+    snapshot_parser.add_argument("--embedding-cache-dir")
+    snapshot_parser.add_argument("--methodology-artifact", action="append", default=[], help="Gated precision JSON for the methodology block")
+    snapshot_parser.add_argument("--web-out", help="Optional second copy for the web app public dir")
+
+    supabase_parser = subparsers.add_parser("load-supabase", help="Load a score snapshot and observations into Supabase")
+    supabase_parser.add_argument("--snapshot", required=True, help="Snapshot JSON produced by build-score-snapshot")
+    supabase_parser.add_argument("--observations", action="append", default=[], help="Training/observation JSONL for the evidence explorer; may repeat")
+    supabase_parser.add_argument("--url", help="Supabase project URL (defaults to $SUPABASE_URL)")
+    supabase_parser.add_argument("--key", help="Supabase API key (defaults to $SUPABASE_SERVICE_ROLE_KEY)")
+    supabase_parser.add_argument("--not-current", action="store_true", help="Load without marking this snapshot as the current/live one")
+
+    finetune_parser = subparsers.add_parser("run-finetuned-encoder-bakeoff", help="Fine-tune a shared encoder with per-field heads on grouped holdouts")
+    finetune_parser.add_argument("--training", required=True)
+    finetune_parser.add_argument("--out", required=True)
+    finetune_parser.add_argument("--checkpoint", default="BAAI/bge-small-en-v1.5")
+    finetune_parser.add_argument("--field", action="append", default=[])
+    finetune_parser.add_argument("--runs", type=int, default=4)
+    finetune_parser.add_argument("--epochs", type=int, default=3)
+    finetune_parser.add_argument("--batch-size", type=int, default=16)
+    finetune_parser.add_argument("--learning-rate", type=float, default=2e-5)
+    finetune_parser.add_argument("--max-length", type=int, default=256)
+    finetune_parser.add_argument("--unfrozen-layers", type=int, default=2)
+    finetune_parser.add_argument("--group-field", default="thread_id", choices=["source_item_id", "thread_id"])
 
     threshold_parser = subparsers.add_parser("threshold-report", help="Measure precision and coverage by confidence threshold")
     threshold_parser.add_argument("--training", required=True)
@@ -247,6 +309,8 @@ def main() -> None:
     args = parser.parse_args()
     if args.command == "fetch-hn":
         _fetch_hn(args)
+    elif args.command == "fetch-hn-search":
+        _fetch_hn_search(args)
     elif args.command == "fetch-github-search":
         _fetch_github_search(args)
     elif args.command == "fetch-github-repo":
@@ -293,10 +357,20 @@ def main() -> None:
         _run_routed_rubric_bakeoff(args)
     elif args.command == "train-routed-rubric-classifier":
         _train_routed_rubric_classifier(args)
+    elif args.command == "run-gated-precision-bakeoff":
+        _run_gated_precision_bakeoff(args)
+    elif args.command == "run-soft-chain-bakeoff":
+        _run_soft_chain_bakeoff(args)
     elif args.command == "assess-publication-readiness":
         _assess_publication_readiness(args)
     elif args.command == "run-setfit-bakeoff":
         _run_setfit_bakeoff(args)
+    elif args.command == "run-finetuned-encoder-bakeoff":
+        _run_finetuned_encoder_bakeoff(args)
+    elif args.command == "build-score-snapshot":
+        _build_score_snapshot(args)
+    elif args.command == "load-supabase":
+        _load_supabase(args)
     elif args.command == "threshold-report":
         _threshold_report(args)
     elif args.command == "evaluate-fixed-classifier":
@@ -328,6 +402,36 @@ def _fetch_hn(args: argparse.Namespace) -> None:
         raw_items = client.fetch_items(ids)
     count = write_jsonl(args.out, raw_items)
     print(json.dumps({"written": count, "out": args.out}))
+
+
+def _fetch_hn_search(args: argparse.Namespace) -> None:
+    client = HackerNewsClient()
+    excluded: set[str] = set()
+    if args.exclude_thread_ids:
+        with open(args.exclude_thread_ids, encoding="utf-8") as handle:
+            excluded = {line.strip() for line in handle if line.strip()}
+    seen_story_ids: set[int] = set()
+    raw_items = []
+    fetched_stories = 0
+    for query in args.query:
+        story_ids = client.search_story_ids(
+            query,
+            max_stories=args.limit,
+            min_comments=args.min_comments,
+            sort_by_date=args.sort_by_date,
+        )
+        for story_id in story_ids:
+            if story_id in seen_story_ids or str(story_id) in excluded:
+                continue
+            seen_story_ids.add(story_id)
+            raw_items.extend(
+                client.fetch_story_with_comments(
+                    story_id, max_comments=args.comments, max_depth=args.max_depth
+                )
+            )
+            fetched_stories += 1
+    count = write_jsonl(args.out, raw_items)
+    print(json.dumps({"written": count, "stories": fetched_stories, "out": args.out}))
 
 
 def _fetch_github_search(args: argparse.Namespace) -> None:
@@ -528,19 +632,63 @@ def _run_frozen_embedding_bakeoff(args: argparse.Namespace) -> None:
 
 
 def _run_routed_rubric_bakeoff(args: argparse.Namespace) -> None:
+    field_config = None
+    if args.field_config:
+        with open(args.field_config, encoding="utf-8") as handle:
+            field_config = json.load(handle)
     result = run_routed_rubric_bakeoff(
         args.training,
         args.out,
         runs=args.runs,
         group_field=args.group_field,
         embedding_cache_dir=args.embedding_cache_dir,
+        field_config=field_config,
     )
     print(json.dumps({"examples": result["examples"], "mean_macro_f1": result["mean_macro_f1"], "out": args.out}))
 
 
 def _train_routed_rubric_classifier(args: argparse.Namespace) -> None:
-    count = train_routed_rubric_classifier(args.training, args.model_out)
+    field_config = None
+    if args.field_config:
+        with open(args.field_config, encoding="utf-8") as handle:
+            field_config = json.load(handle)
+    count = train_routed_rubric_classifier(args.training, args.model_out, field_config=field_config)
     print(json.dumps({"examples": count, "model_out": args.model_out}))
+
+
+def _run_gated_precision_bakeoff(args: argparse.Namespace) -> None:
+    field_config = None
+    if args.field_config:
+        with open(args.field_config, encoding="utf-8") as handle:
+            field_config = json.load(handle)
+    result = run_gated_precision_bakeoff(
+        args.training,
+        args.out,
+        runs=args.runs,
+        group_field=args.group_field,
+        embedding_cache_dir=args.embedding_cache_dir,
+        field_config=field_config,
+        calibrate=args.calibrated,
+    )
+    print(json.dumps({"examples": result["examples"], "out": args.out}))
+
+
+def _run_soft_chain_bakeoff(args: argparse.Namespace) -> None:
+    field_config = None
+    if args.field_config:
+        with open(args.field_config, encoding="utf-8") as handle:
+            field_config = json.load(handle)
+    result = run_soft_chain_bakeoff(
+        args.training,
+        args.out,
+        runs=args.runs,
+        inner_runs=args.inner_runs,
+        group_field=args.group_field,
+        embedding_cache_dir=args.embedding_cache_dir,
+        field_config=field_config,
+    )
+    best = max(result["variants"].values(), key=lambda variant: variant["mean_macro_f1"])
+    print(json.dumps({"examples": result["examples"], "best_mean_macro_f1": best["mean_macro_f1"], "out": args.out}))
 
 
 def _assess_publication_readiness(args: argparse.Namespace) -> None:
@@ -561,6 +709,63 @@ def _run_setfit_bakeoff(args: argparse.Namespace) -> None:
         group_field=args.group_field,
     )
     print(json.dumps({"examples": result["examples"], "ranked": len(result["ranking"]), "out": args.out}))
+
+
+def _build_score_snapshot(args: argparse.Namespace) -> None:
+    from social_benchmark.pipeline.score_snapshot import build_score_snapshot
+
+    field_config = None
+    if args.field_config:
+        with open(args.field_config, encoding="utf-8") as handle:
+            field_config = json.load(handle)
+    gates = None
+    if args.gates:
+        with open(args.gates, encoding="utf-8") as handle:
+            gates = json.load(handle)
+    snapshot = build_score_snapshot(
+        training_jsonl=args.training,
+        observation_paths=args.observations,
+        reviewed_paths=args.reviewed,
+        output_path=args.out,
+        field_config=field_config,
+        gates=gates,
+        embedding_cache_dir=args.embedding_cache_dir,
+        methodology_paths=args.methodology_artifact,
+        web_output_path=args.web_out,
+    )
+    print(json.dumps({"snapshot_id": snapshot["snapshot_id"], "corpus": snapshot["corpus"], "out": args.out}))
+
+
+def _load_supabase(args: argparse.Namespace) -> None:
+    from social_benchmark.pipeline.supabase_loader import load_snapshot_to_supabase
+
+    written = load_snapshot_to_supabase(
+        snapshot_path=args.snapshot,
+        observation_paths=args.observations,
+        url=args.url,
+        key=args.key,
+        make_current=not args.not_current,
+    )
+    print(json.dumps({"loaded": written}))
+
+
+def _run_finetuned_encoder_bakeoff(args: argparse.Namespace) -> None:
+    from social_benchmark.pipeline.finetune_experiments import run_finetuned_encoder_bakeoff
+
+    result = run_finetuned_encoder_bakeoff(
+        args.training,
+        args.out,
+        checkpoint=args.checkpoint,
+        fields=tuple(args.field) or TARGET_FIELDS,
+        runs=args.runs,
+        epochs=args.epochs,
+        batch_size=args.batch_size,
+        learning_rate=args.learning_rate,
+        max_length=args.max_length,
+        unfrozen_layers=args.unfrozen_layers,
+        group_field=args.group_field,
+    )
+    print(json.dumps({"examples": result["examples"], "mean_macro_f1": result["mean_macro_f1"], "out": args.out}))
 
 
 def _threshold_report(args: argparse.Namespace) -> None:

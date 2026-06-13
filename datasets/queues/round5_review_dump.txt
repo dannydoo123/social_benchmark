@@ -1,0 +1,600 @@
+=== 0 500e1a1292ea4956982c5fb22f87147c
+M: claude | general satisfaction hearsay -1 fh=False
+T: Pretty sure this is wrong - the recent conversation list is not verbatim stored in the context (unlike the actual Memories that you can edit). Rather it seems to me a bit similar to Claude - memories are created per conversation by compressing the conversations and accessed on demand rather than forced into context.
+=== 1 f14f9ed91f2249e196e19b2a6c586acb
+M: gemini | general satisfaction hearsay 1 fh=False
+T: Gemini took a pile of dirt and gave me countless ideas, improved my plans, recommended materials, etc. a designer gave me two out of the box ideas that Gemini didn’t come up with, but it did everything else perfectly. (Designer said, put a patio out in the yard and put your table there, and take your ugly shed and make it the center of attention, since you’ll never succeeed trying to hide it)
+=== 2 b15be6083d9d4b6787341f7fc3442e29
+M: gpt-5 | general satisfaction hearsay -1 fh=False
+T: Sadly I wish I could disable the embeddings memory and keep the explicit. The lossy nature of embeddings make it hallucinate a bit too much for my liking and GPT-5 seems to have just made it worse.
+=== 3 efdb3cc6afdb4d6086531b4bcbcb8065
+M: llama | general satisfaction comparative_evaluation 0 fh=False
+T: I thought Llamafile was just a model and llama.cpp bundled in to a single binary - is this the difference between Llamafile injecting a default sysmtem prompt vs hitting the raw llama-server endpoint with no harness? That seems like comparing apples to apple pie, there's some ingredients missing.
+=== 4 5183b77f886044a487dd6b3bdcbb698f
+M: gpt-4o | writing trust_reliability hearsay -1 fh=False
+T: It told her she wasn't broken, that trauma can imprint itself even on joyous milestones like birth, and that healing doesn't make her a weak mother, but a brave one. She began chatting with GPT-4o almost every night. The model helped her map her emotions, analyze peer-reviewed studies in simplified language, and even gently guided her through journaling prompts.
+=== 5 0fe4495d5db2482dba63d4dd63fe0bf4
+M: mistral | agents satisfaction comparative_evaluation 0 fh=False
+T: Same Mistral-Nemo 12B weights produce 7% accuracy on llama-server with native function calling and 83% on Llamafile in prompt mode. I thought Llamafile was just a model and llama.cpp bundled in to a single binary - is this the difference between Llamafile injecting a default sysmtem prompt vs hitting the raw llama-server endpoint with no harness? That seems like comparing apples to apple pie, there's some ingredients missing.
+=== 6 f6e778c69f6540308312afb23c635185
+M: gpt-4o | writing refusal_acceptance hearsay -1 fh=False
+T: She asked ChatGPT for life coaching and GPT-5.1 thinking refused directly with a suggestion of seeking professional psychological counselor. Switching to GPT-4o, 4o gave her a lot of suggestions without hesitation. Even many uni students are using 4o for drafting email and essay, employees accessing 4o for polishing theirs work, and old ppl chatting with 4o for accompany.
+=== 7 be7dfe9d09544a6ea3b98398327bd181
+M: gpt-4o | writing satisfaction hearsay -1 fh=False
+T: Title: Why GPT-4o is an Irreplaceable Tool for My Mental Health and Productivity—and Why GPT-5.2 Fails Body: I’m writing this because the upcoming forced migration to GPT-5.2 feels less like an "upgrade" and more like the destruction of a vital cognitive bridge. As a student and user, GPT-4o has been more than a chatbot; it has been a cornerstone of my daily life and mental well-being. 1.
+=== 8 6117b4273b24405abb9d3eefa24e19c6
+M: gpt-5 | writing refusal_acceptance hearsay -1 fh=False
+T: She asked ChatGPT for life coaching and GPT-5.1 thinking refused directly with a suggestion of seeking professional psychological counselor. Switching to GPT-4o, 4o gave her a lot of suggestions without hesitation. Even many uni students are using 4o for drafting email and essay, employees accessing 4o for polishing theirs work, and old ppl chatting with 4o for accompany.
+=== 9 b7c6f77044514369af81234fc416242e
+M: gemini | roleplay value pricing_value_comment 2 fh=False
+T: • Seedream: The adventurous middle child. Faster, cheaper, and often surprisingly good at aesthetic effects—bokeh, low-poly, ukiyo-e, metallic sheen, etc. Not as creative as OpenAI, not as conservative as Gemini.
+=== 10 f6f23b7bdb1748dd85397306d66d29e2
+M: claude | coding developer_ergonomics firsthand_usage 0 fh=True
+T: I think this will be the next frontier for these models, improving the desktop tooling. I am surprised I've yet to see them go all in on hiring desktop app developers to overhaul Claude Code / Codex / Antigravity / etc because there's so many things they could do to reduce the footprint and issues drastically.
+=== 11 271430705fcf499d9ff5a5bde4af6312
+M: claude | research trust_reliability firsthand_usage 0 fh=True
+T: "I make AI output lots of stuff" is not an intrinsically valuable thing. I can run the same thing on Claude in research mode and get a report with cited sources in a more digestable format on my phone.
+=== 12 5e0d151f63814368a6ccedf61f9f5ef9
+M: claude | coding value integration_failure 0 fh=True
+T: Plan mode is partial automation of the thinking there too (improving every month) Claude Code debugs something, it's automating a chain of reasoning: "This error message means execution reached this file. That implies this variable has this value. I can test this theory by sending this HTTP request.
+=== 13 6f1b42aef52c4492b11bcaa7ffad2359
+M: claude-opus-4.7 | coding satisfaction hearsay -1 fh=False
+T: Recent performance of Claude Opus 4.7 and Claude Code has been poor because of context bloat. Model no longer obeys instructions well.
+=== 14 d0e0dc0b808e430781acbc01b28240d7
+M: deepseek | coding satisfaction hearsay 1 fh=False
+T: I'm glad we're seeing a shift towards objectively scored tests. We've been doing this at scale at , and although the author looks to be running unique one-off samples, it's not surprising to see how well Kimi K2.6 performed. Based on our testing, for coding especially, Kimi is within statistical uncertainty of MiMo V2.5 Pro for top open weights model, and performs much better with tools than DeepSeek V4 Pro.
+=== 15 3f55325e59bc4bffb007fa148cc05ebd
+M: gemini | general developer_ergonomics integration_failure 1 fh=False
+T: Gemini doesnt feel quite as smart these days. It does well with very long conversations. Except it has bugs where all context gets lost or pruned, and it will lie and gaslight about it.
+=== 16 6e25a72318fa4a0382e43cc25027ee5b
+M: gpt-5.5 | general satisfaction comparative_evaluation 0 fh=False
+T: Or 2.05TB on disk for the full precision GGUF. If you can afford the hardware to run Kimi K2.6 at any decent speed for more than 1 simultaneous user, you probably have a whole team of people on staff who are already very familiar with how to benchmark it vs Claude, GPT-5.5, etc.
+=== 17 83883249a87149a789287932b6895c68
+M: kimi | coding satisfaction hearsay 1 fh=False
+T: I'm glad we're seeing a shift towards objectively scored tests. We've been doing this at scale at , and although the author looks to be running unique one-off samples, it's not surprising to see how well Kimi K2.6 performed. Based on our testing, for coding especially, Kimi is within statistical uncertainty of MiMo V2.5 Pro for top open weights model, and performs much better with tools than DeepSeek V4 Pro.
+=== 18 a48481cc6e0c49968a0ea9744c5d87da
+M: qwen | api_developer_workflow satisfaction release_update_reaction 1 fh=False
+T: At the moment I have ollama running on my server with qwen 9b which works fine but a 26M that could be deployed on the pi itself would be amazing.
+=== 19 cf412821c89344ccb683c96b30b4f75d
+M: claude | coding regression_stability bug_regression_report 0 fh=False
+T: Looking back at chatGPT and claude a couple years ago, very small Qwen models are basically equal in coding to what those cloud based models could do then. Also factoring in scaling laws, a 9b going to 18b is roughly a 40% increase, whereas 18b to 35b is 20%, I expect there will be a change of at least price in cloud based models. Adobe used to be $600 per month, then it became $20 when distribution scaled.
+=== 20 ddc135ef8b6740b08ca578b75634a341
+M: deepseek | agents value pricing_value_comment 0 fh=False
+T: Just putting it out there that OpenCode lets you edit your system prompt, and choose a model that isn't bonkers expensive. { "agent": { "subagent-coder-mini": { "description": "Assign this subagent for small, well-defined tasks performed quickly", "mode": "primary", "prompt": "{file:./prompts/my-custom-prompt.md}", "model": "deepseek-v4-flash" } } } (I actually think OpenCode UX sucks, but there isn't much else out there that's better.
+=== 21 635073cc723f422186d0e604b49645aa
+M: gpt-4o | research regression_stability bug_regression_report -1 fh=False
+T: The Case for Preserving GPT-4o: Why Heuristic Intelligence Matters for Humanities Research As OpenAI pivots toward a Codex-centric paradigm, a critical subset of users—particularly in the humanities and social sciences—faces a severe regression in utility.
+=== 22 72ea18998c8c48b7ac9ae46d65e4c9df
+M: qwen | coding regression_stability bug_regression_report 0 fh=False
+T: Looking back at chatGPT and claude a couple years ago, very small Qwen models are basically equal in coding to what those cloud based models could do then. Also factoring in scaling laws, a 9b going to 18b is roughly a 40% increase, whereas 18b to 35b is 20%, I expect there will be a change of at least price in cloud based models. Adobe used to be $600 per month, then it became $20 when distribution scaled.
+=== 23 13d3f41f4eac4eb38235aff843e47886
+M: gpt-5 | general task_fit comparative_evaluation -1 fh=False
+T: I did a lot of sampling and the results were objectively bad. Am I the only one? Has anyone seen actual real-world benefits of GPT-5 vs other models?
+=== 24 39245f1ae1e44610b8d2b81ba23bc161
+M: gpt-5 | coding regression_stability bug_regression_report -1 fh=False
+T: The Case for Preserving GPT-4o: Why Heuristic Intelligence Matters for Humanities Research As OpenAI pivots toward a Codex-centric paradigm, a critical subset of users—particularly in the humanities and social sciences—faces a severe regression in utility. While GPT-5.2 excels at deterministic tasks like coding, it exhibits a noticeable flattening in complex, dialectical inquiries. 1.
+=== 25 7df787122bf746ecae31ee984288fb94
+M: qwen | api_developer_workflow trust_reliability release_update_reaction 2 fh=False
+T: I source old, defective high-end radios with timeless designs from brands like Grundig or Braun, and replace the original hardware with a Raspberry Pi while using the original audio parts to build custom smart speakers. Reliable hotword detection and voice command recognition have been a persistent challenge over the years, but whisper and other small models have helped enormously. At the moment I have ollama running on my server with qwen 9b whi
+=== 26 49e59c3ac59b4445b7a8c60ddae6dabc
+M: gpt-5.5 | agents value pricing_value_comment 0 fh=False
+T: This led to lots of duplicated functions and slower development, though the new models (GPT-5.5 and Opus 4.6) seem to suffer from this less. My takeaway was that “dumber” (i.e. smaller) models might be better as an agentic harness, or at least feasibly cheaper/faster to run for a large swath of problems.
+=== 27 3a91378b485d466199971dac2870344a
+M: gemini | general task_fit firsthand_usage 1 fh=True
+T: I haven’t found Gemini to be particularly good at long horizon tool calling though.
+=== 28 6a4a6780ef474a9caa913f737822dce8
+M: gemini-2.5 | coding developer_ergonomics integration_failure 0 fh=True
+T: GPT-5 often says what it will do and then says “say go and I’ll go” or says “you should run command x”, but doesn’t just DO it. Also for bug fixes in difficult codebases nothing beats Gemini 2.5 pro
+=== 29 0aa30a40911a43bcb8d5c1fadb205aa3
+M: gpt-5 | coding developer_ergonomics integration_failure 0 fh=True
+T: GPT-5 often says what it will do and then says “say go and I’ll go” or says “you should run command x”, but doesn’t just DO it. Also for bug fixes in difficult codebases nothing beats Gemini 2.5 pro
+=== 30 9e68e09e0bf240aea3f7347d2cdb9df0
+M: claude | general refusal_acceptance firsthand_usage 0 fh=True
+T: At the time at least, Claude basically refused to use the memory proactively, even with prompts trying hard to push it in that direction. Having to always explicitly tell it to check its memories or remember X and Y from the conversation killed the usefulness for me. Repo:
+=== 31 ee643ef8a53a4a3fb282752e4b1a0cc9
+M: claude | agents hallucination_safety firsthand_usage 0 fh=True
+T: But the state machine pattern applies to any multi-step work where agents are useful but susceptible to death spirals, hallucinations, or other non-deterministic quirkiness. This also enables Claude Desktop and other non-coding agents to perform useful constrained work. I've been building a content pipeline for tabletop publishing and tested it a bit earlier yesterday.
+=== 32 ab68c4dc244f4143aa675e7da0c6dc66
+M: grok | general satisfaction hearsay 1 fh=False
+T: Today, AI may share dogmatically correct spiritual answers, but its goal is not your salvation but for you to ceaselessly ask it more questions. The creators of AI want you to love their own creation, not the Lord Himself." This is true with any technology, and often, in many cases many human spiritual leader. My agreement is not to downplay the risk or natural 'amorality' of such a technology--it's clear with Grok e.g.
+=== 33 1e652051dd6548798e02cc81c77f7253
+M: qwen | coding value pricing_value_comment 0 fh=False
+T: At the current rate, open sourced models are expected to surpass cloud models within a couple years based on a study I read a couple days ago. Looking back at chatGPT and claude a couple years ago, very small Qwen models are basically equal in coding to what those cloud based models could do then. Also factoring in scaling laws, a 9b going to 18b is roughly a 40% increase, whereas 18b to 35b is 20%, I expect there will be a change of at least pri
+=== 34 39cf8a000f7146a4ae6336f6047a64b9
+M: gpt-5 | general value pricing_value_comment 1 fh=False
+T: GPT-5 isn’t really a brand-new model in the way people think. From what I’ve seen, the goal was more about reducing costs and unifying the interface than releasing a totally different architecture. Under the hood it is still routing to models we already know, just picking what it thinks will give the “best” result for the request.
+=== 35 f79b1784547042bf99817ee64fa5c6a3
+M: kimi | general value comparative_evaluation 0 fh=False
+T: Quantizations lower than Q8 are probably worthless for quality. Or 2.05TB on disk for the full precision GGUF. If you can afford the hardware to run Kimi K2.6 at any decent speed for more than 1 simultaneous user, you probably have a whole team of people on staff who are already very familiar with how to benchmark it vs Claude, GPT-5.5, etc.
+=== 36 6fb5d3b3b0a04b30a141b41ff9ddc5af
+M: gemini-2.5 | multimodal satisfaction benchmark_anecdote 1 fh=False
+T: By far the biggest challenge was adapting from SOTA vision models like Gemini 2.5 Pro to small, local models. My constraints were that it had to take up <4GB of ram and have vision capabilities. I had to do a lot of evals to figure out that Qwen2.5VL-3B was the best balance of size and quality, but there was still a sizable tradeoff in quality that I had to accept.
+=== 37 ff3a589a0a4445dc9149a1c15c259fe4
+M: gpt-4 | coding trust_reliability hearsay -1 fh=False
+T: It took a while to get the kinks out of GPT-4 until people trusted it. Just switching it on is really hurting their brand. The fact they didn’t do this makes me think their finances are in very bad shape.
+=== 38 56623532fe1e4672b3da8106f10fa825
+M: gemini | coding trust_reliability firsthand_usage 0 fh=True
+T: Doing manually it’s very exhausting. Thats being said, I feel like I’m feeling more productive it terms of generating insights apart from what the AI said. I also have a chat interface where I basically can ask anything I want from the PDF (and yeah I’m aware of the NotebookLM, I just don’t trust Gemini)
+=== 39 b2edc9c9574b4a019616608ebcac423a
+M: claude-sonnet-4.6 | agents satisfaction firsthand_usage 0 fh=True
+T: We tested our purpose-built QA agent against GPT 5.4, Claude Code (Opus 4.6), and Sonnet 4.6 across 35 real PRs on Grafana, Mattermost, Cal.com, and Apache Superset on three dimensions: Relevance, Coverage, and Coherence. Coverage is where the gap was largest. Canary leads by 11 points over GPT 5.4, 18 over Claude Code, and 26 over Sonnet 4.6.
+=== 40 884c8ed182db4cc48abc5f2355183f4d
+M: claude-sonnet-4.5 | coding developer_ergonomics integration_failure 0 fh=True
+T: Think of it as a unit test but for your API. Our Cloud platform does the following automatically: - Updates the test suite of recorded traces to maintain freshness - Matches relevant Drift tests to your PR’s changes when running tests in CI - Surfaces unintended deviations, does root cause analysis, and suggests code fixes We’re excited to see this use case finally unlocked. The release of Claude Sonnet 4.5 and similar coding models have made it 
+=== 41 bac7f374965c4cfd9555e8cfeda282a4
+M: claude-sonnet-4.5 | coding satisfaction release_update_reaction 0 fh=True
+T: Our Cloud platform does the following automatically: - Updates the test suite of recorded traces to maintain freshness - Matches relevant Drift tests to your PR’s changes when running tests in CI - Surfaces unintended deviations, does root cause analysis, and suggests code fixes We’re excited to see this use case finally unlocked. The release of Claude Sonnet 4.5 and similar coding models have made it possible to go from failing test to root caus
+=== 42 b4eb512ed6a745748d2c1005bf94502c
+M: gemini-2.5 | general value pricing_value_comment -1 fh=False
+T: Gemini 2.5 Pro is pretty expensive, mostly because videos take up a lot of tokens. It's roughly 1 million input tokens/hr, with a relatively insignificant amount of output tokens. Fortunately, Gemini has a very generous free tier, which is more than enough to cover daily usage.
+=== 43 d444f4d8454045a49e9b78f1da37f85d
+M: kimi | general task_fit hearsay 1 fh=False
+T: Personally, I’d love a slightly larger model that runs easily on an e.g. 32GB M2 MBP, but with tool calling RL as the primary focus. Some of the open weight models are getting close (Kimi, Qwen), but the quantization required to fit them on smaller machines seems to drop performance substantially.
+=== 44 2c439a5c44274daf9cbb912d0bd3df71
+M: qwen | general task_fit hearsay 1 fh=False
+T: Personally, I’d love a slightly larger model that runs easily on an e.g. 32GB M2 MBP, but with tool calling RL as the primary focus. Some of the open weight models are getting close (Kimi, Qwen), but the quantization required to fit them on smaller machines seems to drop performance substantially.
+=== 45 385f45356db24b13b19ffc64f6dbc519
+M: gpt-4o | writing task_fit hearsay 1 fh=False
+T: GPT-4o is truly a model that good at writing, teaching, guiding, unwinding, chatting, anticipating the hidden needs and regulating daily stuff of users.
+=== 46 db1f03637cbb45f89f051abc212eabce
+M: gpt-4 | general value pricing_value_comment 0 fh=False
+T: OpenAI's GPT-4 Discontinuation: Consumer Fraud and Regulatory Scrutiny. The sudden removal without transition or meaningful remedy feels like an unjustified abandonment of real reliance. This decision also reflects a broader shift: OpenAI moving away from its founding mission of benefiting humanity toward enterprise-focused commercialization. The cost of management’s overspending appears to be transferred to consumers — users lose access to a pro
+=== 47 ba1f4f0ac8664c129c4e61db048e6223
+M: deepseek | agents task_fit hearsay 2 fh=False
+T: Seems like in agentic work flow the qween flash and Deepseek flash models are quite good. Fits with another comment from yesterday on here who said the flash models are just better at tool calling. Planning with gpt55 and implementation with a flash model could be bang for the buck route.
+=== 48 b0f1ed3bbab24f3da548ccecc0126033
+M: claude | general task_fit hearsay 2 fh=False
+T: Voker takes these and uses LLMs and hierarchical text classification to create dynamic categories that give higher level insights so you don’t have to read individual conversations to know what are the main usage patterns across your users. The most common substitute solution we’ve seen is uploading obs logs to Claude or ChatGPT and asking for summary insights. There are a few problems with this - mainly that LLMs aren’t good at math or data scie
+=== 49 7c482506d7be4b1187410d9f378316a6
+M: gpt-5 | coding trust_reliability benchmark_anecdote 1 fh=False
+T: Both models are state-of-the-art when it comes to reliable code generation, producing over 70% fewer errors than GPT-5.1-Codex (high) on our internal mini-app generation benchmark. Furthermore, we trained custom Eagle3 heads for both Phind Fast and Phind Large for fast inference. Phind Fast runs at up to 300 tokens per second, and Phind Large runs at up to 200 tokens per second, making them the fastest Phind models ever.
+=== 50 e68c2222898440918a09f9c1488c6b79
+M: claude-haiku-4.5 | general satisfaction firsthand_usage 1 fh=True
+T: I’m using Claude Haiku 4.5 for my voice assistant right now and it’s pretty fast, but if I could keep the LLM local, it’d be even better.
+=== 51 bae7e590490a4cc0af012722f029b771
+M: claude-opus-4.5 | general satisfaction release_update_reaction 1 fh=False
+T: I am already seeing this trend in the recent releases of the native models (such as Opus 4.5, Gemini 3, and especially Gemini 3 flash). It's only going to get better from here. Another thing to note is, there are over 5 startups right now in YC portfolio doing the same thing and going after a similar/overlapping target market if I remember correctly.
+=== 52 395123adc600472ab7cb50c03dce1439
+M: gemini-3-flash | general satisfaction release_update_reaction 1 fh=False
+T: I am already seeing this trend in the recent releases of the native models (such as Opus 4.5, Gemini 3, and especially Gemini 3 flash). It's only going to get better from here. Another thing to note is, there are over 5 startups right now in YC portfolio doing the same thing and going after a similar/overlapping target market if I remember correctly.
+=== 53 c46c4b01a1a448c3a9aa0dc448fa04d2
+M: claude | general satisfaction comparative_evaluation 0 fh=False
+T: i had idea like this when gpt first came out but decided not to go down this route because idk at what point to automate and at what point to refine and just seemed too complex and now tools like claude cli seem to make more sense for devs.
+=== 54 5d03c44ec1b547ea8aa35af2fcb7533e
+M: claude | agents satisfaction hearsay 1 fh=False
+T: I know there is a lot out there, but seeing a project that uses AI to produce features of this standard is great to see. I'd be interested in learning how the author developed features while building this out and how effective Claude/AI was while performing this building. Heck, I'd watch something where the author demonstrates their workflow.
+=== 55 1a072df2237845f8ad48577e13275992
+M: llama | agents satisfaction comparative_evaluation 0 fh=False
+T: Same Mistral-Nemo 12B weights produce 7% accuracy on llama-server with native function calling and 83% on Llamafile in prompt mode. I thought Llamafile was just a model and llama.cpp bundled in to a single binary - is this the difference between Llamafile injecting a default sysmtem prompt vs hitting the raw llama-server endpoint with no harness? That seems like comparing apples to apple pie, there's some ingredients missing.
+=== 56 ad3499e28c404f48aa513b5197c173a8
+M: claude | general satisfaction benchmark_anecdote 1 fh=False
+T: down in the trenches people have built these things up to be critical dependencies in either their day to day life or their work, my eyes are mostly glazing over hearing about how people are using claude to do whatever grand array of things with no oversight. the way we benchmark this shit is all over the map, the goalposts are just teleporting randomly at this point. my claude usage has drastically dried up as i've personally realized the real b
+=== 57 eb309da1616a41269d8e118d0192f01f
+M: gpt-5 | writing satisfaction hearsay -1 fh=False
+T: Title: Why GPT-4o is an Irreplaceable Tool for My Mental Health and Productivity—and Why GPT-5.2 Fails Body: I’m writing this because the upcoming forced migration to GPT-5.2 feels less like an "upgrade" and more like the destruction of a vital cognitive bridge. As a student and user, GPT-4o has been more than a chatbot; it has been a cornerstone of my daily life and mental well-being. 1.
+=== 58 14f11fcbeda84771af6cfc28b3f98630
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: I highly recommend companies to keep it simple and use n8n with Gemini for OCR. You will save money and get 90%+ of the same functionality as products like this.
+=== 59 380f8312690848bea3290462229d0c22
+M: gpt-5 | general satisfaction firsthand_usage 0 fh=True
+T: GPT-5 often says what it will do and then says “say go and I’ll go” or says “you should run command x”, but doesn’t just DO it.
+=== 60 d0f0551bcead4704aa0828fc8bc34e25
+M: claude | agents satisfaction hearsay 1 fh=False
+T: It shows every link between different services, logs, and metrics so that Claude Code can understand the issue faster. One of our users using Sentry was receiving ~180 alerts/day. Here is what their workflow looked like: - Receive the alert - 1) Defocus from their current task or wake up, or 2) don't look at the alert at all (most of the time) - Go check dashboards to find the root cause (if infra type) or read the stack trace, events, etc.
+=== 61 f24cb6c605a145fd846bc60aeea8b710
+M: claude | general satisfaction firsthand_usage 1 fh=True
+T: We support BYOK so you can use your own claude key, and vertex key. If you do that you are basically just paying us a flat troll tole of $16/month to use our entire frontend but you are free to be unbounded by a markup on your tokens. We actually prefer this because it's better unit economics for us.
+=== 62 34a86156f6894dd1a9fb52411f888f4d
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: I mean, I am sure they don't mean it but they have the incentive to burn as much tokens as they are allowed to get away with. Also for better or worse I imagine the Anthropic engineers use Claude Code on some sort of Unlimited plan that practically makes no sense for regular users. So adding a 100k tokens is not a big deal.
+=== 63 a022ddb050c24a0491622029c1eaf6b2
+M: claude | general satisfaction hearsay 1 fh=False
+T: I love Claude's memory implementation, but I turned memory off in ChatGPT.
+=== 64 e0bf6aac78eb4fa48dd77b2b684ac487
+M: claude | general satisfaction hearsay -1 fh=False
+T: With Claude Pro $20 plan my usage can barely survive one or two prompts. And I choose Ollama cloud just because their CLI is convenient to use but their are a lot of other providers for those models so you aren’t even stuck with shitty conditions and usage rules. To me that’s a pretty bad thing for American economy.
+=== 65 633a653c79114f34972dd32ee1e93ed2
+M: gemini | general satisfaction hearsay 1 fh=False
+T: I'm not running the trial of Gemini anymore. Would be nice to detect when there's no mouse movements / keyboard activity and stop recording in those case. And also stop recording when a media player is at fullscreen.
+=== 66 ca44c12c607e4a0ba7f7298440b15fc6
+M: gemini | general satisfaction hearsay 1 fh=False
+T: Gemini is pretty solid for 1-shot tool call and affordable as well.
+=== 67 84fa80e525854636b9f25cbb337c328a
+M: llama | general satisfaction hearsay 1 fh=False
+T: Nice work, does this work with local (100% offline) models assuming you have decent hardware and are serving them up with llama.cpp or similar?
+=== 68 e7223ffe70064d43b63c9026e5e37deb
+M: claude | coding satisfaction hearsay 1 fh=False
+T: I feel you on the Claude pulsing thing. Running (or trying to) run Opencode with any model I could throw at it to perform useful work like the frontier/proprietary models do (a tall order I know) is where I started.
+=== 69 b390c4a0435948578df4796795394fa6
+M: claude | general satisfaction hearsay 1 fh=False
+T: my claude usage has drastically dried up as i've personally realized the real bottom of this stuff is always gonna be genuinely learning and becoming excellent at a thing.
+=== 70 bc8cd538a02f4a359acd44ba4affbaea
+M: claude | coding satisfaction hearsay 1 fh=False
+T: It might be interesting to distill traces from real Codex or Claude code sessions, where there’s long chains of tool calls between each user query. Personally, I’d love a slightly larger model that runs easily on an e.g. 32GB M2 MBP, but with tool calling RL as the primary focus.
+=== 71 aaa1dca1d20f446ca9a655e1818da71a
+M: claude | general satisfaction comparative_evaluation 0 fh=False
+T: Or 2.05TB on disk for the full precision GGUF. If you can afford the hardware to run Kimi K2.6 at any decent speed for more than 1 simultaneous user, you probably have a whole team of people on staff who are already very familiar with how to benchmark it vs Claude, GPT-5.5, etc.
+=== 72 c50304b4800c4c1da8beada2deb30804
+M: gemini | multimodal satisfaction hearsay 1 fh=False
+T: • Gemini (flash-image / nanoBanana): The cautious realist. Best for subtle, photorealistic edits—fog, lighting tweaks, gentle filters, lens effects. Almost never ruins details, but sometimes refuses to do artsy transformations, especially on human photos.
+=== 73 89c822104d5642c2b041eb156e494653
+M: gemini | roleplay satisfaction hearsay 1 fh=False
+T: Not as creative as OpenAI, not as conservative as Gemini. Can hallucinate, but in fun ways. Bottom line: • Creative prompts → OpenAI • Realistic photo edits → Gemini • Budget-friendly, balanced option → Seedream If you’re planning an automated pipeline, routing “artistic” prompts to OpenAI and “photorealistic” ones to Gemini (with Seedream as a wildcard) matches their own conclusion.
+=== 74 c2cabe67e4c447e5bceb7b4c6eb6ec02
+M: gemini | general satisfaction comparative_evaluation -1 fh=False
+T: To me, I like to think in times the model failed versus success. So what I did, is I looked every time at the worst result. To me, the one which stood out (negatively) is Gemini.
+=== 75 ef444388a88f4a1d8dd7e52b2e0611dc
+M: gpt-5 | roleplay refusal_acceptance hearsay -1 fh=False
+T: “This is the end of the story. However, in comparison, one day my friend who’s a normal uni student feeling a bit lost and confused about her future. She asked ChatGPT for life coaching and GPT-5.1 thinking refused directly with a suggestion of seeking professional psychological counselor.
+=== 76 df18e95eafaa456aba1aded7a72c1b27
+M: kimi | general satisfaction hearsay 2 fh=False
+T: I absolutely love Kimi's personality - some of the things it says are so out there! And it's been great for very focused, iterative work. Its weakness is that it seems to yak on-and-on when it needs to plan out something big or read through and make sense of how to use a niche piece of a complex library.
+=== 77 1487243956cf45b083d6dc60a0514d87
+M: kimi | general satisfaction comparative_evaluation 0 fh=False
+T: Or 2.05TB on disk for the full precision GGUF. If you can afford the hardware to run Kimi K2.6 at any decent speed for more than 1 simultaneous user, you probably have a whole team of people on staff who are already very familiar with how to benchmark it vs Claude, GPT-5.5, etc.
+=== 78 6d86fc843b724f3bb5f082d16fc05373
+M: claude | api_developer_workflow satisfaction integration_failure 1 fh=False
+T: It seems to me like Claude's is better suited for solving technical tasks while ChatGPT's is more suited to improving casual conversation (and, as pointed out, future ads integration). I think it probably won't be too long before these language-based memories look antiquated. Someone is going to figure out how to store and retrieve memories in an encoded form that skips the language representation.
+=== 79 9ddd0a5f4baf46a7a3dd252e2516c4a1
+M: claude | coding satisfaction hearsay 2 fh=False
+T: I feel you on the Claude pulsing thing. Running (or trying to) run Opencode with any model I could throw at it to perform useful work like the frontier/proprietary models do (a tall order I know) is where I started. everyone makes the problem bigger (massive contexts, massive number of parameters, more transformers (MoE)) but I started with how can we make small/local LLMs perform better (do more with less) Opencode's plan/build is decent, like i
+=== 80 fff3bb6efd7b461c9b96ff2b1ac8a62a
+M: claude | agents satisfaction hearsay 1 fh=False
+T: This is all based on observed behavior from daily Claude Code CLI usage, where I've added hooks specifically to catch systematic failure patterns. OpenSwarm is essentially a productized version of those scaffoldings from my actual workflow — packaged into a more reusable architecture. On context drift — good call, and yeah, that's exactly why the shared memory layer matters.
+=== 81 06ced6200dd442bfb290d7bd997fb710
+M: claude | general satisfaction hearsay 1 fh=False
+T: the real problem is everyone else just hitting accept on whatever claude spits out without even reading the diff. tooling for review keeps getting better while the average review effort keeps going down.
+=== 82 002eaaece6c340e4abcca02395fcf236
+M: claude | coding satisfaction hearsay 2 fh=False
+T: I’ve been maining Kimi k2.6 through opencode go and openrouter for a week and I can say it’s the same experience as when I was maining Sonnet 3.5/4 late last year. Not as good or as fast as Claude Code on Opus now but definitely enough for casual/hobby use. The best part is multiple choices for providers, if opencode gimps their service, I’ll switch
+=== 83 ec9746881bca4fee94cca54292e22df3
+M: kimi | coding satisfaction hearsay 2 fh=False
+T: I’ve been maining Kimi k2.6 through opencode go and openrouter for a week and I can say it’s the same experience as when I was maining Sonnet 3.5/4 late last year. Not as good or as fast as Claude Code on Opus now but definitely enough for casual/hobby use. The best part is multiple choices for providers, if opencode gimps their service, I’ll switch
+=== 84 c9e99f77dc344cb58894dd6d50beb654
+M: gpt-4o | writing satisfaction hearsay 1 fh=False
+T: For countless users, GPT-4o was a genuine daily helper — for creative writing, brainstorming, emotional processing, overcoming blocks, and simply not feeling alone. These were not superficial interactions; they were built over months or years of consistent use. The sudden removal without transition or meaningful remedy feels like an unjustified abandonment of real reliance.
+=== 85 a7a1279d24ef4b70ac9fbdc4d59808ac
+M: claude | agents satisfaction hearsay 1 fh=False
+T: Thanks Tom, good to see you on HN! You can connect Papermill to your favourite agent via MCP - we prefer Claude Code.
+=== 86 f8034c84f54849468d37b82d3b5ffb18
+M: claude | agents regression_stability bug_regression_report -1 fh=False
+T: You can clear context between review stages because state is stored in JSON artifacts on disk, with built-in scripts for keeping it updated. The walkthrough command uses Claude’s AskUserQuestion feature to walk you through uncertain findings or items needing human review one by one. Then, the fix command dispatches per-fix-group agents and re-reviews the work with Opus, reverting any regressions before committing survivors.
+=== 87 16229b18e02249c0940ca6ce2e8b3ff5
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: I don't want to see their thought process, I just want the end product like how ChatGPT or Claude currently work.
+=== 88 89f415d2bce84e3c9d78041757e37b65
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: I’m using them right now on the $20 Ollama cloud plan and I can actually work with them on my side projects without reaching the limits too much. With Claude Pro $20 plan my usage can barely survive one or two prompts. And I choose Ollama cloud just because their CLI is convenient to use but their are a lot of other providers for those models so you aren’t even stuck with shitty conditions and usage rules.
+=== 89 05babc9cd8a24880b52ceb982c3fd61e
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: I would not be comfortable sending my bank info passwords and all sorts of other sensitive data that I input and see on my screen to Gemini.
+=== 90 df340f37fdd44576b4e0ddc42b40ecf1
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: Makes me wonder if I should be using Gemini on pay per use with custom harness.
+=== 91 401f28fed10d42d1828a3f64b52b8d73
+M: gpt-4o | coding regression_stability bug_regression_report -1 fh=False
+T: The Case for Preserving GPT-4o: Why Heuristic Intelligence Matters for Humanities Research As OpenAI pivots toward a Codex-centric paradigm, a critical subset of users—particularly in the humanities and social sciences—faces a severe regression in utility. While GPT-5.2 excels at deterministic tasks like coding, it exhibits a noticeable flattening in complex, dialectical inquiries. 1.
+=== 92 0cbbd493236c49d287140609f96757e6
+M: claude | coding satisfaction hearsay -2 fh=False
+T: For coding (in Cursor), it's slow, fails with tool calls often (no MCP just stock Cursor tools) and stored some new application state in globalThis - something that no model has ever attempted to do in over a year of very heavy Cursor / Claude Code use).
+=== 93 f0fe346045b442158863fe06d02c8539
+M: claude | api_developer_workflow value integration_failure 1 fh=False
+T: We spoke to hundreds of companies generating PDFs before we designed the language, and had been building AI design systems ourselves for a few years. You can connect an agent to our MCP server, see: It's quite amazing to see what Claude can do when it has a tool like Papermill at its disposal - worth connecting and having a play. In practice, you can either directly connect an LLM to the MCP server, or send via the API after (say) cleaning up LLM
+=== 94 5791d2bd583049a8bf7ddfcd36ac5fc0
+M: gpt-4o | coding satisfaction hearsay 1 fh=False
+T: GPT-4o has been an irreplaceable creative partner for many of us in the arts. Unlike models optimized for speed or coding, 4o offers a unique blend of emotional intelligence, imaginative expression, and contextual nuance that’s vital for writers, artists, and storytellers. Yes, GPT-5 may be more efficient for data analysis or programming, but creative professionals don’t just need speed—we need soul.
+=== 95 24d000058c8d4ebfbdf72dd1a906744d
+M: gpt-5 | coding satisfaction hearsay 1 fh=False
+T: Unlike models optimized for speed or coding, 4o offers a unique blend of emotional intelligence, imaginative expression, and contextual nuance that’s vital for writers, artists, and storytellers. Yes, GPT-5 may be more efficient for data analysis or programming, but creative professionals don’t just need speed—we need soul. Replacing 4o without a comparable creative alternative feels like asking an artist to swap a brush for a calculator.
+=== 96 024075c917854ad4ab0e0e2a5fb44b85
+M: claude | long_context satisfaction firsthand_usage 0 fh=True
+T: When chat breaks apart for me, it’s almost always because the context window has been overflown and it is no longer remembering some important feature implemented earlier in the chat; it seems based on your description that Claude is optimizing to not do that.
+=== 97 90e53cf78251426c97e21f9cc458f594
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: I am surprised I've yet to see them go all in on hiring desktop app developers to overhaul Claude Code / Codex / Antigravity / etc because there's so many things they could do to reduce the footprint and issues drastically.
+=== 98 fffb3bc53e414df580b1f3ad4b2682fd
+M: claude | general satisfaction comparative_evaluation 1 fh=True
+T: That's better than cursor who does 25%. We support BYOK so you can use your own claude key, and vertex key. If you do that you are basically just paying us a flat troll tole of $16/month to use our entire frontend but you are free to be unbounded by a markup on your tokens.
+=== 99 c9d1020223ea422bb3f76e45aee80715
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: From my experience it can be tricky to get an agent to call an MCP server in the first place. This must require something beyond instructions in the CLAUDE.md.
+=== 100 ceac19fb58d14d23b7d79420393423df
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: instead of you course correcting, it's the state machine to your first question: the engine is Apache 2.0 and runs locally. the managed service adds the visual editor, run history and plugin install. the enforcement itself doesn't require the cloud, I run the exact same engine on the backend the MCP server is just the way to get statewright in the hands of a wide array of existing use cases, claude code included.
+=== 101 9644440afc724a2686e2347eb9bd7267
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: I don't think we've agreed to anything. That said I think paying for something like Claude Code makes a lot of sense because you can outsource the question of "how many tokens should I use per hour and how should I use them?" to the people providing the tokens.
+=== 102 f61a1ddea18a46b7b350efbb5a65627d
+M: claude | general value pricing_value_comment 0 fh=True
+T: the other issue is crazy token wastage, which gets expensive. my gut instinct re triaging is that i want to do it myself in the prompt - but if it prevents noise before reaching claude it may be useful for some folks just for the token savings. no, I don’t receive alerts because i’m looking at the PR/issues list all day anyway, it would just be noise.
+=== 103 9dac1431285548c08c1ecbcaa91e01f3
+M: claude | general satisfaction release_update_reaction 0 fh=True
+T: I modeled it after the built-in /review command and extended it meaningfully. You can clear context between review stages because state is stored in JSON artifacts on disk, with built-in scripts for keeping it updated. The walkthrough command uses Claude’s AskUserQuestion feature to walk you through uncertain findings or items needing human review one by one.
+=== 104 628e16644fe240f6a0bf134deca91bba
+M: qwen | agents satisfaction firsthand_usage 0 fh=True
+T: While it beats FunctionGemma-270M, Qwen-0.6B, Granite-350M, LFM2.5-350M on single-shot function calling, those models have more scope/capacity and excel in conversational settings. We encourage you to test on your own tools via the playground and finetune accordingly. This is part of our broader work on Cactus ( ), an inference engine built from scratch for mobile, wearables and custom hardware.
+=== 105 5c54d41f04c2464e9e09c14f1ede537b
+M: claude | coding regression_stability firsthand_usage 0 fh=True
+T: Doing that with enough diligence to be meaningful is going to at least like 2x the amount of processing needed, and fill the context with a bunch of tangential reasoning about malware patterns. This smacks of dumb vibe coding. "I got told to make sure claude couldn't be used to develop malware, ok 'claude pls no develop malware'"
+=== 106 1ee512ec54e34f8d9271d3ca683613dd
+M: claude | coding satisfaction comparative_evaluation 0 fh=True
+T: AFAIK, every tool out there that lets you do oauth with your Claude Max plan is doing so with the same copy-pasted client id/secret that are extracted from Claude Code. It's not clear at all that this is above board, and when I asked our Anthropic rep, they encouraged us not to do this. If there's an official way for 3rd party devs to piggyback on Anthropic plans, someone please tell me how!
+=== 107 5d1fc1203543446cb1808ca31ea5e548
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: the managed service adds the visual editor, run history and plugin install. the enforcement itself doesn't require the cloud, I run the exact same engine on the backend the MCP server is just the way to get statewright in the hands of a wide array of existing use cases, claude code included. not all agentic clients are created equal and Pi is actually the experience I want to hone next (also the most extensible)
+=== 108 7663bad971c445c3849b06546d067039
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: We are testing out a teams feature which allows you to share canvases with members on your team securely. Beyond that, we are working on adding roles and email-based sharing controls which is in our roadmap. 5) Claude Code in a block is a really interesting idea.
+=== 109 26b90904b18a4267896027ed11350ff9
+M: claude | long_context satisfaction comparative_evaluation 0 fh=True
+T: You can ask Claude to generate templates, full documents, ask it about the Press language, save templates, ask it about templates and more. There's a lot more to it - design guidelines for print vs web, recipes in Press etc. I've tried it with Fable already and it's a noticeable improvement - we support visual feedback through MCP and I think that's helping Fable a lot.
+=== 110 94021e84b8574a7694851f93f9fd4e68
+M: claude | agents satisfaction benchmark_anecdote 0 fh=True
+T: We evaluated test generation using Claude code and our purpose built harness and measured the quality of tests in catching the unknown unknowns. We noticed Claude Code misses the second order effects that actually break applications. You also need infrastructure to execute the tests - browser fleets, ephemeral environments, data seeding need to be handled
+=== 111 397f79fbdfba4c158a3dd350102a7bee
+M: claude | general value integration_failure 0 fh=True
+T: the timing is not a huge issue though because the type of bugs being caught at this stage are rarely so critical they need to fixed in less time than that - and the bandwidth is limited by someone reviewing the PR anyway. the other issue is crazy token wastage, which gets expensive. my gut instinct re triaging is that i want to do it myself in the prompt - but if it prevents noise before reaching claude it may be useful for some folks just for th
+=== 112 149c0f5a7757407a97f70ba9ec17f410
+M: claude | coding satisfaction release_update_reaction 0 fh=True
+T: adamsreview is six Claude Code slash commands packaged as a plugin: review, codex-review, add, promote, walkthrough, and fix. I modeled it after the built-in /review command and extended it meaningfully. You can clear context between review stages because state is stored in JSON artifacts on disk, with built-in scripts for keeping it updated.
+=== 113 2f44249ed5854b0bb3450ce70bb999f3
+M: claude | coding satisfaction comparative_evaluation 0 fh=True
+T: I’m reading your summary versus the other article here, but it seems like for writing code, Claude would be the clear winner? When chat breaks apart for me, it’s almost always because the context window has been overflown and it is no longer remembering some important feature implemented earlier in the chat; it seems based on your description that Claude is optimizing to not do that.
+=== 114 956c69f4720a4ce1860d2f80a92333ae
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: Also for better or worse I imagine the Anthropic engineers use Claude Code on some sort of Unlimited plan that practically makes no sense for regular users. So adding a 100k tokens is not a big deal. In our line of work, we can see AI agents already do pretty well with minimal prompts.
+=== 115 3cdee28ad4fe4cccbe378e53add9fe71
+M: claude | agents value pricing_value_comment 0 fh=True
+T: Same experience here - I built a similar tool, for reviewing both plans and code - (shameless plug), browser based as opposed to TUI. Having said that, I don't review the code until going through a few iterations of reviews from Claude. Each round it does find some "obvious" issue, so as long as I'm not close to maxing my subscription for the week I let it run an audit -> validator checks the claims -> fix issues before I get to it.
+=== 116 fe1a672b35f44834a1b8a887416a74a8
+M: claude | coding developer_ergonomics integration_failure 0 fh=True
+T: On Linux, both handy.computer and epicenter Whispering (using parakeet of course) work incredibly well for set-and-forget STT. I use it constantly to write messages on Slack/Teams, do debate with claude code etc. Both have minor bugs, but I can easily accept those, these apps being FOSS and all.
+=== 117 f188391b3d8742a08f7b453113519179
+M: claude | agents satisfaction comparative_evaluation 0 fh=True
+T: You can connect Papermill to your favourite agent via MCP - we prefer Claude Code. You can ask Claude to generate templates, full documents, ask it about the Press language, save templates, ask it about templates and more. There's a lot more to it - design guidelines for print vs web, recipes in Press etc.
+=== 118 a1dd8438b79f42438cf2ae7801686c68
+M: claude | api_developer_workflow satisfaction integration_failure 0 fh=True
+T: I am still baffled by the fact that we have collectively agreed to use agentic harnesses by the same companies that are selling access to their APIs. I mean, I am sure they don't mean it but they have the incentive to burn as much tokens as they are allowed to get away with. Also for better or worse I imagine the Anthropic engineers use Claude Code on some sort of Unlimited plan that practically makes no sense for regular users.
+=== 119 27d13e4566cd4ab69f5bc2745fe6b263
+M: claude | agents value pricing_value_comment 0 fh=True
+T: That is exactly the impression I get from the claude code team, and by extension some of their recent launches like Cowork and Design. And of course with the growth team or whoever is in charge of the subscription and quota side of things. They just do the basic experiment -> ship workflow over and over again, doing whatever optimizes their product in the short term, and never seem to step back and think about the full long-term impact of their c
+=== 120 30760908102c4c2381ce5817bda5d9c3
+M: claude | general satisfaction hearsay 1 fh=False
+T: I actually think you should give it a spin. IMO you don't need claude level performance for a lot of day to day tasks. Qwen3 8B, or even 4B quantized is actually quite good.
+=== 121 10dd4a2d6e644ffe8501040bb227ed8c
+M: claude | general satisfaction hearsay 1 fh=False
+T: I agree that this answer was a bit wacky. Phind Fast is the fast and free model. Selecting Phind Large, GPT-5.1, and Claude models would be better for a modeling task like this.
+=== 122 cbaa5617862e463dab368305e21f6c68
+M: claude | general satisfaction hearsay 1 fh=False
+T: Awesome to have a open model that can compete, but damn it would be so much better if you could run it locally. Otherwise, it's almost so difficult to run (e.g. self host) that it's just way more convenient to pay OpenAI, Claude, etc
+=== 123 e09ca66ee1aa4ac7a520b40e3696e1f9
+M: claude | general satisfaction hearsay 1 fh=False
+T: All my co-workers say Claude blows away Gemini. Is it really that good?
+=== 124 23137ae8d8c345ff858002a21a3742c3
+M: claude-opus-4.7 | general satisfaction hearsay 1 fh=False
+T: In my own internal tests it was really hard to judge whether GPT 5.5 or Opus 4.7 is the better model. They have different styles and it's basically up to preference. There where even times where I gave the win to one model only to think about it more and change my mind.
+=== 125 fcab877847c641fd8d24aeabc48ad209
+M: gemini | general satisfaction hearsay 1 fh=False
+T: Gemini 3's new "Dynamic View" responses does a pretty good job:
+=== 126 c1241beaee4f4f68b55be03f0db90bd9
+M: gemini | general satisfaction hearsay 1 fh=False
+T: So what I did, is I looked every time at the worst result. To me, the one which stood out (negatively) is Gemini. OpenAI had some very good results but also some missing the mark.
+=== 127 c897a0449a944693a4b62fceff9d015d
+M: gemini | general satisfaction hearsay 1 fh=False
+T: All my co-workers say Claude blows away Gemini. Is it really that good?
+=== 128 f5a0118ccd8341feb90c049b083add76
+M: gemini | general value pricing_value_comment 0 fh=False
+T: Very cool idea. When using the Gemini option, what kind of cost would be expected to be incurred? I'd be satisfied by knowing the approximate number of tokens one would expect to be consumed by processing an hour of these recordings, and which specific model is being used.
+=== 129 ed59eba6959442eb94784e5c9821d064
+M: gpt-4o | general refusal_acceptance hearsay -1 fh=False
+T: However, in comparison, one day my friend who’s a normal uni student feeling a bit lost and confused about her future. She asked ChatGPT for life coaching and GPT-5.1 thinking refused directly with a suggestion of seeking professional psychological counselor. Switching to GPT-4o, 4o gave her a lot of suggestions without hesitation.
+=== 130 c95e9d7ec800495ba534b0dfcecf04d7
+M: gpt-4o | roleplay satisfaction hearsay 1 fh=False
+T: As a fresh graduate, I had no idea how I can deliver professional information in a simple way that elderly people can understand. But GPT-4o just... too expert in telling complex stuff in a simple way, it is full of power of understanding different kind of people, so that it helped me to check my slides and script, to ensure those words are not hard enough, and I can deliver complex information in a creative way.
+=== 131 37727141be2b4e4986ad2b01eb3fba76
+M: gpt-5 | general refusal_acceptance hearsay -1 fh=False
+T: However, in comparison, one day my friend who’s a normal uni student feeling a bit lost and confused about her future. She asked ChatGPT for life coaching and GPT-5.1 thinking refused directly with a suggestion of seeking professional psychological counselor. Switching to GPT-4o, 4o gave her a lot of suggestions without hesitation.
+=== 132 526a527a88e84d30b0279c4ecd74825d
+M: gpt-5 | general satisfaction hearsay 1 fh=False
+T: I agree that this answer was a bit wacky. Phind Fast is the fast and free model. Selecting Phind Large, GPT-5.1, and Claude models would be better for a modeling task like this.
+=== 133 bfe0e990cdf440fcbd974b2b16fcbdc9
+M: kimi | general satisfaction hearsay 1 fh=False
+T: Kimi is really good.
+=== 134 baf35aa598074526a5a087c815c2e9ce
+M: kimi | general satisfaction hearsay 1 fh=False
+T: People thinking to self-host Kimi K2.6 had better be prepared for how big it is. Q8 K XL quantization for instance is around 600GB on disk. I would bet about 700GB of VRAM needed.
+=== 135 6a70de0c7c964272bb0daafd54847a4a
+M: claude | general refusal_acceptance hearsay -1 fh=False
+T: At the time at least, Claude basically refused to use the memory proactively, even with prompts trying hard to push it in that direction.
+=== 136 cc6d43072fc34fa6b4f893370a3973ab
+M: claude | research satisfaction hearsay -1 fh=False
+T: Claude's memory implementation feels more oriented towards the long term goal of accessing abstractions and past interactions. It's very close to how humans access memories, albeit with a search feature. (they have not implemented it yet afaik), there is a clear path where they leverage their current implementation w RL posttraining such that claude "remembers" the mistakes you pointed out last time.
+=== 137 c8c35c1aa50e4dbc98f0a9cf2bd5a6ce
+M: claude | coding satisfaction hearsay -1 fh=False
+T: I'm still astounded that everyone else has figured out ways to speed up harnesses, but Claude Code is still slow like a slug.
+=== 138 906678fd3d1f4a19ac26f06711a85ce3
+M: claude | coding satisfaction hearsay 1 fh=False
+T: Great question... and there are two answers depending on what you were originally referring to: re: Claude Code... we actually don't filter or modify the tool list so all tools stay visible -- disallowed calls get blocked at execution time with an error message.
+=== 139 56bc6de523634109b0b8d7c44da84849
+M: claude | coding satisfaction hearsay 1 fh=False
+T: Your review is ready sir This was claude-only, no codex / --ensemble mode. It ran against the branch's base, which is 1 behind main. Would love your feedback when you have the chance!
+=== 140 941f6e3f1fb245e1b39a3efb321c7483
+M: claude | coding satisfaction hearsay 1 fh=False
+T: Anecdotal, but having used Claude Code exclusively for the last several months, I was pleasantly surprised by how capable Pi + Kimi K2.6 is.
+=== 141 3bb7d6d1029f4ca5815803a61c4d8ad3
+M: claude | long_context value pricing_value_comment 0 fh=False
+T: Right now Claude and other top models already do a decent job at e.g. "generate OCR from this document". But as mentioned there are serious failure modes, it's non-deterministic, and especially cost-prohibitive at scale.
+=== 142 f9171bc0653f4186acdca0abc4596dcf
+M: claude | coding value pricing_value_comment 0 fh=False
+T: At the current rate, open sourced models are expected to surpass cloud models within a couple years based on a study I read a couple days ago. Looking back at chatGPT and claude a couple years ago, very small Qwen models are basically equal in coding to what those cloud based models could do then. Also factoring in scaling laws, a 9b going to 18b is roughly a 40% increase, whereas 18b to 35b is 20%, I expect there will be a change of at least pri
+=== 143 f9a30007e00c41a78b31517ee127176e
+M: deepseek | agents satisfaction hearsay 1 fh=False
+T: Seems like in agentic work flow the qween flash and Deepseek flash models are quite good.
+=== 144 429228be8f4e4ac186086f4e7b5be652
+M: gemini | general satisfaction release_update_reaction 1 fh=False
+T: Localization of edits, in general, seems to have changed and not necessarily for the better. Comparison solely between the Gemini models (NB, NB Pro, and NB Pro 2):
+=== 145 4fca585ca64a4b9eb3167fdf9aceaf21
+M: gemini | coding satisfaction hearsay 1 fh=False
+T: It also has very little empathy, and mostly ignores user frustration. But at least theres branching, so one can go back without completely starting over. Gemini doesnt feel quite as smart these days.
+=== 146 7dd638a29232485581bb69f2063f8044
+M: gpt-5 | research satisfaction hearsay -1 fh=False
+T: The global embeddings memory is accessed via runtime vector search. Sadly I wish I could disable the embeddings memory and keep the explicit. The lossy nature of embeddings make it hallucinate a bit too much for my liking and GPT-5 seems to have just made it worse.
+=== 147 87b697e807754b99a3ca5bbd0016b40f
+M: kimi | coding satisfaction hearsay 1 fh=False
+T: Anecdotal, but having used Claude Code exclusively for the last several months, I was pleasantly surprised by how capable Pi + Kimi K2.6 is.
+=== 148 885ea7f47df64b53b3f42d1d571ac80d
+M: claude | data_analysis refusal_acceptance hearsay -1 fh=False
+T: I made a MCP tool for fun this spring that has memory storage in a SQLite db. At the time at least, Claude basically refused to use the memory proactively, even with prompts trying hard to push it in that direction.
+=== 149 852cd8c311514652954c658994165f22
+M: claude | coding regression_stability bug_regression_report 0 fh=False
+T: That is despite their other teams (especially alignment) having a track record of being fairly well thought-out and intelligent. To the guys at Anthropic's product teams, every problem is a data science problem that you slap an A/B test onto, and they seem to think that the A/B test is all that's needed, and actual verification and thinking things through is overrated af. That's what leads to countless regressions in Claude Code as well as removi
+=== 150 8cdda5adef4f4ca2918201f387d69970
+M: claude | coding regression_stability bug_regression_report -1 fh=False
+T: Having to deal with a larger, more complicated codebase. Nothing in this seems to attempt to deal with the possibility that a session that got labeled a regression might have actually been scored even lower against a month ago's Claude Code. "It's harder to read code than to write code" and "codebases take more effort to modify over time as they grow" are ancient observations.
+=== 151 e7749d831fcb45f791d985f1bd29924e
+M: claude | coding satisfaction hearsay -1 fh=False
+T: All the Claude code animations and not knowing what's happening, how long it will take and what will come out is really frustrating me. On top of that there is no way to actually limit the scope of things. Opencode's Plan mode and build mode helps a bit.
+=== 152 f9ac81f7bb004b13804672451d3e6a6d
+M: claude | coding value pricing_value_comment 0 fh=False
+T: I wrote this on another thread: Claude Code certainly not as easy to engineer with, though it is less expensive. For instance the @feature isn’t as robust as cursors ime. Also no shift+enter is quite a pain.
+=== 153 d50671b3e2584cfd9e0b641f8f2df65d
+M: claude | general value comparative_evaluation 0 fh=False
+T: Quantizations lower than Q8 are probably worthless for quality. Or 2.05TB on disk for the full precision GGUF. If you can afford the hardware to run Kimi K2.6 at any decent speed for more than 1 simultaneous user, you probably have a whole team of people on staff who are already very familiar with how to benchmark it vs Claude, GPT-5.5, etc.
+=== 154 d50880cb7eb74454bfc280836a7f03d0
+M: deepseek | agents satisfaction hearsay 1 fh=False
+T: { "agent": { "subagent-coder-mini": { "description": "Assign this subagent for small, well-defined tasks performed quickly", "mode": "primary", "prompt": "{file:./prompts/my-custom-prompt.md}", "model": "deepseek-v4-flash" } } } (I actually think OpenCode UX sucks, but there isn't much else out there that's better.
+=== 155 949535255c244c79b4eb93fbc80c4971
+M: deepseek | coding satisfaction comparative_evaluation 1 fh=False
+T: We've been doing this at scale at , and although the author looks to be running unique one-off samples, it's not surprising to see how well Kimi K2.6 performed. Based on our testing, for coding especially, Kimi is within statistical uncertainty of MiMo V2.5 Pro for top open weights model, and performs much better with tools than DeepSeek V4 Pro. GPT 5.5 has a comfortable lead, but Kimi is on par with or better than Opus 4.6.
+=== 156 57570c4597fe4d0db0107b1439f85383
+M: gpt-4o | research satisfaction comparative_evaluation 0 fh=False
+T: Methodological Integrity vs. Behavioral Scripting In my historiographical research, especially in textual collation and source comparison, GPT-4o has shown superior capabilities. It holds variant textual traditions in tension while maintaining conceptual integrity.
+=== 157 f5b2cf1475ef4a6e9b7321b469e9820a
+M: gpt-4o | research satisfaction hearsay 1 fh=False
+T: Now, we face sudden deprecation despite a 20k+ signature petition, raising concerns of platform instability. If OpenAI drops a model serving as a cognitive scaffold for humanities research, it signals a shift from “AI for Everyone” to “AI for Engineers.” We urge the community to remember: Better isn't always newer. GPT-4o isn’t legacy—it’s irreplaceable for those of us who work with ambiguity, contradiction, and language as lived experience.
+=== 158 d27cb4ba18984263952f4916e225e74b
+M: gpt-5.5 | general value comparative_evaluation 0 fh=False
+T: Quantizations lower than Q8 are probably worthless for quality. Or 2.05TB on disk for the full precision GGUF. If you can afford the hardware to run Kimi K2.6 at any decent speed for more than 1 simultaneous user, you probably have a whole team of people on staff who are already very familiar with how to benchmark it vs Claude, GPT-5.5, etc.
+=== 159 5af6b8897bea4a2d91cbbaf242e94e93
+M: kimi | coding satisfaction comparative_evaluation 1 fh=False
+T: We've been doing this at scale at , and although the author looks to be running unique one-off samples, it's not surprising to see how well Kimi K2.6 performed. Based on our testing, for coding especially, Kimi is within statistical uncertainty of MiMo V2.5 Pro for top open weights model, and performs much better with tools than DeepSeek V4 Pro. GPT 5.5 has a comfortable lead, but Kimi is on par with or better than Opus 4.6.
+=== 160 033d77cc13a24b47946802d7325fcb6c
+M: claude | coding satisfaction hearsay 1 fh=False
+T: It shows every link between different services, logs, and metrics so that Claude Code can understand the issue faster.
+=== 161 9c8418b8f6e24945b14dbfc93a6afe84
+M: qwen | coding satisfaction hearsay 1 fh=False
+T: The results were more promising than I would have expected. Across multiple model families irrespective of age (qwen-coder, gpt-oss, gemma4) and the improvements were consistent above the 13B parameter inflection point. Below that, models can navigate the state machine but can't retain enough context to produce accurate edits.
+=== 162 01031e3b5c604c86973cb82d24b81f1d
+M: claude | agents regression_stability bug_regression_report -1 fh=False
+T: Probably something like "add malware processing guardrails" and it split between two agents coding uncoordinated changes, and then got Claude to push it out itself. No acceptance testing, no regression testing, all slop.
+=== 163 141fd5ae29be4ee699ee8039dd04be4c
+M: claude | coding satisfaction bug_regression_report -1 fh=False
+T: In addition to the elsewhere-mentioned "you're using a black box to try to analyze the same black box," the fundamental metrics all seem incredibly prone to other factors than any Claude Code changes. Claude Code changes all the time—it's the whole shitty trend of the day—but you can't tell which of those changes are better or worse from analyzing results on independent novel tasks. And you're baking in certain conclusions: "HOLDING / SUSPECTED R
+=== 164 f13d025163dc4e0db97a60e5bc98d3e5
+M: gpt-4o | roleplay satisfaction hearsay 1 fh=False
+T: GPT-4o has been an irreplaceable creative partner for many of us in the arts. Unlike models optimized for speed or coding, 4o offers a unique blend of emotional intelligence, imaginative expression, and contextual nuance that’s vital for writers, artists, and storytellers.
+=== 165 7662dff52c104b7089fc775a9421f9e0
+M: gpt-4o | writing satisfaction hearsay 1 fh=False
+T: Switching to GPT-4o, 4o gave her a lot of suggestions without hesitation. Even many uni students are using 4o for drafting email and essay, employees accessing 4o for polishing theirs work, and old ppl chatting with 4o for accompany. GPT-4o should be preserved very well because there’re more than 0.1% ppl need it in the world.” “That’s GPT-4o that reduces tragic deaths and makes the world better.”
+=== 166 cb45f8a6d8b442d387b0924c97e2a7e8
+M: claude | coding developer_ergonomics integration_failure 1 fh=False
+T: I feel you on how sluggish Claude Code can be, you just never know what those pulsing prompts are doing in the background... Given Statewright plugs into Claude Code, there is a little added overhead while managing the state machine logic, but for complicated workflows if it saves you a few debug loops, mass edit reversions or death spirals I think the case can be pretty solid for including it
+=== 167 1b1e7ace499e4046be66662a168f5c8f
+M: claude | coding regression_stability bug_regression_report -1 fh=False
+T: It's vibe coded. Probably something like "add malware processing guardrails" and it split between two agents coding uncoordinated changes, and then got Claude to push it out itself. No acceptance testing, no regression testing, all slop.
+=== 168 30bf5b91d6a54c19bddd2b795e97d645
+M: kimi | general satisfaction firsthand_usage 0 fh=True
+T: Never had to worry about it doing anything other than what I asked it to do. GLM crapped the bed once or twice. Kimi never did.
+=== 169 45bd817a37c444c5b726acfd4c2335cd
+M: kimi | general satisfaction firsthand_usage 0 fh=True
+T: Meanwhile, I can’t get kimi k2.6 to edit a heredoc in a shell script without it fucking it up.
+=== 170 13328b2c40f340d8bdb029b7566dcd85
+M: claude | coding satisfaction comparative_evaluation 2 fh=False
+T: I would love feedback from Claude Code users, pro devs, and anyone with strong opinions about AI code reviews. Repo: Install: /plugin marketplace add adamjgmiller/adamsreview, /plugin install adamsreview@adamsreview
+=== 171 ca0b27e58a9148d8af8bc8978740bb65
+M: qwen | research satisfaction hearsay 1 fh=False
+T: Across multiple model families irrespective of age (qwen-coder, gpt-oss, gemma4) and the improvements were consistent above the 13B parameter inflection point. Below that, models can navigate the state machine but can't retain enough context to produce accurate edits. More on the research bit: Surprisingly this yielded improvements in frontier models as well.
+=== 172 5ea72b9b922f41cd96cef129fea8a6eb
+M: claude | coding satisfaction integration_failure -1 fh=False
+T: I mean, ok, you have your "pricing" reselling an access to LLM models, that's the only, probably, simple way to monetize it, but it's a bad way in 2025, seriously. Allow me to bring my oauth with claude max, and/or offload whatever you do to my local claude code (or if there's some magic behind orchestration use SDK). And, oops, there's nothing to monetize and the entire thing can be recreated with vibe coding within a few weeks (it's not so much
+=== 173 9a64cedd0caf4ff5a8c444cb08549a33
+M: claude | agents value pricing_value_comment 1 fh=False
+T: Press is designed from the ground-up for agentic workflows. We spoke to hundreds of companies generating PDFs before we designed the language, and had been building AI design systems ourselves for a few years. You can connect an agent to our MCP server, see: It's quite amazing to see what Claude can do when it has a tool like Papermill at its disposal - worth connecting and having a play.
+=== 174 0860bac94deb474aa115fd009777326c
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: Interesting, I built a ticketing system similar to Beads which has yielded more predictable results with Claude and other models, and I'm currently building a custom harness, I'm able to use offline models though my GPU ram bandwidth is much lower, but I'm also planning on doing something similar to what you've built, namely the editing tools and what not, I hate how long it takes for Claude to look for files, it feels wasteful.
+=== 175 eeaf3fafa0034b43905e66f45b5214bb
+M: claude | general satisfaction firsthand_usage 1 fh=True
+T: Impressive. A few weeks ago I asked Claude how to use FreeCad, and I got stuck and Claude couldn't help me get out. When I told Phind I'm a complete novice, it came up with very detailed instructions and troubleshooting tips.
+=== 176 49404a3249fa4a2186c5d5e65714f723
+M: claude | general satisfaction firsthand_usage 1 fh=True
+T: my gut instinct re triaging is that i want to do it myself in the prompt - but if it prevents noise before reaching claude it may be useful for some folks just for the token savings. no, I don’t receive alerts because i’m looking at the PR/issues list all day anyway, it would just be noise.
+=== 177 ac7e9ac8cc7d452baa1c1d5b9ca20722
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: For claude, I use `claude setup-token`, put the token into a local auth.json and mount that.
+=== 178 5c389c8a109146f995bea9a41b8c6695
+M: claude | general satisfaction firsthand_usage 1 fh=True
+T: A useful(ish) trick I've found is adding a persona block to my CLAUDE.md. When it stops addressing me as 'meatbag' I know the HK-47 persona instructions are not being followed, which means other instructions are not being followed.
+=== 179 80d4c31db8644731a1f6fc48b94831ca
+M: claude | general satisfaction firsthand_usage 1 fh=True
+T: Very cool work ! I'm running harness system myself and could measure improvement of token use of 2x to 10x on gsm8k only by running a math harness - i'm confident the future is bright for people who will know how to sell tech that is appropriately scaled to one's need. We absolutely do not need to run Claude 123 for most tasks and we better prepare for the rag-pull !
+=== 180 c9c4adb039914064a7a1f6362c7caf31
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: This is neat, and matches an observation I saw with early Claude Code usage: Sonnet would often call tools quickly to gather more context, whereas Opus would spend more time reasoning and trying to solve a problem with the context it had.
+=== 181 f63b622b27d54b0c89c1c3d7a9a5a006
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: Same experience here i use open router with claude as fallback for my startup.
+=== 182 37ecea602e9f4db1af8283e32863c0fd
+M: deepseek | agents satisfaction firsthand_usage 0 fh=True
+T: I've used DeepSeek V4 flash a lot and compsred to Gemma 4 E2B (ie. the smallest, event at q4), it consistently underperforms. In contrast to DS flash, I've found Gemma 4 to be incredibly precise and consistent with tool use.
+=== 183 16d258fabee94e5f802ab5331b214e8c
+M: gemini | research satisfaction firsthand_usage 0 fh=True
+T: You can make this a part of the project if you want to - Gemini is integrated into the Sources panel, so I just opened a JSX file and asked what classes I'd use in Tailwind to replace my CSS and it told me the right answer.
+=== 184 63c4b15e8e194ea3ab6e59ae2a9e1939
+M: gemini | coding satisfaction firsthand_usage 0 fh=True
+T: I was surprised by the ranking, until I read what the test was. Not horribly relevant for coding. The current ranking of all tests makes more sense (well, except for how well Gemini does)
+=== 185 c67aca8b719848dbbf7bfef70e82669e
+M: llama | general satisfaction firsthand_usage 0 fh=True
+T: I actually never tried it with that. Only published ollama, llamfile, llama.cpp native/prompt - and unofficially tested vLLM, but never lmstudio.
+=== 186 5f68adf8d0484b3981daf261f8f141e3
+M: claude | agents satisfaction hearsay 1 fh=False
+T: You can connect any block to any other block, and that connection guarantees the passing of context regardless of block type. The whole system is model-agnostic, so in a single workflow you can go from an OpenAI LLM call, to an image generation mode like Nano Banana Pro, to Claude generating an interactive app, each block using whatever model fits best. Multiple blocks can fan out from the same input, analyzing it in different ways with different
+=== 187 25ad3e19c5354608bf960e6f9f25eeee
+M: claude | coding value comparative_evaluation 2 fh=False
+T: It runs against your regular Claude Code subscription (Max plan recommended), unlike /ultrareview, which charges against your Extra Usage pool. I would love feedback from Claude Code users, pro devs, and anyone with strong opinions about AI code reviews. Repo: Install: /plugin marketplace add adamjgmiller/adamsreview, /plugin install adamsreview@adamsreview
+=== 188 4f31ba3922f34b0a8b2c96928717213c
+M: claude | general regression_stability firsthand_usage 0 fh=True
+T: "I got told to make sure claude couldn't be used to develop malware, ok 'claude pls no develop malware'"
+=== 189 a4be7291305e411da34ea6efa5f8bf57
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: AFAIK, every tool out there that lets you do oauth with your Claude Max plan is doing so with the same copy-pasted client id/secret that are extracted from Claude Code. It's not clear at all that this is above board, and when I asked our Anthropic rep, they encouraged us not to do this.
+=== 190 c199baba26a745518e5c6d80d8e5888b
+M: claude | general satisfaction firsthand_usage 1 fh=True
+T: I love Claude's memory implementation, but I turned memory off in ChatGPT. I use ChatGPT for too many disparate things and it was weird when it was making associations across things that aren't actually associated in my life.
+=== 191 d264bfea186b4566a1fd3c1e11972a8f
+M: claude | general satisfaction firsthand_usage 1 fh=True
+T: Claude is designed to be economically useful, with secondary potential for addiction. That’s why. In either case, I’ve turned off memory features in any LLM product I use.
+=== 192 0b94234d4bb141e1b764d2907b50b0d5
+M: claude | coding satisfaction release_update_reaction 0 fh=True
+T: I need to get that out, I prioritized the end-to-end simple Claude Code plugin for the launch.
+=== 193 94d3830bfa0949ad97a867e106025ec7
+M: claude | long_context satisfaction firsthand_usage 1 fh=True
+T: I'd love to see something like this in chatgpt or claude. The PDFs you can generate there are always so boring.
+=== 194 2dc35bfc42ae4bf2bc0968ba157cdd90
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: I run them in containers. For claude, I use `claude setup-token`, put the token into a local auth.json and mount that. For codex, I run the cli in my working dir prefixed with `CODEX_HOME=./codex-home codex` and mount that whole `codex-home` directory - done :)
+=== 195 565a07ad93874be5b7e3c96d0a3946c6
+M: claude | coding satisfaction release_update_reaction 0 fh=True
+T: That is exactly the impression I get from the claude code team, and by extension some of their recent launches like Cowork and Design.
+=== 196 c07794feec0b4a4a97de1084fe63596a
+M: claude | coding satisfaction benchmark_anecdote 0 fh=True
+T: We evaluated test generation using Claude code and our purpose built harness and measured the quality of tests in catching the unknown unknowns. We noticed Claude Code misses the second order effects that actually break applications.
+=== 197 1b9ce6b3ece44552a1e7504adc50e1a7
+M: claude | data_analysis trust_reliability firsthand_usage 0 fh=True
+T: We're enrolled in the Cyber Verification Program and Claude will happily help me look for vulnerabilities and built POCs demonstrating RCE. But when I point it to a malware sample and ask for analysis it will still refuse any work.
+=== 198 dda82ca78c5d493e93b4c5333ab104b9
+M: claude | coding value pricing_value_comment 0 fh=True
+T: Having said that, I don't review the code until going through a few iterations of reviews from Claude. Each round it does find some "obvious" issue, so as long as I'm not close to maxing my subscription for the week I let it run an audit -> validator checks the claims -> fix issues before I get to it.
+=== 199 be68349ac9d44d5bb36750b06ebd9ccd
+M: claude | coding value pricing_value_comment 0 fh=True
+T: The problem I ran into is that if you build a deterministic app that happens to use LLMs instead of the other way around, I don't think there's any way to get it to use your Claude Code subscription credits.

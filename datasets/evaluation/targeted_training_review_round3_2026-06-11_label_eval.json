@@ -1,0 +1,172 @@
+{
+  "fields": {
+    "aspect_category": {
+      "accuracy": 0.4508670520231214,
+      "confusion": {
+        "developer_ergonomics -> developer_ergonomics": 3,
+        "developer_ergonomics -> satisfaction": 8,
+        "developer_ergonomics -> task_fit": 2,
+        "hallucination_safety -> hallucination_safety": 3,
+        "hallucination_safety -> satisfaction": 3,
+        "hallucination_safety -> task_fit": 3,
+        "refusal_acceptance -> refusal_acceptance": 3,
+        "regression_stability -> regression_stability": 3,
+        "satisfaction -> developer_ergonomics": 4,
+        "satisfaction -> hallucination_safety": 5,
+        "satisfaction -> regression_stability": 5,
+        "satisfaction -> satisfaction": 46,
+        "satisfaction -> task_fit": 22,
+        "satisfaction -> trust_reliability": 11,
+        "satisfaction -> value": 5,
+        "task_fit -> satisfaction": 2,
+        "task_fit -> task_fit": 3,
+        "trust_reliability -> trust_reliability": 6,
+        "value -> satisfaction": 11,
+        "value -> value": 11
+      },
+      "correct": 78,
+      "labeled": 173
+    },
+    "evidence_type": {
+      "accuracy": 0.2774566473988439,
+      "confusion": {
+        "benchmark_anecdote -> benchmark_anecdote": 6,
+        "comparative_evaluation -> comparative_evaluation": 3,
+        "firsthand_usage -> comparative_evaluation": 7,
+        "firsthand_usage -> firsthand_usage": 18,
+        "firsthand_usage -> hearsay": 4,
+        "hearsay -> benchmark_anecdote": 4,
+        "hearsay -> bug_regression_report": 3,
+        "hearsay -> comparative_evaluation": 16,
+        "hearsay -> firsthand_usage": 36,
+        "hearsay -> hearsay": 11,
+        "hearsay -> pricing_value_comment": 3,
+        "hearsay -> release_update_reaction": 4,
+        "integration_failure -> comparative_evaluation": 4,
+        "integration_failure -> firsthand_usage": 5,
+        "integration_failure -> integration_failure": 3,
+        "pricing_value_comment -> comparative_evaluation": 5,
+        "pricing_value_comment -> firsthand_usage": 4,
+        "pricing_value_comment -> pricing_value_comment": 4,
+        "release_update_reaction -> comparative_evaluation": 4,
+        "release_update_reaction -> firsthand_usage": 6
+      },
+      "correct": 48,
+      "labeled": 173
+    },
+    "firsthand_flag": {
+      "accuracy": 0.4161849710982659,
+      "confusion": {
+        "false -> false": 35,
+        "false -> true": 91,
+        "true -> false": 10,
+        "true -> true": 37
+      },
+      "correct": 72,
+      "labeled": 173
+    },
+    "inference_profile": {
+      "labeled": 0
+    },
+    "model_id": {
+      "accuracy": 0.8265895953757225,
+      "confusion": {
+        "claude -> claude": 42,
+        "claude-opus-4.5 -> claude-opus-4.5": 6,
+        "claude-opus-4.7 -> claude-opus-4.7": 4,
+        "claude-sonnet -> claude-sonnet": 2,
+        "claude-sonnet-4.6 -> claude-sonnet-4.6": 2,
+        "gemini -> gemini": 29,
+        "gemini -> gemini-3": 8,
+        "gemini-2.5 -> gemini-2.5": 3,
+        "gemini-2.5 -> gemini-2.5-pro": 4,
+        "gemini-3-flash -> gemini-3-flash": 4,
+        "gemini-3.0 -> gemini-3.0": 2,
+        "gemini-3.1-pro -> gemini-3.1-pro": 3,
+        "gpt-4 -> gpt-4": 2,
+        "gpt-4.1 -> gpt-4.1": 2,
+        "gpt-4o -> gpt-4o": 3,
+        "gpt-5 -> gpt-5": 6,
+        "gpt-5.4 -> gpt-5.4": 4,
+        "grok -> grok": 7,
+        "kimi -> kimi": 2,
+        "o3 -> o3": 2
+      },
+      "correct": 143,
+      "labeled": 173
+    },
+    "polarity_score": {
+      "accuracy": 0.3930635838150289,
+      "confusion": {
+        "-1 -> -1": 16,
+        "-1 -> -2": 13,
+        "-1 -> 0": 5,
+        "-1 -> 1": 6,
+        "-1 -> 2": 2,
+        "-2 -> -2": 2,
+        "0 -> -1": 10,
+        "0 -> -2": 5,
+        "0 -> 0": 15,
+        "0 -> 1": 19,
+        "0 -> 2": 2,
+        "1 -> -1": 14,
+        "1 -> -2": 8,
+        "1 -> 0": 8,
+        "1 -> 1": 34,
+        "1 -> 2": 5,
+        "2 -> -1": 3,
+        "2 -> 1": 5,
+        "2 -> 2": 1
+      },
+      "correct": 68,
+      "labeled": 173
+    },
+    "product_id": {
+      "labeled": 0
+    },
+    "provider_id": {
+      "accuracy": 1.0,
+      "confusion": {
+        "alibaba -> alibaba": 4,
+        "anthropic -> anthropic": 63,
+        "deepseek -> deepseek": 5,
+        "google -> google": 63,
+        "meta -> meta": 2,
+        "mistral -> mistral": 1,
+        "moonshot -> moonshot": 2,
+        "openai -> openai": 26,
+        "xai -> xai": 7
+      },
+      "correct": 173,
+      "labeled": 173
+    },
+    "task_category": {
+      "accuracy": 0.5028901734104047,
+      "confusion": {
+        "agents -> coding": 5,
+        "agents -> general": 4,
+        "api_developer_workflow -> api_developer_workflow": 2,
+        "api_developer_workflow -> general": 5,
+        "api_developer_workflow -> multimodal": 2,
+        "coding -> agents": 2,
+        "coding -> coding": 20,
+        "coding -> general": 17,
+        "general -> agents": 4,
+        "general -> coding": 9,
+        "general -> general": 55,
+        "general -> multimodal": 10,
+        "general -> research": 2,
+        "general -> writing": 5,
+        "long_context -> general": 2,
+        "research -> research": 5,
+        "roleplay -> coding": 3,
+        "roleplay -> general": 3,
+        "writing -> multimodal": 2,
+        "writing -> writing": 2
+      },
+      "correct": 87,
+      "labeled": 173
+    }
+  },
+  "rows": 220
+}

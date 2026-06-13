@@ -1,0 +1,53 @@
+{
+  "checkpoints": {
+    "BAAI/bge-small-en-v1.5": {
+      "checkpoint": "BAAI/bge-small-en-v1.5",
+      "fields": {
+        "polarity_score": {
+          "accuracy": 0.6556962025316456,
+          "classes_in_train": [
+            "-1",
+            "0",
+            "1"
+          ],
+          "classes_only_in_test": [],
+          "confusion": {
+            "-1 -> -1": 93,
+            "-1 -> 0": 1,
+            "-1 -> 1": 52,
+            "0 -> -1": 20,
+            "0 -> 0": 1,
+            "0 -> 1": 18,
+            "1 -> -1": 45,
+            "1 -> 1": 165
+          },
+          "evaluated": 395,
+          "macro_f1": 0.4673985422586337
+        }
+      },
+      "mean_macro_f1": 0.4673985422586337,
+      "text_mode": "evidence_only"
+    }
+  },
+  "evaluation": {
+    "group_field": "thread_id",
+    "runs": 1,
+    "test_examples": 395,
+    "test_fraction": 0.25,
+    "train_examples": 628
+  },
+  "examples": 1023,
+  "ranking": [
+    {
+      "checkpoint": "BAAI/bge-small-en-v1.5",
+      "mean_macro_f1": 0.4673985422586337,
+      "text_mode": "evidence_only"
+    }
+  ],
+  "training": {
+    "batch_size": 16,
+    "max_steps": 300,
+    "num_epochs": 1,
+    "num_iterations": 4
+  }
+}

@@ -10,11 +10,56 @@ from social_benchmark.pipeline.normalization import hash_identifier, normalize_t
 class HackerNewsClient:
     """Client for the official Hacker News Firebase API."""
 
-    def __init__(self, http: HttpJsonClient | None = None) -> None:
+    def __init__(
+        self,
+        http: HttpJsonClient | None = None,
+        search_http: HttpJsonClient | None = None,
+    ) -> None:
         self.http = http or HttpJsonClient(
             base_url="https://hacker-news.firebaseio.com/v0",
             min_delay_seconds=0.02,
         )
+        self.search_http = search_http or HttpJsonClient(
+            base_url="https://hn.algolia.com/api/v1",
+            min_delay_seconds=0.25,
+        )
+
+    def search_story_ids(
+        self,
+        query: str,
+        max_stories: int = 30,
+        min_comments: int = 0,
+        sort_by_date: bool = False,
+    ) -> list[int]:
+        """Search stories via the official HN Algolia API and return story IDs."""
+        endpoint = "search_by_date" if sort_by_date else "search"
+        story_ids: list[int] = []
+        page = 0
+        while len(story_ids) < max_stories:
+            payload = self.search_http.get_json(
+                endpoint,
+                params={
+                    "query": query,
+                    "tags": "story",
+                    "hitsPerPage": min(50, max_stories),
+                    "page": page,
+                },
+            )
+            hits = (payload or {}).get("hits") or []
+            if not hits:
+                break
+            for hit in hits:
+                if int(hit.get("num_comments") or 0) < min_comments:
+                    continue
+                story_id = hit.get("story_id") or hit.get("objectID")
+                if story_id is not None:
+                    story_ids.append(int(story_id))
+                if len(story_ids) >= max_stories:
+                    break
+            page += 1
+            if page >= int((payload or {}).get("nbPages") or 0):
+                break
+        return story_ids
 
     def get_item(self, item_id: int | str) -> dict | None:
         return self.http.get_json(f"item/{item_id}.json")

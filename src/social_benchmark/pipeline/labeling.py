@@ -335,7 +335,7 @@ def _suggested_confidence(classifier: Any, field: str, value: Any) -> str:
 
 
 def _field_meets_quality_gate(classifier: Any, field: str) -> bool:
-    metrics = classifier.field_metrics.get(field)
+    metrics = getattr(classifier, "field_metrics", {}).get(field)
     if not metrics:
         return True
     try:

@@ -291,7 +291,7 @@ def _fit_logistic(vectors: list[list[float]], labels: list[str]) -> Any:
         return None
     from sklearn.linear_model import LogisticRegression
 
-    model = LogisticRegression(class_weight="balanced", max_iter=1200)
+    model = LogisticRegression(class_weight="balanced", max_iter=2000)
     model.fit(vectors, labels)
     return model
 

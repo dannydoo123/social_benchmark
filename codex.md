@@ -53,19 +53,41 @@ The product should answer practical questions such as which model fits a workflo
 - Read `plan.md` when choosing build order, MVP scope, milestones, or next implementation tasks.
 - Read `data-pipeline.md` before designing schema, collectors, extraction models, scoring jobs, confidence intervals, deduplication, or release/update monitoring.
 - Read `config/model_registry.json` before changing model/provider aliases, product/interface mappings, or inference profile labels.
+- Read `docs/web-dashboard.md` before changing the web dashboard, the score-snapshot shape, model identity/provider rollup, tier thresholds, or the Supabase schema/loader.
 - Read `description.md` only when deeper product/research rationale is needed.
 - Keep `codex.md` synchronized with this file so Codex sessions can load the same guidance.
 
 ## Current Task
 
-- Maintain planning docs and convert product decisions into implementable schema, pipeline, and scoring specifications.
+- Grow the reviewed Hacker News corpus (1,114 observations as of
+  2026-06-12, rounds 5-8 merged): fetch fresh data, pipeline-label with the
+  trained routed rubric classifier, review labels with LLM evaluation, and
+  merge reviewed rows into training. All five fields now have an >=80%
+  calibrated gated-precision operating point; the multi-task fine-tuned
+  encoder (`run-finetuned-encoder-bakeoff`) ties the frozen stack with a
+  single model.
+- Re-run thread-grouped classifier experiments and calibrated gated
+  precision (`run-gated-precision-bakeoff --calibrated`) on each expanded
+  corpus; assess publication readiness after each round.
+- The selected candidate is the multi-encoder stacked routed rubric
+  classifier with a flat polarity head
+  (`datasets/training/routed_variant_stacked_polflat_2026-06-12.json`,
+  mean macro F1 `0.4700`; trained model
+  `routed_stacked_polflat_round5_2026-06-12_model.joblib`). Firsthand,
+  aspect, evidence, and 3-class sign polarity clear the 80% gated-precision
+  bar; task does not yet. See
+  `analysis/round5-polarity-iteration-report-2026-06-12.md`.
+- Next: fine-tuned shared encoder at ~1,200 examples, polarity hard
+  negatives in review rounds, locked 300-observation holdout.
 
 ## Next Task Recording
 
-- Scaffold the repo with Next.js, FastAPI, PostgreSQL/Supabase, and shared project conventions.
-- Define the first database schema for sources, communities, authors, threads, evidence items, models, observations, duplicate clusters, score snapshots, and confidence intervals.
-- Implement the first official-API collector on Hacker News before considering any other sources.
-- Add a small manual labeling flow to validate model, task, aspect, evidence type, and score extraction.
+- When the classifier passes publication-readiness gates, build the scoring
+  engine snapshot job and scaffold the dashboard stack (Next.js, FastAPI,
+  PostgreSQL/Supabase) with the observation schema in migrations.
+- Architecture options if data growth stalls: evidence-to-rubric
+  cross-encoder, stronger instruction-tuned embedding checkpoints, or
+  per-field data augmentation.
 
 ## Key Scoring Notes
 
@@ -83,6 +105,19 @@ The product should answer practical questions such as which model fits a workflo
 - Keep `provider_id`, `model_id`, `product_id`, and `inference_profile` separate. Products such as Claude Code or ChatGPT are not model IDs when the base model is known.
 - LLM API calls are allowed for monitoring official model releases, update notes, pricing/limit changes, alias discovery, and aggregate shift analysis.
 - Release/update records should help explain why satisfaction or dissatisfaction changes after provider announcements or model behavior changes.
+
+## Update - 2026-06-11
+
+Superseding note: read `analysis/stacked-encoder-iteration-report-2026-06-11.md`
+first. The corpus is now `859` accepted observations across `157` threads
+(`datasets/training/hn_manual_training_threaded_round4_2026-06-11_merged.jsonl`).
+The selected candidate is the multi-encoder stacked routed classifier with an
+NLI polarity feature (`datasets/training/routed_variant_stacked_v2_2026-06-11.json`,
+trained model `datasets/training/routed_stacked_round4_2026-06-11_model.joblib`)
+at strict thread-grouped mean macro F1 `0.4639`. The selective soft chain is
+retired. Use `fetch-hn-search` for targeted collection and
+`run-gated-precision-bakeoff` for production-trust measurement. Firsthand is
+deployable at 80% precision / full coverage; polarity is the weakest field.
 
 ## Current Classifier Handoff - 2026-06-07
 
@@ -116,6 +151,17 @@ strict thread-grouped mean macro F1: 0.4169
 absolute improvement: +0.0215
 relative improvement: approximately +5.4%
 ```
+
+The retained selective soft-chain experiment reached:
+
+```text
+strict thread-grouped mean macro F1: 0.4217
+absolute improvement over routed rubric: +0.0048
+```
+
+Only the `firsthand_flag` probability vector is passed to `evidence_type`.
+This improved evidence macro F1 from `0.3675` to `0.3916` without changing the
+other field results. Broad chains and retrieval augmentation were rejected.
 
 Selected routed field results:
 
@@ -204,12 +250,19 @@ Recommended order:
    - Do not use ground-truth upstream labels at evaluation or inference time.
    - Compare multiple chain orders or an ensemble of chains.
 
+   Status: completed. Retain only the selective `firsthand_flag` to
+   `evidence_type` dependency. Broad chains damaged downstream fields.
+
 2. Retrieval-augmented classification.
    - Retrieve nearest reviewed examples using cached embeddings.
    - Add neighbor label distributions, similarity, and disagreement as model
      features.
    - Preserve thread-grouped evaluation so neighbors from held-out threads do
      not leak into training.
+
+   Status: completed and rejected. The best tested variant regressed to
+   `0.4004` mean macro F1. Do not repeat without a materially different
+   retrieval representation or training design.
 
 3. Evidence-to-rubric cross-encoder.
    - Start with evidence type and aspect because they remain weak.
@@ -264,6 +317,8 @@ Read these before making classifier decisions:
 
 - `analysis/architecture-upgrade-report-2026-06-07.md`
   - authoritative experiment results and retained/rejected architecture choices
+- `analysis/soft-chain-and-retrieval-report-2026-06-07.md`
+  - latest selective chain improvement and rejected retrieval experiment
 - `analysis/round2-review-processing-report-2026-06-07.md`
   - latest reviewed batch composition and accuracy movement
 - `analysis/gold-evaluation-report-2026-06-06.md`

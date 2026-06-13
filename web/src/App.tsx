@@ -13,7 +13,8 @@ import {
   RotateCcw,
   Upload,
 } from 'lucide-react';
-import { benchmarkModels, sampleAspectScores } from './benchmarkData';
+import { benchmarkModels } from './benchmarkData';
+import { Dashboard } from './Dashboard';
 import { sampleRows } from './sampleRows';
 import type { LabelRow } from './types';
 
@@ -313,7 +314,7 @@ export function App() {
       </aside>
 
       {view === 'benchmark' ? (
-        <BenchmarkDashboard rows={rows} />
+        <Dashboard />
       ) : active ? (
         <ReviewPane
           active={active}
@@ -582,64 +583,6 @@ function ReviewPane({
   );
 }
 
-function BenchmarkDashboard({ rows }: { rows: LabelRow[] }) {
-  const rowStats = useMemo(() => {
-    const providers = new Set(rows.map((row) => row.provider_id || providerFromModel(row.model_id)).filter(Boolean));
-    const products = new Set(rows.map((row) => row.product_id).filter(Boolean));
-    const profiles = new Set(rows.map((row) => row.inference_profile).filter(Boolean));
-    return { providers: providers.size, products: products.size, profiles: profiles.size };
-  }, [rows]);
-
-  const modelCards = useMemo(() => buildModelCards(), []);
-
-  return (
-    <section className="benchmark-pane">
-      <header className="topbar">
-        <div>
-          <p className="eyebrow">Internal benchmark preview</p>
-          <h2>Provider-Grouped Models</h2>
-        </div>
-      </header>
-
-      <section className="benchmark-summary">
-        <Stat label="Tracked Models" value={benchmarkModels.length} />
-        <Stat label="Providers" value={rowStats.providers || groupModelsByProvider().length} />
-        <Stat label="Products" value={rowStats.products} />
-        <Stat label="Profiles" value={rowStats.profiles} />
-      </section>
-
-      <section className="notice-band">
-        These scores are internal only. Public ranking is blocked until each model has enough effective sample size,
-        healthier source mix, and reviewed labels.
-      </section>
-
-      <section className="model-table" aria-label="Model score preview">
-        <div className="model-table-head">
-          <span>Model</span>
-          <span>Provider</span>
-          <span>Best Internal Aspect</span>
-          <span>Evidence</span>
-          <span>Status</span>
-        </div>
-        {modelCards.map((card) => (
-          <div className="model-table-row" key={card.id}>
-            <div>
-              <strong>{card.displayName}</strong>
-              <small>{card.family}</small>
-            </div>
-            <span>{card.providerName}</span>
-            <span>{card.bestAspect}</span>
-            <span>{card.evidence}</span>
-            <span className={card.publishable ? 'status-good' : 'status-blocked'}>
-              {card.publishable ? 'publishable' : 'needs review'}
-            </span>
-          </div>
-        ))}
-      </section>
-    </section>
-  );
-}
-
 function ProviderList() {
   const providers = groupModelsByProvider();
   return (
@@ -853,19 +796,6 @@ function groupModelsByProvider() {
     grouped.get(model.providerId)?.models.push(model);
   }
   return [...grouped.values()];
-}
-
-function buildModelCards() {
-  return benchmarkModels.map((model) => {
-    const scores = sampleAspectScores.filter((score) => score.model_id === model.id);
-    const best = [...scores].sort((a, b) => b.score - a.score)[0];
-    return {
-      ...model,
-      bestAspect: best ? `${best.aspect_category} ${Math.round(best.score)}` : 'no evidence yet',
-      evidence: best ? `n_eff ${best.effective_n.toFixed(1)} / w ${best.weighted_n.toFixed(1)}` : 'waiting for observations',
-      publishable: scores.some((score) => score.publishable),
-    };
-  });
 }
 
 function isReviewed(row: LabelRow) {

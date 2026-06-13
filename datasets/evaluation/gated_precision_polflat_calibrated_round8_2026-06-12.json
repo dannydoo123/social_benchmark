@@ -1,0 +1,287 @@
+{
+  "backend": "routed_rubric_gated_calibrated",
+  "evaluation": {
+    "calibrated": true,
+    "group_field": "thread_id",
+    "groups": 245,
+    "runs": 8
+  },
+  "examples": 1114,
+  "field_config": {
+    "aspect_category": {
+      "backend": "auto",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "sentence-transformers/all-mpnet-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "thenlper/gte-base"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        }
+      ],
+      "rubric_scale": 1.0,
+      "strategy": "flat"
+    },
+    "evidence_type": {
+      "backend": "auto",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "sentence-transformers/all-mpnet-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "thenlper/gte-base"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        }
+      ],
+      "rubric_scale": 0.0,
+      "strategy": "flat"
+    },
+    "firsthand_flag": {
+      "backend": "transformers",
+      "embedding_model": "bert-base-uncased",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "BAAI/bge-small-en-v1.5"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        }
+      ],
+      "rubric_scale": 0.0,
+      "strategy": "flat"
+    },
+    "polarity_score": {
+      "backend": "auto",
+      "embedding_model": "thenlper/gte-base",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "sentence-transformers/all-mpnet-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "BAAI/bge-small-en-v1.5"
+        }
+      ],
+      "nli_model": "cross-encoder/nli-deberta-v3-xsmall",
+      "nli_scale": 3.0,
+      "rubric_scale": 3.0,
+      "strategy": "flat"
+    },
+    "task_category": {
+      "backend": "auto",
+      "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+      "extra_embedding_models": [
+        {
+          "backend": "auto",
+          "embedding_model": "thenlper/gte-base"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "intfloat/e5-base-v2"
+        },
+        {
+          "backend": "auto",
+          "embedding_model": "BAAI/bge-small-en-v1.5"
+        }
+      ],
+      "rubric_scale": 10.0,
+      "strategy": "flat"
+    }
+  },
+  "fields": {
+    "aspect_category": {
+      "evaluated": 2281,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.42525208241999124,
+          "covered": 970,
+          "precision": 0.6051546391752577
+        },
+        "0.60": {
+          "coverage": 0.17799210872424376,
+          "covered": 406,
+          "precision": 0.729064039408867
+        },
+        "0.70": {
+          "coverage": 0.09907935116177115,
+          "covered": 226,
+          "precision": 0.8849557522123894
+        },
+        "0.80": {
+          "coverage": 0.0920648838228847,
+          "covered": 210,
+          "precision": 0.8952380952380953
+        },
+        "0.90": {
+          "coverage": 0.0775975449364314,
+          "covered": 177,
+          "precision": 0.9152542372881356
+        },
+        "0.95": {
+          "coverage": 0.0530469092503288,
+          "covered": 121,
+          "precision": 0.9504132231404959
+        }
+      }
+    },
+    "evidence_type": {
+      "evaluated": 2281,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.5436212187637002,
+          "covered": 1240,
+          "precision": 0.6274193548387097
+        },
+        "0.60": {
+          "coverage": 0.31477422183252957,
+          "covered": 718,
+          "precision": 0.6935933147632312
+        },
+        "0.70": {
+          "coverage": 0.24594476106970628,
+          "covered": 561,
+          "precision": 0.7076648841354723
+        },
+        "0.80": {
+          "coverage": 0.10258658483121438,
+          "covered": 234,
+          "precision": 0.7735042735042735
+        },
+        "0.90": {
+          "coverage": 0.04910127137220517,
+          "covered": 112,
+          "precision": 0.8214285714285714
+        },
+        "0.95": {
+          "coverage": 0.030688294607628234,
+          "covered": 70,
+          "precision": 0.8285714285714286
+        }
+      }
+    },
+    "firsthand_flag": {
+      "evaluated": 2281,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.9605436212187637,
+          "covered": 2191,
+          "precision": 0.7973528069374715
+        },
+        "0.60": {
+          "coverage": 0.8899605436212188,
+          "covered": 2030,
+          "precision": 0.8177339901477833
+        },
+        "0.70": {
+          "coverage": 0.7606313020604998,
+          "covered": 1735,
+          "precision": 0.8478386167146974
+        },
+        "0.80": {
+          "coverage": 0.5813239807102148,
+          "covered": 1326,
+          "precision": 0.8793363499245852
+        },
+        "0.90": {
+          "coverage": 0.33537921964050854,
+          "covered": 765,
+          "precision": 0.9124183006535947
+        },
+        "0.95": {
+          "coverage": 0.21744848750548004,
+          "covered": 496,
+          "precision": 0.9254032258064516
+        }
+      }
+    },
+    "polarity_score": {
+      "evaluated": 2281,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.04734765453748356,
+          "covered": 108,
+          "precision": 0.4444444444444444
+        },
+        "0.60": {
+          "coverage": 0.022797018851380975,
+          "covered": 52,
+          "precision": 0.4423076923076923
+        },
+        "0.70": {
+          "coverage": 0.00789127575624726,
+          "covered": 18,
+          "precision": 0.6666666666666666
+        },
+        "0.80": {
+          "coverage": 0.00657606313020605,
+          "covered": 15,
+          "precision": 0.6666666666666666
+        },
+        "0.90": {
+          "coverage": 0.00657606313020605,
+          "covered": 15,
+          "precision": 0.6666666666666666
+        },
+        "0.95": {
+          "coverage": 0.00657606313020605,
+          "covered": 15,
+          "precision": 0.6666666666666666
+        }
+      }
+    },
+    "task_category": {
+      "evaluated": 2281,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.5992985532661114,
+          "covered": 1367,
+          "precision": 0.5918068763716167
+        },
+        "0.60": {
+          "coverage": 0.3051293292415607,
+          "covered": 696,
+          "precision": 0.6795977011494253
+        },
+        "0.70": {
+          "coverage": 0.15431828145550197,
+          "covered": 352,
+          "precision": 0.7045454545454546
+        },
+        "0.80": {
+          "coverage": 0.06181499342393687,
+          "covered": 141,
+          "precision": 0.7943262411347518
+        },
+        "0.90": {
+          "coverage": 0.01709776413853573,
+          "covered": 39,
+          "precision": 0.8974358974358975
+        },
+        "0.95": {
+          "coverage": 0.016659359929855327,
+          "covered": 38,
+          "precision": 0.8947368421052632
+        }
+      }
+    }
+  }
+}

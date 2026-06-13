@@ -120,6 +120,56 @@ class ClientMappingTest(unittest.TestCase):
         self.assertEqual(raw_items[1].metadata["depth"], 1)
         self.assertEqual(raw_items[1].metadata["comment_index"], 1)
 
+    def test_false_context_mentions_are_dropped(self):
+        from social_benchmark.pipeline.catalog import ModelCatalog
+
+        catalog = ModelCatalog()
+        self.assertEqual(
+            [m.model_id for m in catalog.find_mentions("Head to gemini://gemi.dev in your Gemini browser")],
+            [],
+        )
+        self.assertEqual(
+            [m.model_id for m in catalog.find_mentions("depends who is hosting the model (together, openrouter, grok)")],
+            [],
+        )
+        self.assertEqual(
+            [m.model_id for m in catalog.find_mentions("Gemini 2.5 Pro handles large context well")],
+            ["gemini-2.5"],
+        )
+        self.assertEqual(
+            [m.model_id for m in catalog.find_mentions("Grok had an existential crisis")],
+            ["grok"],
+        )
+
+    def test_hackernews_search_filters_and_paginates(self):
+        pages = [
+            {
+                "hits": [
+                    {"story_id": 200, "num_comments": 50},
+                    {"objectID": "201", "num_comments": 2},
+                    {"story_id": 202, "num_comments": 30},
+                ],
+                "nbPages": 2,
+            },
+            {
+                "hits": [{"story_id": 203, "num_comments": 25}],
+                "nbPages": 2,
+            },
+        ]
+        requested_params = []
+
+        class FakeSearchHttp:
+            def get_json(self, path, params=None, headers=None):
+                requested_params.append((path, params))
+                return pages[params["page"]]
+
+        client = HackerNewsClient(search_http=FakeSearchHttp())
+        story_ids = client.search_story_ids("Claude", max_stories=3, min_comments=10)
+
+        self.assertEqual(story_ids, [200, 202, 203])
+        self.assertEqual(requested_params[0][0], "search")
+        self.assertEqual(requested_params[0][1]["tags"], "story")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,100 @@
+{
+  "task_category": {
+    "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+    "backend": "auto",
+    "rubric_scale": 10.0,
+    "strategy": "flat",
+    "extra_embedding_models": [
+      {
+        "embedding_model": "thenlper/gte-base",
+        "backend": "auto"
+      },
+      {
+        "embedding_model": "intfloat/e5-base-v2",
+        "backend": "auto"
+      },
+      {
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "backend": "auto"
+      }
+    ]
+  },
+  "aspect_category": {
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "backend": "auto",
+    "rubric_scale": 1.0,
+    "strategy": "flat",
+    "extra_embedding_models": [
+      {
+        "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+        "backend": "auto"
+      },
+      {
+        "embedding_model": "thenlper/gte-base",
+        "backend": "auto"
+      },
+      {
+        "embedding_model": "intfloat/e5-base-v2",
+        "backend": "auto"
+      }
+    ]
+  },
+  "evidence_type": {
+    "embedding_model": "BAAI/bge-small-en-v1.5",
+    "backend": "auto",
+    "rubric_scale": 0.0,
+    "strategy": "flat",
+    "extra_embedding_models": [
+      {
+        "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+        "backend": "auto"
+      },
+      {
+        "embedding_model": "thenlper/gte-base",
+        "backend": "auto"
+      },
+      {
+        "embedding_model": "intfloat/e5-base-v2",
+        "backend": "auto"
+      }
+    ]
+  },
+  "polarity_score": {
+    "embedding_model": "thenlper/gte-base",
+    "backend": "auto",
+    "rubric_scale": 3.0,
+    "strategy": "ordinal",
+    "nli_model": "cross-encoder/nli-deberta-v3-xsmall",
+    "nli_scale": 3.0,
+    "extra_embedding_models": [
+      {
+        "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+        "backend": "auto"
+      },
+      {
+        "embedding_model": "intfloat/e5-base-v2",
+        "backend": "auto"
+      },
+      {
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "backend": "auto"
+      }
+    ]
+  },
+  "firsthand_flag": {
+    "embedding_model": "bert-base-uncased",
+    "backend": "transformers",
+    "rubric_scale": 0.0,
+    "strategy": "flat",
+    "extra_embedding_models": [
+      {
+        "embedding_model": "BAAI/bge-small-en-v1.5",
+        "backend": "auto"
+      },
+      {
+        "embedding_model": "intfloat/e5-base-v2",
+        "backend": "auto"
+      }
+    ]
+  }
+}

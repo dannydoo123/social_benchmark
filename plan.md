@@ -74,12 +74,28 @@ Current MVP source scope is Hacker News only. Other sources remain future expans
 9. Add additional sources only after Hacker News extraction quality, labeling, and scoring are stable.
 10. Add paid decision-support features only after public scoring is credible.
 
+## Current Status (2026-06-11)
+
+The Hacker News collection, extraction, labeling, and classifier-experiment
+pipeline is built and iterating. Reviewed training data stands at 547
+observations across 69 threads. The selected classifier candidate is the
+routed rubric architecture (per-field encoders plus rubric features) with a
+selective firsthand-to-evidence soft chain, at thread-grouped mean macro F1
+`0.4217`. The publication-readiness gate still rejects it: too few thread
+groups and task/aspect/evidence/polarity below per-field thresholds.
+
 ## Current Task
 
-- Convert `description.md` into actionable project planning documents.
-- Create `plan.md`.
-- Create `claude.md` with project guidance and context.
+- Expand the reviewed corpus: pull fresh Hacker News data, label with the
+  pipeline classifier, review labels with LLM evaluation, and merge into
+  training data.
+- Re-run embedding and architecture experiments on the expanded corpus until
+  per-field quality passes the publication-readiness gate.
+- When improvements plateau, change architecture (e.g. evidence-to-rubric
+  cross-encoder) or research new methods before adding more data.
 
 ## Next Task
 
-- Scaffold the application stack and define the initial database schema for observations, sources, models, scores, and evidence provenance.
+- Once the classifier passes publication gates, return to the scoring engine
+  and dashboard milestones: scaffold Next.js/FastAPI/Supabase, define the
+  observation schema in migrations, and ship the minimal leaderboard.

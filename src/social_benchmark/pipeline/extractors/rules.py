@@ -210,6 +210,32 @@ REFUSAL_TERMS = ("refused", "refusal", "censored", "won't answer", "over-cautiou
 VALUE_TERMS = ("price", "pricing", "worth", "expensive", "cheap", "subscription", "cost")
 BENCHMARK_TERMS = ("benchmark", "benchmarks", "leaderboard", "eval", "evaluations", "scores")
 NOISE_TERMS = ("automod", "bot", "debug", "traceback", "stack trace", "stderr", "stdout", "log output")
+
+# Self-hosting/hardware requirement talk; two or more distinct hits without
+# firsthand usage means the span is about running models, not model quality.
+HARDWARE_INFRA_TERMS = (
+    "gguf",
+    "vram",
+    "quantization",
+    "quantized",
+    "q8",
+    "q4",
+    "on disk",
+    "self-host",
+    "self host",
+    "gb of ram",
+    "of vram",
+    "wafer",
+    "h100",
+    "gpu cluster",
+    "llama.cpp",
+    "llama-server",
+    "llamafile",
+)
+
+
+def _hardware_infra_hits(lowered: str) -> int:
+    return sum(1 for term in HARDWARE_INFRA_TERMS if term in lowered)
 POLARITY_IGNORE_PHRASES = ("bad actors",)
 INSTRUCTION_PREFIXES = (
     "install manually:",
@@ -270,6 +296,7 @@ class RuleBasedExtractor:
         release = _contains_any(lowered, RELEASE_TERMS, matched_terms)
         benchmark = _contains_any(lowered, BENCHMARK_TERMS, matched_terms)
         noise = _contains_any(lowered, NOISE_TERMS, matched_terms)
+        hardware = _hardware_infra_hits(lowered) >= 2
 
         polarity = _polarity_score(lowered, matched_terms)
         exclude_reason = _exclude_reason(
@@ -283,6 +310,7 @@ class RuleBasedExtractor:
             release=release,
             benchmark=benchmark,
             noise=noise,
+            hardware=hardware,
             polarity=polarity,
         )
         evidence_types = self._evidence_types(firsthand, comparative, regression, value, release, benchmark, text)
@@ -321,7 +349,7 @@ class RuleBasedExtractor:
         )
 
     def extract_observations(self, item: RawItem) -> list[Observation]:
-        observations_by_key: dict[tuple[str, str, str, str, str, str], tuple[Observation, float]] = {}
+        observations_by_key: dict[tuple[str, str, str, str], tuple[Observation, float]] = {}
 
         for span in _candidate_spans(item):
             features = self._extract_features_for_text(item, span)
@@ -337,7 +365,7 @@ class RuleBasedExtractor:
         self,
         item: RawItem,
         features: CandidateFeatures,
-        observations_by_key: dict[tuple[str, str, str, str, str, str], tuple[Observation, float]],
+        observations_by_key: dict[tuple[str, str, str, str], tuple[Observation, float]],
     ) -> None:
         weights = self._weights(item, features)
         evidence_type = features.evidence_types[0] if features.evidence_types else EvidenceType.HEARSAY
@@ -345,12 +373,15 @@ class RuleBasedExtractor:
         for mention in features.model_mentions:
             for task in features.task_categories:
                 for aspect in features.aspect_categories:
+                    # Collapse task/aspect variants of the same comment-model
+                    # pair: review rounds showed they are near-duplicate
+                    # spans, not independent claims. Evidence type stays in
+                    # the key because different spans of one comment can
+                    # carry genuinely different evidence.
                     key = (
                         mention.model_id,
                         features.product_id or "",
                         features.inference_profile or "",
-                        task.value,
-                        aspect.value,
                         evidence_type.value,
                     )
                     observation = Observation(
@@ -530,6 +561,8 @@ def _evidence_span_score(text: str, features: CandidateFeatures) -> float:
         score -= 2.5 * (len(features.model_mentions) - 1)
     if lowered.startswith(("as part of ", "according to ", "anthropic says ", "openai says ", "google says ")):
         score -= 4.0
+    if _hardware_infra_hits(lowered) >= 2:
+        score -= 6.0
     return score
 
 
@@ -739,10 +772,13 @@ def _exclude_reason(
     release: bool,
     benchmark: bool,
     noise: bool,
+    hardware: bool,
     polarity: int,
 ) -> str | None:
     if _looks_non_english_or_garbled(text):
         return "non_english_or_garbled"
+    if hardware and not (firsthand or regression or hallucination or refusal):
+        return "hardware_infra_requirements"
     if noise and not (firsthand or comparative or regression or hallucination or refusal or value or abs(polarity) > 0):
         return "tooling_or_bot_transcript"
     if release and not (firsthand or comparative or regression or hallucination or refusal or value or abs(polarity) > 0):

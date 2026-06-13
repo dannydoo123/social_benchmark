@@ -1,0 +1,19 @@
+{
+  "examples": 1023,
+  "failures": [
+    "mean_macro_f1<0.7",
+    "aspect_category<0.6",
+    "evidence_type<0.6",
+    "polarity_score<0.6",
+    "task_category<0.6"
+  ],
+  "field_macro_f1": {
+    "aspect_category": 0.41174111197765983,
+    "evidence_type": 0.4552371962210419,
+    "firsthand_flag": 0.7762123620119411,
+    "polarity_score": 0.33371301073940185,
+    "task_category": 0.372858170579749
+  },
+  "groups": 208,
+  "ready": false
+}

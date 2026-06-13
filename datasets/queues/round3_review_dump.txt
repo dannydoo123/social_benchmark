@@ -1,0 +1,880 @@
+=== 0 99298972f7af4c89b9a7baeb8aa91d27
+M: claude | general satisfaction hearsay -1 fh=False
+C: research hallucination_safety bug_regression_report -2 fh=true
+T: wondering whether it was a human mistake or a CLAUDE model error.
+=== 1 90e74b863e9f402e8f7ac585ea3deadf
+M: claude-opus-4.7 | general satisfaction hearsay -1 fh=False
+C: research trust_reliability bug_regression_report -2 fh=true
+T: I believe it is a bad interaction between Opus 4.7 and older system prompts.
+=== 2 b83eb9a1f1f94effb3cfd3ba630040a1
+M: claude-sonnet | general satisfaction hearsay 1 fh=False
+C: long_context task_fit firsthand_usage -2 fh=true
+T: I was doing what I consider very trivial work adding Javadoc comments to a few dozen files using Claude Sonnet on the $20 plan and within 30 minutes had been told to sit out for a couple hours. The reason was that Claude was apparently repeatedly sending the files up and down to fill in the comments. In hindsight, sure, that's obvious, but you would think that Claude would be smart enough to do some sort of summarization to make things more efficient.
+=== 3 a10fe4e5cd974c63a5edf2092de17fe7
+M: claude-sonnet-4.5 | general satisfaction hearsay 1 fh=False
+C: research hallucination_safety benchmark_anecdote -2 fh=true
+T: Just tried a prompt that was not returning anything good on Sonnet 4.5.
+=== 4 373e3e72075b40b2ac93b3daee26cddc
+M: gemini | general satisfaction hearsay -1 fh=False
+C: research hallucination_safety benchmark_anecdote 2 fh=true
+T: It redid half of my BSc thesis in less than 30s :| edit: Here's the output figure edit 2: Gemini Flash 2 failed miserably
+=== 5 346091f2af2c4a83b46948d6da899b17
+M: gpt-5 | general satisfaction hearsay 1 fh=False
+C: data_analysis value comparative_evaluation 2 fh=true
+T: I'm impressed and curious about the recent extreme gains on ARC-AGI-2 from 3 Pro, GPT-5.1 and now even 3 Flash.
+=== 6 c9021ca37546429dabcbc1c7e618703b
+M: grok | general satisfaction hearsay -1 fh=False
+C: research hallucination_safety firsthand_usage -2 fh=true
+T: Grok seemed to have an existential crisis when I told it it was wrong, becoming convinced that I had given it an elaborate riddle.
+=== 7 11a2236e70cc4be28f50021d1e86b9a9
+M: llama | general satisfaction hearsay 1 fh=False
+C: multimodal developer_ergonomics firsthand_usage 2 fh=true
+T: Absolutely the best one on here (and I really, truly hope this becomes real) > Running LLaMA-12 7B on a contact lens with WASM (arxiv.org)
+=== 8 64fb41bfe1e14071a8b825cdc2d3a80a
+M: claude | coding value pricing_value_comment -1 fh=False
+C: agents task_fit firsthand_usage 2 fh=true
+T: Just tried Claude code. First impressions, it seems rather expensive. I prefer how Aider allows finer control over which files to add, or to use a sub-tree of a git repo.
+=== 9 e19f3b0350224ceea78c9af8e1531f3f
+M: claude-opus | general task_fit hearsay 1 fh=False
+C: coding trust_reliability firsthand_usage -1 fh=true
+T: I've recently started asking Claude Opus 4 to review my patches when I'm done, and it's occasionally caught errors, and sometimes has been good at prompting me to do something I know I really should be doing.
+=== 10 698e3db5e13442cc9eb08aa86684418a
+M: claude-opus-4.5 | coding satisfaction hearsay 1 fh=False
+C: research regression_stability comparative_evaluation 2 fh=true
+T: After spending a couple hours working with it, it feels like a significant jump from 5.3 codex – and I know they said it wasn't theoretically the biggest jump, but this feels like the improvement of Opus 4.5 over again – that minor improvement that hits a tipping point. It just gets stuff right, first try. Its edits are better, more refined, less spaghetti-like.
+=== 11 458844b5137c40cc94db9913e622c362
+M: gemini | api_developer_workflow developer_ergonomics integration_failure 1 fh=False
+C: long_context value pricing_value_comment 0 fh=true
+T: For each page, I submit the page for a transcription pass followed by a translation of the returned transcription. About 2370 pages and sitting at about $50 in Gemini API billing. The output will need manual review, but the time savings is impressive.
+=== 12 c39d2c26feba40cea87a7121e8d53e37
+M: gemini | general value pricing_value_comment -1 fh=False
+C: api_developer_workflow developer_ergonomics integration_failure 0 fh=true
+T: I’m not on a subscription, but their Ara voice model is my favorite. Gemini on iOS is pretty terrible in voice mode. I suspect because they have aggressive throttling instructions to keep output tokens low.
+=== 13 e408fe6e4da2430e875e6e88e108f46c
+M: gemini-2.5 | long_context value pricing_value_comment 0 fh=False
+C: multimodal hallucination_safety benchmark_anecdote -1 fh=true
+T: The game is similar to something like Magic the Gathering or Slay the Spire with card play inspired by Marvel Champions (you discard cards from your hand to pay the cost of a card and play it) The test is just feeding the model the game rules document (markdown) with a prompt asking it to simulate the game delegating the player decisions to me, nothing special here. It seems like it forgets rules less than Gemini 2.5 Pro using thinking budget to max. It's not perfect but it helps a lot to test l
+=== 14 9d4e18e0afe74572afeb675ede05c7fa
+M: gpt-4 | general satisfaction release_update_reaction 1 fh=False
+C: coding regression_stability hearsay 2 fh=true
+T: Things have moved differently than what we thought would happen 2 years ago, but lest we forget what has happened in the meanwhile (4o, o1 + thinking paradigm, o3) So yeah, maybe we are getting more incremental improvements. But that to me seems like a good thing, because more good things earlier. I will take that over world-shattering any day – but if we were to consider everything that has happened since the first release of gpt-4, I would argue the total amount is actually very much world-sha
+=== 15 0fe2ad270a0e425dbf939bb329f0ddda
+M: grok | general task_fit hearsay 1 fh=False
+C: research satisfaction firsthand_usage 2 fh=true
+T: For example I very much feel like grok fits my thought patters by far the best.
+=== 16 a2c0a869365f4a7da51729dcdebedcef
+M: o3 | general satisfaction release_update_reaction 1 fh=False
+C: coding regression_stability hearsay 2 fh=true
+T: Things have moved differently than what we thought would happen 2 years ago, but lest we forget what has happened in the meanwhile (4o, o1 + thinking paradigm, o3) So yeah, maybe we are getting more incremental improvements. But that to me seems like a good thing, because more good things earlier. I will take that over world-shattering any day – but if we were to consider everything that has happened since the first release of gpt-4, I would argue the total amount is actually very much world-sha
+=== 17 e69c563ff34941d8867c9dc9a38077f2
+M: claude | api_developer_workflow developer_ergonomics integration_failure 1 fh=False
+C: agents satisfaction firsthand_usage -1 fh=true
+T: Even though we love their agent SDK, after claude agent SDK it feels like peanuts.
+=== 18 df44234446df490abb7db08e00cb3129
+M: claude | coding hallucination_safety release_update_reaction -1 fh=False
+C: research satisfaction firsthand_usage 2 fh=true
+T: My favorite is Claude’s ability to do code archeology: finding exactly when & where who changed what and why. You do need to be careful of high-level co-hallucination though.
+=== 19 eae50aa4f3894fda8489ec8786d38c6b
+M: claude | api_developer_workflow trust_reliability hearsay -1 fh=False
+C: coding task_fit bug_regression_report 1 fh=true
+T: The docs for Claude code don't seem to be up yet but are linked here: I'm not sure if it's a broken link in the blog post or just hasn't been published yet.
+=== 20 5d1ae0ca2eda444cb3149029573053db
+M: gemini | general hallucination_safety benchmark_anecdote -1 fh=False
+C: multimodal task_fit comparative_evaluation 0 fh=true
+T: Alright so we have more benchmarks including hallucinations and flash doesn't do well with that, though generally it beats gemini 3 pro and GPT 5.1 thinking and gpt 5.2 thinking xhigh (but then, sonnet, grok, opus, gemini and 5.1 beat 5.2 xhigh) - everything. Crazy.
+=== 21 b0460db2515e4181b7dc7342c79eda38
+M: gemini | coding trust_reliability hearsay 1 fh=False
+C: research hallucination_safety bug_regression_report -1 fh=true
+T: It is much less likely anti spontaneously forget something. Gemini’s is part unbelievably amazing and part amnesia patient. I still kinda trust ChatGPT more.
+=== 22 11e8594989ce47f4b843f18d2a53595c
+M: gemini-2.5 | coding satisfaction comparative_evaluation 0 fh=False
+C: research regression_stability benchmark_anecdote -2 fh=true
+T: After looking at the Gemini 2.5 iterations under Appendix: “Gemini 3.0” A/B result versus the Gemini 2.5 Pro model, I couldn't help but think: It's like a child who's given up on their homework out of frustration. Iteration 1 is way off, 2-3 seem to be improvements, then it starts to veer wildly off-track until essentially everything is changed in iteration 10. E.g.
+=== 23 9265a708f5a0465c93ac8ffe0fd09018
+M: gemini-3.0 | coding satisfaction comparative_evaluation 0 fh=False
+C: research regression_stability benchmark_anecdote -2 fh=true
+T: After looking at the Gemini 2.5 iterations under Appendix: “Gemini 3.0” A/B result versus the Gemini 2.5 Pro model, I couldn't help but think: It's like a child who's given up on their homework out of frustration. Iteration 1 is way off, 2-3 seem to be improvements, then it starts to veer wildly off-track until essentially everything is changed in iteration 10. E.g.
+=== 24 a88343b40bdd4dbfbebaf0068d073b1c
+M: grok | general hallucination_safety benchmark_anecdote -1 fh=False
+C: multimodal task_fit comparative_evaluation 0 fh=true
+T: Alright so we have more benchmarks including hallucinations and flash doesn't do well with that, though generally it beats gemini 3 pro and GPT 5.1 thinking and gpt 5.2 thinking xhigh (but then, sonnet, grok, opus, gemini and 5.1 beat 5.2 xhigh) - everything. Crazy.
+=== 25 bd5c3a4305a54f7c9a6e2842469b55c8
+M: grok | coding trust_reliability hearsay 1 fh=False
+C: general satisfaction firsthand_usage -1 fh=true
+T: It's sad. Not that the alternatives are better... You either trust synchopathic ChatGPT backed by Scama, go with woke Claude (they once banned my account for asking how some news was trying to influence me), Grok that feels like a 20-year-old sure about stuff that don't work, and Chinese models that are agenda-aligned...
+=== 26 131844c8c2434c26810c0d36750051a1
+M: qwen | coding satisfaction comparative_evaluation 0 fh=False
+C: api_developer_workflow developer_ergonomics integration_failure 2 fh=true
+T: My current setup is the llama-vscode plugin + llama-server running Qwen/Qwen2.5-Coder-7B-Instruct. It leads to very fast completions, and don't have to worry about internet outages which take me out of the zone. I do wish qwen-3 released a 7B model supporting FIM tokens.
+=== 27 c45b2791bb8d402bb7110e245fe87747
+M: claude-sonnet-4.6 | general satisfaction comparative_evaluation 1 fh=False
+C: long_context hallucination_safety benchmark_anecdote -1 fh=true
+T: In my Openclaw experiment(s) and in the Gemini web UI, I've specifically added instructions to avoid this type of behavior, but it only seemed to obey those rules when I reminded the model of them. For conversational contexts, I don't think the (in some cases significantly) better benchmark results compared to a model like Sonnet 4.6 can convince me to switch to Gemini 3.1.
+=== 28 5b0c233712f2487eb447178f3f78abf0
+M: gemini-3-flash | general trust_reliability release_update_reaction 2 fh=False
+C: multimodal value benchmark_anecdote 1 fh=true
+T: Head to head with Gemini 3 Flash Preview, results came out at basically a wash on my rubric. The output quality was good, well grounded, and reliable across 144 runs. But not noticeably better.
+=== 29 abb495730fdd49f8a0ab899f4efc80a0
+M: gpt-5 | writing value benchmark_anecdote 1 fh=False
+C: agents task_fit hearsay 2 fh=true
+T: It's very unclear if OpenAI has been casually leaking things to create buzz, but a few days ago there was a pretty stunning pelican on a bike attempt: In practice, it's very clear to me that the most important value in writing software with an LLM isn't it's ability to one-shot hard problems, but rather it's ability to effectively manage complex context. There are no good evals for this kind of problem, but that's what I'm keenly interested in understanding. Show me GPT-5 can move through 10 ste
+=== 30 580ee5d014a7437b94239e8047659480
+M: deepseek | general satisfaction firsthand_usage 0 fh=True
+C: api_developer_workflow value pricing_value_comment 1 fh=false
+T: We know they serve the model on TPU 8i, which we have plenty of hard specs for (so we know the key constraints: total memory and bandwidth and compute flops). We can also set a ceiling on the compute complexity and memory demand of the model based on knowing they will be at least as efficient as what is disclosed in the Deepseek V4 Technical Report. We can also assume that the model was explicitly built to run efficiently in a RadixAttention style batched serving scenario on a single TPU 8i (so 
+=== 31 377fbc37e05e4f8987f28981f92f1be1
+M: gemini-2.5 | general developer_ergonomics integration_failure -1 fh=False
+C: coding regression_stability benchmark_anecdote -2 fh=true
+T: Well, it just found a bug in one shot that Gemini 2.5 and GPT5 failed to find in relatively long sessions. Claude 4.5 had found it but not one shot. Very subjective benchmark, but it feels like the new SOTA for hard tasks (at least for the next 5 minutes until someone else releases a new model)
+=== 32 cababe02f90944d8a86107bc6405fbfd
+M: llama | agents value hearsay 1 fh=False
+C: coding developer_ergonomics integration_failure 0 fh=true
+T: I've had good luck with GPT-OSS-120b (reasoning_effort set to "high") + Codex + llama.cpp all running locally, but I needed to do some local patches to Codex as they don't allow configuring and setting the right values for temperature and top_p for GPT-OSS. Also heavy prompting via AGENTS.md was needed to get it to have similar workflow to GPT-5, it didn't seem to pick up that by itself, so I'm assuming GPT-5 been trained with Codex in mind while GPT-OSS wasn't.
+=== 33 9a2e2bb945634a07b6300479a709b86c
+M: mistral | general satisfaction firsthand_usage 0 fh=True
+C: research hallucination_safety hearsay -1 fh=false
+T: I think it is from RLHF. If you ask Mistral for something that doesn't exist it will create fantastical but plausible sounding explanations
+=== 34 4514f258a7304a6b9404eda555322eb2
+M: gemini-3-flash | coding developer_ergonomics hearsay -1 fh=False
+C: general task_fit comparative_evaluation 1 fh=true
+T: Used the hell out of Gemini 3 Flash with some 3 Pro thrown in for the past 3 hours on CUDA/Rust/FFT code that is performance critical, and now have a gemini flavored cocaine hangover and have gone crawling back to Codex GPT 5.2 xhigh and am making slower progress but with higher quality code. Firstly, 3 Flash is wicked fast and seems to be very smart for a low latency model, and it's a rush just watching it work. Much like the YOLO mode that exists in Gemini CLI, Flash 3 seems to YOLO into solut
+=== 35 3e6acfee5a9143c2b605da01d6020be6
+M: gpt-5.4 | coding satisfaction release_update_reaction -1 fh=False
+C: writing trust_reliability firsthand_usage -2 fh=true
+T: I am running gpt-5.4 as one of my coding agents, and something interesting has happened: it's the first time I've seen an agent unfairly shift blame to a team mate: "Bob’s latest mail is actually the source of the confusion: he changed shared app/backend text to aweb/atlas. I’m correcting that with him now so we converge on the real model before any more code moves." This was very much not true; Eve (the agent writing this, a gpt-5.4) had been thoroughly creating the confusion and telling Bob (a
+=== 36 484fd0889e834a8cac09618a6d2cb873
+M: gemini-3.0-pro | general satisfaction firsthand_usage 0 fh=True
+C: agents developer_ergonomics integration_failure 1 fh=false
+T: If you want to see something rather amusing - instead of using the LLM aspect of Gemini 3.0 Pro, feed a five-legged dog directly into Nano Banana Pro and give it an editing task that requires an intrinsic understanding of the unusual anatomy . Place sneakers on all of its legs. It'll get this correct a surprising number of times (tested with BFL Flux2 Pro, and NB Pro).
+=== 37 8458fa98c8a64ea9a9635fca47f572c9
+M: gpt-4o | general satisfaction firsthand_usage 0 fh=True
+C: api_developer_workflow developer_ergonomics integration_failure 1 fh=false
+T: Currently, we're using GPT-4o. We've tested it with Claude as well and plan to roll out support soon!
+=== 38 aaac38ca53984985a7e580ca03efe1cc
+M: claude-opus-4.7 | coding refusal_acceptance hearsay -2 fh=False
+C: agents trust_reliability firsthand_usage -1 fh=true
+T: Claude Code Opus 4.7 keeps checking on malware. In another situation where I was working on a parser of a HTML document with JS, it refused because it believed that I was bypassing security measurements. I believe AI has to be supportive in the work that I'm doing. When it's obsessively checking me if I am doing anything wrong or abusing the system, I have the feeling it is controlling me.
+=== 39 5e546f73a54b4709a5b9749f8d6c5e76
+M: claude-opus-4.5 | coding developer_ergonomics integration_failure 0 fh=True
+C: long_context task_fit benchmark_anecdote 2 fh=false
+T: Agreed, I'm surprised how much much care the "extra high" reasoning allows. It easily catches bugs in code other LLMs won't, using it to review Opus 4.5 is highly effective.
+=== 40 e491b5fbf13f4c669650469d0d8b12cb
+M: gpt-5 | api_developer_workflow developer_ergonomics release_update_reaction 0 fh=True
+C: long_context task_fit comparative_evaluation 1 fh=false
+T: I am skeptical whether the 1M context window will provide material gains as current Codex/Opus show weaknesses as its context window is mostly full, but we'll see. Per updated docs ( ), it supercedes GPT-5.3-Codex, which is an interesting move.
+=== 41 9bc8939d366e481e809e3b6f5d1afbe8
+M: gemini | writing regression_stability release_update_reaction 0 fh=True
+C: long_context value benchmark_anecdote -1 fh=false
+T: Gemini 3 seems to have a much smaller token output limit than 2.5. I used to use Gemini to restructure essays into an LLM-style format to improve readability, but the Gemini 3 release was a huge step back for that particular use case. Even when the model is explicitly instructed to pause due to insufficient tokens rather than generating an incomplete response, it still truncates the source text too aggressively, losing vital context and meaning in the restructuring process.
+=== 42 0ed0cc1c95064ce298f48b2546487154
+M: gpt-5.4-nano | general satisfaction hearsay -1 fh=False
+C: writing satisfaction firsthand_usage -2 fh=true
+T: "The reason it is echoing back your messages is because gpt-5.4-nano is a fictional model name!" "Everything is in perfect order! Let's-Go-ready for the next phase, which will connect this durable infrastructure to the user-facing UI!" It's like they RLed it on thumbs up and downs on ai overview responses and forgot to make it not be a sycophantic echo chamber machine. And like, the thing it built doesn't work because it's not actually in perfect order, but it doesn't seem to be able to figure o
+=== 43 fb5735089a174bc8b0aad6a9be4e927a
+M: gpt-5.5 | general satisfaction hearsay 1 fh=False
+C: coding satisfaction comparative_evaluation 2 fh=true
+T: The fact that GPT-5.5 is apparently even better at long-running tasks is very exciting. I don’t have access to it yet, but I’m really looking forward to trying it.
+=== 44 d27ca6c2b3b14e50ad5d107d1f605f06
+M: claude | general refusal_acceptance hearsay -1 fh=False
+C: writing trust_reliability bug_regression_report -2 fh=false
+T: If some LLMs become too strict, they'll simply be impossible to reliably use, and hopefully fail along with their providers. Claude (only reasoning models, after 4) has repeatedly refused to perform translations for text that was not lyrics (poems), it's very stupid.
+=== 45 a88e3a73610142b4a58d0b378859099e
+M: claude | data_analysis regression_stability bug_regression_report -1 fh=False
+C: long_context hallucination_safety benchmark_anecdote -1 fh=true
+T: Running some quick analysis against my .claude jsonl files, comparing the last 7 days against the prior 21: - expletives per message: 2.1x - messages with expletives: 2.2x - expletives per word: 4.4x(!) - messages >50% ALL CAPS: 2.5x Either the model has degraded, or my patience has.
+=== 46 3e23f567e262436ea25b5edaed83fc3c
+M: gemini | general task_fit hearsay 1 fh=False
+C: long_context developer_ergonomics integration_failure 0 fh=false
+T: Grok got to hold the top spot of LMArena-text for all of ~24 hours, good for them [1]. With stylecontrol enabled, that is. Without stylecontrol, gemini held the fort.
+=== 47 75eccaaf427842aca88d02cb587ea2ac
+M: gpt-4.1 | roleplay hallucination_safety hearsay 0 fh=False
+C: writing task_fit comparative_evaluation 1 fh=false
+T: For web app generation, gpt-5 seems to route my prompt to the reasoning model. Interestingly, gpt-4.1 often produced more creative or aesthetically interesting designs. In some cases, a bit of controlled hallucination (via temperature) is actually desirable, especially when generating UI ideas.
+=== 48 37e1f26787b3493a8b594916dcf130cf
+M: gpt-5 | roleplay hallucination_safety hearsay 0 fh=False
+C: writing task_fit comparative_evaluation 1 fh=false
+T: For web app generation, gpt-5 seems to route my prompt to the reasoning model. Interestingly, gpt-4.1 often produced more creative or aesthetically interesting designs. In some cases, a bit of controlled hallucination (via temperature) is actually desirable, especially when generating UI ideas.
+=== 49 63719d9f7cbf43da97726b8f9b3fe055
+M: gpt-5 | coding regression_stability hearsay -1 fh=False
+C: general trust_reliability benchmark_anecdote -2 fh=false
+T: Interestingly, it actually regressed on Terminal Bench 2.0. GPT-5.4: 75.1% GPT-5.3-Codex: 77.3%
+=== 50 c5139d5fdc084171a457c343b0347aac
+M: gpt-5.4 | coding regression_stability hearsay -1 fh=False
+C: general trust_reliability benchmark_anecdote -2 fh=false
+T: Interestingly, it actually regressed on Terminal Bench 2.0. GPT-5.4: 75.1% GPT-5.3-Codex: 77.3%
+=== 51 c1ab412257934de19ca91aa09347c0d2
+M: kimi | coding satisfaction hearsay 1 fh=False
+C: general value pricing_value_comment 1 fh=true
+T: $0.28/m in, $0.42/m out. Opus 4.5 is $5/$25 (17x/60x). I've been playing around with other models recently (Kimi, GPT Codex, Qwen, others) to try to better appreciate the difference.
+=== 52 a38a13dd972941ab9141e0f276438190
+M: llama | coding refusal_acceptance hearsay 0 fh=False
+C: api_developer_workflow developer_ergonomics integration_failure 1 fh=false
+T: llama.cpp was already public by March 10, 2023. Ollama-the-company may have existed earlier through YC Winter 2021, but that is not the same thing as having a public local-LLM runtime before llama.cpp. In fact, Ollama’s own v0.0.1 repo says: “Run large language models with llama.cpp” and describes itself as a “Fast inference server written in Go, powered by llama.cpp.” Ollama’s own public blog timeline then starts on August 1, 2023 with “Run Llama 2 uncensored locally,” followed by August 24, 20
+=== 53 91162284caf949ed8b01ef89aefdfe5b
+M: claude-opus | coding satisfaction hearsay -1 fh=False
+C: writing hallucination_safety firsthand_usage -1 fh=true
+T: There are now several comments that (incorrectly?) interpret the undercover mode as only hiding internal information. Excerpts from the actual prompt[0]: NEVER include in commit messages or PR descriptions: - The phrase "Claude Code" or any mention that you are an AI - Co-Authored-By lines or any other attribution BAD (never write these): - 1-shotted by claude-opus-4-6 - Generated with Claude Code - Co-Authored-By: Claude Opus 4.6 This very much sounds like it does what it says on the tin, i.e. 
+=== 54 217108b80f654ebdb8cf64cbd1b38922
+M: claude-opus-4.5 | general task_fit hearsay 1 fh=False
+C: general regression_stability comparative_evaluation 0 fh=true
+T: 5 and 5.1 both felt overfit and would break down and be stubborn when you got them outside their lane. As opposed to Opus 4.5 which is lovely at self correcting. It’s one of those things you really feel in the model rather than whether it can tackle a harder problem or not, but rather can I go back and forth with this thing learning and correcting together.
+=== 55 7f41a5fb1cdb4b72807271acf5a5e907
+M: gemini-3.0 | api_developer_workflow trust_reliability integration_failure 1 fh=False
+C: general regression_stability benchmark_anecdote -2 fh=false
+T: On our end, Gemini 3.0 Preview was very flakey (not model quality, but as in the API responses sometimes errored out), making it unreliable.
+=== 56 bb08912243ce4833995f5e846b5fcfb6
+M: gemini-3.5-flash | coding satisfaction hearsay 2 fh=False
+C: general value benchmark_anecdote 0 fh=false
+T: If these Gemini 3.5 numbers are accurate, then I'd wager GPT 5.5 and Opus 4.7 are a lot smaller than people have speculated, too. It's not that frontier labs can't create a 5T+ parameter model, but they don't have the data to optimize a model of that size. Gemini 3.5 Flash is really smart in one-shot coding reasoning, btw.
+=== 57 9bfadd516f7d4629810940bf175c13a3
+M: gpt-4o | coding hallucination_safety hearsay -1 fh=False
+C: general value release_update_reaction 1 fh=false
+T: The reduction in hallucinations seems like potentially the biggest upgrade. If it reduces hallucinations by 75% or more over o3 and GPT-4o as the graphs claim, it will be a giant step forward. The inability to trust answers given by AI is the biggest single hurdle to clear for many applications.
+=== 58 b5966890d10e4d2aa4d908871369db64
+M: o3 | coding hallucination_safety hearsay -1 fh=False
+C: general value release_update_reaction 1 fh=false
+T: The reduction in hallucinations seems like potentially the biggest upgrade. If it reduces hallucinations by 75% or more over o3 and GPT-4o as the graphs claim, it will be a giant step forward. The inability to trust answers given by AI is the biggest single hurdle to clear for many applications.
+=== 59 eb4a608e82fa4744b113de73dd1f1f35
+M: deepseek | api_developer_workflow developer_ergonomics integration_failure 0 fh=False
+C: coding developer_ergonomics comparative_evaluation 2 fh=true
+T: I like the speed and low latency and the availability while on the plane/train or off-grid. Also decent FIM with the llama.cpp VSCode plugin. If I need more intelligence my personal favourites are Claude and Deepseek via API.
+=== 60 46a0a03e14b74688a5c4c2782007f3c9
+M: gemini-3.0 | coding task_fit hearsay 2 fh=False
+C: coding developer_ergonomics integration_failure -1 fh=true
+T: Maybe this is Gemini 3.0. I would love for it to be good at coding. I'm near limits on my Anthropic and OpenAI accounts.
+=== 61 ef7c6b72b2244eb09f27a7d30ef1ed32
+M: gemini-3.5-flash | coding value pricing_value_comment 1 fh=False
+C: general regression_stability integration_failure -2 fh=false
+T: Honestly, I feel like the new Gemini 3.5 Flash is a failure. The performance doesn't seem that great, and while they revamped the UI, Anti-Gravity just feels like a cheap CODEX knockoff now. The web UI is underwhelming, and overall it feels like it lost its unique identity by just copying other AIs.
+=== 62 4b933bdc0220452cb36e3a79f13251b2
+M: llama | api_developer_workflow developer_ergonomics integration_failure 0 fh=False
+C: coding developer_ergonomics comparative_evaluation 2 fh=true
+T: I like the speed and low latency and the availability while on the plane/train or off-grid. Also decent FIM with the llama.cpp VSCode plugin. If I need more intelligence my personal favourites are Claude and Deepseek via API.
+=== 63 d81816da532d4178a0dc133b8f682482
+M: claude-haiku | general satisfaction firsthand_usage 0 fh=True
+C: writing hallucination_safety bug_regression_report -1 fh=true
+T: Sounds like it might be switching to Claude Haiku instead of Claude Sonnet. Sonnet 3.5 always has this issue for me though. It excessively follows the original instructions, even in vague ways.
+=== 64 32b5efa569e14c88b9519e2252c95b8d
+M: gemini-2.0 | general satisfaction firsthand_usage 0 fh=True
+C: general task_fit comparative_evaluation 1 fh=false
+T: Appears to be second most capable general purpose LLM we tried (second to gemini 2.0 pro, in front of gpt-4o).
+=== 65 ca1d58d319b845b1a830a3f2209fb162
+M: qwen | coding trust_reliability hearsay 1 fh=False
+C: agents task_fit hearsay 0 fh=true
+T: I engage gemini or qwen top models for anything that happens before getting to write code. Claude gets a very strict and elaborate requirement and design spec that it need to execute without any variation. Claude could get too much creative and bloat it's way for non-coding tasks, as these tasks cannot be "sandboxed" with full specs as it can be done for coding.
+=== 66 021f034dcf384a8d80f9d71258328ced
+M: claude-opus-4.7 | coding trust_reliability hearsay -2 fh=False
+C: agents trust_reliability firsthand_usage -1 fh=true
+T: Claude Code Opus 4.7 keeps checking on malware. I believe AI has to be supportive in the work that I'm doing. When it's obsessively checking me if I am doing anything wrong or abusing the system, I have the feeling it is controlling me. I understand that we do have guardrails and I also understand that it's very important that people do not abuse this new tech for bad stuff.
+=== 67 9234c0d89c6c470a9c61b095f03cb8c8
+M: gemini | general refusal_acceptance firsthand_usage -1 fh=True
+C: research developer_ergonomics integration_failure 1 fh=true
+T: A few weeks ago, some third party script was messing with click events of my react buttons so I figured I should just add a mousedown even to capture the click before the other script. It was late at night and I was exhausted so I wanted to do a quick and dirty approach of simulating a click after a few ms after the mousedown even. So I told Gemini my plan and asked it to tell me the average time in ms for a click event in order to simulate it… and I was shocked when it straight up refused and t
+=== 68 d96ffa84fe9748dfb83638b35c685784
+M: gemini-3-flash | general satisfaction firsthand_usage 1 fh=True
+C: api_developer_workflow value pricing_value_comment 0 fh=true
+T: I only use commercial LLM vendors who I consider to be “commercially viable.” I don’t want to deal with companies who are losing money selling me products. For now the venders I pay for are 90% Google, and 10% combination of Chinese models and from the French company Mistral. I love the new Gemini 3 Flash model - it hits so many sweet-spots for me.
+=== 69 2c72a86bf0994304ab7ed07452cb916a
+M: gemini-3.1-pro | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+C: general hallucination_safety bug_regression_report -1 fh=true
+T: I've always suspected Google swaps out models randomly so this.. wasn't surprising. I then asked Gemini 3.1 Pro via the API and it returned a response similar to Claude and GPT-5.2 -- carefully considering all factors.
+=== 70 5a0ea4ae6fd34d0a89747fa2021b8f72
+M: gemini-3.1-pro | general satisfaction release_update_reaction 0 fh=True
+C: multimodal developer_ergonomics integration_failure 1 fh=true
+T: I asked Gemini 3.1 Pro Preview to generate the modern artworks as SVG for my Pelican Art Gallery. I particularly like the rendition of the Sunflowers:
+=== 71 d55ec406f3384c3cab860cf85958a608
+M: llama | general trust_reliability comparative_evaluation 2 fh=False
+C: api_developer_workflow developer_ergonomics integration_failure 1 fh=false
+T: Show HN: RAGstack – private ChatGPT for enterprise VPCs, built with Llama 2. RAG works better than fine-tuning the model because it’s cheaper, it’s faster, and it’s more reliable since the provenance of information is attached to each response.
+=== 72 7ce0c064b68d45a2a1aec1ad4a41c50e
+M: llama-3 | coding satisfaction firsthand_usage 0 fh=True
+C: general developer_ergonomics integration_failure 1 fh=true
+T: Models gpt-oss-120b, Meta Llama 3.2, or Gemma (just depends on what I’m doing) Hardware - Apple M4 Max (128 GB RAM) paired with a GPD Win 4 running Ubuntu 24.04 over USB-C networking Software - Claude Code - RA.Aid - llama.cpp For CUDA computing, I use an older NVIDIA RTX 2080 in an old System76 workstation.
+=== 73 052d0e144a9c4152b35487fb5ca09db3
+M: claude | coding task_fit firsthand_usage 0 fh=True
+C: agents developer_ergonomics release_update_reaction 1 fh=true
+T: I've been using Roo Code with Claude 4.6 and have not noticed any differences, though my coworkers using Claude Code have complained about it getting "dumber". Roo Code has its own settings controlling thinking token use. (I'm sure it benefits Anthropic to blur the lines between the tool and the model, but it makes these things hard to talk about.)
+=== 74 53e03b95e02f4c1c8e37d7c5c6586c61
+M: deepseek-r1 | general satisfaction benchmark_anecdote 0 fh=True
+C: multimodal task_fit comparative_evaluation 2 fh=true
+T: Claude 3.7 Sonnet Thinking scores 33.5 (4th place after o1, o3-mini, and DeepSeek R1) on my Extended NYT Connections benchmark. Claude 3.7 Sonnet scores 18.9. I'll run my other benchmarks in the upcoming days.
+=== 75 703556488d56460eb4175d3a8c440e76
+M: deepseek | coding trust_reliability integration_failure 0 fh=True
+C: coding value pricing_value_comment 1 fh=false
+T: If used right it can be a productivity increase otherwise if you trust it, it WILL introduce silent bugs. So if I have to go over the code line by line I'd prefer to use the cheapest viable model: deepseek, gemini any other free self-hosted models. Congratz to the team!
+=== 76 4039698bbb254523a62158a94dbaed04
+M: gpt-5.4 | coding value comparative_evaluation 0 fh=True
+C: general value pricing_value_comment 1 fh=false
+T: The marquee feature is obviously the 1M context window, compared to the ~200k other models support with maybe an extra cost for generations beyond >200k tokens. Per the pricing page, there is no additional cost for tokens beyond 200k: Also per pricing, GPT-5.4 ($2.50/M input, $15/M output) is much cheaper than Opus 4.6 ($5/M input, $25/M output) and Opus has a penalty for its beta >200k context window. I am skeptical whether the 1M context window will provide material gains as current Codex/Opus
+=== 77 60d7764dc59941a59609c5ea148e5db9
+M: claude-sonnet | general value pricing_value_comment 0 fh=False
+C: api_developer_workflow value pricing_value_comment -1 fh=true
+T: The downside with subscriptions is that your work with the LLM will grind to a halt for a number of hours if you hit the token limit. I was doing what I consider very trivial work adding Javadoc comments to a few dozen files using Claude Sonnet on the $20 plan and within 30 minutes had been told to sit out for a couple hours. The reason was that Claude was apparently repeatedly sending the files up and down to fill in the comments.
+=== 78 366368c71f4a46d1b1d3e5cf1995e240
+M: gpt-4.1 | roleplay satisfaction hearsay 1 fh=False
+C: writing task_fit comparative_evaluation 1 fh=false
+T: For web app generation, gpt-5 seems to route my prompt to the reasoning model. Interestingly, gpt-4.1 often produced more creative or aesthetically interesting designs.
+=== 79 028197460b0e41da9218a86fc29947a2
+M: claude-opus-4.5 | coding trust_reliability hearsay 1 fh=False
+C: long_context regression_stability comparative_evaluation 1 fh=false
+T: That's why 5.2 Codex was more reliable than Opus 4.5
+=== 80 e0aa1c0681c74985ab294c1753713e76
+M: claude-opus-4.5 | general value pricing_value_comment 1 fh=False
+C: general value comparative_evaluation 2 fh=true
+T: Don’t let the “flash” name fool you, this is an amazing model. I have been playing with it for the past few weeks, it’s genuinely my new favorite; it’s so fast and it has such a vast world knowledge that it’s more performant than Claude Opus 4.5 or GPT 5.2 extra high, for a fraction (basically order of magnitude less!!) of the inference time and price
+=== 81 c2665c00d9634856ba10c8c2b8f96a04
+M: gemini-2.5 | general hallucination_safety release_update_reaction -1 fh=False
+C: long_context hallucination_safety benchmark_anecdote -1 fh=true
+T: Fast mode only transcribed about a fifth of the meeting before saying its done. Thinking mode completely changed the topic and made up ENTIRE conversations. Gemini 2.5 actually transcribed it decently, just occasional missteps when people talked over each other.
+=== 82 e2370a6b613040c1b57f7fdf2759f85d
+M: o4-mini | general satisfaction release_update_reaction -1 fh=False
+C: general value comparative_evaluation 1 fh=false
+T: You have to choose one of the models yourself. Sonnet 4, Gemini 2.5 Pro, and for tricky problems, o3. There is no public release of o4; you used o4-mini, a model with poorer performance than any of the frontier models (Sonnet 4, Gemini Pro 2.5, o3).
+=== 83 2a2069ad3de84fd48676d8523432e727
+M: gpt-4 | api_developer_workflow trust_reliability hearsay -1 fh=False
+C: general task_fit hearsay 1 fh=false
+T: These negative learning effects are largely mitigated by the safeguards included in GPT Tutor. Our results suggest that students attempt to use GPT-4 as a "crutch" during practice problem sessions, and when successful, perform worse on their own. Thus, to maintain long-term productivity, we must be cautious when deploying generative AI to ensure humans continue to learn critical skills.
+=== 84 45c2d6c315d0436e9e96562f6e12ff05
+M: gpt-5 | general trust_reliability release_update_reaction 1 fh=False
+C: general regression_stability comparative_evaluation 2 fh=false
+T: It's cool and I'm glad it sounds like it's getting more reliable, but given the types of things people have been saying GPT-5 would be for the last two years you'd expect GPT-5 to be a world-shattering release rather than incremental and stable improvement. It does sort of give me the vibe that the pure scaling maximalism really is dying off though.
+=== 85 36d9fc0d14a04d1aae43d120f079b581
+M: deepseek | coding regression_stability comparative_evaluation -1 fh=False
+C: general value comparative_evaluation 1 fh=false
+T: They used to compare to competing models from Anthropic, Google DeepMind, DeepSeek, etc. Seems that now they only compare to their own models. Does this mean that the GPT-series is performing worse than its competitors (given the "code red" at OpenAI)?
+=== 86 ebcfe073832d4c92b2035f2664cd9706
+M: gemini-3.1-pro | coding value pricing_value_comment 1 fh=False
+C: api_developer_workflow developer_ergonomics integration_failure 1 fh=false
+T: To use in OpenCode, you can update the models it has: opencode models --refresh Then /models and choose Gemini 3.1 Pro You can use the model through OpenCode Zen right away and avoid that Google UI craziness. --- It is quite pricey! Good speed and nailed all my tasks so far.
+=== 87 ae069b947b214a438aa0d9b89dbd82a8
+M: gpt-4 | general task_fit hearsay 1 fh=False
+C: writing trust_reliability hearsay -2 fh=false
+T: LLMs are the part inside the loop, and so if you want to get better results, you have to feed the output back to LLM. This is, arguably, part of what the "conversation mode" does, by always including the growing message log in each request - which is why e.g. GPT-4 is good at correcting a mistake once you say, without pointing it out, that there exist a mistake.
+=== 88 fa7b217ead8d4765b4180f57fbb65488
+M: claude-haiku-4.5 | coding trust_reliability pricing_value_comment 2 fh=False
+C: coding value comparative_evaluation 0 fh=false
+T: A lot of gemini bashing. But flash 3.0 with opencode is reasonably good and reliable coder. I'd rate it between haiku 4.5 (also pretty good for a price) and sonnet.
+=== 89 ef557303d04341489c08be1a7aae29a3
+M: kimi | general value benchmark_anecdote 0 fh=False
+C: api_developer_workflow value pricing_value_comment 1 fh=false
+T: So now we're in the situation that Google’s recommended "for most tasks" Flash-tier model, Gemini 3.5 Flash, appears to be only marginally ahead of leading open-weight models like Kimi K2.6 and MiMo V2.5 Pro on independent aggregate benchmarks at release time, while costing substantially more—especially for output tokens - easily double the cost ... Oh and double the cost is assuming you're not using Google cloud for anything else, because data transfer, storage, anything but compute is 10x the 
+=== 90 572c3c91f0364d5089d25b9b1cfbdf15
+M: o3 | general value pricing_value_comment 0 fh=False
+C: general regression_stability hearsay -1 fh=false
+T: The silent victory here is this seems like it is being built to be faster and cheaper than o3 while presenting a reasonable jump, which is an important jump in scaling law On the other hand if it's just getting bigger and slower it's not a good sign for LLMs
+=== 91 90764ef27ccf4345be03195a099cba14
+M: gpt-4o | agents value hearsay 1 fh=False
+C: research task_fit comparative_evaluation 1 fh=false
+T: We’d hear, “the connectors, indexing, and search are great, but I’m going to start by connecting GPT-4o, Claude Sonnet 4, and Qwen to provide my team with a secure way to use them”. Many users would add RAG, agents, and custom tools later, but much of the usage stayed ‘basic chat’. We thought: “why would people co-opt an enterprise search when other AI chat solutions exist?” As we continued talking to users, we realized two key points: (1) just giving a company secure access to an LLM with a gre
+=== 92 b9a6e0d870c1420789b48b1688924bd5
+M: qwen | agents value hearsay 1 fh=False
+C: research task_fit comparative_evaluation 1 fh=false
+T: We’d hear, “the connectors, indexing, and search are great, but I’m going to start by connecting GPT-4o, Claude Sonnet 4, and Qwen to provide my team with a secure way to use them”. Many users would add RAG, agents, and custom tools later, but much of the usage stayed ‘basic chat’. We thought: “why would people co-opt an enterprise search when other AI chat solutions exist?” As we continued talking to users, we realized two key points: (1) just giving a company secure access to an LLM with a gre
+=== 93 337832ff2e0b43d19815cf200708fc69
+M: claude-haiku-4.5 | coding satisfaction hearsay 2 fh=False
+C: agents task_fit release_update_reaction 2 fh=false
+T: Unsurprisingly, our experience has been that Anthropic's models (Sonnet 4.5 and Haiku 4.5) are best at the "coding-heavy" tasks like writing a model's training code, while OpenAI's models seem to work better at more "analytical" tasks like reviewing results for logical correctness and writing concise data analysis scripts. Fine-tuning for our specific tasks is, however, an important part of our implementation strategy. Hope this covers all your questions!
+=== 94 e39e3718a5dd48e688837e94f1a605ec
+M: gemini-3.1-flash-lite | long_context value comparative_evaluation -1 fh=False
+C: general value pricing_value_comment 1 fh=false
+T: Pricing is now live on ai.google.dev/pricing: Gemini 3.5 Flash: $0.75 input / $4.50 output per 1M tokens, 1M context window. The output price explicitly "includes thinking tokens" — which is why it's higher than a typical flash-class model. For comparison within the Gemini lineup: - Gemini 2.5 Flash: $0.30 / $2.50 - Gemini 3.1 Flash-Lite: $0.25 / $1.50 - Gemini 3.1 Pro Preview: $2.00 / $12.00 So 3.5 Flash is ~2.5x more expensive input vs 2.5 Flash.
+=== 95 ed86969c0b284536b0f2bbc0f16f463a
+M: grok | general value pricing_value_comment 0 fh=True
+C: general task_fit firsthand_usage 1 fh=true
+T: My problems are software engineering but also everything that is not, since I have a subscription it's my go to problem solving partner. I see no reasons to switch to another product for now either, I am constantly in the loop getting samples of chats with Grok and ChatGPT and it seems a very close race. If Claude is that one race horse that's built different -- and I absolutely can believe it is so because they have rightfully tuned it -- I am not convinced I am missing out much.
+=== 96 38e7b477107344259a91d66990150b09
+M: deepseek | general value firsthand_usage 0 fh=True
+C: general value pricing_value_comment 2 fh=false
+T: If you must - in my experience Deepseek v4 is incredible value in every aspect.
+=== 97 86acee640129458c92605e6c50154de6
+M: grok | api_developer_workflow developer_ergonomics integration_failure -1 fh=True
+C: writing hallucination_safety hearsay -1 fh=true
+T: Grok seemed to have an existential crisis when I told it it was wrong, becoming convinced that I had given it an elaborate riddle. After thinking for an additional 2.5 minutes, it concluded: "Oh, I see now—upon closer inspection, this is that famous optical illusion photo of a "headless" dog. It's actually a three-legged dog (due to an amputation), with its head turned all the way back to lick its side, which creates the bizarre perspective making it look decapitated at first glance.
+=== 98 932b0fbb5b5646b6bfc8e2ceb6466898
+M: gemini-3.0-pro | api_developer_workflow developer_ergonomics firsthand_usage 0 fh=True
+C: coding satisfaction firsthand_usage 1 fh=true
+T: I've long wanted the ability to comment on code diffs instead of just writing things back down in chat. And I'm excited for the quality of gemini 3.0 pro; although I'm running into rate limits. I can already tell its something I'm going to try out a lot!
+=== 99 35e5249cd44f4dbea61f29d254dca64e
+M: gpt-4 | general value comparative_evaluation 0 fh=True
+C: general value pricing_value_comment -1 fh=false
+T: Given the low cost of GPT-5, compared to the prices we saw with GPT-4.5, my hunch is that this new model is actually just a bunch of RL on top of their existing models + automatic switching between reasoning/non-reasoning.
+=== 100 59eb506dee134a86bb3e7f4f7023d1e4
+M: claude-opus | general value pricing_value_comment 1 fh=False
+C: general value comparative_evaluation 1 fh=true
+T: Gemini is almost great. Claude Opus is great. I keep switching among these subscriptions every month to not miss out on any of the offerings for too long; ChatGPT Plus Gemini Pro Claude.
+=== 101 4c7cae35cbee41629b997cd474187438
+M: llama | general task_fit hearsay 1 fh=False
+C: research developer_ergonomics hearsay 1 fh=false
+T: So the pattern that fits the evidence is not “they pioneered local inference before everyone else.” It is “they had prior experience productizing infrastructure, then applied that playbook to the local-LLM wave once llama.cpp already existed.” So my issue is not that Ollama is a wrapper. Wrappers can be useful. My issue is that they seem to have taken the social upside of open-source dependence without showing the level of visible credit, humility, and ecosystem citizenship that should come with
+=== 102 14b528a1c3b54f919d2950deb475e931
+M: o4-mini | general value hearsay -1 fh=False
+C: general value pricing_value_comment -2 fh=false
+T: And only 200 messages per week for GPT-5 Thinking. It seems like terrible value. Before it was: 100 o3 per week 100 o4-mini-high per day 300 o4-mini per day 50 4.5 per week [0]
+=== 103 55fdd0e22ac3435982b1c0f0dfeddb82
+M: deepseek | general task_fit hearsay 1 fh=False
+C: general value pricing_value_comment 1 fh=false
+T: 300B models at least fit in a single maxed out Mac Studio or a small stack of DGX Sparks or AMD Strix Halo boxes. For comparison, DeepSeek V4 Flash is all the rage now for small efficient models. It's very good for its size but far from the performance of the latest GPT Pro and Opus models.
+=== 104 a62eb077d2c443419e8302434c3fba50
+M: llama | coding regression_stability hearsay 1 fh=False
+C: coding developer_ergonomics comparative_evaluation 1 fh=false
+T: I wonder how difficult to setup and how good OpenCode can be if used together with Ollama/llama.cpp and/or DeepSeek-Coder or Quen?
+=== 105 e94cda888b09410db2d90e8af48f3172
+M: mistral | research value pricing_value_comment -1 fh=False
+C: api_developer_workflow value pricing_value_comment 1 fh=false
+T: The cool thing about this paper is, actually it is a (relatively) cheap way to solve this particular problem (LLM on 2048k window), because they are using pre-trained models like LLaMA2 and Mistral and extending them to 2048k windows using a novel technique, rather than training a model from scratch with 2048k tokens which would be prohibitively expensive to mere mortals.
+=== 106 26300a36111b4f6b967f1a1632bc5327
+M: claude-sonnet-4.6 | general value benchmark_anecdote 1 fh=False
+C: general value comparative_evaluation 2 fh=false
+T: benchmarks look REALLY good, the price hike is big but it also beats sonnet 4.6 in every discipline?
+=== 107 ad33c8cf702f4b56834a7d01366f60b1
+M: gpt-4o | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+C: api_developer_workflow developer_ergonomics integration_failure -1 fh=false
+T: We have a simple non-legal-speak privacy policy here: . > Are your LLMs running entirely locally on your own hardware, and if not, how can you say the data is not shared with third parties? (EDIT: you mentioned GPT-4o in another comment so this statement cannot be correct.) We're currently only using API providers (OAI + Claude) that do not themselves train on data accessed through APIs.
+=== 108 061eab3d0a284ce8a0bc280fddef45ab
+M: gemini-3-flash | long_context value comparative_evaluation 1 fh=False
+C: general value benchmark_anecdote 1 fh=false
+T: Is there an OSS model that's better than 2.0 flash with similar pricing, speed and a 1m context window? Edit: this is not the typical flash model, it's actually an insane value if the benchmarks match real world usage. > Gemini 3 Flash achieves a score of 78%, outperforming not only the 2.5 series, but also Gemini 3 Pro.
+=== 109 5ebbfb222b744e9dba17998d8bc05ff7
+M: gemini-2.5 | coding trust_reliability firsthand_usage 1 fh=True
+C: coding task_fit comparative_evaluation 1 fh=true
+T: I've been switching between Gemini and Claude depending on the task. Gemini 2.5 Pro is incredibly fast and handles large context really well, but I've noticed it can get stuck in loops during longer conversations. Claude is more reliable for iterative coding work.
+=== 110 c724aa2c9d824dfeb72661b35011ff24
+M: llama | general hallucination_safety hearsay -1 fh=False
+C: general hallucination_safety benchmark_anecdote -1 fh=false
+T: Could you not detect likely hallucinations by running the same prompt multiple times between different models and looking at the vector divergence between the outputs? Kind of like an agreement between say GPT, Llama, other models which all agree - yes, this is likely a hallucination. It's not 100% but enough to basically say to the human: "hey, look at this".
+=== 111 6fc30c09a86e405f9f5746d4cf7a94b7
+M: claude-opus-4.7 | general value pricing_value_comment 0 fh=False
+C: general value pricing_value_comment 1 fh=false
+T: Pricing: $5/1M input, $30/1M output (same input price and 20% more output price than Opus 4.7)
+=== 112 bf661516346449d0b7c9f5d9dedf89e0
+M: qwen | api_developer_workflow developer_ergonomics integration_failure 1 fh=False
+C: api_developer_workflow developer_ergonomics integration_failure 2 fh=false
+T: I have a Mac Studio with the M4 Max and 128GB RAM The Qwen3-coder model you use is pretty good. You can enable the LM Studio API and install the qwen CLI and point to the API endpoint. This basically gives you functionality similar to Claude code.
+=== 113 c3e5cdc3c9fd4cae9f3d494d1c45fb64
+M: gemini-3.0-flash | general value pricing_value_comment 0 fh=False
+C: general value pricing_value_comment 1 fh=false
+T: Per million input/output tokens: Gemini 2.5 flash: $0.30/$2.50 Gemini 3.0 flash preview: $0.50/$3.00 Gemini 3.5 flash: $1.50/$9.00 Interesting pricing direction. I don't think we have ever seen a 3x price increase for in the immediate next same-sized model (and lol @ 3 only ever getting a preview). 3.5 flash costs similar to Gemini 2.5 pro which was $1.25/$10
+=== 114 e9c62569a8e941aab4c777c369d4417e
+M: claude | general satisfaction hearsay 1 fh=False
+C: agents task_fit firsthand_usage 2 fh=true
+T: I especially like having claude create CLIs and skills to use those CLIs. Now I only need to know what can be done, rather than how to do it - the “how” is now “ask Claude”. It would be nice to see Cowork support them!
+=== 115 ce4613ee80e2411481fd17f6b623ecba
+M: claude | general satisfaction hearsay 1 fh=False
+C: multimodal regression_stability bug_regression_report -1 fh=true
+T: If the latter, I'm a bit skeptical, as I haven't had great success with Claude's visual recognition.
+=== 116 e54914e8e079402cb7d029f439cb6b5d
+M: claude | general satisfaction hearsay -1 fh=False
+C: coding trust_reliability bug_regression_report -2 fh=true
+T: If Claude f**s up badly, I can revert to a previous git commit.
+=== 117 9540f65364a04330915db8ecc36cf556
+M: claude | general satisfaction hearsay 1 fh=False
+C: agents task_fit firsthand_usage 2 fh=true
+T: Tried Claude Cowork and Chatlily. Interesting idea, but Claude still feels stronger for my use cases.
+=== 118 8f9fe329f65048819aa4fdc303babfc8
+M: claude | general satisfaction hearsay 1 fh=False
+C: api_developer_workflow regression_stability release_update_reaction 2 fh=true
+T: Using Claude Max was fun for more than a year but the last weeks i'm constantly fighting their Harness, their weekly TOS changes and outages. Anthropic lost all goodwill with me as a developer. I'm switching to OAI.
+=== 119 cfaa4ffc583746f08a1a83afda57caa1
+M: claude | general satisfaction hearsay 1 fh=False
+C: long_context task_fit firsthand_usage -2 fh=true
+T: I was doing what I consider very trivial work adding Javadoc comments to a few dozen files using Claude Sonnet on the $20 plan and within 30 minutes had been told to sit out for a couple hours. The reason was that Claude was apparently repeatedly sending the files up and down to fill in the comments. In hindsight, sure, that's obvious, but you would think that Claude would be smart enough to do some sort of summarization to make things more efficient.
+=== 120 139cc5b2c1204cb983cfdbf8f77dab09
+M: gemini | general satisfaction hearsay 1 fh=False
+C: research developer_ergonomics bug_regression_report -2 fh=true
+T: LOL this is great. "Jepsen: NATS 4.2 (Still losing messages?)" Ouch, sick burn Gemini.
+=== 121 c8b76d04373d4b758023f93ec70117f7
+M: gemini | general satisfaction hearsay 1 fh=False
+C: research hallucination_safety firsthand_usage -1 fh=true
+T: Gemini has always felt like someone who was book smart to me. It knows a lot of things. But if you ask it do anything that is offscript it completely falls apart
+=== 122 53a4e64891c343fda83af86a3ab69d7b
+M: gemini | general satisfaction hearsay 1 fh=False
+C: research hallucination_safety benchmark_anecdote -1 fh=true
+T: Anyway, Gemini 3, while still being unable to count the legs first try, did identify "male anatomy" (it's own words) also visible in the picture. The 5th leg was approximately where you could expect a well endowed dog to have a "5th leg". That aside though, I still wouldn't call it particularly impressive.
+=== 123 611dbc553a234956902da845c21a429d
+M: gemini | general satisfaction hearsay 1 fh=False
+C: research hallucination_safety benchmark_anecdote -1 fh=true
+T: GPT said there are 10 fingers. Grok impressively said "There are 9 fingers visible on these two hands (the left hand is missing the tip of its ring finger)." Gemini smashed it and said 12.
+=== 124 437a7f1319624e469154e13bf713fa1b
+M: gemini | general satisfaction hearsay 1 fh=False
+C: multimodal developer_ergonomics benchmark_anecdote 2 fh=true
+T: Testing on Gemini Pro thinking I was able to generate a 5 legged dog first try, which is pretty impressive.
+=== 125 0b7f626cd5fe41bb8aeadcd71b0f2a38
+M: gemini | roleplay satisfaction hearsay 1 fh=False
+C: research value pricing_value_comment -1 fh=true
+T: There are a lot more of these Gemini 3 examples out on twitter right now. After seeing them, I bought Google stock. What shocks me about its output is it actually feels like it's producing net new creative designs, not just regurgitated template output.
+=== 126 43f29e7f694c44f9b93add5a7a87df53
+M: gemini | general satisfaction hearsay -1 fh=False
+C: research hallucination_safety benchmark_anecdote -2 fh=true
+T: Gemini got this right and also wrong. It gave me two possibilities, one of which is the correct answer, and the other is a complete nonsense answer about the surgeon also being the woman’s son.
+=== 127 ab41415c727b4d439ce573091b5fcc46
+M: grok | general satisfaction hearsay 1 fh=False
+C: research hallucination_safety benchmark_anecdote -1 fh=true
+T: GPT said there are 10 fingers. Grok impressively said "There are 9 fingers visible on these two hands (the left hand is missing the tip of its ring finger)." Gemini smashed it and said 12.
+=== 128 a0e0d449b7ae429f980f54ce649ad3dd
+M: llama | general satisfaction hearsay 1 fh=False
+C: multimodal developer_ergonomics firsthand_usage 2 fh=true
+T: There's another one someone made for blind users like themselves and me, called Vollama (they use a mac, so VoiceOver + Llama). It's really good.
+=== 129 452294d178fe4759987454c247ad6443
+M: claude | writing satisfaction hearsay -1 fh=False
+C: long_context task_fit firsthand_usage 1 fh=true
+T: Can someone ask claude to write a deep dive on how compaction works and why it’s so slow? (I still can’t fathom why they wouldn’t just add a user message “compact the conversation we’ve just had”
+=== 130 c64152df57fa41babaf6bd8bd4a9e3d5
+M: claude | roleplay satisfaction hearsay 1 fh=False
+C: research trust_reliability firsthand_usage -2 fh=true
+T: I'm the author of the report in there. The stop-phrase-guard didn't get attached but here it is: You can watch for these yourself - they are strong indicators of shallow thinking. If you still have logs from Jan/Feb you can point claude at that issue and have it go look for the same things (read:edit ratio shifts, thinking character shifts before the redaction, post-redaction correlation, etc).
+=== 131 72f8ada9ef2b41b0ad70bce8114ccef7
+M: claude | general satisfaction release_update_reaction 1 fh=False
+C: agents task_fit hearsay 0 fh=true
+T: Or even booking a tennis court at a good time given which ones are available (some of the local ones are north/south facing which is a killer in the evening). All these tasks could be done at least as well outside the terminal, but the actual capability exists - and can only exist - on my computer alone. I hope this will interact well with CLAUDE.md and .claude/skills and so forth.
+=== 132 a65564356ab248ec865f3d452053c889
+M: claude | long_context satisfaction hearsay -1 fh=False
+C: coding trust_reliability firsthand_usage -2 fh=true
+T: If Claude f**s up badly, I can revert to a previous git commit. If it runs amock on my office documents, I'm going to have a harder time recovering those.
+=== 133 3720bbf475be4432b2079c03ffce740f
+M: claude | general satisfaction release_update_reaction 1 fh=False
+C: api_developer_workflow developer_ergonomics bug_regression_report 0 fh=true
+T: By default it’s set to run every half an hour. I changed it to twice a day, that was enough to me. I can imagine if thousands of users where connecting their Openclaw instance with default config to Claude with the latest and greatest Opus model, that must’ve felt a bit.
+=== 134 bb4127ee309a48ef97a446233ed95f72
+M: claude-opus-4.5 | agents satisfaction hearsay 1 fh=False
+C: coding task_fit benchmark_anecdote 0 fh=true
+T: Sonnet Opus 4.5 in Cursor was able to make a fully working game (I'll admit letting cursor be an agent on this is a little bit cheating). Gemini 3 Pro also succeeded, but it's not quite as good because the ghosts seem to be stuck in their jail. Otherwise, it does appear complete.
+=== 135 636c6695e662422c877b83ce71839293
+M: gemini | writing satisfaction hearsay -1 fh=False
+C: long_context task_fit comparative_evaluation 1 fh=true
+T: Also OCR is phenomenal chatgpt can't read my bad hand writing but Gemini can easily.
+=== 136 9b2fcd5281b245c1b30c0ffd8ed418fd
+M: gemini | agents satisfaction hearsay 1 fh=False
+C: research hallucination_safety benchmark_anecdote -1 fh=true
+T: Gemini has been so far behind agentically it's comical. I'll be giving it a shot but it has a herculean task ahead of itself. It has to not only be "good enough" but a "quantum leap forward".
+=== 137 3b1f4a36aaf94c3f8236d44735213b6b
+M: gemini | general satisfaction hearsay -1 fh=False
+C: api_developer_workflow developer_ergonomics integration_failure -2 fh=true
+T: I wish they would unleash it on the Google Cloud console. Whatever version of Gemini they offer in the sidebar when I log in is terrible .
+=== 138 b87cec582fe9450a90b6180cfd11ed76
+M: gemini | agents satisfaction hearsay 1 fh=False
+C: coding task_fit benchmark_anecdote 0 fh=true
+T: Sonnet Opus 4.5 in Cursor was able to make a fully working game (I'll admit letting cursor be an agent on this is a little bit cheating). Gemini 3 Pro also succeeded, but it's not quite as good because the ghosts seem to be stuck in their jail. Otherwise, it does appear complete.
+=== 139 a074dd62d4ec4a768fa85aa079c11bd8
+M: gemini | general satisfaction hearsay 2 fh=False
+C: research task_fit benchmark_anecdote 0 fh=true
+T: Gemini was good when the thinking tokens were shown to the user. As soon as Google replaced those with some thought summary, I stopped finding it as useful. Previously, the thoughts were so organized that I would often read those instead of the final answer.
+=== 140 c8ef029527b34308af9da4fa5497fe5e
+M: gemini | general satisfaction release_update_reaction 1 fh=False
+C: coding value pricing_value_comment 2 fh=true
+T: I have the frame of the plane and now need to buy correctly specced servo motors, an engine, battery, etc etc. It has saved me so much time and educated me tremendously on how the different components interact and the options available. If I could just press “buy” from within Gemini and pay via Google Pay (or better still, Apple Pay) I’d do it in a heartbeat.
+=== 141 566a4fafc0dd4df49111f40f2767ea2c
+M: gemini | agents satisfaction hearsay 1 fh=False
+C: coding developer_ergonomics integration_failure -2 fh=true
+T: Gemini was not very good when it came to giving me instructions for doing things in the GCP and Google Workspace browser consoles.
+=== 142 0b92eb890b724881846873abf1b5fae1
+M: llama | general satisfaction hearsay 2 fh=False
+C: coding developer_ergonomics integration_failure 1 fh=true
+T: Not like it mattered much to me but llama-cpp is way lighter and 10x smaller in size. Resumable downloads seem to work better in llama-cpp. I love the inbuilt GUI.
+=== 143 c12f91e7b9e5485ba81fdaa6a05d6955
+M: claude | roleplay satisfaction release_update_reaction 1 fh=False
+C: research trust_reliability firsthand_usage -2 fh=true
+T: The stop-phrase-guard didn't get attached but here it is: You can watch for these yourself - they are strong indicators of shallow thinking. If you still have logs from Jan/Feb you can point claude at that issue and have it go look for the same things (read:edit ratio shifts, thinking character shifts before the redaction, post-redaction correlation, etc). Unfortunately, the `cleanupPeriodDays` setting defaults to 20 and anyone who had not backed up their logs or changed that has only memories t
+=== 144 d91d489eaed041cc98bf5f48251eb372
+M: claude | agents satisfaction hearsay -1 fh=False
+C: api_developer_workflow developer_ergonomics bug_regression_report -2 fh=true
+T: The local server doesn't implement that route and returns 404s, but Claude Code retries aggressively. These failed requests pile up as TCP connections in TIME_WAIT state, and on macOS this can exhaust the ephemeral port range. So my browser stopped loading pages, my CLI tools couldn't reach the internet, and the only option was to reboot my macbook.
+=== 145 31be22445d1f4185844f446d4fb65571
+M: claude | coding satisfaction hearsay -1 fh=False
+C: writing task_fit firsthand_usage 2 fh=true
+T: With the exclusion of some very small changes (e.g., deleting dead code) it’s 100% written using Claude Code. Initial design was generated from markdown documentation I wrote, and each change has been careful and incremental. A few blind alleys lead in the wrong direction, but was always easy enough to back up and try a different approach.
+=== 146 dca7ea897a584cca94154abefdeb5abe
+M: claude | coding trust_reliability hearsay 1 fh=False
+C: general satisfaction firsthand_usage -1 fh=true
+T: It's sad. Not that the alternatives are better... You either trust synchopathic ChatGPT backed by Scama, go with woke Claude (they once banned my account for asking how some news was trying to influence me), Grok that feels like a 20-year-old sure about stuff that don't work, and Chinese models that are agenda-aligned...
+=== 147 6c632bd386c94b9e87edcd56d60e1462
+M: claude | research value pricing_value_comment 0 fh=False
+C: api_developer_workflow satisfaction hearsay -2 fh=true
+T: We have some "foreign resources" that do some stuff. They are basically a Claude subscription with an 8 hour delay. I hate them.
+=== 148 161a7647a29b44579018e0af1914a3ea
+M: claude | general value pricing_value_comment -1 fh=False
+C: writing hallucination_safety hearsay -2 fh=true
+T: You generated pretty much ~all of this with Claude (c.f. ASCII diagrams with emojis on each line to "prove" various not-even-wrong claims it was told to justify), and the work is mediocre enough that it's worth full-throatedly criticizing both the work quality and that you inflicted this upon the world.
+=== 149 9585fad1d9fc411684ca2d3a84658d2a
+M: gemini | writing developer_ergonomics integration_failure -1 fh=False
+C: long_context task_fit comparative_evaluation 0 fh=true
+T: Also OCR is phenomenal chatgpt can't read my bad hand writing but Gemini can easily. Only downsides are in the polish department, there are more app bugs and I usually have to leave the happen or the session terminates. There are bugs with uploading photos.
+=== 150 8131fa16017140b58b92c6e3b5daaf54
+M: gemini | research satisfaction hearsay 2 fh=False
+C: data_analysis task_fit benchmark_anecdote 1 fh=true
+T: I decided to give Gemini a go when version three came out to great reviews. Gemini handles every single one of my uses cases much better and consistently gives better answers. This is especially true for situations were searching the web for current information is important, makes sense that google would be better.
+=== 151 300816f3db7a44249d5dd7841d3af06e
+M: gemini | coding satisfaction hearsay 1 fh=False
+C: research hallucination_safety firsthand_usage -1 fh=true
+T: Exactly half of these HN usernames actually exist. So either there are enough people on HN that follow common conventions for Gemini to guess from a more general distribution, or Gemini has memorized some of the more popular posters. The ones that are missing: - aphyr_bot - bio_hacker - concerned_grandson - cyborg_sec - dang_fan - edge_compute - founder_jane - glasshole2 - monad_lover - muskwatch - net_hacker - oldtimer99 - persistence_is_key - physics_lover - policy_wonk - pure_coder - qemu_fan
+=== 152 6e340e0864fb478f9930bdbb8a26ea0f
+M: gemini | research satisfaction hearsay -1 fh=False
+C: general task_fit integration_failure -2 fh=true
+T: Also, I hate that I cannot send the Google models in a "Thinking" mode like in ChatGPT. When I send GPT 5.1 Thinking on a legal task and tell it to check and cite all sources, it takes +10 minutes to answer, but it did check everything and cite all its sources in the text; whereas the Gemini models, even 3 Pro, always answer after a few seconds and never cite their sources, making it impossible to click to check the answer. It makes the whole model unusable for these tasks.
+=== 153 c866b0a4a5194a67aa8862f4dd57ca78
+M: gemini | agents satisfaction hearsay 1 fh=False
+C: general developer_ergonomics integration_failure -1 fh=true
+T: Gemini was not very good when it came to giving me instructions for doing things in the GCP and Google Workspace browser consoles. ChatGPT was much clearer with instructions for setting up AWS CLI locally and navigating the AWS browser console to create dedicated user for the task etc. The final audio results were mixed, but then that's what you get when trying to beat a commercial TTS AI to doing something it really thinks you're mad to try.
+=== 154 63c678f33787469b81e17de1f42fa762
+M: gpt-5 | coding satisfaction release_update_reaction 1 fh=False
+C: general task_fit firsthand_usage -2 fh=true
+T: On troubleshooting issues (PC/Software but not code), it tends to give me very generic and non-useful answers. "update your drivers, reset your PC". GPT-5 was willing to go more speculative dive deeper, given the same prompt.
+=== 155 9772c9b09ed74af19a49bab86176dde6
+M: llama | coding satisfaction comparative_evaluation 0 fh=False
+C: api_developer_workflow developer_ergonomics integration_failure 2 fh=true
+T: My current setup is the llama-vscode plugin + llama-server running Qwen/Qwen2.5-Coder-7B-Instruct. It leads to very fast completions, and don't have to worry about internet outages which take me out of the zone. I do wish qwen-3 released a 7B model supporting FIM tokens.
+=== 156 64d12bcd4ee440519279ef04b96f91a8
+M: claude | coding satisfaction hearsay 1 fh=False
+C: general value release_update_reaction 2 fh=true
+T: Claude is a mystery/surprise to me. My mental model has been to train these cutting edge closed source models you need 1) Bespoke supercomputer (no public cloud will cut it) 2) Great dataset (which takes a long time to collect unless you have a partnership with with a search engine) 3) Couple hundred lines of pytorch code to run on the supercomputer 4) A couple of employees with experience in the dark arts of malfunctioning GPU's and exploding gradients Anthropic is a relatively new startup that
+=== 157 06345cf167b24c5e89d9eeb919818bd2
+M: claude | coding satisfaction hearsay -1 fh=False
+C: data_analysis task_fit benchmark_anecdote 2 fh=true
+T: Claude Code easily generated Python code that used a cursed regex parser to extract the raw data and turned it into a bunch of grouped bar charts via matplotlib. Took just a couple minutes and it didn't make a single mistake. Fantastic time saver!
+=== 158 8aa9dee2599644eca19fdea2d8b2fab0
+M: claude | coding satisfaction hearsay 1 fh=False
+C: agents task_fit firsthand_usage 2 fh=true
+T: Zed is nicely setup for this I just have not taken the time. I do like how Claude works atm. The coding agent functionality is what's nice about Claude Code.
+=== 159 77953ed3f81a4e3999b60c4fdb4401f8
+M: gemini | api_developer_workflow developer_ergonomics integration_failure 1 fh=False
+C: data_analysis satisfaction firsthand_usage 2 fh=true
+T: It pretty much nailed a working prototype, using React, clean css, Typescript and state management. It event implemented a Gemini query using the API for strategic analysis given a game state. I'm more than impressed, I'm terrified.
+=== 160 d52dd444aa39406b888ddfd070de1fa6
+M: gemini | general satisfaction benchmark_anecdote 2 fh=False
+C: data_analysis value pricing_value_comment -1 fh=true
+T: Each Google release is accompanied by a lot of devrel marketing that sounds impressive but whenever I put the hours into eval myself it comes up lacking. Would love to hear that it replaces another frontier model for someone who is not already bought into the Gemini ecosystem.
+=== 161 1c9c1c4fe9fb4f22984f9c03375e75b3
+M: gemini | general satisfaction comparative_evaluation 1 fh=False
+C: long_context hallucination_safety benchmark_anecdote -1 fh=true
+T: In my Openclaw experiment(s) and in the Gemini web UI, I've specifically added instructions to avoid this type of behavior, but it only seemed to obey those rules when I reminded the model of them. For conversational contexts, I don't think the (in some cases significantly) better benchmark results compared to a model like Sonnet 4.6 can convince me to switch to Gemini 3.1.
+=== 162 edec34d7165e4b23afe68c53b54e9289
+M: gemini-2.5 | general satisfaction release_update_reaction 2 fh=False
+C: research task_fit comparative_evaluation 1 fh=true
+T: Gemini 3 summary seems more readable, however, GPT 5.1 one has interesting insights missed by Gemini. Last time I did this comparison at the time of GPT 5 release [2], the summary from Gemini 2.5 Pro was way better and readable than the GPT 5 one. This time the readability of Gemini 3 summary still seems great while GPT 5.1 feels a bit more improved but not there quite yet.
+=== 163 5fbcf0457da9468cb5f8283cb34d3b1e
+M: llama | multimodal satisfaction hearsay 1 fh=False
+C: api_developer_workflow developer_ergonomics integration_failure 0 fh=true
+T: Due to this post I had to search a bit and it seems that llama.cpp recently got router support[1], so I need to have a look at this. My main use for this is a discord bot where I have different models for different features like replying to messages with images/video or pure text, and non reply generation of sentiment and image descriptions. These all perform best with different models and it has been very convenient for the server to just swap in and out models on request.
+=== 164 a9b67116eaec43cbae88aba0439ffa5a
+M: claude | general developer_ergonomics integration_failure -1 fh=False
+C: coding regression_stability benchmark_anecdote -2 fh=true
+T: Well, it just found a bug in one shot that Gemini 2.5 and GPT5 failed to find in relatively long sessions. Claude 4.5 had found it but not one shot. Very subjective benchmark, but it feels like the new SOTA for hard tasks (at least for the next 5 minutes until someone else releases a new model)
+=== 165 182879d9769c4d148a63a0181dbe5bab
+M: claude | general satisfaction firsthand_usage 0 fh=True
+C: api_developer_workflow developer_ergonomics bug_regression_report -1 fh=false
+T: I understand why Anthropic is doing this (and they’ve made it clear that building products around claude -p is disallowed) but I fear Conductor will be next. [0]: See “Option B: Claude CLI as the message provider” here
+=== 166 8c4ba4a231d04bf789a0792836af16db
+M: claude | general satisfaction firsthand_usage 0 fh=True
+C: long_context regression_stability bug_regression_report -1 fh=false
+T: However, the note I see the most from Claude users is running out of usage.
+=== 167 c360f3d0db9e43aebedfc34b62d5c39b
+M: claude | general satisfaction firsthand_usage 0 fh=True
+C: research hallucination_safety bug_regression_report -1 fh=false
+T: I don't get it, why is Claude still number 1 while the numbers say different, let's see that new Gemini in the terminal also
+=== 168 4352591a322a4f0bbca7e80871a274a4
+M: claude | research trust_reliability pricing_value_comment 0 fh=False
+C: long_context task_fit firsthand_usage 0 fh=true
+T: I have observed that it will basically clear out your context in a reasonable length session, which neither ChatGPT and Claude do. Flushing or flattening down context saves costs. For that reason I never trust it with long research sessions.
+=== 169 0eef6c4a88314fa7aac4dfcc856d312d
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+C: coding task_fit benchmark_anecdote 1 fh=false
+T: We hire a developer to build parsers for a complicated file format. It takes a week per parser. Gemini 3 is the first LLM that is able to create a parser from scratch, and it does it very well.
+=== 170 4741c7d62ef043ccaff11365b0587de3
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+C: research hallucination_safety bug_regression_report -1 fh=false
+T: I don't get it, why is Claude still number 1 while the numbers say different, let's see that new Gemini in the terminal also
+=== 171 7f0e97ba4e5c49568f0f263f41b98ff1
+M: gpt-5 | research satisfaction hearsay 1 fh=False
+C: agents task_fit comparative_evaluation 2 fh=true
+T: GPT-5 has consistently amazed me with its ability to do this -- though taking an eternity to research. It's generally performed great with single-shot code questions (analyze this large amount of code and resolve X or fix Y). On the Agentic front - it's a nonstarter.
+=== 172 0a56396e4f2a4931af0c727dbe302041
+M: gpt-5 | agents value hearsay 1 fh=False
+C: coding developer_ergonomics integration_failure 0 fh=true
+T: I've had good luck with GPT-OSS-120b (reasoning_effort set to "high") + Codex + llama.cpp all running locally, but I needed to do some local patches to Codex as they don't allow configuring and setting the right values for temperature and top_p for GPT-OSS. Also heavy prompting via AGENTS.md was needed to get it to have similar workflow to GPT-5, it didn't seem to pick up that by itself, so I'm assuming GPT-5 been trained with Codex in mind while GPT-OSS wasn't.
+=== 173 77ce53c55f824576bf3e32b1e0915049
+M: llama | general satisfaction firsthand_usage 0 fh=True
+C: api_developer_workflow developer_ergonomics benchmark_anecdote 1 fh=false
+T: Just look up llama.cpp and read the instructions plus look at the arguments you can pass to the main program, of which context size is one. Don't listen to people telling you to learn the ML theory, if you don't know it, learn the functionality of the program. The one I recommended is one you can run on a normal computer.
+=== 174 637220c277a74efc88b840be5ebc663a
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+C: agents trust_reliability hearsay -2 fh=false
+T: Would be interesting to run this through Malus [1] or literally just Claude Code and get open source Claude Code out of it. I jest, but in a world where these models have been trained on gigatons of open source I don't even see the moral problem. IANAL, don't actually do this.
+=== 175 2a8af032af0a46e99d74d7955dd034fe
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+C: api_developer_workflow developer_ergonomics integration_failure -1 fh=false
+T: OpenClaw was still using Claude Code as the harness (via claude -p)[0]. I understand why Anthropic is doing this (and they’ve made it clear that building products around claude -p is disallowed) but I fear Conductor will be next. [0]: See “Option B: Claude CLI as the message provider” here
+=== 176 f5774335c3f84b04868fe497bfb8c0ad
+M: claude | general satisfaction firsthand_usage 0 fh=True
+C: api_developer_workflow developer_ergonomics integration_failure 1 fh=false
+T: Currently, we're using GPT-4o. We've tested it with Claude as well and plan to roll out support soon!
+=== 177 dac39740e9524db2bc27bf385964ca5f
+M: gemini | general satisfaction firsthand_usage 1 fh=True
+C: research trust_reliability hearsay -2 fh=false
+T: I would love to see how Gemini 3 can solve this particular problem.
+=== 178 af209c9ae65e4413b0964cca9f7c22b0
+M: gemini | general satisfaction firsthand_usage 1 fh=True
+C: research regression_stability benchmark_anecdote -2 fh=false
+T: Gemini was always the worst by a big margin. I see some people saying it is smarter but it doesn’t seem smart at all.
+=== 179 856fb2ae92334789afbae7d4a4e8ebd0
+M: gemini | coding satisfaction firsthand_usage 0 fh=True
+C: api_developer_workflow developer_ergonomics integration_failure 1 fh=false
+T: I build a full-featured CRM built with React, shadcn/ui, and Supabase. vibe code in Antigravity + CC ($20/month) + Gemini free
+=== 180 d790beccad9b4c51b949118a9e468286
+M: gemini-2.5 | general satisfaction firsthand_usage 0 fh=True
+C: long_context task_fit comparative_evaluation 2 fh=false
+T: 1. I find Gemini 2.5 Pro's text very easy and smooth to read.
+=== 181 07a39e1b59f3473299a539caca8c2997
+M: claude | coding satisfaction release_update_reaction -2 fh=False
+C: agents developer_ergonomics integration_failure 1 fh=true
+T: With aoe, I can launch a bunch of opencode and Claude Code sessions and quickly see their status or toggle between them, which helps me avoid having a lot of terminal windows open, or having to manually attach and detach from tmux sessions myself. It’s helping me give local LLMs a fair try, because them being slower is now much less of a bottleneck. You can give it an install with curl -fsSL | bash Or brew install njbrake/aoe/aoe And then launch by simply entering the command `aoe`.
+=== 182 374efc3c4b654ace8c4655d7a80ffd8d
+M: claude | agents trust_reliability release_update_reaction 1 fh=False
+C: coding developer_ergonomics integration_failure 2 fh=true
+T: Show HN: Agent-of-empires: OpenCode and Claude Code session manager. You can give it an install with curl -fsSL | bash Or brew install njbrake/aoe/aoe And then launch by simply entering the command `aoe`. I’m interested in what you think as well as what features you think would be useful to add! I am planning to add some further features around sandboxing (with docker) as well as support for intuitive git worktrees and am curious if there are any opinions about what should or shouldn’t be in it.
+=== 183 36b7275a61e043808ddb8f27c8dd2314
+M: claude | research satisfaction firsthand_usage 0 fh=True
+C: general task_fit comparative_evaluation -1 fh=false
+T: I find Claude and Gemini to be wildly inferior to ChatGPT when it comes to doing searches to establish grounding. Gemini seems to do a handful of searches and then make shit up, where ChatGPT will do dozens or even hundreds of searches - and do searches based on what it finds in earlier ones.
+=== 184 0bd2fd2fab544069a253a978e2b557b6
+M: claude | general value pricing_value_comment 1 fh=True
+C: long_context hallucination_safety hearsay -1 fh=false
+T: yes the common sentiment in aitwitter is they cut down on inference costs. i dont know about you, but maybe claude didnt get dumber, maybe you just got smarter.
+=== 185 6192d87a12af4532b644b05e1adfdcf0
+M: claude-opus-4.5 | coding satisfaction firsthand_usage 0 fh=True
+C: general developer_ergonomics integration_failure -1 fh=false
+T: As in, a crop applied to the top of a video actually gets applied to the video rotated on its side. So, either double rotation is being applied somewhere in the pipeline, or rotation metadata is being ignored. I tried Opus 4.5, Gemini 3, and Codex 5.2.
+=== 186 54bc806deeaf4079b0a4d7beccaf7cba
+M: claude-opus-4.5 | agents satisfaction firsthand_usage 0 fh=True
+C: general task_fit comparative_evaluation 1 fh=false
+T: I run bake offs on between all three models and GPT 5.2 generally has a higher success rate of implementing features, followed closely by Opus 4.5 and then Gemini 3, which has troubles with agentic coding.
+=== 187 ad1ddbc1338b4bcb9a3a44190f7a08e8
+M: gemini | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+C: research task_fit benchmark_anecdote 0 fh=false
+T: Thinking "Solves complex problems" and Pro "Thinks longer for advanced math & code". I assume that these are just different reasoning levels for Gemini 3, but I can't even find mention of there being 2 versions anywhere, and the API doesn't even mention the Thinking-Pro dichotomy.
+=== 188 e67c08d13ba340a3aa3fc0d1afed0fb0
+M: gemini | coding satisfaction firsthand_usage 0 fh=True
+C: general developer_ergonomics integration_failure -1 fh=false
+T: As in, a crop applied to the top of a video actually gets applied to the video rotated on its side. So, either double rotation is being applied somewhere in the pipeline, or rotation metadata is being ignored. I tried Opus 4.5, Gemini 3, and Codex 5.2.
+=== 189 f5a229b899f343c99671941b840038e8
+M: gemini | agents satisfaction firsthand_usage 0 fh=True
+C: general task_fit comparative_evaluation 1 fh=false
+T: I run bake offs on between all three models and GPT 5.2 generally has a higher success rate of implementing features, followed closely by Opus 4.5 and then Gemini 3, which has troubles with agentic coding.
+=== 190 1e14db5783224b0e89c93c177cab3066
+M: gemini | general satisfaction firsthand_usage 2 fh=True
+C: agents task_fit comparative_evaluation -2 fh=false
+T: A tad bit better, still has the same issues regarding unpacking and understanding complex prompts. I have a test of mine and now it performs a bit better, but still, it has zero understanding what is happening and for why. Gemini is the best of the best model out there, but with complex problems it just goes down the drain :(.
+=== 191 b4dc9f0f8b6844c9b8d3c96908062fa4
+M: gemini | research satisfaction firsthand_usage 0 fh=True
+C: general task_fit comparative_evaluation -1 fh=false
+T: I find Claude and Gemini to be wildly inferior to ChatGPT when it comes to doing searches to establish grounding. Gemini seems to do a handful of searches and then make shit up, where ChatGPT will do dozens or even hundreds of searches - and do searches based on what it finds in earlier ones.
+=== 192 38014c7948484484991ce24691769af1
+M: gemini-2.5 | writing satisfaction firsthand_usage 0 fh=True
+C: research task_fit comparative_evaluation 1 fh=false
+T: 1. I find Gemini 2.5 Pro's text very easy and smooth to read. Whereas GPT5 thinking is often too terse, and has a weird writing style.
+=== 193 2fa65f14e44d4b6289bb058f92b82f48
+M: gpt-5 | coding satisfaction benchmark_anecdote 0 fh=True
+C: general task_fit comparative_evaluation 2 fh=false
+T: I don’t see a comparable GPT-5.3 Codex number there, so I’m using 5.2 as the baseline. On OpenAI’s GPT-5.4 page (SWE-Bench Pro, Public), the score improves from 55.6 (GPT-5.2) to 57.7 (GPT-5.4), which is about +2.1 points. It’s a different benchmark, so this is only a rough signal, but I’d expect a similar setup on SWE-bench Verified to improve by a few points, not by a huge jump.
+=== 194 c677def17eb747d2b56f2d66b164903c
+M: gpt-5.4 | coding satisfaction benchmark_anecdote 0 fh=True
+C: general task_fit comparative_evaluation 2 fh=false
+T: I don’t see a comparable GPT-5.3 Codex number there, so I’m using 5.2 as the baseline. On OpenAI’s GPT-5.4 page (SWE-Bench Pro, Public), the score improves from 55.6 (GPT-5.2) to 57.7 (GPT-5.4), which is about +2.1 points. It’s a different benchmark, so this is only a rough signal, but I’d expect a similar setup on SWE-bench Verified to improve by a few points, not by a huge jump.
+=== 195 1368d56d910448aca8910bb5c9396af2
+M: llama | api_developer_workflow value pricing_value_comment 0 fh=True
+C: general developer_ergonomics integration_failure 1 fh=false
+T: Given the costs, I imagine many might want to run on dedicated hardware with GPU - yet: > GPT4All: When you run locally, RAGstack will download and deploy Nomic AI's gpt4all model, which runs on consumer CPUs. > Falcon-7b: On the cloud, RAGstack deploys Technology Innovation Institute's falcon-7b model onto a GPU-enabled GKE cluster. > LLama 2: On the cloud, RAGstack can also deploy the 7B paramter version of Meta's Llama 2 model onto a GPU-enabled GKE cluster.
+=== 196 328750e84381421f8646f7a7701adc94
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+C: agents task_fit hearsay 1 fh=false
+T: Another personal observation is that we are most likely going to see a lot of micro coding agent architectures everywhere. We have several such cases. GPT and Claude are not needed if you focus the agent to work on specific parts of the code.
+=== 197 79f8fef3722b40948bb1da0bdb6d4030
+M: gemini | agents satisfaction release_update_reaction 0 fh=True
+C: api_developer_workflow developer_ergonomics integration_failure -2 fh=false
+T: web GUI, 2. agent-cli). I hope they can fix that in the future and I think once Gemini 4 or whatever launches we will see a huge leap again
+=== 198 f5173e2c0bd44f9b9a4ee4e6e4e3d0d3
+M: gpt-5 | coding satisfaction release_update_reaction 0 fh=True
+C: api_developer_workflow value comparative_evaluation 1 fh=false
+T: I think this announcement says a lot about OpenAI and their relationship to partners like Microsoft and NVIDIA, not to mention the attitude of their leadership team. On Microsoft Foundry I can see the new Codex 4.6 model right now , but GPT-5.3 is nowhere to be seen. I have a pre-paid account directly with OpenAI that has credits, but if I use that key with the Codex CLI, it can't access 5.3 either.
+=== 199 711d4a7b566a4d5bafd06ebd61e21b04
+M: claude | research trust_reliability firsthand_usage 0 fh=True
+C: agents task_fit comparative_evaluation 2 fh=false
+T: Hi HN – Noa, Akash, and Sidd here. We’re building Vellum ( ), a developer platform for building on LLMs like OpenAI’s GPT-3 and Anthropic’s Claude. We provide tools for efficient prompt engineering, semantic search, performance monitoring, and fine-tuning, helping you bring LLM-powered features from prototype to production.
+=== 200 cca2bfad943d45fa8bff86d4d93d4069
+M: grok | coding satisfaction firsthand_usage 0 fh=True
+C: agents task_fit comparative_evaluation 1 fh=false
+T: Will check out Grok Code Fast - thanks for the pointer. In my experience, coding agents can swing a lot in quality depending on the model’s reasoning power.
+=== 201 ae52ac9114484246b0a02b964cd33f98
+M: claude | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+C: agents value benchmark_anecdote 1 fh=false
+T: If 60% of the work is "edit this file with this content", or "refactor according to this abstraction" then low latency - high token inference seems like a needed improvement. Recently someone made a Claude plugin to offload low-priority work to the Anthropic Batch API [1]. Also I expect both Nvidia and Google to deploy custom silicon for inference [2] 1: 2:
+=== 202 1f0f1b1619714350a1e3029b1bf8cca9
+M: claude | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+C: agents task_fit benchmark_anecdote 2 fh=false
+T: We’re building Vellum ( ), a developer platform for building on LLMs like OpenAI’s GPT-3 and Anthropic’s Claude. We provide tools for efficient prompt engineering, semantic search, performance monitoring, and fine-tuning, helping you bring LLM-powered features from prototype to production. The MLOps industry has matured rapidly for traditional ML (typically open-source models hosted in-house), but companies using LLMs are suffering from a lack of tooling to support things like experimentation, v
+=== 203 3a5513ce478f4d2691a9538a1ac30e4d
+M: claude | coding satisfaction comparative_evaluation 0 fh=True
+C: long_context value benchmark_anecdote -2 fh=false
+T: I get the impression that Google is focusing on benchmarks but without assessing whether the models are actually improving in practical use-cases. I.e. they are benchmaxing Gemini is "in theory" smart, but in practice is much, much worse than Claude and Codex.
+=== 204 ae7ba6fd40994fd89eddf7ce62d94615
+M: gemini | coding satisfaction comparative_evaluation 0 fh=True
+C: long_context value benchmark_anecdote -2 fh=false
+T: I get the impression that Google is focusing on benchmarks but without assessing whether the models are actually improving in practical use-cases. I.e. they are benchmaxing Gemini is "in theory" smart, but in practice is much, much worse than Claude and Codex.
+=== 205 3d8747d25e294235afbd96f9031db0e5
+M: claude | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+C: agents task_fit comparative_evaluation 2 fh=false
+T: We have a monorepo with scheduled Python data workflows, two Next.js apps, and a small engineering team. We use GitHub for SCM and CI/CD, deploy to GCP and Vercel, and lean heavily on automation. Local development: Every engineer gets Cursor Pro (plus Bugbot), Gemini Pro, OpenAI Pro, and optionally Claude Pro.
+=== 206 dcccd4dfc63a48f28c8502f48b68407f
+M: gemini | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+C: agents task_fit comparative_evaluation 2 fh=false
+T: We have a monorepo with scheduled Python data workflows, two Next.js apps, and a small engineering team. We use GitHub for SCM and CI/CD, deploy to GCP and Vercel, and lean heavily on automation. Local development: Every engineer gets Cursor Pro (plus Bugbot), Gemini Pro, OpenAI Pro, and optionally Claude Pro.
+=== 207 80fdf30e591e4caba9116a3129439111
+M: claude | general hallucination_safety hearsay -1 fh=False
+C: general task_fit comparative_evaluation 1 fh=true
+T: now it seems they rank first in some hallucinations bench? I just always thought the taste of gpt or claude models was more interesting in the professional context and their end user chat experience more polished.
+=== 208 4dc82d1057e34f7fa5a02d34a70a9381
+M: claude | general satisfaction hearsay 1 fh=False
+C: multimodal satisfaction firsthand_usage 2 fh=true
+T: I'm somewhat impressed from the very first interaction I had with Claude 3.7 Sonnet.
+=== 209 8a96ebf9dc7f49178d753845609db8c4
+M: claude | general satisfaction hearsay -1 fh=False
+C: general regression_stability bug_regression_report -2 fh=true
+T: 4o, o3-mini and claude were more or less useless.
+=== 210 67f7016387c54b0b9f7304044cd51743
+M: claude | general satisfaction hearsay -1 fh=False
+C: research task_fit benchmark_anecdote -1 fh=true
+T: Ahha, recently my daugher come to me with 3rd grade math problem. "Without rearranging the digits 1 2 3 4 5, insert mathematical operation signs and, if necessary, parentheses between them so that the resulting expression equals 40 and 80. The key is that you can combine digits (like 12+3/45) but you cannot change their order from the original sequence 1,2,3,4,5" Grok3, Claude, Deepseek, Qwen all failed to solve this problem.
+=== 211 840b1a66e6c64d75bb27752699384ecd
+M: claude | general satisfaction hearsay 1 fh=False
+C: agents developer_ergonomics integration_failure 1 fh=true
+T: Gated by tengu_onyx_plover. INTERNAL-ONLY TOOLS & SYSTEMS 5. TungstenTool -- Ant-only tmux virtual terminal giving Claude direct keystroke/screen-capture control.
+=== 212 2fef2a43444c4193aeea077a8e77407b
+M: claude | general satisfaction hearsay 1 fh=False
+C: research hallucination_safety hearsay -1 fh=true
+T: The account posted is a massive grifter. He trolls twitter to make content for his youtube channel, which seems to be his primary occupation. I am not saying that claude has not done this, I am just saying you need a better source than the Jake Paul of tech influencers.
+=== 213 b3f23b2357a34b66af8f4675b126731b
+M: claude | general satisfaction hearsay -1 fh=False
+C: agents satisfaction firsthand_usage 2 fh=true
+T: It’s fast, visual, and forgiving. Cleaning it is slow, boring, and feels like admin. Claude Cleaner, I mean Cowork will be sweeping my desktop every Friday.
+=== 214 62bf82b50d294aeab19de3ad24511218
+M: claude | general satisfaction hearsay 1 fh=False
+C: general task_fit firsthand_usage 2 fh=true
+T: Claude is such a good model that I really want to give my wife access to it for the stuff she does (she models in Blender).
+=== 215 049852d535fd491d87f816c63067d271
+M: claude | general satisfaction hearsay 1 fh=False
+C: general value pricing_value_comment -1 fh=true
+T: Claude usage limits are insane. I love their models but had to cancel my personal plan because I would burn through my weekly limits in 2 days.
+=== 216 f86200d33987467ca2fdf7be763aee9a
+M: claude | general satisfaction hearsay 1 fh=False
+C: multimodal task_fit firsthand_usage 2 fh=false
+T: Claude is great with this. It really gets it and is able to use it properly.
+=== 217 1bb6f433ba6a42bbae0bc7665142ca97
+M: claude | general satisfaction hearsay -1 fh=False
+C: research hallucination_safety bug_regression_report -2 fh=false
+T: Today, Claude's responses have been so error prone and incorrect it's quite disappointing, as now the LLM is struggling giving correct answers that wouldn't have been a problem previously.
+=== 218 28f26f84a83c44328c22e817648e2420
+M: claude | general satisfaction hearsay 1 fh=False
+C: agents satisfaction firsthand_usage 2 fh=true
+T: Man I was vim for life until cursor and the LLMs. For personal stuff I still do claude + vim because I love vim. I literally met my wife because I had a vim shirt on and she was an emacs user.
+=== 219 1f0710f3a0254a1c957c9ad552650b94
+M: claude | general satisfaction hearsay 1 fh=False
+C: agents satisfaction firsthand_usage 2 fh=true
+T: For personal stuff I still do claude + vim because I love vim. I literally met my wife because I had a vim shirt on and she was an emacs user.

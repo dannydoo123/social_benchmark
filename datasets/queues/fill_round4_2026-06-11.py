@@ -1,0 +1,273 @@
+"""Apply LLM-reviewer decisions to the round-4 labeling queue."""
+import csv
+
+QUEUE = "datasets/queues/targeted_training_review_round4_2026-06-11.csv"
+OUT = "datasets/queues/targeted_training_review_round4_2026-06-11_filled.csv"
+
+EXCLUDED = {
+    3: "meta commentary on discussion venues, no quality claim",
+    5: "question about article inconsistency, no claim",
+    10: "training infrastructure performance, not model quality",
+    14: "no clear quality claim about extracted model (gemini)",
+    15: "product pricing listing, no model quality claim",
+    16: "duplicate span; labeled under index 78",
+    20: "license/strategy commentary, no model quality claim",
+    21: "parameter-count rumor discussion, no quality claim",
+    23: "license/strategy commentary, no model quality claim",
+    33: "duplicate span; labeled under index 204",
+    34: "Gemini protocol (gemini://), not the model",
+    36: "inference hardware speculation, not model quality",
+    37: "tool availability description, no quality claim",
+    38: "question about context window exposure, no claim",
+    39: "scraping tooling description, no model claim",
+    40: "span evaluates Llama 4, misattributed to mistral-large",
+    42: "fine-tuning service pitch, no model quality claim",
+    45: "speculation about subscription effort settings",
+    48: "orchestration architecture description, no quality claim",
+    50: "model size-tier rumor, no quality claim",
+    51: "question only, no claim",
+    53: "Gemini protocol (gemini://), not the model",
+    60: "article self-contradiction, no resolvable claim",
+    64: "hypothetical trade-off numbers, no real claim",
+    69: "open-source ecosystem commentary, no llama quality claim",
+    76: "runtime wrapper script, no model quality claim",
+    82: "conceptual model-type distinction, no quality claim",
+    84: "API distillation game-theory speculation",
+    94: "availability note, no quality claim",
+    97: "fragment without referent",
+    107: "fine-tuning service pitch",
+    108: "duplicate span; labeled under index 114",
+    112: "grok here is Groq the hosting provider, not the model",
+    117: "describes choosing to try LLM, no outcome stated",
+    119: "duplicate span; no outcome stated",
+    122: "weak attribution; span criticizes products generally",
+    124: "censorship layer speculation, not model quality",
+    125: "system prompt speculation, no quality claim",
+    127: "inference hardware commentary",
+    130: "third-party tool configuration issue, not model",
+    137: "runtime acceleration advice, no model claim",
+    140: "duplicate span; labeled under index 78",
+    141: "conditional interest, no claim",
+    143: "Gemini protocol critique, not the model",
+    150: "duplicate span; labeled under index 17",
+    152: "system prompt phrasing analysis, not model quality",
+    153: "idea-generation cost commentary, no model quality claim",
+    156: "duplicate span; labeled under index 13",
+    157: "Gemini protocol (gemini.circumlunar.space), not the model",
+    158: "duplicate span; labeled under index 154",
+    164: "plugin announcement, no model quality claim",
+    165: "spending pattern commentary, no quality claim",
+    167: "tool support mention, no claim",
+    168: "runtime throughput numbers, not model quality",
+    169: "implementation MFU note, not model quality",
+    170: "hardware setup capability, not model quality",
+    171: "duplicate hardware setup span",
+    172: "wafer economics, not model quality",
+    173: "context window listing, no claim",
+    175: "critique of anthropomorphizing language, not model quality",
+    176: "duplicate context window span",
+    178: "MMMU speculation without testing",
+    180: "Gemini protocol (online space), not the model",
+    182: "OpenRouter quota issue, not model quality",
+    183: "capability listing mention, no quality claim",
+    184: "pre-release naming commentary, no gpt-5 quality claim",
+    185: "release roadmap speculation",
+    186: "duplicate hardware cost span",
+    187: "duplicate release roadmap speculation",
+    188: "duplicate span; labeled under index 77",
+    189: "post-training vs prompt speculation",
+    190: "philosophical rant, no clear model claim",
+    192: "Gemini protocol gateway, not the model",
+    195: "duplicate context window span",
+    197: "Gemini protocol extensibility, not the model",
+    200: "span evaluates Llama 4, misattributed to llama-3",
+    202: "harness design comparison, not model quality",
+    203: "question comparing tools, no claim",
+    205: "fine-tuning infrastructure pitch",
+    210: "long chat mention, no quality claim",
+    217: "hypothetical snark, no claim",
+}
+
+# index: (task, aspect, evidence, polarity, firsthand, model_override, note)
+LABELS = {
+    0: ("coding", "regression_stability", "bug_regression_report", -1, True, None, "got better then very dumb again"),
+    1: ("multimodal", "hallucination_safety", "firsthand_usage", -1, True, "claude-opus-4.5", "described wrong layout from frame"),
+    2: ("coding", "value", "pricing_value_comment", 2, True, None, "under $1 for 10M tokens"),
+    4: ("general", "refusal_acceptance", "firsthand_usage", -1, True, None, "refusal for same request another model accepted"),
+    6: ("general", "satisfaction", "firsthand_usage", -1, True, "gemini-2.5", "stuck applying cipher algorithms"),
+    7: ("coding", "satisfaction", "comparative_evaluation", 1, True, None, "needs less handholding than composer2"),
+    8: ("general", "satisfaction", "firsthand_usage", 1, True, None, "free models surprisingly productive"),
+    9: ("general", "trust_reliability", "benchmark_anecdote", -1, True, None, "older llamas not fixed by caveat"),
+    11: ("general", "satisfaction", "firsthand_usage", 0, True, "o3-pro", "mixed: alright but slow, flaky apps"),
+    12: ("coding", "trust_reliability", "firsthand_usage", 2, True, None, "interactive, no unrequested actions"),
+    13: ("general", "trust_reliability", "comparative_evaluation", 1, True, "deepseek-r1", "fixes repetitive loop failure mode"),
+    17: ("coding", "satisfaction", "firsthand_usage", 1, True, None, "mixed: real velocity gains, high review cost"),
+    18: ("general", "trust_reliability", "hearsay", 0, False, "deepseek-r1", "language-mixing artifact commentary"),
+    19: ("writing", "satisfaction", "comparative_evaluation", 1, True, None, "knew the episode, unlike Llama 4"),
+    22: ("writing", "satisfaction", "comparative_evaluation", -1, True, None, "not great stylistically, missing knowledge"),
+    24: ("coding", "regression_stability", "bug_regression_report", -2, True, None, "worst day, cursing in documents"),
+    25: ("general", "trust_reliability", "comparative_evaluation", 1, True, None, "trusted more than self-hosted models"),
+    26: ("data_analysis", "hallucination_safety", "firsthand_usage", 0, True, None, "span truncated; outcome unclear"),
+    27: ("general", "trust_reliability", "comparative_evaluation", 1, True, None, "trusted more than self-hosted models"),
+    28: ("coding", "value", "comparative_evaluation", -1, True, None, "astronomical cost vs Anthropic"),
+    29: ("multimodal", "hallucination_safety", "firsthand_usage", -2, True, None, "hallucinated design from blank screenshot"),
+    30: ("agents", "satisfaction", "firsthand_usage", 1, True, None, "good at basics, harness complaints"),
+    31: ("data_analysis", "task_fit", "firsthand_usage", -1, True, None, "could not beat rule-based extractor"),
+    32: ("coding", "satisfaction", "firsthand_usage", -2, True, "kimi-2.6", "went hard, left buggy mess"),
+    35: ("agents", "satisfaction", "benchmark_anecdote", 2, True, "claude-opus-4.7", "best in agentic sessions on private suite"),
+    41: ("coding", "satisfaction", "hearsay", 0, False, None, "historical tooling-progress commentary"),
+    43: ("general", "satisfaction", "benchmark_anecdote", 1, False, None, "63% benchmark claim"),
+    44: ("coding", "regression_stability", "bug_regression_report", -1, True, None, "last days a struggle"),
+    46: ("general", "satisfaction", "firsthand_usage", 0, True, "kimi-2.5", "interesting but below frontier"),
+    47: ("general", "hallucination_safety", "firsthand_usage", 2, True, None, "rarely have to check since o3"),
+    49: ("coding", "satisfaction", "firsthand_usage", -1, True, None, "failed boilerplate until coached"),
+    52: ("coding", "value", "pricing_value_comment", 0, True, None, "no perf difference, cheaper is big"),
+    54: ("agents", "satisfaction", "firsthand_usage", 0, True, None, "runs all day; purpose unclear"),
+    55: ("general", "satisfaction", "benchmark_anecdote", 1, True, "gemini-2.0", "faster, both parts correct"),
+    56: ("coding", "satisfaction", "comparative_evaluation", -1, True, None, "nobody would pick it vs cloud models"),
+    57: ("coding", "trust_reliability", "comparative_evaluation", -1, True, None, "more merge errors than subject model"),
+    58: ("coding", "satisfaction", "firsthand_usage", 2, True, None, "ridiculous good and fast"),
+    59: ("general", "satisfaction", "hearsay", 1, False, None, "caught up with or exceeded ChatGPT"),
+    61: ("coding", "value", "pricing_value_comment", -1, True, None, "thousands in credits, era expensive"),
+    62: ("long_context", "task_fit", "benchmark_anecdote", 1, True, None, "first model good at NIAN"),
+    63: ("agents", "task_fit", "comparative_evaluation", 2, True, None, "so good at inline tool use"),
+    65: ("coding", "trust_reliability", "firsthand_usage", 0, True, None, "cannot separate harness drama from model"),
+    66: ("coding", "task_fit", "firsthand_usage", 1, True, "claude-opus-4.7", "code reviews found major bugs"),
+    67: ("general", "satisfaction", "hearsay", 1, False, None, "LeCun on DeepSeek performance"),
+    68: ("agents", "trust_reliability", "comparative_evaluation", -1, True, None, "wrong decisions, spinning in circles"),
+    70: ("coding", "task_fit", "comparative_evaluation", 1, True, None, "finds real things bugbot misses"),
+    71: ("coding", "satisfaction", "release_update_reaction", 1, False, "claude-opus-4.7", "xhigh effort benchmark claim"),
+    72: ("general", "hallucination_safety", "benchmark_anecdote", 1, True, "claude-opus-4.5", "10.9% on grounded hallucination leaderboard"),
+    73: ("general", "hallucination_safety", "benchmark_anecdote", -1, True, "gpt-5.1", "beaten on hallucination leaderboard"),
+    74: ("general", "hallucination_safety", "benchmark_anecdote", -1, True, "grok-4", "beaten on hallucination leaderboard"),
+    75: ("general", "value", "pricing_value_comment", 1, True, None, "cheap and fast"),
+    77: ("agents", "satisfaction", "benchmark_anecdote", 1, True, "claude-opus-4.5", "close second to 4.7 in agentic suite"),
+    78: ("coding", "task_fit", "firsthand_usage", 1, True, "deepseek-r1-distill-qwen-32b", "good for refactoring chains of thought"),
+    79: ("general", "satisfaction", "comparative_evaluation", 1, True, "claude-opus", "baseline better than tested model"),
+    80: ("general", "trust_reliability", "benchmark_anecdote", 1, True, "gemini-3-flash", "most consistent in their runs"),
+    81: ("general", "satisfaction", "comparative_evaluation", 1, True, None, "better than opus with limited context"),
+    83: ("research", "hallucination_safety", "firsthand_usage", -1, True, "llama-3.1", "hallucinated MFU, misread scaling"),
+    85: ("general", "satisfaction", "benchmark_anecdote", -2, True, None, "0/10 across all runs"),
+    86: ("general", "satisfaction", "benchmark_anecdote", 1, True, None, "7/10, best of tested models"),
+    87: ("general", "satisfaction", "benchmark_anecdote", -2, True, None, "0/10 across all runs"),
+    88: ("general", "satisfaction", "benchmark_anecdote", -2, True, None, "0/10 across all runs"),
+    89: ("long_context", "satisfaction", "firsthand_usage", 0, True, "llama-4", "maverick fine, scout junk (possibly infra)"),
+    90: ("data_analysis", "satisfaction", "firsthand_usage", 0, True, "mistral-7b", "tested for extraction, outcome unstated"),
+    91: ("multimodal", "task_fit", "firsthand_usage", 1, True, "llama-3.1", "8B vision answers locally"),
+    92: ("general", "value", "comparative_evaluation", -1, False, "claude-opus", "same price, slightly less capable"),
+    93: ("coding", "satisfaction", "firsthand_usage", -1, True, "claude-opus-4.5", "churns out meaningless tests"),
+    95: ("coding", "hallucination_safety", "firsthand_usage", -1, True, "gemini-2.5-pro", "read hallucinated env vars"),
+    96: ("general", "satisfaction", "benchmark_anecdote", -2, True, None, "failed easiest olympiad question"),
+    98: ("general", "satisfaction", "firsthand_usage", 1, True, "deepseek-r1-distill-qwen-32b", "cofounder of hosting service; possible bias"),
+    99: ("general", "value", "release_update_reaction", -1, False, "claude-opus-4.7", "more output tokens hurt subscriptions"),
+    100: ("general", "value", "release_update_reaction", 0, False, None, "beaten-baseline benchmark listing"),
+    101: ("general", "value", "release_update_reaction", 0, False, None, "beaten-baseline benchmark listing"),
+    102: ("research", "satisfaction", "firsthand_usage", 1, True, "llama-3.2", "good job on technical docs"),
+    103: ("general", "trust_reliability", "benchmark_anecdote", 1, True, None, "7/10 consistency, best of cohort"),
+    104: ("research", "task_fit", "comparative_evaluation", -1, True, None, "less web-search happy than o3"),
+    105: ("data_analysis", "refusal_acceptance", "comparative_evaluation", 1, True, None, "does not interfere with legitimate work"),
+    106: ("general", "satisfaction", "firsthand_usage", -1, True, None, "benchmarks good, vibe tests fail"),
+    109: ("general", "value", "release_update_reaction", 0, False, "llama-4", "marketing benchmark summary"),
+    110: ("coding", "hallucination_safety", "comparative_evaluation", -2, True, "gpt-4o", "hallucination made it unusable for codegen"),
+    111: ("api_developer_workflow", "developer_ergonomics", "integration_failure", -2, True, None, "slow, expensive, flaky API, 8k window"),
+    113: ("coding", "value", "comparative_evaluation", 1, True, "deepseek-r1", "slower but cost-effective, holds its own"),
+    114: ("general", "satisfaction", "release_update_reaction", -1, False, "gemini-3.5-flash", "strange positioning, mixed quality"),
+    115: ("coding", "value", "benchmark_anecdote", 1, False, "gpt-5.4", "5x cheaper, nearly as good as Opus 4.6"),
+    116: ("coding", "value", "benchmark_anecdote", -1, False, "gpt-5.5", "2x more expensive than 5.4"),
+    118: ("general", "refusal_acceptance", "comparative_evaluation", 1, True, None, "helped where Gemini refused"),
+    120: ("coding", "satisfaction", "firsthand_usage", 1, True, "gemini-2.5-pro", "enjoy for planning"),
+    121: ("writing", "regression_stability", "bug_regression_report", -1, False, None, "degraded for a while then fixed"),
+    123: ("multimodal", "satisfaction", "comparative_evaluation", 0, True, "gemini-3.0-pro", "opus did a bit better on SVG test"),
+    126: ("agents", "task_fit", "comparative_evaluation", -1, True, "gemini-2.5", "o3 preferred for tool use"),
+    128: ("coding", "satisfaction", "comparative_evaluation", -1, True, None, "never better than opus in extensive use"),
+    129: ("writing", "satisfaction", "comparative_evaluation", 1, True, "grok-3", "baseline better than Scout"),
+    131: ("api_developer_workflow", "developer_ergonomics", "firsthand_usage", 1, True, "llama-4-scout", "API worked fine for weeks"),
+    132: ("general", "satisfaction", "firsthand_usage", 1, True, None, "picks reasonable interpretation now"),
+    133: ("general", "refusal_acceptance", "hearsay", -1, False, None, "usage policy refusal message"),
+    134: ("agents", "satisfaction", "hearsay", -1, False, None, "failed Pokemon Blue spectacularly"),
+    135: ("general", "satisfaction", "firsthand_usage", -1, True, None, "long stuttering trace, wrong answer"),
+    136: ("general", "satisfaction", "firsthand_usage", 1, True, "gemini-3-pro", "only model breaking initial assumption"),
+    138: ("coding", "satisfaction", "firsthand_usage", 1, True, None, "worth $100/m, not switching"),
+    139: ("writing", "satisfaction", "hearsay", 1, False, None, "contest entry pretty good"),
+    142: ("multimodal", "task_fit", "firsthand_usage", -2, True, None, "small diagram edits impossible"),
+    144: ("research", "task_fit", "comparative_evaluation", -1, True, None, "cli not great at web lookup"),
+    145: ("general", "satisfaction", "benchmark_anecdote", 0, False, None, "pelican svg joke"),
+    146: ("research", "task_fit", "comparative_evaluation", 1, True, None, "better trained for lookup, smoother"),
+    147: ("coding", "satisfaction", "firsthand_usage", 1, True, "qwen-3.6", "local model runs well on Apple Silicon"),
+    148: ("writing", "satisfaction", "comparative_evaluation", 1, True, None, "knew the episode, unlike Llama 4"),
+    149: ("coding", "satisfaction", "firsthand_usage", 1, True, None, "autocomplete smarter thanks to Claude"),
+    151: ("coding", "satisfaction", "comparative_evaluation", 1, True, "claude-opus-4", "opus always better than sonnet in use"),
+    154: ("general", "satisfaction", "firsthand_usage", 1, True, "deepseek-r1-distill-qwen-1.5b", "impressed on hard CS problem"),
+    155: ("general", "value", "hearsay", 1, False, None, "good results with little horsepower"),
+    159: ("general", "satisfaction", "firsthand_usage", 0, True, None, "stack listing"),
+    160: ("coding", "developer_ergonomics", "firsthand_usage", 0, True, None, "nice combo; junk binary files"),
+    161: ("general", "satisfaction", "hearsay", 1, False, None, "great model, frustrated by bans"),
+    162: ("general", "value", "pricing_value_comment", 1, True, None, "$20/mo is enough"),
+    163: ("coding", "satisfaction", "firsthand_usage", 1, True, None, "go-to for pair programming"),
+    166: ("general", "trust_reliability", "hearsay", -1, False, None, "prefers open tool that cannot spy"),
+    174: ("general", "satisfaction", "release_update_reaction", -1, False, None, "jump from 3.7 not spectacular"),
+    177: ("general", "satisfaction", "hearsay", 1, False, None, "synthetic data secret, amazing result"),
+    179: ("general", "refusal_acceptance", "hearsay", -1, False, None, "censorship differs across versions"),
+    181: ("writing", "satisfaction", "firsthand_usage", -1, True, None, "repetitive phrasing"),
+    191: ("coding", "developer_ergonomics", "firsthand_usage", 0, True, "claude-opus-4.7", "effort settings tuning"),
+    193: ("agents", "trust_reliability", "firsthand_usage", 2, True, "llama-3.3-70b", "exceptionally reliable function calling"),
+    194: ("general", "satisfaction", "release_update_reaction", 1, True, "qwen-3.5", "thanks team; linear attention concern"),
+    196: ("research", "task_fit", "comparative_evaluation", -1, True, None, "ChatGPT and Gemini run circles around it"),
+    198: ("general", "hallucination_safety", "firsthand_usage", -1, True, "gemini-2.5", "hallucinates remake puzzle elements"),
+    199: ("general", "satisfaction", "benchmark_anecdote", 0, True, "deepseek-v3", "on par with Maverick FP8 in own evals"),
+    201: ("general", "satisfaction", "benchmark_anecdote", 1, True, "llama-4", "own evals: decent despite bad launch"),
+    204: ("coding", "trust_reliability", "benchmark_anecdote", 0, True, "claude-sonnet-4.6", "correct when primed as intelligence test"),
+    206: ("coding", "value", "firsthand_usage", 1, True, "deepseek-coder-6.7b", "boilerplate mostly works locally"),
+    207: ("coding", "satisfaction", "comparative_evaluation", 1, False, None, "capacity baseline above local models"),
+    208: ("general", "value", "hearsay", -1, False, None, "building to avoid spending $$$ on Claude"),
+    209: ("agents", "task_fit", "comparative_evaluation", 2, True, None, "absolute best at tool calling"),
+    211: ("general", "satisfaction", "hearsay", -1, False, None, "article: all but Opus 4.6 reliably fail"),
+    212: ("general", "satisfaction", "hearsay", 1, False, None, "heard great things, not tried"),
+    213: ("research", "task_fit", "comparative_evaluation", 1, True, "claude-opus", "more effort, better job than GPT5.2"),
+    214: ("general", "regression_stability", "firsthand_usage", 0, True, None, "disputes degradation reports"),
+    215: ("coding", "task_fit", "firsthand_usage", 1, True, None, "SVG icons all the time"),
+    216: ("general", "satisfaction", "firsthand_usage", -1, True, None, "dislikes brief caveat style"),
+    218: ("writing", "satisfaction", "hearsay", -1, False, None, "summaries no one reads"),
+    219: ("multimodal", "task_fit", "firsthand_usage", 2, True, None, "calipers photos to parametric openscad"),
+}
+
+
+def main() -> None:
+    with open(QUEUE, encoding="utf-8", newline="") as handle:
+        reader = csv.DictReader(handle)
+        rows = list(reader)
+        fieldnames = reader.fieldnames
+
+    assert len(rows) == 220, len(rows)
+    missing = [i for i in range(len(rows)) if i not in EXCLUDED and i not in LABELS]
+    assert not missing, missing
+    overlap = set(EXCLUDED) & set(LABELS)
+    assert not overlap, overlap
+
+    for index, row in enumerate(rows):
+        row["reviewed_flag"] = "True"
+        if index in EXCLUDED:
+            row["human_excluded_from_scoring"] = "True"
+            row["human_exclusion_reason"] = EXCLUDED[index]
+            continue
+        task, aspect, evidence, polarity, firsthand, model, note = LABELS[index]
+        row["human_excluded_from_scoring"] = "False"
+        row["human_task_category"] = task
+        row["human_aspect_category"] = aspect
+        row["human_evidence_type"] = evidence
+        row["human_polarity_score"] = str(polarity)
+        row["human_firsthand_flag"] = "True" if firsthand else "False"
+        row["human_model_id"] = model or row.get("model_id", "")
+        row["human_provider_id"] = row.get("provider_id", "")
+        row["human_notes"] = note
+
+    with open(OUT, "w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+    print(f"wrote {len(rows)} rows -> {OUT}")
+    print(f"excluded={len(EXCLUDED)} labeled={len(LABELS)}")
+
+
+if __name__ == "__main__":
+    main()

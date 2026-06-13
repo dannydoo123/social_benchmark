@@ -1,0 +1,240 @@
+=== 0 b2b5f178d3a2461da1fb48d1ed0ad5ab
+M: claude | general value pricing_value_comment 0 fh=False
+T: If anyone wants to do this let me know, I don't want to burn money on every LLM out there... I'll throw in my Claude Subscription into the contest... Edit: Actually the repo README indeed says its inspired by Screeps.
+=== 1 0df837a5f53a4bd78c9efc8552dcda9c
+M: claude | general satisfaction hearsay -1 fh=False
+T: Yes, worktrees with workmux. I expected this to become less necessary over time as models got faster, but the opposite has happened. It feels like Claude has actually gotten slower (but in fairness does more per prompt), meaning worktrees are even more essential now.
+=== 2 14097975d4ef49499e404704ff09cef7
+M: claude | writing trust_reliability hearsay 1 fh=False
+T: I like how it allows for safe experimentation on OpenClaw functionality. Like others on this thread, I'm a bit hesitant about connecting to email services without knowing more about the developer and how they use data from connected services, but there's a lot of interesting things you can do with this even without connecting to anything. (The free credits are v helpful too, although the underlying Claude models burn through them quickly.) Thanks
+=== 3 d88ecf713f854dbd863982d4bcb5a8b1
+M: claude-opus-4.7 | writing value hearsay 1 fh=False
+T: You should be able to point Opus 4.7 to the repository and it will know how to set it up in your project. You are welcome to send me an email at [my_username]@gmail.com if you want to talk about some of these things that I'm working on that are in your space. `intercept` is just a proof-of-concept and at this point, if it added any value to what you are working on, that would be the best.
+=== 4 f80633fa7526468db96d658eafa31fbc
+M: claude | research task_fit release_update_reaction 0 fh=True
+T: Other routers exist, but we built Rayline to let us continue using claude code (no separate harness), route tasks at a subagent level, and route across cloud and on-device. The main agent often benefits from Opus. But many delegated calls have narrow scope: search the repo, summarize context, inspect an error, poll for CI updates, etc.
+=== 5 12f2555cf2cd415ead748a1d5e0d8304
+M: qwen | general satisfaction hearsay -1 fh=False
+T: I put a lot of emphasis on my explicit corrections where I told the AI it was wrong and what the right answer was and WHY. fine tuned qwen 4B on it with qlora. the model learned my voice perfectly - during training it would say things like 'no.
+=== 6 f9b5835e7ea64ff2b54eaa0fcb7a1b3b
+M: gemini | writing value pricing_value_comment 0 fh=False
+T: This post focuses solely on the process and practical lessons learned collaborating with LLMs on a large writing project.) Hey HN, I recently finished a months-long project collaborating intensively with various LLMs (ChatGPT, Claude, Gemini) to write a book about using AI in management. The process became a meta-experiment, revealing practical workflows and pitfalls that felt worth sharing. This post breaks down the workflow, quirks, and lessons
+=== 7 05b2130c972d4915b9d2ab0d1bd9993e
+M: llama | long_context satisfaction firsthand_usage 0 fh=True
+T: ofcourse ofcourse, I've documented everything here: llama.cpp compiled as a native Android library via the NDK, linked into React Native through a custom JSI bridge. GGUF models loaded straight into memory. On Snapdragon devices we use QNN (Qualcomm Neural Network) for hardware acceleration.
+=== 8 2123e6f7ba8548cc823f5a42ac5c3034
+M: qwen | long_context value pricing_value_comment 0 fh=False
+T: It's context-aware, in the sense that it reads your screen, documents, and active app to understand what you're working on. You can ask about PDFs, reply to emails, create calendar events, use web search, editing text, all by voice. You can download a compiled version for free with the code HITOKUHN2026 (base price is 5 dollars) It supports Gemma 4 and Qwen 3.5 for text generation, plus multiple STT backends (Parakeet, Qwen3-ASR).
+=== 9 f8f7970bd4de40a3ac42ee735e2096a3
+M: claude-opus-4.5 | coding trust_reliability firsthand_usage 0 fh=True
+T: In my testing I found that Claude Opus 4.5 was the most dominant model, but it showed weakness in round 1 as it was overly focused on its in-game economy. Meanwhile, I probably spent a third of all code on sandbox hardening because GPT 5.2 kept trying to cheat by pre-reading its opponent's strategies. If there's interest, I'm planning on doing a round of testing with the latest generation of LLMs (Claude 4.6 Opus, GPT 5.3 Codex, etc.).
+=== 10 2204198653dc4b0aafe0f487eff1b537
+M: gemini | coding developer_ergonomics integration_failure 0 fh=True
+T: Lately I've had a lot more success having Claude generate a plan, send the plan to Codex for co-validation/amendments, have Claude implement the plan, then have Codex PR review the commit (and likely make some edits of its own), then I test out the code/changes. Meanwhile, my actual management of what I'm asking them to do is just a text file in Notepad where I'll write like BUG: xyz thing does abc or IDEA: let's change this to that as I'm testin
+=== 11 8cbefd241d50481baeb3b896d40f21c0
+M: claude | coding developer_ergonomics integration_failure 0 fh=True
+T: The main reason is because if there's a significant bug or large optimization going on, that shit needs to be done, tested and merged before building more stuff on top, otherwise you run the risk of wasted time, tokens and effort having a bunch of parallel work running that may not end up compatible at the end. Lately I've had a lot more success having Claude generate a plan, send the plan to Codex for co-validation/amendments, have Claude implem
+=== 12 ba3f7c7d8e9c45bc862460f141a64734
+M: qwen | api_developer_workflow developer_ergonomics hearsay 1 fh=False
+T: is end to end speech model like openai real time /gemini live or open source qwen 3 omni better in terms of latency?
+=== 13 2023ea19503b49efa7523d43fa48248a
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: (cofounder here) Honestly, we were hoping Gemini would nail this so we wouldn't have to build it ourselves, but here we are.
+=== 14 8df93c72d9e048c984c1fe787b151fac
+M: mistral | general satisfaction firsthand_usage 0 fh=True
+T: The work is based on a repo by pipecat that I forked and modified to be more comfortable to run (docker compose for the server and client), added Spanish support via canary models, and added Nvidia Ampere support so it can run on my 3090. The use case is a conversation partner for my gf who is learning Spanish, and it works incredibly well. For LLM I settled with Mistral-Small-3.2-24B-Instruct-2506-Q4_K_S.gguf
+=== 15 0fda61d0601d4a939248e511108c144d
+M: kimi | coding satisfaction comparative_evaluation 0 fh=False
+T: Or vice versa. Can you objectively analyze how VSCode adapts to your way of working without our interference? Did you test your theory with the actual frontier LLMs (which Kimi K2.5 is not BTW?)
+=== 16 d531c4ee3550453786f069b061f6af25
+M: claude-opus-4.8 | coding satisfaction benchmark_anecdote 0 fh=True
+T: For the LLM baseline we provided them with the submission script and source code of the workload being ran, and gave it the full capabilities of its coding harness in the cluster and it performed quite poorly. We benchmarked Expanse against the state of the art at the time (Gemini 3.5 pro, Claude Opus 4.8, GPT 5.5, Codex 5.3) and outperformed them by 8x. You might be thinking, as these models scale and get better, they could beat us on this task;
+=== 17 94239854507542108839d12f882aaf55
+M: qwen | multimodal task_fit hearsay 1 fh=False
+T: Whisper is really good for 1 person speaking. With more people you get repetitions. Qwen and other open multimodal models gives subpar results.
+=== 18 57f515eb5fbc40f69b62facdf0f5dffd
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: Four ways: (1) We are built specifically for Claude Code model routing. (2) We route at a subagent/subtask level. (3) We support on-device routing.
+=== 19 8769c5dcef274f2fb50e6d6e2b49dacc
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: If it has enough context, it produces a concise and tested PR. If it doesn't, it posts its findings for the investigating team, and automatically pulls in the engineers that could contribute more context based on documentation, previous investigations and Slack threads. Either way the output is one clean PR per incident, posted in Slack, that you can merge, ignore, or open as a Claude Code session and modify.
+=== 20 263f7e8b1d3f4c5195818733309f16aa
+M: claude | coding satisfaction hearsay 1 fh=False
+T: I’ve had a lot of fun with Remotion and Claude Code for CLI video editing. I’ve been impressed with how much traditional video editing I can manage. I will be checking this out!
+=== 21 0cbfd684b8744da1b7315d0c9aed6566
+M: claude | coding satisfaction hearsay 1 fh=False
+T: What I do now is preserve all my claude code conversations and set the context from there. This allows me to curate memory and it’s been the best way so far.
+=== 22 74bf3377b4f34af5a2267636657b9e88
+M: claude | agents satisfaction hearsay 1 fh=False
+T: I have a claude skill that takes in a chat and then offers tools/fixes to system prompt. Have found that + the anthropic harness engineering blogs to be super useful in making the agent actually do the work.
+=== 23 ecb2f2f245dc4e6aa6d9ea2e9bff474f
+M: claude | agents value pricing_value_comment 0 fh=False
+T: Having the agent build itself is not something I would have ever thought of though. Curious if you find it genuinely creates specific enough tools for it to be worth the setup time? I have a claude skill that takes in a chat and then offers tools/fixes to system prompt.
+=== 24 a082f8cb0bb34ef99bbd874a3bac2b78
+M: qwen | general satisfaction release_update_reaction 1 fh=False
+T: Show HN: Qwen 3.5 running on a $300 Android phone – on-device, open source. I had it running on a mid-tier Android phone within hours. It's great seeing the on-device AI community light up around this release. Off Grid brings it to Android: phones with 6GB RAM in the $200-300 range, ~8 tok/sec on the 2B model.
+=== 25 2b277ea4a7814d8a8a5e41bcd949184e
+M: claude | coding trust_reliability hearsay 1 fh=False
+T: Superpowers works well at building comprehensive plans for implementing large features or refactors, and asks the questions up front, and then worktrees provide a safe place to actually perform that work. It's not perfect; I've had some issues with Claude Code forgetting where it did things ("oh... it's not working because I'm not in the right directory").
+=== 26 a97bddb636f942b2af535bff4d0c7a94
+M: claude | writing value pricing_value_comment 0 fh=False
+T: This post focuses solely on the process and practical lessons learned collaborating with LLMs on a large writing project.) Hey HN, I recently finished a months-long project collaborating intensively with various LLMs (ChatGPT, Claude, Gemini) to write a book about using AI in management. The process became a meta-experiment, revealing practical workflows and pitfalls that felt worth sharing. This post breaks down the workflow, quirks, and lessons
+=== 27 ab695e825d234e559a5b19af992fc5ee
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: I’m on the $100 Claude and $20 GPT plans. I almost never run out of weekly usage on Claude and occasionally blow my Codex allowance, but OpenAI lets you buy credits ad-hoc (either $40 per 1000, or just turn on and monitor the “top-off” and set it to buy like $5 at a time. The one or two times I’ve run out, by the time the week resets, I’ve only spent an extra 5 or 10 bucks.
+=== 28 855470cbc8944e9a8569c8d729d544d0
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: (2) We route at a subagent/subtask level. (3) We support on-device routing. (4) We have a built-in ML router trained specifically to route Claude Code subagent tasks.
+=== 29 74b8dd81e3d54b6e94ed82e137a1d2d0
+M: claude | general trust_reliability pricing_value_comment 1 fh=True
+T: In about an hour worth of tokens with claude, we get a mcp server that works locally with each users credentials in a fairly reliable manner. We have been able to get this working in otherwise locked down corporate environments.
+=== 30 aada383edd0e4acdbda955148cd0f1df
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: We built something similar an A/B testing framework that measures Unblocked's impact on real AI coding agents. It spawns agent CLIs (Claude Code, Codex, Cursor, GitHub Copilot) with and without Unblocked's MCP server attached, then statistically compares the results: We likewise measured token savings, (wall clock) time, # tool calls, and # turns.
+=== 31 a79c7dd61bcc4c1ca7789dbfdd3436f5
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: In our experience, that doesn’t work well because it requires the main agent to use tokens to think about + call the tools, and LLMs are generally a very inefficient way to make routing decisions. By implementing Rayline as a gateway, we let users deterministically configure routing decisions, and you can optionally use our ML model to make routing decisions. We built it after noticing that Claude Code sessions contain a lot of subagent calls tha
+=== 32 049f8d86d6d84112bc2adf2de7cd1f8e
+M: claude | coding value comparative_evaluation 0 fh=False
+T: Show HN: Rayline routes Claude Code subagents to on-device and cheaper models. But many delegated calls have narrow scope: search the repo, summarize context, inspect an error, poll for CI updates, etc. The thing we’re exploring is subagent-level routing. The main cost lever in coding agents is usually cached vs non-cached input.
+=== 33 0fbcf188a78b4e99a480dd7c8728bb7c
+M: claude | agents value pricing_value_comment 0 fh=True
+T: Our Solution: The core agent relies on a combination of models such as Gemini, Claude, and GPT. A central LLM-based agent maintains planning context across turns and decides which specialized tool to call next. Each tool has a specific responsibility: - Venue search and filtering - Cost estimations (accommodation + flights) - Budget comparisons - Quote and outreach flows - Communication tool with our team For venue recommendations across more tha
+=== 34 d3e165eb25a74c04910af1121c98935d
+M: gemini | agents value pricing_value_comment 0 fh=True
+T: Our Solution: The core agent relies on a combination of models such as Gemini, Claude, and GPT. A central LLM-based agent maintains planning context across turns and decides which specialized tool to call next. Each tool has a specific responsibility: - Venue search and filtering - Cost estimations (accommodation + flights) - Budget comparisons - Quote and outreach flows - Communication tool with our team For venue recommendations across more tha
+=== 35 13018f6f23634bd9998275cfc3bb5174
+M: claude-opus-4.5 | api_developer_workflow trust_reliability integration_failure 0 fh=True
+T: It was described as an "MMO RTS sandbox for programmers." The Screeps paradigm of writing code and having it executed in a real-time game environment is well suited to LLMs. Drawing on a version of the Screeps open source API, LLM Skirmish pits LLMs head-to-head in a series of 1v1 real-time strategy games. In my testing I found that Claude Opus 4.5 was the most dominant model, but it showed weakness in round 1 as it was overly focused on its in-g
+=== 36 cd31568bcda446f5806cc2341a90157b
+M: claude | long_context value pricing_value_comment 0 fh=True
+T: You can ask about PDFs, reply to emails, create calendar events, use web search, editing text, all by voice. You can download a compiled version for free with the code HITOKUHN2026 (base price is 5 dollars) It supports Gemma 4 and Qwen 3.5 for text generation, plus multiple STT backends (Parakeet, Qwen3-ASR). Examples: - Gemma4 in action, - query a pdf document, - reply to email, - and the usual voice dictation (with optional polishing) I current
+=== 37 033bf26da7744418b57aa89b29d2a70f
+M: qwen | long_context value pricing_value_comment 0 fh=True
+T: You can ask about PDFs, reply to emails, create calendar events, use web search, editing text, all by voice. You can download a compiled version for free with the code HITOKUHN2026 (base price is 5 dollars) It supports Gemma 4 and Qwen 3.5 for text generation, plus multiple STT backends (Parakeet, Qwen3-ASR). Examples: - Gemma4 in action, - query a pdf document, - reply to email, - and the usual voice dictation (with optional polishing) I current
+=== 38 ff1f0a8241d24defbc0bb8c9b315bc89
+M: claude | coding satisfaction hearsay -1 fh=False
+T: One bad bracket and your pipeline crashes. This might be one reason why Claude Code uses XML for tool calling: repeating the tag name in the closing bracket helps it keep track of where it is during inference, so it is less error prone.
+=== 39 1c27a4db937b40cd936ce1e1f179ffde
+M: claude | coding satisfaction hearsay 1 fh=False
+T: Turns out to be surprisingly useful. It's also fun as you can customize the speaking style and mirror your vibe etc. The voice plugin gives commands to control it: /voice:speak stop /voice:speak azelma (change the voice) /voice:speak [1] Handy [2] Pocket-TTS [3] Voice plugin for Claude Code:
+=== 40 e9dfe73b258049deaaf70308408643af
+M: gemini | api_developer_workflow developer_ergonomics hearsay 1 fh=False
+T: is end to end speech model like openai real time /gemini live or open source qwen 3 omni better in terms of latency?
+=== 41 0971f54a54114cf794a6701454652ea0
+M: claude | agents satisfaction hearsay 1 fh=False
+T: I've had good success with something along these lines but perhaps a bit more raw: - claude takes a -p option - i have a bunch of tiny scripts, each script is an agent but it only does one tiny task - scripts can be composed in a unix pipeline For example: $ git diff --staged | ai-commit-msg | git commit -F - Where ai-commit-msg is a tiny agent: #!/usr/bin/env bash # ai-commit-msg: stdin=git diff, stdout=conventional commit message # Usage: git d
+=== 42 18276c978628461a80b97cb57ab63601
+M: claude | agents value pricing_value_comment -2 fh=False
+T: 2) As you know, It's a very client facing/customized solution space You might find this interesting, it reflects my thoughts in the space as well. Tough to scale as a fresh startup unless you really niche down on some specific workflows. (he is also building in the deterministic agent space now funnily enough) 3) It actually is annoyingly expensive with Claude if you break caching, which you have to at some point if you feed in every screenshot e
+=== 43 d64bd163b41843029fd712bdd10ef68f
+M: claude | api_developer_workflow value integration_failure -2 fh=False
+T: (he is also building in the deterministic agent space now funnily enough) 3) It actually is annoyingly expensive with Claude if you break caching, which you have to at some point if you feed in every screenshot etc. You mentioned you use multiple models (i guess uitars/omniparser?), but in the comments you said claude? 4) Ultimately the big bet in the RPA space, as again you know, is that the TAM wont shrink a lot due to more and more SAP's, ERP'
+=== 44 4441336efd884ec68aa0f6cbf494f9fa
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: I do use worktrees occasionally (especially during times where I'll have a very sticky problem that I make the LLM run in a loop on until it satisfies acceptance criteria, and want to isolate the potential fallout of Claudes Gone Wild), and I run Claude and Codex side by side, but I rarely have them work on truly-different tasks simultaneously.
+=== 45 2c28b87513aa43c4ad00560c5a30f221
+M: claude | coding developer_ergonomics integration_failure 0 fh=True
+T: Building on the "investigation > patch" point — running Claude Code, Codex, and Gemini CLI daily, the pattern I keep noticing is that auto-fix is fine on "obvious bug, obvious fix" (off-by-one, null check, missing await, error not propagated). It falls over on "subtle invariant" bugs where the existing code is intentionally weird to preserve something non-obvious — the PR looks right and breaks something three modules away. The tool I'd actually 
+=== 46 5a33f428cfc8419f9b68afb065c628ca
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: I am goi t o investigate that use case deeper. The models at core are Gemini / ChatGPT / claude so you should get a similar level answer or better (because of our data) not worse. I think in the VISA, we may have to do a specific training and setup of the system prompt.
+=== 47 354eda1e1d8d420cad4679dfc9520ddd
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: I tested a couple of "memory" systems, doing some heavy lifting or seemingly implementation of theories (layering, hot memory, etc), I can't really tell if they improve performance, quality or reliability on a task. But they do increase the overhead, for the LLM and for me, that's for sure. One problem I have is that now CLAUDE.md or skills tend to get version controlled within projects, I suspect they could get in the way sometimes.
+=== 48 b483d76309ad4153a8495ae570f8f045
+M: gemini | coding developer_ergonomics integration_failure 0 fh=True
+T: Building on the "investigation > patch" point — running Claude Code, Codex, and Gemini CLI daily, the pattern I keep noticing is that auto-fix is fine on "obvious bug, obvious fix" (off-by-one, null check, missing await, error not propagated). It falls over on "subtle invariant" bugs where the existing code is intentionally weird to preserve something non-obvious — the PR looks right and breaks something three modules away. The tool I'd actually 
+=== 49 0ccccb11ab264d3fb7fcbce08da215a6
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: I am goi t o investigate that use case deeper. The models at core are Gemini / ChatGPT / claude so you should get a similar level answer or better (because of our data) not worse. I think in the VISA, we may have to do a specific training and setup of the system prompt.
+=== 50 52e91c3732a44eca9ac620fc95d229ac
+M: gemini | api_developer_workflow satisfaction integration_failure 0 fh=True
+T: (cofounder here) Honestly, we were hoping Gemini would nail this so we wouldn't have to build it ourselves, but here we are. The main difference is we're not bounded by Google's ecosystem - we're starting with Gmail but already working on Outlook and other integrations. Also, the goal is to build an executive assistant, not just a voice client for email and calendar.
+=== 51 a7c71f9eed2847f587baf9fffa9ea55c
+M: claude | api_developer_workflow value integration_failure 0 fh=False
+T: We optimized the CLI for agent callers and cut Claude's output token usage by up to 79% and API cost by up to 67% versus a bare-Claude baseline. We wrote a blog documenting our lessons on optimizing user token usage when designing a CLI, e.g. using predicate flags so the agent doesn't compose jq | python | wc pipelines, output format that strips JSON's redundant field names.
+=== 52 8ec14b9885ac410d87cf56f727de35df
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: Earlier this year we started seeing agent traffic in our logs and it looked like coding agents were calling our CLI. But that CLI wasn't designed with coding agents in mind. We went down a philosophical rabbit hole to see if a CLI is even needed anymore given that Claude, Copilot et al.
+=== 53 501fb65ab7204f6fa9343e3cf8388c74
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: The default interface is a CLI, so it is easy to script or call from any coding agent shell. Try it on macOS 14+: /bin/bash -c "$(curl -fsSL )" The first internal use case was delegated demo recording. We ask Claude Code to drive an app while 'cua-driver recording start' captures the trajectory, screenshots, actions, and click markers.
+=== 54 494c2ca59ae045509a606a1db0a4fc5d
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: The result is an agent-generated product demo, Screen Studio inspired. Other things we have used it for: - Replacing Vercel’s agent-browser and other browser-use CLIs. With Claude Code and Cua Driver, you do not need Chrome DevTools Protocol at all.
+=== 55 8d7c19455493403b87e0d433f0789397
+M: claude | long_context satisfaction firsthand_usage 0 fh=True
+T: Examples: - Gemma4 in action, - query a pdf document, - reply to email, - and the usual voice dictation (with optional polishing) I currently use it a lot with Claude Code and Logseq. Now with some friends we are also building a new cross-platform version. The goal is on the long run to have AI interactive local models serving people and professionals.
+=== 56 45917a336a6b41dea0edf14d744df4ea
+M: claude | agents satisfaction hearsay 1 fh=False
+T: As large language models improved at multi-step reasoning and tool use, it became realistic to automate the coordination layer itself. Our Solution: The core agent relies on a combination of models such as Gemini, Claude, and GPT. A central LLM-based agent maintains planning context across turns and decides which specialized tool to call next.
+=== 57 f1e2f34ea981425489b83e1f9b033030
+M: gemini | general satisfaction hearsay 1 fh=False
+T: (Lessons 5 & 6: Use the right tool for the job; learn strengths via experimentation & use models to check each other. Feeding output between them often revealed flaws - Gemini calling out ChatGPT's tells was useful). Stuff I Did Not Do Well: Biggest hurdles: AI Flattery is Real: Helpfulness optimization means praise for bad work.
+=== 58 e53f3d6814f9483faee4601926ab8124
+M: gemini | agents satisfaction hearsay 1 fh=False
+T: As large language models improved at multi-step reasoning and tool use, it became realistic to automate the coordination layer itself. Our Solution: The core agent relies on a combination of models such as Gemini, Claude, and GPT. A central LLM-based agent maintains planning context across turns and decides which specialized tool to call next.
+=== 59 0455580609654678841cc06d8713af56
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: I haven't made much use of Gemini in this context though because two's company, three's a crowd. YMMV.
+=== 60 bcbbbac0df1b49fc83412ddd9d8bf690
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: Reminds me of Screeps, which I never took the time to fully play, but now I'm wondering if using Claude Code to play Screeps is cheating. Additionally, Screeps lets you host your own backend...
+=== 61 fd4a9c05eea149b6afb6ceb25b9494da
+M: claude | writing satisfaction firsthand_usage 0 fh=True
+T: Writing up a whole new independent Terraform parser or test harness to verify the results was beyond the scope of what I was willing to do for this just right now. So I opted for a "just assume Claude always gets it right", and we reported on just the token differences to get there.
+=== 62 d539685768b5433ead882b88ab133a22
+M: claude | agents value pricing_value_comment 1 fh=False
+T: Show HN: Rayline routes Claude Code subagents to on-device and cheaper models. We look at the message-thread context for a delegated call and choose a model for that call. At a task level, Sonnet and Haiku are almost always less capability-per-dollar than open models, so the main advantage is better + (much) cheaper subagents (60-90% in our private beta). The whole world seems to have started talking about model routing in the past two weeks, so 
+=== 63 5a6e111253b1465d9141df844b6e73cd
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: This is coming straight from my experience last week. I actually tried to test this. took 30 days of my claude code sessions, about 32k conversation turns across 21 sessions and 10 projects.
+=== 64 862bd0f61ef04f5085cd6817be2bf626
+M: qwen | multimodal satisfaction firsthand_usage 0 fh=True
+T: Qwen and other open multimodal models gives subpar results. I tried multipass approach, with the first one identifying the language and chunking and the next one the actual transcription, but this tended to miss a lot of content. I'm going to give canary-1b-v2 a try next weekend.
+=== 65 51229ec588fb4e8f86b9f0611a49dd17
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: If there's interest, I'm planning on doing a round of testing with the latest generation of LLMs (Claude 4.6 Opus, GPT 5.3 Codex, etc.). You can run local matches via CLI. I'm running a hosted match runner with Google Cloud Run that uses isolated-vm.
+=== 66 e0d79f6098ed40b7aa52631f89941cfa
+M: claude | coding satisfaction benchmark_anecdote 0 fh=True
+T: Reminds me of Screeps, which I never took the time to fully play, but now I'm wondering if using Claude Code to play Screeps is cheating. Additionally, Screeps lets you host your own backend... What if we started benchmarking coding LLMs with Screeps?...
+=== 67 638fd9c003414604838efe0344f5ec12
+M: claude | coding satisfaction benchmark_anecdote 0 fh=True
+T: The only asterisk on the code editing is I didn't automate the reporting of accuracy because the test only uses Claude and having it judge it's own work seemed dubious, and having our existing parsers + policy checks verify Claude's output in a benchmark test like this might look like we were cooking the books in our favor (i.e., we're testing and verifying using our own system which obviously we will always get 100% on). Writing up a whole new i
+=== 68 3f1355af18f5401287876bc525463163
+M: claude | coding trust_reliability release_update_reaction 0 fh=True
+T: My immediate hesitance with a tool like this (which sounds awesome) is that I don't actually trust tools like Claude Code unless I have them running in a git directory where I can see exactly what changed, and easily revert when needed.
+=== 69 da9d60c20d3f48588613d2f68245a2c5
+M: gemini | agents satisfaction firsthand_usage 0 fh=True
+T: We found Gemini Flash to be the sweet spot for both agentic actions as well as writing code. Even Flash-Lite is too hit or miss. We are thinking through on self healing mechanisms like falling back to a live web agent and rewriting script.
+=== 70 1cccf260db8349e0b266e934912b8661
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: I ask a question or show agent some ideas, discuss the approach, let the agent write code, then I review and verify. I did try to adopt some of the “high-efficiency” workflows people talk about, but none of them work for me. Around the end of last year I saw Boris, the Claude Code Author, share how he uses Claude Code.
+=== 71 8f0479d769414346abceb2a6dfacdc84
+M: claude | agents developer_ergonomics integration_failure 0 fh=True
+T: Other things we have used it for: - Replacing Vercel’s agent-browser and other browser-use CLIs. With Claude Code and Cua Driver, you do not need Chrome DevTools Protocol at all. - A dev-loop QA agent that reproduces a visual bug, edits code, rebuilds, and verifies the UI while my editor stays frontmost.
+=== 72 e3721485933b48c2975452a29c6c4c8b
+M: gemini | coding satisfaction benchmark_anecdote 0 fh=True
+T: For the LLM baseline we provided them with the submission script and source code of the workload being ran, and gave it the full capabilities of its coding harness in the cluster and it performed quite poorly. We benchmarked Expanse against the state of the art at the time (Gemini 3.5 pro, Claude Opus 4.8, GPT 5.5, Codex 5.3) and outperformed them by 8x. You might be thinking, as these models scale and get better, they could beat us on this task;
+=== 73 a1dfe205e0c74f36a917631e519c2089
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: I’ve been trying to make sense of how people really use tools like Claude Code, especially after seeing some of the workflows shared on Twitter. I started using terminal coding agents around June last year. I used Claude Code for a few months, then switched to Opencode because the experience was rough.
+=== 74 4d3b437d8dc24130bc33fa5f2882ff03
+M: claude | coding satisfaction hearsay 1 fh=False
+T: I’ve been an engineer for almost 40 years and love seeing what Claude Code can do. Like it or not, young people will not know a world where this technology doesn’t exist. It is just part of their toolset now.
+=== 75 4ac720f12d5b47a9afb8654ce40e4f52
+M: gemini | api_developer_workflow satisfaction integration_failure 1 fh=False
+T: great demo - wonder why isnt google just providing this as part of Gemini plans - I would pay money for it, why is Google so far behind on Gemini integration?
+=== 76 73e96a8544e9421d9c0fe6a556db4ad2
+M: claude | agents satisfaction hearsay 1 fh=False
+T: It is a good demonstration that 47 iterations of a recursive Claude agent writing itself to decompose any transport.
+=== 77 114120c022cd4c1b9cc7a8cd51a7a421
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: What a day to be alive, I just watched Gemini zergling rush Opus and it got completely overwhelmed. Opus needs to learn to kite.
+=== 78 ef5a068daa504ea5ad9a90d4b4f81fd8
+M: claude | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: We have several third party web apps in use. These apps don't expose a public api, but they are all single page web apps. We wanted to connect claude code to these web apps for our limited use case.
+=== 79 a2e2a23e0dbf4e5c9da3478b0fc04411
+M: gemini | api_developer_workflow developer_ergonomics integration_failure 1 fh=False
+T: No external API calls needed, but also supports them (OpenAI, Ollama, Bedrock, Gemini, etc.) License: I went with Elastic License v2, not an OSI-approved license. I know that's a topic with strong feelings here. The practical upshot: you can use it, modify it, self-host it, build products on top of it, you just can't offer Antfly itself as a managed service.

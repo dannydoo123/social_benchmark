@@ -1,0 +1,218 @@
+{
+  "backend": "routed_rubric_gated",
+  "evaluation": {
+    "group_field": "thread_id",
+    "groups": 108,
+    "runs": 8
+  },
+  "examples": 720,
+  "field_config": {
+    "aspect_category": {
+      "backend": "auto",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "rubric_scale": 1.0,
+      "strategy": "flat"
+    },
+    "evidence_type": {
+      "backend": "auto",
+      "embedding_model": "BAAI/bge-small-en-v1.5",
+      "rubric_scale": 0.0,
+      "strategy": "flat"
+    },
+    "firsthand_flag": {
+      "backend": "transformers",
+      "embedding_model": "bert-base-uncased",
+      "rubric_scale": 0.0,
+      "strategy": "flat"
+    },
+    "polarity_score": {
+      "backend": "auto",
+      "embedding_model": "thenlper/gte-base",
+      "rubric_scale": 3.0,
+      "strategy": "ordinal"
+    },
+    "task_category": {
+      "backend": "auto",
+      "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+      "rubric_scale": 10.0,
+      "strategy": "flat"
+    }
+  },
+  "fields": {
+    "aspect_category": {
+      "evaluated": 1530,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.06013071895424837,
+          "covered": 92,
+          "precision": 0.8913043478260869
+        },
+        "0.60": {
+          "coverage": 0.013725490196078431,
+          "covered": 21,
+          "precision": 1.0
+        },
+        "0.70": {
+          "coverage": 0.00065359477124183,
+          "covered": 1,
+          "precision": 1.0
+        },
+        "0.80": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        },
+        "0.90": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        },
+        "0.95": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        }
+      }
+    },
+    "evidence_type": {
+      "evaluated": 1530,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.0392156862745098,
+          "covered": 60,
+          "precision": 0.7833333333333333
+        },
+        "0.60": {
+          "coverage": 0.006535947712418301,
+          "covered": 10,
+          "precision": 1.0
+        },
+        "0.70": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        },
+        "0.80": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        },
+        "0.90": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        },
+        "0.95": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        }
+      }
+    },
+    "firsthand_flag": {
+      "evaluated": 1530,
+      "thresholds": {
+        "0.50": {
+          "coverage": 1.0,
+          "covered": 1530,
+          "precision": 0.7620915032679738
+        },
+        "0.60": {
+          "coverage": 0.5633986928104575,
+          "covered": 862,
+          "precision": 0.8805104408352669
+        },
+        "0.70": {
+          "coverage": 0.19934640522875818,
+          "covered": 305,
+          "precision": 0.9672131147540983
+        },
+        "0.80": {
+          "coverage": 0.013725490196078431,
+          "covered": 21,
+          "precision": 1.0
+        },
+        "0.90": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        },
+        "0.95": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        }
+      }
+    },
+    "polarity_score": {
+      "evaluated": 1530,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.01568627450980392,
+          "covered": 24,
+          "precision": 0.4166666666666667
+        },
+        "0.60": {
+          "coverage": 0.00196078431372549,
+          "covered": 3,
+          "precision": 0.0
+        },
+        "0.70": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        },
+        "0.80": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        },
+        "0.90": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        },
+        "0.95": {
+          "coverage": 0.0,
+          "covered": 0,
+          "precision": 0.0
+        }
+      }
+    },
+    "task_category": {
+      "evaluated": 1530,
+      "thresholds": {
+        "0.50": {
+          "coverage": 0.3869281045751634,
+          "covered": 592,
+          "precision": 0.5777027027027027
+        },
+        "0.60": {
+          "coverage": 0.23333333333333334,
+          "covered": 357,
+          "precision": 0.5854341736694678
+        },
+        "0.70": {
+          "coverage": 0.1287581699346405,
+          "covered": 197,
+          "precision": 0.6345177664974619
+        },
+        "0.80": {
+          "coverage": 0.05032679738562092,
+          "covered": 77,
+          "precision": 0.6493506493506493
+        },
+        "0.90": {
+          "coverage": 0.011764705882352941,
+          "covered": 18,
+          "precision": 0.6111111111111112
+        },
+        "0.95": {
+          "coverage": 0.00522875816993464,
+          "covered": 8,
+          "precision": 0.875
+        }
+      }
+    }
+  }
+}

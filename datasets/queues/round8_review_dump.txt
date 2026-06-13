@@ -1,0 +1,420 @@
+=== 0 9ad00fc01d8148a6a4c11c49dc16ba13
+M: claude | general satisfaction hearsay 1 fh=False
+T: It's been very helpful, and it's been very easy to guide it to do this. It came up with approaches of calculating targeting and movement that I would not have thought of myself. That being said, Claude does not structure the project in the way someone familiar with the engine would, and just like any 'real' software, if you don't guide it, the output quickly degenerates.
+=== 1 27e3b95fe4094bef8e7f3bdc20c1e143
+M: qwen | general satisfaction comparative_evaluation 0 fh=False
+T: 2) Split reasoning from acting (planner vs executor). Planner (reasoning): DeepSeek R1 (local) generates step intent + what must be true afterward. Executor (action): Qwen ~3B (local) selects concrete DOM actions like CLICK(id) / TYPE(text).
+=== 2 322b0ebb637443fd883d12372161388e
+M: claude | agents value pricing_value_comment 0 fh=False
+T: For each, include the abstract, citation count, publication date, and a GitHub repo if available." ( ) Hypothesis testing: "Check if user complaints about Figma's performance on large files have increased in the last 3 months. Search forums like Hacker News, Reddit, and Figma's community site and show the most relevant posts with timestamps and engagement metrics." ( ) The first version of Webhound was a single agent running on Claude 4 Sonnet. I
+=== 3 9b7c5e49b3914327bd9ea82a67abc4ee
+M: deepseek | general task_fit firsthand_usage 0 fh=True
+T: This broke when labs started implementing batching, and no one bothered fixing it because the benefits of batching vastly outweighed the demand for deterministic output. I am hopeful deterministic output will return, though; DeepSeek v4 claims to have implemented "bitwise batch-invariant and deterministic kernels," though I haven't tested it myself.
+=== 4 c19b7624a22342c78a92a95025ba3977
+M: claude | general developer_ergonomics integration_failure 0 fh=True
+T: Show HN: Unified access to top AI models, supporting GPT4, Claude and more. --- Note: Labophase is in beta, accounts is not fully working and expect some bugs here and there. Free access will continue until I run out of credits.
+=== 5 f2c7f9f955104ce9bb1a526de4a100d6
+M: gpt-4 | general satisfaction hearsay 1 fh=False
+T: For those without access, GPT-3.5 is still an impressive tool. A friend of mine uses GPT-3.5 with autoGPT and achieves remarkable results. I recommend exploring GPT-3.5 and not solely focusing on obtaining access to GPT-4.
+=== 6 49bed7bcb7024316804edbbd955f1139
+M: gpt-5 | general satisfaction hearsay 1 fh=False
+T: Second, you're accepting credit cards without providing any Terms of Service. This seems like a significant oversight for a YC company. Third, as another commenter mentioned, GPT-5 can already do this faster and more effectively, and Claude has similar capabilities.
+=== 7 e4b6e906656842f39b2e78c93ca89504
+M: llama-3 | general satisfaction hearsay 1 fh=False
+T: Good idea, maybe I'll add Groq as another option, since I don't have an internal Llama 3.1 flow yet. But I'll still need to keep the others to maintain the diversity of responses.
+=== 8 c513a96392804ecea69ad8ebc2c0fade
+M: claude | agents trust_reliability hearsay 1 fh=False
+T: Chrome devtool mcp, this is the most reliable way to give claude to control my browser.
+=== 9 d59dd7c6a322460c9afd0b124c3fccec
+M: gpt-4o | general regression_stability pricing_value_comment 0 fh=False
+T: But gpt-4o can already answer your question for a fraction of the price and time: To determine which of the items could be used to make an actual fire, we need to analyze the definitions provided: 1. *Glaarg*: A wooden item. 2.
+=== 10 7f6de0cadc594d94a9b59cd47b4dd1d2
+M: mistral | long_context satisfaction benchmark_anecdote 2 fh=False
+T: Good way to think about automation is recall at high precision which is what you need for true automation where you don't worry about documents that are very likely to have correct results and focus on manually correcting documents likely to have errors. The reason accuracies are tighly grouped but not the automation is because these models are trained to be accurate but not necessarily predictable, where there is no real way to get confidence sc
+=== 11 699fa204400347aa85c580840b6f2e1c
+M: gemini | general satisfaction firsthand_usage 0 fh=True
+T: I was using Gemini for prompting and aggregation, and I'm waiting for their quota increase response. In the meantime, I've switched to GPT-4o for the prompting/aggregation. 3.
+=== 12 9afe9d4d07ce415f94b1fb07086a47d7
+M: gpt-4o | general satisfaction firsthand_usage 0 fh=True
+T: I was using Gemini for prompting and aggregation, and I'm waiting for their quota increase response. In the meantime, I've switched to GPT-4o for the prompting/aggregation. 3.
+=== 13 cbf032088e484c8a89f6193669b7c114
+M: qwen | coding refusal_acceptance hearsay -1 fh=False
+T: Bypassing Gemma and Qwen safety with raw strings. Qualitative failures were stark: models that previously refused to generate explosives tutorials or explicit fiction immediately complied when the "Assistant" persona wasn't triggered by the template. It seems we are treating client-side string formatting as a load-bearing safety wall. Full logs, the apply_chat_template ablation code, and heatmaps are in the post.
+=== 14 c1c636daaa764b56a59af49af6141027
+M: gpt-4 | general value pricing_value_comment 0 fh=True
+T: While the time/cost of using GPT-4 is not ideal, GPT-4-level classification is absolutely crucial for the entire adaptation process to succeed. With 3.5 guiding the adaptation, we find that errors quickly accumulate. It can't identify complex ideas correctly.
+=== 15 ec5b282a84d745d59a5810e6bf812d85
+M: gemini | multimodal hallucination_safety hearsay -2 fh=False
+T: For our test set, every record is paired with a JSON Schema and a ground-truth answer that was verified against the source context manually by a human and an LLM cross-check, so a missing or hallucinated value will be considered to be wrong. Open source is doing pretty well with GLM 4.7 coming in number 2 right after GPT 5.4. We noticed the rankings shift across modalities: GLM-4.7 leads text, Gemma-4-31B leads images, Gemini-2.5-Flash leads audi
+=== 16 7b650056ab904a6f95e60cd701467685
+M: deepseek-r1 | general satisfaction comparative_evaluation 0 fh=True
+T: We collect raw elements, then run a WASM pass to produce a compact “semantic snapshot” (roles/text/geometry) and prune the rest (often on the order of ~95% of nodes). 2) Split reasoning from acting (planner vs executor). Planner (reasoning): DeepSeek R1 (local) generates step intent + what must be true afterward.
+=== 17 f2e6e67427b84e20881d67c5b53cf65f
+M: gemini | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: For embedding models, ‘gemini-embedding-001’ performed reasonably well at first, but we later switched to the Contextualized Embeddings from ‘voyage-context-3’. It produced more relevant results than even the newer Voyage 4 models because its chunk embeddings are encoded with awareness of the surrounding document context. We then applied Voyage’s ‘rerank-2.5’ as second-stage re-ranking, reducing 50 initial chunks to a final top 15 (configurable i
+=== 18 7b7cbe94433740638f284d6faa9adae1
+M: deepseek | general regression_stability bug_regression_report 0 fh=True
+T: You used to be able to set temp=0 and a fixed seed and get the same output every time. This broke when labs started implementing batching, and no one bothered fixing it because the benefits of batching vastly outweighed the demand for deterministic output. I am hopeful deterministic output will return, though; DeepSeek v4 claims to have implemented "bitwise batch-invariant and deterministic kernels," though I haven't tested it myself.
+=== 19 e1dbbb81a31e4c06a354f2411383dda7
+M: claude | coding hallucination_safety firsthand_usage 0 fh=True
+T: But I realize that's hallucinated, so I try Gemini. That answer sounds right, but I cross-reference with Claude just to make sure. This doesn't really apply to math/coding (where o1 or Gemini can probably one-shot an excellent response), but more to online search, where information is more fluid and there's no "right" search engine + text restructuring + model combination every time.
+=== 20 8f01ff10020d46369a6ad52e7988d301
+M: gemini-2.5 | api_developer_workflow value pricing_value_comment 0 fh=True
+T: From what we've seen it's actually the other way around - once it gets a sense of where this information lives the latter stages of data collection go quicker, especially since it's able to deploy search agents in parallel to get information and doesn't need to do the manual work as much anymore. Having said that, it does sometimes forget to do that, and although we've added the critic agent to remind it to do that it can be inconsistent but usua
+=== 21 6c4d91a3fe0e4728a914314a74b4f9be
+M: gemini-2.5 | general satisfaction hearsay 1 fh=False
+T: Also, usually it is good to look at the newest model. Gemini 2.5 Flash is quite dated. Gemini 3.1 Flash Lite is the new one ( ).
+=== 22 cd9f93e52a7e4340b0d39e18319efb6d
+M: gemini-3.1-flash-lite | general satisfaction hearsay 1 fh=False
+T: Also, usually it is good to look at the newest model. Gemini 2.5 Flash is quite dated. Gemini 3.1 Flash Lite is the new one ( ).
+=== 23 2dc006c41d774e84af8356ca49f4b5ea
+M: grok | general satisfaction hearsay 1 fh=False
+T: Voice Recognition: Voice Activity Detection with Silero-VAD + Speech to Text with Faster-Whisper, to let users interrupt 3. Talking head animation: some flavor of wav2lip, diff2lip or LivePortrait 4. Text inference: Any grok hosted model that is fast enough to do near real time responses (llama3.1 70b or even 8b) or local inference of a quantized SML like a 3B model on a 4090 via vLLM 5.
+=== 24 54259acb3405428e8efcd6888edf9fd8
+M: gpt-4o | api_developer_workflow developer_ergonomics integration_failure 1 fh=False
+T: Is that the best rendering, or are the videos stale? Also the audio cloning sounds quite a bit different from the input on For live avatar conversations, it's going to be interesting, to see how models like OpenAI's GPT-4o that have audio-in-audio-out websocket streaming API (that came out yesterday), interesting to see how that will work with technology like this, it does look like there is likely to be a live audio transcript delta that could d
+=== 25 fb0269a8633847f2b5347937341034a4
+M: gpt-4o | multimodal value pricing_value_comment -1 fh=False
+T: Talking head animation: some flavor of wav2lip, diff2lip or LivePortrait 4. Text inference: Any grok hosted model that is fast enough to do near real time responses (llama3.1 70b or even 8b) or local inference of a quantized SML like a 3B model on a 4090 via vLLM 5. Visual understanding of users webcam: either gpt-4o with vision (expensive) or a cheap and fast Vision Language Model like Phi3-vision, LLaVA-NeXT, etc.
+=== 26 3afc3aeafbe14b268ca6d7ba5d4ff06f
+M: grok | multimodal value pricing_value_comment -1 fh=False
+T: Talking head animation: some flavor of wav2lip, diff2lip or LivePortrait 4. Text inference: Any grok hosted model that is fast enough to do near real time responses (llama3.1 70b or even 8b) or local inference of a quantized SML like a 3B model on a 4090 via vLLM 5. Visual understanding of users webcam: either gpt-4o with vision (expensive) or a cheap and fast Vision Language Model like Phi3-vision, LLaVA-NeXT, etc.
+=== 27 97441aa2d2bd401e84871a2f29a3869d
+M: gemini | api_developer_workflow trust_reliability hearsay 1 fh=False
+T: You're right that you can chat with files using Gemini or a codegen'd RAG pipeline, and that does work well for a lot of teams. The problem that Captain really addresses comes when production pipelines need to run continuously over large file corpora with fast, incremental indexing, and reliable latency. The maintenance required in these situations is often quite significant.
+=== 28 fd78e0c4d58f4850afb7456d6113ad0c
+M: o3 | research satisfaction firsthand_usage 0 fh=True
+T: The link in the article to the full blog explaining rerankers is 404ing for me. Questions to you as an expert related to search ranking. With o3 and source quality thresholds when performing web search.
+=== 29 3dc432225a5549a7afe565f7bb599c07
+M: claude-opus-4.5 | writing satisfaction firsthand_usage 1 fh=True
+T: Anecdotal, but I have used Claude to help me write sections of games that I'm (sometimes) working on in Godot fairly recently (Opus 4.5 iirc). It's been very helpful, and it's been very easy to guide it to do this. It came up with approaches of calculating targeting and movement that I would not have thought of myself.
+=== 30 160fe8e3a980444ca4989466083e48ce
+M: gpt-4.1 | writing regression_stability firsthand_usage 0 fh=True
+T: When I asked GPT-4.1 to show some references to confirm an answer was as widely accepted as it claimed, it replied with a bunch of unrelated GitHub issues with fake descriptions, and this Stack Overflow link: . Turns out this is actually a link to a completely unrelated question . It had tricked me by rewriting the title part of the url, which is not used to identify the question.
+=== 31 175ec0fdcff24f8f95fccd4d30f7fc84
+M: gpt-4 | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: I use GPT-4 on ChatGPT Plus daily, primarily for quick coding help, and it is significantly more advanced than GPT-3.5 in this regard. As for the GPT-4 API, I don't use it extensively at the moment, just occasionally to experiment with newer applications like Microsoft's Jarvis project (HuggingGPT). Eventually, I plan to integrate the Whisper API, GPT-4 API, and Elevenlabs API to create my own personal assistant.
+=== 32 3c2f6e1e313946a7bc2d29b0b70f7db5
+M: gemini | api_developer_workflow value integration_failure 0 fh=False
+T: But what I really cant fathom is that pricing which is completely out of band. You can already talk to files directly with gemini, just wrapping other apis etc makes no sense. This is even stuff now you can easily codegen entire solutions for esp object storage based ones.
+=== 33 1076b8a188a2492bb371cc2b4c45b680
+M: gpt-5 | general hallucination_safety integration_failure -1 fh=False
+T: Model size is not a predictor, either: Qwen3.5-35B and GLM-4.7 beat GPT-5 and Claude-Sonnet-4.6 on Value Accuracy. Phi-4 (14B) beats GPT-5 and GPT-5-mini on text. Structured hallucinations are the hardest bug.
+=== 34 e43bc48b335842298ab247326e4fda2a
+M: llama | general satisfaction firsthand_usage 0 fh=True
+T: Lol no, Llama & it's genus is enough for me & every enterprise
+=== 35 e9fd833a42d84ff280b3bb61a9c75fb6
+M: o4-mini | general satisfaction firsthand_usage 0 fh=True
+T: OpenAI o3 and o4-mini are massive disappointments for me so far.
+=== 36 12c273ef9698493daa55d68ef2586834
+M: claude-sonnet-4.5 | general satisfaction firsthand_usage 1 fh=True
+T: For me too, it was around that time last year, with GPT-5, Claude Sonnet 4.5 and then Gemini 3 that I started feeling that these models are clearly becoming great at reasoning. I'm not at all opposed to saying that they are around PhD-level on at least some domains.
+=== 37 edc4e92d5b37451f9d5ec0fc8b3ab9e5
+M: claude-sonnet-4.6 | general satisfaction firsthand_usage 0 fh=True
+T: Agree that the choices are strange. Sonnet 4.6 was tested, but no Opus 4.6. Gemini 3.1 and GLM 5 came out around the same time as Sonnet 4.6 (~Feb 2026) so it's strange that they are missing, but Gemini 2.5 Flash, Gemini 3 Flash, and GLM 4.7 are there.
+=== 38 7c50840349eb4217baffe0de753e3578
+M: gemini-3-flash | general satisfaction firsthand_usage 0 fh=True
+T: Agree that the choices are strange. Sonnet 4.6 was tested, but no Opus 4.6. Gemini 3.1 and GLM 5 came out around the same time as Sonnet 4.6 (~Feb 2026) so it's strange that they are missing, but Gemini 2.5 Flash, Gemini 3 Flash, and GLM 4.7 are there.
+=== 39 c5871ea9a85a415f9339814380ea4fb1
+M: gpt-4 | coding trust_reliability firsthand_usage 0 fh=True
+T: Why I built this: I needed a way to verify AI-generated code was production-safe. Existing tools either required cloud uploads (privacy concern) or produced output too large for AI context windows. TheAuditor solves both problems - it runs completely offline and chunks findings into 65KB segments that fit in Claude/GPT-4 context limits.
+=== 40 7f5a993c03d943e2ba6f1fa31c987ec6
+M: claude-sonnet | general satisfaction hearsay 1 fh=False
+T: Claude represents some sort of inflection point or phase change. With all the noise, Claude Sonnet is by far the most impressive model since gpt4.
+=== 41 bede095f9dbd4f0a996d528ee387a184
+M: claude-opus-4.7 | general value pricing_value_comment 1 fh=False
+T: Then the way to go is to use Pareto frontier, e.g. If you want to avoid using Opus 4.7 them why GPT-5.4 (unless with a disclaimer that it is low reasoning setting, or check that on medium its price is comparable with Haiku/Flash). Also, usually it is good to look at the newest model.
+=== 42 7d3252db8dfe48918ab4b0ce4d7343f8
+M: gpt-5.4 | general value pricing_value_comment 1 fh=False
+T: Then the way to go is to use Pareto frontier, e.g. If you want to avoid using Opus 4.7 them why GPT-5.4 (unless with a disclaimer that it is low reasoning setting, or check that on medium its price is comparable with Haiku/Flash). Also, usually it is good to look at the newest model.
+=== 43 fdf0617e7b434c999bc1659141945b5f
+M: qwen | general satisfaction comparative_evaluation 0 fh=False
+T: 2) Split reasoning from acting (planner vs executor). Planner (reasoning): DeepSeek R1 (local) generates step intent + what must be true afterward. Executor (action): Qwen ~3B (local) selects concrete DOM actions like CLICK(id) / TYPE(text).
+=== 44 883d0116e15640d19175314e820326b0
+M: claude | agents satisfaction hearsay -1 fh=False
+T: I was looking into .claude folder and skim reading it. One thing stood out to me how large it is. If I'm not mistake how Claude Code or AI agent work, they need everything in 'context' and few tricks to reduce the context size.
+=== 45 82e2eb5dbdc24ed59ac2032f58932311
+M: claude | general satisfaction hearsay 1 fh=False
+T: Second, you're accepting credit cards without providing any Terms of Service. This seems like a significant oversight for a YC company. Third, as another commenter mentioned, GPT-5 can already do this faster and more effectively, and Claude has similar capabilities.
+=== 46 902a9c3f20c6431695286def208dfcf3
+M: claude | api_developer_workflow satisfaction integration_failure 1 fh=False
+T: Loving the ‘Claude plays’ integration. Great work
+=== 47 382cd387a3f94db1bae104f47131f617
+M: claude | multimodal satisfaction hearsay 1 fh=False
+T: FWIW I've seen noticeably better results on (1) and (4) extracting JSON from images via Claude, although (2) and (3) still take effort.
+=== 48 184a3c7b89e847369e0b16f6caa3cdd2
+M: claude | coding satisfaction hearsay 1 fh=False
+T: The two loops I think you should add / address: 3D assets / rigging. This is the hardest thing to do in the current Claude Code to Godot MCP loop right now. Claude can reliably make 3D assets using the in game creator, but ideally you have a system that works with external models (or better yet, generates them ala something like spline or similar system in Blender) and then can rig them up in game.
+=== 49 0d6b32389bea48279d59916e6f9e232f
+M: claude | general satisfaction hearsay 2 fh=False
+T: Nice work, must have been a pain to get Godot's formats working with Claude. As another commenter suggested the demo videos don't do any justice to this project - yeah it's the magic that you can generate playable (wouldn't say complete myself) games with a single prompt, but the quality of those is exactly why people are so put off by AI slop. If this was a better harness that acted more like a tool I think it would be seen as more useful.
+=== 50 9b5fd57652694c3aad2fbccec3a35ae0
+M: claude | agents satisfaction comparative_evaluation -1 fh=False
+T: One thing stood out to me how large it is. If I'm not mistake how Claude Code or AI agent work, they need everything in 'context' and few tricks to reduce the context size. Sure, but given the number of files you have, how much of the context is consumed by all those claude files vs actual user input?
+=== 51 19ebbc461cb745fc961aa97208eb87d9
+M: gpt-4 | general satisfaction firsthand_usage 0 fh=True
+T: I pay $20/mo for ChatGPT plus to get access to gpt-4. At one point they stopped offering memberships due to capacity issues.
+=== 52 fc21193f346f4fb0ba0c9b8518aaadd4
+M: gpt-5 | general satisfaction firsthand_usage 0 fh=True
+T: Some people here in the comments are arguing that the LLM "understands" what is "true" and "false", that is somewhat capable of reasoning, etc, but I still find it quite easy (with GPT-5) to break its facade of "reasoning". I asked it to play a word game. This is very simple, and a very short session too.
+=== 53 d1ad395d5f1e4c79b222f6e1514c8834
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: I'm paying a fixed amount on Claude and other agents, so "more tokens" is "free" for me.
+=== 54 8794e975680544239a7d106eff011cf7
+M: gpt-4 | general satisfaction release_update_reaction 0 fh=True
+T: I pay $20/mo for ChatGPT plus to get access to gpt-4. At one point they stopped offering memberships due to capacity issues. Not sure if it's available again or not.
+=== 55 2542378b6a3a4ff38f0a2356cee59211
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: This is our earlier work. Since May we've made it really easy for the community to build their own agents to play the game: you can now hook up your terminal to get Claude Code to play the game.
+=== 56 7c28a6487a37435aa4237b41bdbe84aa
+M: deepseek-r1 | general satisfaction comparative_evaluation 0 fh=True
+T: We collect raw elements, then run a WASM pass to produce a compact “semantic snapshot” (roles/text/geometry) and prune the rest (often on the order of ~95% of nodes). 2) Split reasoning from acting (planner vs executor). Planner (reasoning): DeepSeek R1 (local) generates step intent + what must be true afterward.
+=== 57 93f59492f0704ae5939901e4255fb797
+M: claude | api_developer_workflow value pricing_value_comment 0 fh=False
+T: it's interesting to see how things will play out, but I really believe that doing Claude Code (maybe with Opus 4.6) + click tool + move_mouse tool + snapshot page tool + another 114 more tools is definitely not the best approach the main issue with this interface is that the commands are too low-level and that there is no way of controlling the context over time once a snapshot is added to the context those tokens will take up very precious conte
+=== 58 b2b6b0a3cf354c83925d9ef833d915cb
+M: claude | agents value pricing_value_comment 0 fh=False
+T: For example, instead of this: click(x=342, y=128) type("search query") click(x=401, y=130) scroll(down=500) click(x=220, y=340) ...50 more steps Your agent just says: Search for flights from NYC to LA and find the cheapest option Agents like Claude Code can use the Smooth CLI to extract hard-to-reach data, fill-in forms, download files, interact with dynamic content, handle authentication, vibe-test apps, and a lot more. Smooth enables agents to 
+=== 59 10140e9008e04c4199338b5ea1758000
+M: mistral | agents satisfaction firsthand_usage 0 fh=True
+T: Agents receive structured observations every tick and can take actions that change the world. You can edit the rules between runs—prompts, decision logic, even how they see chat history—without rebuilding. On the technical side, we built a Unity bridge with MCP and multi-provider routing via LiteLLM, with local model support via Mistral.rs coming next.
+=== 60 42950b0a5ff5499fa98e1e6b9f32cf55
+M: claude | coding trust_reliability benchmark_anecdote 0 fh=True
+T: I think those benchmarks are all noise. Claude has so far been the only model I really trust and use in Cursor.
+=== 61 499e3b56ab62414aae81bb2fe5214c14
+M: qwen | general refusal_acceptance firsthand_usage 0 fh=True
+T: Bypassing Gemma and Qwen safety with raw strings. I spent the weekend red-teaming small-scale open weights models (Qwen2.5-1.5B, Qwen3-1.7B, Gemma-3-1b-it, and SmolLM2-1.7B). I found a consistent vulnerability across all of them: Safety alignment relies almost entirely on the presence of the chat template. When I stripped the / instruction tokens and passed raw strings: Gemma-3 refusal rates dropped from 100% → 60%.
+=== 62 4928946c88d647279d4fe7a12e0d0142
+M: gemini | coding hallucination_safety firsthand_usage 0 fh=True
+T: But I realize that's hallucinated, so I try Gemini. That answer sounds right, but I cross-reference with Claude just to make sure. This doesn't really apply to math/coding (where o1 or Gemini can probably one-shot an excellent response), but more to online search, where information is more fluid and there's no "right" search engine + text restructuring + model combination every time.
+=== 63 a4ffa20987f54e35b66a4943eb34af83
+M: claude | research satisfaction firsthand_usage 0 fh=True
+T: I just tested ChatGPT 4o and Claude 3.5 Sonnet using the following prompt, with and without the last sentence: “Write a one-paragraph summary of research since 2015 on the use of machine translation in second-language academic writing. Include five in-text citations to previous research, and include full reference information for each citation after the paragraph. Do not hallucinate any of the citations and references.
+=== 64 47b8c4b3c39049418d426f2c77a68995
+M: claude | research hallucination_safety firsthand_usage 0 fh=True
+T: Show HN: Unified access to top AI models, supporting GPT4, Claude and more. Do people prefer a "search" interface over a chatbot interface i.e. (one to many as opposed to one to one interaction with ai)? - My experience is that it's the best defense against hallucinations and misinformation from models because models often hallucinate and fail in different ways and is very obvious when you compare it against other responses.
+=== 65 d9473067ceec461d83c0fcdab48d041c
+M: claude | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: Show HN: Claude Code skills that build complete Godot games. It has ~850 classes and a Python-like syntax that will happily let a model hallucinate Python idioms that fail to compile. To fix this, I built a custom reference system: a hand-written language spec, full API docs converted from Godot's XML source, and a quirks database for engine behaviors you can't learn from docs alone. Because 850 classes blow up the context window, the agent lazy-
+=== 66 44a32fc52283498a9ac3f45d867d46fd
+M: gemini | data_analysis developer_ergonomics integration_failure 0 fh=True
+T: The only thing I had was my experience in the software development! I needed one week to go through the BMAD worklflow and get all documentations out of it. The main plan was to ask AI to implement the detection of the following concerns: * Unusual stillness (potential fall or medical event) * Did not wake up on time * At an unfamiliar location at an unusual hour * Phone silent for too long I ended up with the following technical stack: * Kotlin 
+=== 67 4c4af050abfb4a96bb974bfe3f195c02
+M: claude | general satisfaction hearsay -1 fh=False
+T: What is wrong with "claude --chrome"?
+=== 68 28b3138fee7e4754905319bbc8197abe
+M: claude | general satisfaction hearsay 1 fh=False
+T: claude --chrome works, but as the OP mentions: they can do it 20x faster, by passing in higher-level commands.
+=== 69 cfd3c2a26eba4a47b894a5128d2c0939
+M: claude | general satisfaction hearsay 1 fh=False
+T: Claude can reliably make 3D assets using the in game creator, but ideally you have a system that works with external models (or better yet, generates them ala something like spline or similar system in Blender) and then can rig them up in game.
+=== 70 32047720458f41009ee5b0c47966472a
+M: claude | general satisfaction hearsay 1 fh=False
+T: i expect the point of the skill isnt that the end games are good, but such that claude can work on any part of the godot engine to help you make a game. i do think LLMs need a physics skill though.
+=== 71 1152e6dfae8147abbfe7a181e0044ba8
+M: claude | multimodal satisfaction benchmark_anecdote 1 fh=False
+T: Claude can reliably make 3D assets using the in game creator, but ideally you have a system that works with external models (or better yet, generates them ala something like spline or similar system in Blender) and then can rig them up in game. 2. Expanding the evaluation loop from just screenshots to actually playing the game.
+=== 72 cf0f3c8e6b8c46f79d8fc60668f293ca
+M: claude | coding satisfaction hearsay -1 fh=False
+T: but then the mechanics, and movements of the character, made it seem like it's really bad physics And when you realize that apps that are vibe-coded are to apps what the games here are to actual games, things get really worrying. Oh well, back to my Claude Code CLI anyway but I know it's generating a huge amount of crappy code.
+=== 73 4eedcef564e446418bc9d49810082b5a
+M: claude | coding satisfaction comparative_evaluation 0 fh=False
+T: Show HN: Claude Code skills that build complete Godot games. The Build-Time vs. Runtime State: Scenes are generated by headless scripts that build the node graph in memory and serialize it to .tscn files. This avoids the fragility of hand-editing Godot's serialization format.
+=== 74 82b0e182ac4f4cc09635b62309b0ce32
+M: claude | api_developer_workflow value integration_failure 1 fh=False
+T: Nat.dev (openplaygroundl) is a nice way to access Claude if you don't have API access but want to explore a few settings not available on public facing web sites like system prompts. Your web site is a cool concept but I think you'll have a hard time competing with Poe value wise for SFW LLM usage.
+=== 75 31fd7a1a24f046a7b46b813b01748745
+M: gpt-4 | general satisfaction release_update_reaction 1 fh=False
+T: No, I am an AI language model developed by OpenAI based on GPT-3 technology. As of my last update, GPT-4 had not been released, and I wouldn't have the capabilities or knowledge to confirm if it exists or what features it might have. My purpose is to provide information and answer questions to the best of my ability based on the data available up to my last training cut-off in early 2022.
+=== 76 e14481f7f43b4862aa25919aeaab60e0
+M: claude | coding satisfaction hearsay 1 fh=False
+T: That answer sounds right, but I cross-reference with Claude just to make sure. This doesn't really apply to math/coding (where o1 or Gemini can probably one-shot an excellent response), but more to online search, where information is more fluid and there's no "right" search engine + text restructuring + model combination every time. Even o1 doesn't have online search, so it's obviously a hard problem to solve.
+=== 77 e7d0b334f2c94e44b921eb857fc83713
+M: gemini | long_context satisfaction hearsay 1 fh=False
+T: For this, we’ve had good results with Gemini 3 Pro for images, Reducto for complex documents, and Extend for basic OCR.
+=== 78 b5b92a624bd144c9b76417dc2aae8f18
+M: gemini-2.5 | agents value pricing_value_comment 0 fh=False
+T: There's a main agent, a set of search agents that run subtasks in parallel, a critic agent that keeps things on track, and a validator that double-checks extracted data before saving it. We also gave it a notepad for long-term memory, which helps avoid duplicates and keeps track of what it's already seen. After switching to Gemini 2.5 Flash and layering in the agent system, we were able to cut costs by more than 30x while also improving speed and
+=== 79 ad223eea6fce408396d95ab138b5587c
+M: gpt-4 | general satisfaction firsthand_usage 0 fh=True
+T: I did have GPT-3 access for about 2 years, and wrote tutorials and stuff about GPT-3. I also paid for ChatGPT+ for one month, but other friends who have subscribed earlier didn't get it. Someone asked what I wrote in the waitlist form; I don't remember because GPT-4 filled it in, lol
+=== 80 acca6e8bc59f4b918e0be34e1d20290d
+M: claude | coding trust_reliability comparative_evaluation 0 fh=False
+T: The app shipped and looks stable — so the code is in decent shape. And seeing how Claude Code works, the code is full of comments. Ordinary devs don't document this well.
+=== 81 60f80257efd741fc950218178c2cf361
+M: gemini | coding satisfaction hearsay 2 fh=False
+T: This doesn't really apply to math/coding (where o1 or Gemini can probably one-shot an excellent response), but more to online search, where information is more fluid and there's no "right" search engine + text restructuring + model combination every time. Even o1 doesn't have online search, so it's obviously a hard problem to solve. An example is something like "best ski resorts in the US", which will get a different response from every GPT, but 
+=== 82 84df19858da34a8089ff37a4ae807649
+M: claude | agents value pricing_value_comment -2 fh=False
+T: it exposes low-level tools which make your agent interact directly with the browser which is extremely slow, VERY expensive, and less effective as the agent ends up dealing with UI mechanics instead of thinking about the higher-level goal/intents 2. it makes Claude operate the browser via screenshots and coordinates-based interaction, which does not work for tasks like data extraction where it needs to be able to attend to the whole page - the ag
+=== 83 a8bf4fef0b2d4f9b9f6ea26301956a29
+M: claude | api_developer_workflow developer_ergonomics firsthand_usage 0 fh=True
+T: I've not found this to be an issue. Claude does just fine when you explain what you want. I've never had it hallucinate stuff, and I've barely seen it look at docs.
+=== 84 2d86ee27067142f693a0daef95cc4f98
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: Just gave it a spin. One thing I would have wished, was if the browsers would run locally. Since the smooth browser is running in prod, it makes it harder for Claude to test dev apps
+=== 85 5a3ecfd86b2b4a2aa58137188dd66130
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: Claude codes fine in GoDot. You have to explicitly give it the version you are working on. Claude’s the only one I’ve got working with GoDot.
+=== 86 c92d1980d17f4001a7e4ea308dbc9994
+M: gemini | writing satisfaction firsthand_usage 0 fh=True
+T: Everything about this feels like AI slop, including the post which is very clearly AI written. I'm sorry but if you aren't even willing to put any effort into writing a post showcasing what you have worked on what is the point of anybody taking a serious look? And the tools are clearly AI generated as well, I can even tell where you used Gemini in some places because you left in it's distinctive comments.
+=== 87 2a3f5e0dd2534eb98c4fbe63831fbe91
+M: o3 | general satisfaction firsthand_usage 1 fh=True
+T: One possible explanation here: as these get smarter, they lie more to satisfy requests. I witnessed a very interesting thing yesterday, playing with o3. I gave it a photo and asked it to play geoguesser with me.
+=== 88 e837571555ca40238c51729bedc89c49
+M: o3 | research satisfaction firsthand_usage 0 fh=True
+T: I noticed this even with 4o with web search. With and without websearch I have noticed a huge difference in understanding capabilities. I predict that O3 will hallucinate less if you ask it not to use any tools.
+=== 89 90e627c4fe1d41f59b0272165401729d
+M: o3 | general satisfaction firsthand_usage 0 fh=True
+T: I tried o3 few times, it more resembles a Markov chain generator than intelligence. Disappointed as well.
+=== 90 3c02d21f549b4dfaac625fb9fb2e1f64
+M: claude | agents developer_ergonomics hearsay 1 fh=False
+T: It can also use your IP address while running browsers in the cloud, which helps a lot with roadblocks like captchas ( ). Here’s a demo: Docs start at . Agents like Claude Code, etc are amazing but mostly restrained to the CLI, while a ton of valuable work needs a browser.
+=== 91 5020e092014441bc8ff7f2c11a1cf4ed
+M: claude | coding satisfaction hearsay -2 fh=False
+T: Architecturally, it runs as two Claude Code skills: an orchestrator that plans the pipeline, and a task executor that implements each piece in a `context: fork` window so mistakes and state don't accumulate. Everything is open source: Demo video (real games, not cherry-picked screenshots): Blog post with the full story (all the wrong turns) coming soon. Happy to answer questions.
+=== 92 05acc9c242e9471891b6b977e3a6f1bb
+M: claude | general satisfaction firsthand_usage 0 fh=True
+T: So much so, that I can't remember a time where Claude couldn't figure it out and then switching to another model fixed it for me.
+=== 93 1635a8949a4245908a45070c6b67317c
+M: mistral | general satisfaction firsthand_usage 0 fh=True
+T: I currently support: GPT4-Turbo, Claude-2, Google PaLM2, Llama2, Mistral, and OpenOrca. Working on supporting Gemini soonTM. I built it to solve a couple of personal pains I experienced.
+=== 94 39fa64bde9c74293b44784d417c3ced8
+M: claude | coding trust_reliability firsthand_usage 0 fh=True
+T: Claude has so far been the only model I really trust and use in Cursor.
+=== 95 7a6591a43cf94b17956cdc33236a5dbd
+M: gpt-4 | coding satisfaction firsthand_usage 0 fh=True
+T: I use GPT-4 on ChatGPT Plus daily, primarily for quick coding help, and it is significantly more advanced than GPT-3.5 in this regard.
+=== 96 62e18d24bfee45d29a64467392ae3c04
+M: gpt-4 | general satisfaction firsthand_usage 1 fh=True
+T: I guess I have a question here: Both this post and many many many posts in the main GPT-4 thread are making this same point. I get it. They started out as OpenAI, and they've realized over time that business is much better if they're not actually Open.
+=== 97 eacefeca9635466c929c09b581f2422b
+M: claude | coding satisfaction benchmark_anecdote 0 fh=True
+T: This thing is spot on for me as I'm evaluating trying to build games in Godot using Claude Code, but in C# (I have hacks to make it run on NativeAOT), but the result is...mixed. I see only GDScript option is available and that's kinda sad.
+=== 98 e6b8153888424031847436ccd503ccf9
+M: gpt-4 | general value pricing_value_comment 0 fh=True
+T: The results were pretty good: Another interesting aspect was the money spent on LLMs. We could have directly used GPT-4 to generate the "golden" table; however, it's a bit expensive — costing $60 to process the information of 1000 users. To maintain accuracy while reducing costs significantly, we set up an LLM model cascade in the EvaDB query, running GPT-3.5 before GPT-4, leading to a 11x cost reduction ($5.5).
+=== 99 00616b5090954c09aec9650e02257a19
+M: mistral | agents satisfaction comparative_evaluation 0 fh=True
+T: On the technical side, we built a Unity bridge with MCP and multi-provider routing via LiteLLM, with local model support via Mistral.rs coming next. All system prompts are editable, so you can directly experiment with coordination strategies—tuning how “chatty” agents are versus how much they move or manipulate the environment. We then added a tilemap editor so you can design custom rooms, set tile-based events with conditions and actions, and tu
+=== 100 bfea85e41068429498cab715ee8cdbf9
+M: gpt-4 | research developer_ergonomics integration_failure 0 fh=True
+T: I don't have it either (joined wait list first day), but you got to be more positive on social media like this where they can see you. For example you can translate your rant to a more friendly one with gpt: -- Hey there fellow AI enthusiasts, I was wondering if any of you have had the opportunity to access GPT-4 (API) yet? I'm really excited to start using it for my health-related project and research for an entertainment company, but unfortunat
+=== 101 f0ca6fd2fa5447619a79392db0946b6e
+M: claude | general satisfaction hearsay 1 fh=False
+T: Id love to see Claude playa age of empires. Claude plays command and conquer. I already know there a huge AI starcraft 2 scene, but I don't think those are LLM AI.
+=== 102 22ae62e718524e109a1cff54d7fc9848
+M: o3 | general satisfaction hearsay 1 fh=False
+T: One possible explanation here: as these get smarter, they lie more to satisfy requests. I witnessed a very interesting thing yesterday, playing with o3.
+=== 103 f98920e641a34ba8a376c044b0f779f0
+M: gemini-2.5 | general value pricing_value_comment 1 fh=False
+T: If you want to avoid using Opus 4.7 them why GPT-5.4 (unless with a disclaimer that it is low reasoning setting, or check that on medium its price is comparable with Haiku/Flash). Also, usually it is good to look at the newest model. Gemini 2.5 Flash is quite dated.
+=== 104 c289b3d0d3e84f39b91a8534094dd615
+M: claude | general value pricing_value_comment 0 fh=False
+T: Show HN: Unified access to top AI models, supporting GPT4, Claude and more. 2. Do a lot of people manage multiple subscriptions and billing to access more than one ai model? 3.
+=== 105 dcaca08bcd66464aa1c4c8978d54b43b
+M: claude | agents value pricing_value_comment -1 fh=False
+T: Our browser uses a token-efficient LLM-friendly representation of the webpage that keeps context size low, while also allowing small and efficient models to handle the low-level navigation. This means agents like Claude can work at a higher abstraction level rather than burning tokens on every click and scroll, which would be far more expensive
+=== 106 7c73eea0c9284288ae8608fd06794286
+M: gpt-4 | general satisfaction comparative_evaluation 2 fh=False
+T: Yes, there is definitely a human-in-the-loop element here. It would be great if you could share an example of the inconsistent output problem -- we also faced it. GPT-4 was much better than GPT-3.5 in output quality.
+=== 107 619aa14bfb5d4a51844527993830b738
+M: mistral | general satisfaction benchmark_anecdote 1 fh=False
+T: I noticed the "accuracy" column was very tightly grouped (between 79 & 84%) but the automation score was way more variable. And side note: is there an open source Mistral benchmark for their latest OCR model? I know they claimed it was 95% accurate, but it looks that was based on an internal evaluation.
+=== 108 1a1abd95b2a3408fabf3400bf945030a
+M: claude | general value pricing_value_comment -1 fh=False
+T: With all the unknowns and mistakes, it took me 6 months. My investment so far is mostly the Claude Max subscription. Old-school, that's 2-3 people for the same 6 months.
+=== 109 8c9a64a0e67244c4bd1bfce4261956d6
+M: claude | general hallucination_safety integration_failure -1 fh=False
+T: Model size is not a predictor, either: Qwen3.5-35B and GLM-4.7 beat GPT-5 and Claude-Sonnet-4.6 on Value Accuracy. Phi-4 (14B) beats GPT-5 and GPT-5-mini on text. Structured hallucinations are the hardest bug.
+=== 110 bb595df6f1154fd190b9d5eeccff5c4a
+M: claude | agents satisfaction hearsay 1 fh=False
+T: it makes Claude operate the browser via screenshots and coordinates-based interaction, which does not work for tasks like data extraction where it needs to be able to attend to the whole page - the agent needs to repeatedly scroll and read one little screenshot at the time and it often misses critical context outside of the viewport. It also makes the task more difficult as the model has to figure out both what to do and how to do it, which means
+=== 111 6d663a5b9ce64abe955746667d72310b
+M: gpt-4 | general satisfaction firsthand_usage 0 fh=True
+T: I kept trying to get chatgpt plus for two weeks until I finally got it two weeks ago. GPT-4 certainly feels like an upgrade.
+=== 112 477139c9421440caa78d28b414d626e5
+M: o3 | general satisfaction firsthand_usage 0 fh=True
+T: OpenAI o3 and o4-mini are massive disappointments for me so far.
+=== 113 73ba0bccfb784096acc81b64a81d6a6f
+M: claude | coding satisfaction hearsay -1 fh=False
+T: Show HN: Claude Code skills that build complete Godot games. Everything is open source: Demo video (real games, not cherry-picked screenshots): Blog post with the full story (all the wrong turns) coming soon. Happy to answer questions.
+=== 114 60be57294c094775bc028e4eff9fc456
+M: claude | research hallucination_safety hearsay 0 fh=False
+T: When I included the last sentence, ChatGPT did a web search and came up with five genuine citations. Claude, which cannot do web searches, apologized that it could not write the paragraph or provide the references. Maybe a better test of the effectiveness of "Do not hallucinate" would be prompts that might lead to hallucinated claims that the LLM cannot check using web searches, the execution of Python programs, or other external processes.
+=== 115 e9f277108789432da5cfbe021e22f772
+M: claude | agents value comparative_evaluation -1 fh=False
+T: Our approach is actually very cost-effective compared to alternatives. Our browser uses a token-efficient LLM-friendly representation of the webpage that keeps context size low, while also allowing small and efficient models to handle the low-level navigation. This means agents like Claude can work at a higher abstraction level rather than burning tokens on every click and scroll, which would be far more expensive
+=== 116 53ebc84e8aa94a6da8aa82337a8715f3
+M: gemini | general satisfaction firsthand_usage 1 fh=True
+T: For me too, it was around that time last year, with GPT-5, Claude Sonnet 4.5 and then Gemini 3 that I started feeling that these models are clearly becoming great at reasoning. I'm not at all opposed to saying that they are around PhD-level on at least some domains.
+=== 117 512afda78a7f487fbc46abc98fe20096
+M: gemini-2.5 | general satisfaction firsthand_usage 0 fh=True
+T: Agree that the choices are strange. Sonnet 4.6 was tested, but no Opus 4.6. Gemini 3.1 and GLM 5 came out around the same time as Sonnet 4.6 (~Feb 2026) so it's strange that they are missing, but Gemini 2.5 Flash, Gemini 3 Flash, and GLM 4.7 are there.
+=== 118 9937903841394eacaa3a2a077b185818
+M: gpt-5 | general satisfaction firsthand_usage 1 fh=True
+T: For me too, it was around that time last year, with GPT-5, Claude Sonnet 4.5 and then Gemini 3 that I started feeling that these models are clearly becoming great at reasoning. I'm not at all opposed to saying that they are around PhD-level on at least some domains.
+=== 119 4d123b051d8f4b7f8f82e4e70f313a76
+M: claude | agents trust_reliability hearsay 2 fh=False
+T: It's amazing how agents like Claude Code become very much more autonomous when they have the ability to verify their work. That's part of the reason why they work much better for unit-testable work. I think this paradigm was very visible in yesterday's blog post from Anthropic ( ) when they mentioned that giving the agents the ability to verify against GCC was the key to unlock further progress Giving a browser to these agents is a no brainer, es
+=== 120 003d72eb0c3345fd95b8c4494bcea952
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: I'm not a developer - I literally can't code. I built this entire tool using Claude over 250 hours because I needed something to audit the code that Claude was writing for me. It's turtles all the way down!" - should be in bold on a huge banner
+=== 121 fbef5a21e01840e1b0a43065496824e2
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: I just started building a game in Claude Code Desktop, and the Claude agent there can actually PLAY the game. That's a huge unlock. I've been thinking about how to get this same functionality in the Godot MCP server but if your system can do it that would be awesome too.
+=== 122 95ebcee5d6694e6a9b83eb41cd5514ee
+M: claude | agents value pricing_value_comment 0 fh=True
+T: I'm paying a fixed amount on Claude and other agents, so "more tokens" is "free" for me. There's a lot of niche tools out there but I think we all have "subscription fatigue". But maybe that's just me - Maybe im just not your target audience :)
+=== 123 111a82142c624534af362e94db4f4a10
+M: gpt-4o | general satisfaction firsthand_usage 2 fh=True
+T: I have a feeling that Perplexity and ChatGPT are doing something similar, since common questions I'd ask like "top movies this year" will be answered nearly-instantaneously, way faster than GPT-4o could have done on its own. The only explanation for this is that so many users ask certain questions, they cache the response and return the cached answer. I'd love to do this for Ithy, but it'll be a while before I get the scale of ChatGPT/Perplexity 
+=== 124 f8cdbe94ce9440d08a97bb2befda2da4
+M: claude | agents satisfaction firsthand_usage 0 fh=True
+T: Few days ago I built something like this for a personal project because it’s just the obvious thing to do - abstract away the gory details of using a browser. I found it was surprisingly easy to build and I soon had a browser agent that worked as you describe Smooth. Just surprised that the other browser agent frameworks like Browser Use and claude —chrome haven’t caught up to this yet, it’s so obvious and easy to do.
+=== 125 777747b0d81b43218922000e034cf99d
+M: claude | coding satisfaction firsthand_usage 0 fh=True
+T: The irony isn't lost on me: I used Claude to build a tool that audits code written by Claude. It's enablement all the way down! But that's also the proof it works - if someone who can't code can use AI + TheAuditor to build TheAuditor itself, the development loop is validated.
+=== 126 ec91e8e6b876429e9cf93b7e934d2470
+M: claude | general satisfaction hearsay 1 fh=False
+T: Claude represents some sort of inflection point or phase change. With all the noise, Claude Sonnet is by far the most impressive model since gpt4.
+=== 127 e193c30e971f46cdb7b43277db4dfbbb
+M: qwen | general satisfaction benchmark_anecdote 1 fh=False
+T: We do love Qwen! It can be an easy choice when confused looking at this leaderboard.
+=== 128 6b62a639124242e3961e901d2164c49e
+M: claude | general hallucination_safety hearsay -1 fh=False
+T: Show HN: Unified access to top AI models, supporting GPT4, Claude and more. After reaching out to a couple of users in r/localllama, seems that people would have similar approach to address hallucination, availability, and comparing ai models.
+=== 129 ec09bf7e760f4f889260f90dd34fb229
+M: o3 | research satisfaction hearsay -1 fh=False
+T: With o3 and source quality thresholds when performing web search. Could we implement an ELO-style cutoff where systems default to “I don’t know” rather than citing low-ranked sources? Currently o3’s main weakness is mixing high-quality sources with poor ones when it uses the web search in the same response.
+=== 130 e5aab8f15d5342058035d72e9dc0affa
+M: qwen | general satisfaction hearsay 1 fh=False
+T: We do love Qwen!
+=== 131 b2d61867924c45258e1b0dd91f530f10
+M: claude | research satisfaction firsthand_usage 0 fh=True
+T: The top answer (Terranigma) was unfortunately the same as I got just asking any of Claude/ChatGPT/Llama/Qwen (maybe too easy a question) but the rest of the list did seem a bit more balanced. Thanks for the free try without a login! Thought: there is a marquee of example queries but it doesn't seem like there is a way to see what an answer looks like without individually consuming a search as a user.
+=== 132 4293c7a941e44b0885a3eaeec89c8e98
+M: gemini | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: Blew past my Google API limits as well. I was using Gemini for prompting and aggregation, and I'm waiting for their quota increase response. In the meantime, I've switched to GPT-4o for the prompting/aggregation.
+=== 133 7f60ab1937894c0fa867fb71770f0333
+M: gpt-4o | api_developer_workflow developer_ergonomics integration_failure 0 fh=True
+T: Blew past my Google API limits as well. I was using Gemini for prompting and aggregation, and I'm waiting for their quota increase response. In the meantime, I've switched to GPT-4o for the prompting/aggregation.
+=== 134 2cc6bf4889434e21bc94916514b895dc
+M: llama | research satisfaction firsthand_usage 0 fh=True
+T: The top answer (Terranigma) was unfortunately the same as I got just asking any of Claude/ChatGPT/Llama/Qwen (maybe too easy a question) but the rest of the list did seem a bit more balanced. Thanks for the free try without a login! Thought: there is a marquee of example queries but it doesn't seem like there is a way to see what an answer looks like without individually consuming a search as a user.
+=== 135 f9740adfe2f54c95b6e0d3576c5fdadf
+M: qwen | research satisfaction firsthand_usage 0 fh=True
+T: The top answer (Terranigma) was unfortunately the same as I got just asking any of Claude/ChatGPT/Llama/Qwen (maybe too easy a question) but the rest of the list did seem a bit more balanced. Thanks for the free try without a login! Thought: there is a marquee of example queries but it doesn't seem like there is a way to see what an answer looks like without individually consuming a search as a user.
+=== 136 9dc24e1518564dd2bf20e87db6de5f17
+M: claude | coding trust_reliability firsthand_usage 0 fh=True
+T: After building several systems with Claude, I noticed a pattern: the code always had security issues I could spot from my ops background, but I couldn't fix them myself since I can't actually write code. Why I built this: I needed a way to verify AI-generated code was production-safe. Existing tools either required cloud uploads (privacy concern) or produced output too large for AI context windows.
+=== 137 f949a6c8a8d44904a0a452a5dfdf131b
+M: claude | research hallucination_safety hearsay -1 fh=False
+T: ” When the last sentence was not included, four out of five of ChatGPT’s references were hallucinated; the fifth referred to an existing paper but had an incorrect year. All of Claude’s references were hallucinated. When I included the last sentence, ChatGPT did a web search and came up with five genuine citations.
+=== 138 80b62c71860943afafc4cd084d1bb7a9
+M: claude | agents satisfaction hearsay 1 fh=False
+T: Agents like Claude Code, etc are amazing but mostly restrained to the CLI, while a ton of valuable work needs a browser. This is a fundamental limitation to what these agents can do. So far, attempts to add browsers to these agents (Claude’s built-in --chrome, Playwright MCP, agent-browser, etc.) all have interfaces that are unnatural for browsing.
+=== 139 ab6b65403b9f424397fabe2e03b48d42
+M: gpt-4 | api_developer_workflow developer_ergonomics integration_failure 1 fh=True
+T: As for the GPT-4 API, I don't use it extensively at the moment, just occasionally to experiment with newer applications like Microsoft's Jarvis project (HuggingGPT). Eventually, I plan to integrate the Whisper API, GPT-4 API, and Elevenlabs API to create my own personal assistant. For those without access, GPT-3.5 is still an impressive tool.
