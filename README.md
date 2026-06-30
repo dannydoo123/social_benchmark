@@ -1,232 +1,96 @@
 # Social Benchmark
 
-Social Benchmark is a human-perceived LLM benchmark and decision-support product. It evaluates large language models from real user evidence in public technical communities, then turns that evidence into multidimensional scores with provenance, confidence intervals, and personalized recommendations.
+Social Benchmark is a benchmark and decision-support pipeline for evaluating LLMs from real user evidence in public technical communities. It turns raw community discussion into structured observations, scores, review queues, and model comparison artifacts.
 
-## Purpose
+## Scope
 
-Traditional benchmarks often fail to answer the practical question: which model is best for a real workflow right now? This project focuses on user-reported model quality, regressions, trust, task suitability, hallucination complaints, refusal complaints, and value-for-cost.
+- Primary benchmark source: Hacker News
+- Additional collectors and experiments: Reddit and GitHub
+- Output formats: JSONL, JSON summaries, review CSVs, and benchmark snapshots
 
-## MVP Data Sources
+## Repository Layout
 
-- Hacker News: Ask HN, launch posts, model comparison discussions
+| Area | Purpose |
+|---|---|
+| `src/social_benchmark/` | Python package and CLI implementation |
+| `tests/` | Test suite |
+| `web/` | React benchmark/review UI |
+| `config/` | Source and model registry files |
+| `datasets/` | Reviewed labels, training sets, evaluation outputs, and caches |
+| `db/migrations/` | Initial PostgreSQL/Supabase schema |
+| `docs/` | Review workflow and methodology docs |
+| `analysis/` | Research notes and experiment reports |
 
-Current MVP scope is Hacker News only. Other sources remain future expansion candidates.
-
-## Planned Tech Stack
-
-- Frontend: React, Next.js
-- Backend: Python, FastAPI
-- Database: PostgreSQL via Supabase
-- Data systems: official API collectors, embedding pipeline, vector search, spam/manipulation detection, statistical scoring engine
-
-## Core Scoring Dimensions
-
-- Satisfaction
-- Trustworthiness
-- Task suitability
-- Regression stability
-- Hallucination complaint rate
-- Refusal/censorship complaint rate
-- Value-for-cost
-
-## Product Principles
-
-- Use official APIs and legally clear data access.
-- Preserve evidence provenance and source mix.
-- Show confidence intervals and effective sample size.
-- Resist manipulation through deduplication, sampling caps, and cluster detection.
-- Monetize decision support, not score manipulation.
-
-## Current Status
-
-This repository contains the planning documents and the first Python implementation of the data pipeline.
-
-Implemented pipeline pieces:
-
-- Hacker News official Firebase API client
-- normalized raw item schema
-- model alias catalog and entity matching
-- provider/model/product/inference-profile taxonomy
-- local rule-based extraction baseline
-- observation schema with evidence spans, metric flags, and weights
-- weighted aspect scoring and overall scoring with contribution caps
-- effective sample size and confidence warnings
-- approximate confidence intervals and source mix in score output
-- manual labeling queue export
-- source-specific text cleanup for Hacker News
-- extraction quality reports
-- reviewed-label to training JSONL conversion
-- reviewed-label evaluation and application back to observations
-- firsthand evidence detection helper
-- score publishability gates and publication blockers
-- dependency-free local Naive Bayes classifier baseline
-- local Hugging Face embedding pipeline and embedding-backed classifier hooks
-- classifier comparison report across Naive Bayes, sklearn, and Hugging Face embedding backends
-- JSONL storage helpers
-- initial PostgreSQL/Supabase migration
-
-## Repository Docs
-
-- `description.md`: original product and benchmark construction report
-- `plan.md`: actionable build plan
-- `claude.md`: compact project context and working instructions
-- `codex.md`: Codex-facing copy of the compact project guidance
-- `data-pipeline.md`: concrete pipeline, metric, extraction, scoring, and release-monitoring specification
-- `analysis/initial-signal-test.md`: first live-source signal quality report
-- `docs/labeling-guide.md`: human review instructions for exported label queues
-- `docs/review-workflow.md`: how to review rows using the React UI
-- `config/sources.json`: curated source collection seed
-- `config/model_registry.json`: provider, model, product, and inference-profile registry
-- `web/`: React workspace for label review and future benchmark dashboard
-
-## Local Pipeline Usage
-
-Run tests:
+## Setup
 
 ```powershell
-$env:PYTHONPATH='src'
-python -m unittest discover -s tests -v
+cd C:\coding\social_benchmark\social_benchmark
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -e .
 ```
 
-Fetch Hacker News stories:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli fetch-hn --kind top --limit 50 --comments 100 --out data/raw/hn_top.jsonl
-```
-
-Fetch the curated source config:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli fetch-config --config config/sources.json --out data/raw/curated_sources.jsonl
-```
-
-Process raw JSONL into observations and scores:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli process-jsonl --raw data/raw/hn_top.jsonl --observations-out data/processed/observations.jsonl --scores-out data/processed/scores.json
-```
-
-Export uncertain or neutral observations for manual labeling:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli export-labels --observations data/processed/observations.jsonl --out data/processed/label_queue.csv --max-rows 200
-```
-
-Summarize extraction quality:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli report-observations --observations data/processed/observations.jsonl --out data/processed/observation_report.json
-```
-
-Convert a reviewed label CSV into training JSONL:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli build-training-data --labels data/processed/label_queue.csv --out data/training/extractor_training.jsonl
-```
-
-Evaluate reviewed labels against machine labels:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli evaluate-labels --labels data/processed/label_queue.csv --out data/processed/label_eval.json
-```
-
-Apply reviewed labels back to observations:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli apply-labels --observations data/processed/observations.jsonl --labels data/processed/label_queue.csv --out data/processed/observations_reviewed.jsonl
-```
-
-Train and evaluate the local baseline classifier:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli train-local-classifier --training data/training/extractor_training.jsonl --model-out data/training/local_nb_model.json
-python -m social_benchmark.pipeline.cli evaluate-local-classifier --training data/training/extractor_training.jsonl --out data/training/local_nb_eval.json
-```
-
-Train and evaluate the current sklearn baseline:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli train-sklearn-classifier --training data/training/extractor_training.jsonl --model-out data/training/sklearn_model.joblib
-python -m social_benchmark.pipeline.cli evaluate-sklearn-classifier --training data/training/extractor_training.jsonl --out data/training/sklearn_eval.json
-```
-
-Generate local Hugging Face embeddings and cluster likely duplicate/campaign-like rows:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli embed-jsonl --input data/training/extractor_training.jsonl --out data/training/embeddings.jsonl --embedding-model sentence-transformers/all-MiniLM-L6-v2
-python -m social_benchmark.pipeline.cli cluster-embeddings --embeddings data/training/embeddings.jsonl --out data/training/embedding_clusters.json
-```
-
-Train and evaluate the Hugging Face embedding-backed classifier:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli train-hf-classifier --training data/training/extractor_training.jsonl --model-out data/training/hf_embedding_model.joblib --embedding-model sentence-transformers/all-MiniLM-L6-v2
-python -m social_benchmark.pipeline.cli evaluate-hf-classifier --training data/training/extractor_training.jsonl --out data/training/hf_embedding_eval.json --embedding-model sentence-transformers/all-MiniLM-L6-v2
-```
-
-Compare the new backend with the current models on the same reviewed labels:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli compare-classifiers --training data/training/extractor_training.jsonl --out data/training/classifier_comparison.json --embedding-model sentence-transformers/all-MiniLM-L6-v2
-```
-
-Train the high-precision ensemble. It accepts confident agreement across local backends and abstains on uncertain rows:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli train-high-precision-classifier --training data/training/extractor_training.jsonl --model-out data/training/high_precision_ensemble.joblib --skip-hf --precision-first
-```
-
-The current reviewed HN slice performs best when MiniLM stays available as an experimental comparison backend but is excluded from the production consensus ensemble.
-
-Run the stricter source-item-grouped frozen checkpoint bake-off:
-
-```powershell
-$env:PYTHONPATH='src'
-python -m social_benchmark.pipeline.cli run-frozen-embedding-bakeoff --training datasets/training/hn_manual_training.jsonl --out datasets/training/frozen_embedding_bakeoff_grouped.json
-```
-
-See `analysis/extractor-bakeoff-report-2026-06-01.md` for the latest grouped results. BGE Small currently leads the frozen sentence-transformer matrix. A bounded GPU SetFit pilot completed but did not beat frozen embeddings, so the current production candidate is the frozen BGE Small augmented classifier.
-
-The Hugging Face commands require optional local model dependencies:
+Optional extras:
 
 ```powershell
 pip install -e ".[hf]"
+pip install -e ".[setfit]"
 ```
 
-Scores include `publishable` and `publication_blockers`. A score can be computed for internal analysis but should not be shown on a public leaderboard while blockers are present.
-
-## Review UI
-
-The React UI starts with a labeling workspace and will also become the benchmark website shell.
+Install the web workspace when you need the review UI:
 
 ```powershell
 cd web
 npm install
+```
+
+## Common Commands
+
+The main entrypoint is the `sb-pipeline` CLI.
+
+Fetch and process data:
+
+```powershell
+sb-pipeline fetch-hn --kind top --limit 50 --comments 100 --out data/raw/hn_top.jsonl
+sb-pipeline process-jsonl --raw data/raw/hn_top.jsonl --observations-out data/processed/observations.jsonl --scores-out data/processed/scores.json
+sb-pipeline export-labels --observations data/processed/observations.jsonl --out data/processed/label_queue.csv --max-rows 200
+```
+
+Train and compare classifiers:
+
+```powershell
+sb-pipeline build-training-data --labels data/processed/label_queue.csv --out data/training/extractor_training.jsonl
+sb-pipeline train-sklearn-classifier --training data/training/extractor_training.jsonl --model-out data/training/sklearn_model.joblib
+sb-pipeline compare-classifiers --training data/training/extractor_training.jsonl --out data/training/classifier_comparison.json --embedding-model sentence-transformers/all-MiniLM-L6-v2
+```
+
+Run the frozen embedding bake-off:
+
+```powershell
+sb-pipeline run-frozen-embedding-bakeoff --training datasets/training/hn_manual_training.jsonl --out datasets/training/frozen_embedding_bakeoff_grouped.json
+```
+
+## Web UI
+
+```powershell
+cd web
 npm run dev
 ```
 
-Then load a generated label queue CSV, review rows, and export the reviewed CSV. See `docs/review-workflow.md`.
+The web app is used for review workflows and the benchmark dashboard shell.
 
-## Database
+## Testing
 
-The initial PostgreSQL/Supabase schema is in:
-
-```text
-db/migrations/001_initial_pipeline.sql
+```powershell
+python -m pytest
 ```
 
-It defines source platforms, communities, providers, models, model aliases, products, raw source items, duplicate clusters, extraction runs, candidate features, observations, score snapshots, and release/update records.
+## Key Docs
+
+- `description.md`
+- `plan.md`
+- `claude.md`
+- `codex.md`
+- `data-pipeline.md`
+- `docs/review-workflow.md`
+- `docs/labeling-guide.md`
