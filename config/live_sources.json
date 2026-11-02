@@ -1,0 +1,51 @@
+{
+  "refresh_hours": 4,
+  "window_days": 30,
+  "stories_per_query": 15,
+  "comments_per_story": 100,
+  "hn_queries": [
+    "GPT-6 Astra",
+    "GPT-6.1 Sol",
+    "Claude",
+    "Gemini",
+    "vibe coding"
+  ],
+  "reddit_communities": [
+    "LocalLLaMA",
+    "ArtificialInteligence",
+    "MachineLearning",
+    "singularity",
+    "vibecoding",
+    "ChatGPTCoding",
+    "programming",
+    "webdev",
+    "OpenAI",
+    "OpenaiCodex",
+    "ChatGPT",
+    "ClaudeAI",
+    "Claude",
+    "Bard"
+  ],
+  "classifier": "datasets/training/reddit_auto_review_hn_round8.joblib",
+  "target_chunks_per_model": 1000,
+  "target_models": [
+    "gpt-6-astra",
+    "gpt-6.1-sol"
+  ],
+  "community_groups": {
+    "OpenAI": "vendor",
+    "OpenaiCodex": "vendor",
+    "ChatGPT": "vendor",
+    "ClaudeAI": "vendor",
+    "Claude": "vendor",
+    "Bard": "vendor",
+    "vibecoding": "workflow",
+    "ChatGPTCoding": "workflow",
+    "programming": "workflow",
+    "webdev": "workflow",
+    "LocalLLaMA": "general",
+    "ArtificialInteligence": "general",
+    "MachineLearning": "general",
+    "singularity": "general"
+  }
+}

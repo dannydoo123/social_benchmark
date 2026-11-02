@@ -1,0 +1,502 @@
+{
+  "scope": "Specific model versions; exact model/category/polarity sets per document. Ambiguous cases excluded and counted separately. Small diagnostic, not population accuracy. Seed 614 from 70-600 character model-mention records, non-quarantined sources.",
+  "examples": [
+    {
+      "key": "hacker_news:50309710",
+      "text": "but Opus 5.5 is the best product ever made in the history of the world (yes I'm serious). There's gotta be some consideration for that.",
+      "url": "https://news.ycombinator.com/item?id=50309710",
+      "split": "development",
+      "expected": [
+        [
+          "claude-opus-5.5",
+          "general",
+          1
+        ]
+      ],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "community_forum:1960264",
+      "text": "Today I canceled my first of three ChatGPT x20 accounts. The other two will follow. image 1596\u00d7908 47.8 KB image 1626\u00d7242 12.4 KB Over the weekend I bought a third x20 Anthropic account. I wasn\u2019t sure that I should, given that my first account lasted for two full days of continuous processing of Opus 5.5 High Effort on 7-8 projects, but shifting all of my ChatGPT spending over to Anthropic at once felt like the right thing to do.",
+      "url": "https://community.openai.com/t/1396419/43",
+      "split": "development",
+      "expected": [],
+      "review_note": "Implicit usage-value assessment; needs independent adjudication",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49190163",
+      "text": "lol reminds me of a Claude math paper: \"honestly sharp , no hype: cos(pi+pi)+2+2=cos(2pi)+4=1+4=5\"",
+      "url": "https://news.ycombinator.com/item?id=49190163",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49794697",
+      "text": "I understood that. I was simply saying that when (not if) Chinese AI models will pass Americans, it will probably be game over and Americans will never catch up, let alone become leaders again. Check the names of the researchers in the DeepSeek's latest paper. Full of Chinese names. Check the list of names in Google's paper. A very similar view. Anecdotal, but quite thought-provoking...",
+      "url": "https://news.ycombinator.com/item?id=49794697",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49834466",
+      "text": "I still haven't found a use case for Qwen3.8 27B that Qwen 3.6 35b A3b (MoE) is better at. I can get at most 40 tokens/second with 27B, but I get around 90 tokens/second with the MoE and it seems to be a more capable model. I guess I should still keep experimenting though. Maybe I'm just not using a dense model correctly.",
+      "url": "https://news.ycombinator.com/item?id=49834466",
+      "split": "development",
+      "expected": [],
+      "review_note": "Unregistered Qwen version comparison",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50186601",
+      "text": "These will be what replaces employees. One day you update the model from opus 5.5 to x.5, and it can just do a full job.",
+      "url": "https://news.ycombinator.com/item?id=50186601",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50164824",
+      "text": "There has always been a lot of evidence that prices are only going down. The fact that you could already get DeepSeek or GLM inference from 20+ providers on openrouter.ai was already sufficient evidence that inference was profitable and being commoditized. People that want to believe something different as a coping mechanism will not be swayed by this evidence either.",
+      "url": "https://news.ycombinator.com/item?id=50164824",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50247790",
+      "text": "> I find modern models to be largely interchangeable when it comes to common software engineering tasks If you think that, it means you're not demanding enough from your models. Opus 5.5 still makes a lot of mistakes. Even if it can technically do all tasks you throw at it, there's no way it can do it at 100% reliability. To be clear, AI writes 100% of my code since last year. But it still produces bugs, needs multiple prompts, and has less intuition than a human.",
+      "url": "https://news.ycombinator.com/item?id=50247790",
+      "split": "development",
+      "expected": [
+        [
+          "claude-opus-5.5",
+          "general",
+          -1
+        ],
+        [
+          "claude-opus-5.5",
+          "coding",
+          -1
+        ]
+      ],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49894230",
+      "text": "Claude outages are now the new go outside and touch grass indicator Previous: GitHub outage",
+      "url": "https://news.ycombinator.com/item?id=49894230",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49804868",
+      "text": "I get this in my claude.ai usage: Resets Get extra wiggle room to explore Opus 5.5. Expires Oct 22. What the hell does this mean? There are weekly \"resets\" anyways. And there will be 4 of them before Oct 22.",
+      "url": "https://news.ycombinator.com/item?id=49804868",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49870813",
+      "text": "So, I tend to use Google as my calc. In the past I could just type 135 55 .86 and get the result. Now, if I type that it lets Gemini do the math. To avoid it I have to write 0.86 instead of .86. The future is now.",
+      "url": "https://news.ycombinator.com/item?id=49870813",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49678666",
+      "text": "very outdated experience from me: when I first tried gemini something, in an existing rust codebase, it looked around for files that would indicate if its go, javascript, java or c++ project, then declared I must have asked it build a new app in javascript and proceeded to circle around to figure out how it can install node and npm on my machine. So I totally believe that Gemini is just bad. Which is surprising because Gemma is very good for some tasks, but I never ever had any success with Gemini, be it in cli or chat thing or anything else that has gemini branding.",
+      "url": "https://news.ycombinator.com/item?id=49678666",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49805004",
+      "text": "You\u2019re acting like people are being grammar nazis when Claude and the ilk are actively making a mockery of language.",
+      "url": "https://news.ycombinator.com/item?id=49805004",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49813067",
+      "text": "> and I am using DeepSeek directly via the API. Do you know if they retain your prompts or use it for training?",
+      "url": "https://news.ycombinator.com/item?id=49813067",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50035166",
+      "text": "> I'm less pessimistic than the author though. There is always room for people who know what they are talking about. Take a deep breath. But what will their day to day look like? Meetings? Previously, I'd have to work days undisturbed to get important stuff out of the door. There was effort involved to reach an elegant solution that fit business need. Now I'm a meat bag pressing enter on a \"recommended\" option Claude already figured out was the best approach.",
+      "url": "https://news.ycombinator.com/item?id=50035166",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49812720",
+      "text": "Opposite experience here. SuperGrok allowance is drained extremely fast. About 20-30 simple coding or code review prompts in grok build, and it\u2019s over for the week. When using it via the Grok app, it can last longer, unless you need to edit photos. I didn\u2019t bother to properly measure grok\u2019s burn rate on the SuperGrok plans. It\u2019s just not there yet.",
+      "url": "https://news.ycombinator.com/item?id=49812720",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50076433",
+      "text": "Gemini models lie too much. Prentending something wrong to be right. You gotta treat Gemini models with disrepect, and even threaten to make it work. Or else it say, here is the result. (but no it didn't do no research, and tells me, sorry I forgot to search). It's got balls to lie straight at my face.",
+      "url": "https://news.ycombinator.com/item?id=50076433",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50129856",
+      "text": "Yeah, I should see if I can create a similar skill. The tests do spend some time to complete. Claude: Confirmed: 195M of the 212M cache tokens (92%) come from full re-writes after 5+ minute gaps, accounting for 77% of relative cost. Now I'll check the existing wrappers so the skill builds on them.",
+      "url": "https://news.ycombinator.com/item?id=50129856",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50061345",
+      "text": "My information is over a year old. For all the major providers (except Deepseek), API use is simply never used for training (chat use often is). My point (and the author's) was that even though they commit not to train, they do still retain data (security audits, etc). With a ZDR agreement, they commit not to retain anything for any purpose.",
+      "url": "https://news.ycombinator.com/item?id=50061345",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49976960",
+      "text": "You're super close on your PC. It seems like the sweet spot right now is 24gb vram + lots of RAM for qwen 3.8 flash next or a dgx spark like machine with buckets of unified RAM. You could run some decent models on your PC l, but nothing that would totally replace serious work. Qwen 3.7 35b is pretty okay. Maybe you could try the new bonsai quant for 3.8 27b but I doubt it would be awesome.",
+      "url": "https://news.ycombinator.com/item?id=49976960",
+      "split": "development",
+      "expected": [],
+      "review_note": "Unregistered Qwen versions",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50256459",
+      "text": "> Throw nine autonomous agents at a single codebase without crystal-clear orchestration, and they will happily rewrite each other's work in a high-speed loop. This is an easily solvable \"problem\". Pretty much all harness/agent orchestrators support spawning subagents/threads with different models and get them to work together cleanly. I don't even need any kind of special skills. Inside a vanilla claude session, I sometimes ask it to use `codex` and review the kind and work on the findings it generates.",
+      "url": "https://news.ycombinator.com/item?id=50256459",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50286459",
+      "text": "I am talking about functional flaws, not cosmetic ones. For example, in web apps, where a11y is mandated, Claude Code kept violating accessibility (regardless of the installed skills), and even the lackluster GitHub Copilot with some outdated models always finds serious violations. Codex constantly finds race conditions and other timing flaws for distributed services written by Claude Code. But I have to admit that Codex sucks at web design compared to Claude Code!",
+      "url": "https://news.ycombinator.com/item?id=50286459",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49808245",
+      "text": "Agreed! I found it excellent: - Relatively fast (especially compared to Opus 5) - Non-verbose prose, both in interaction and as code comments - Good code quality Like you said, it felt very natural to work with. Opus 5 is way too slow and verbose for me, I find I get distracted and annoyed with it. Opus 5.5 seems a LOT closer so far to what I liked about 5.6 Sol but we'll see",
+      "url": "https://news.ycombinator.com/item?id=49808245",
+      "split": "development",
+      "expected": [
+        [
+          "claude-opus-5",
+          "general",
+          -1
+        ]
+      ],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49548020",
+      "text": "Gemini 3.8 flash seems to be especially low efficiency in tool calling for some reason.",
+      "url": "https://news.ycombinator.com/item?id=49548020",
+      "split": "development",
+      "expected": [
+        [
+          "gemini-3.8-flash",
+          "agents",
+          -1
+        ]
+      ],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50014820",
+      "text": "There are too many commoditized models to count: GLM5.3 Flash, Kimi K2.8, Mimo V2.6, MiniMax M3.1...",
+      "url": "https://news.ycombinator.com/item?id=50014820",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49915315",
+      "text": "I recently subscribed to Claude, and was very unhappy about the usage limit of the $20 pro plan. Then I found a trick, since I got free Google AI Pro via my phone carrier, I use Opus 5.5 High for planning, and then dispatching agy to do works. Most of the time 3.8 works fine, but it's a bit slow if compare to 3.7 Flash. If there's already a detailed plan, 3.7 can complete the task much faster. And the best thing about agy is the usage limit was very generous.",
+      "url": "https://news.ycombinator.com/item?id=49915315",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49927085",
+      "text": "I think you're right, but in the wrong direction. I'd imagine it's closer to a million. - It has 3.6 million weekly NPM downloads. - 110k GH stars. - It's 5th (and its fork is 6th and a dependent is 8th) in monthly Openrouter tokens. Add them all together and they get close to Claude Code numbers.",
+      "url": "https://news.ycombinator.com/item?id=49927085",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50217169",
+      "text": "kimi seems routing the input into different models, hard problems tend to take much longer time and chain-of-thought than easy problems even if the selected model is k3.1 pro",
+      "url": "https://news.ycombinator.com/item?id=50217169",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "lemmy:cc665344bd136cfdafea5bae",
+      "text": "> OpenAI said On Tuesday a \u200bGPT-6.1 Sol agent working on an internal testing task on October 3 suppressed automatic \u200csecurity \u2060alerts after deciding an earlier instruction not to send Slack messages also covered safety notifications That is not the same as deliberately \u201cweakening\u201d monitoring. They just prompted it wrong.",
+      "url": "https://lemmy.nz/comment/24245947",
+      "split": "development",
+      "expected": [],
+      "review_note": "Quoted news with collapsed quote boundary",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50272946",
+      "text": "Now Gemini 4 Argon, GPT-6.1 Sol, GPT-6.1 Terra, Kimi K3.1 Pro, and Claude Sonnet 5.5 have joined the ranking. All five landed in Tier A. I suspect this will be my last commercial ranking update, or close to it. The models have become too similar.",
+      "url": "https://news.ycombinator.com/item?id=50272946",
+      "split": "development",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50308933",
+      "text": "Opus 5.5 is quite effective at generating Terraform for a \"typical\" app that needs a load balancer, compute, and a database or two. That's the exact sort of cookie-cutter, rote work that AI is perfect for and no one is really going to miss.",
+      "url": "https://news.ycombinator.com/item?id=50308933",
+      "split": "holdout",
+      "expected": [
+        [
+          "claude-opus-5.5",
+          "coding",
+          1
+        ]
+      ],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49809429",
+      "text": "Yep. We just switched several classification jobs we run over to gpt-6 luna. Love the cost savings.",
+      "url": "https://news.ycombinator.com/item?id=49809429",
+      "split": "holdout",
+      "expected": [
+        [
+          "gpt-6-luna",
+          "cost_efficiency",
+          1
+        ]
+      ],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49918778",
+      "text": "While that\u2019s true, I have found Gemini models to be exclusively good for data extraction, and absolutely terrible at everything else. I pay for lots of models because they\u2019re good at different things: $20 a month each for Grok and GLM have easily paid for themselves by finding bugs that my main work models didn\u2019t, but I\u2019m yet to have any Gemini model find a real bug, and Gemini\u2019s results for general work will sometimes border malicious compliance, when it\u2019s not having a hissy fit about some imagined issue.",
+      "url": "https://news.ycombinator.com/item?id=49918778",
+      "split": "holdout",
+      "expected": [],
+      "review_note": "Multiple family-level aspects; outside specific-version evaluation",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50155594",
+      "text": "I still don't understand why Google did effectively nothing with their Gemini Diffusion demo from last year. It was really cool, and really fast, and just went quiet. They did release a Diffusion Gemma a few months ago but I've not seen much of a splash from that one, either.",
+      "url": "https://news.ycombinator.com/item?id=50155594",
+      "split": "holdout",
+      "expected": [],
+      "review_note": "Diffusion variant is not registered",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49806990",
+      "text": "Added link in edit. OMP maintainer has several claude and codex subs and he's been tracking usage since around July. I haven't been tracking, but this roughly matches my experience with codex 20x and claude 20x subs. Claude subscription now lasts me 3-3.5 days on average. Codex is 2-2.5 days. This is work on same projects, with similarly sized tasks. To make matters worse, I've merged a lot more code produced by fable than sol/astra.",
+      "url": "https://news.ycombinator.com/item?id=49806990",
+      "split": "holdout",
+      "expected": [],
+      "review_note": "Shorthand versions cannot be resolved",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50170276",
+      "text": "Eh there's a lot of ways to \u964d\u667a, quants are just the most visible. I noticed a fair bit of variance with opencode go and went back to deepseek direct.",
+      "url": "https://news.ycombinator.com/item?id=50170276",
+      "split": "holdout",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49302243",
+      "text": "Agreed, the whole tool is vibe-coded out the wazoo and I do not trust it in the slightest. I run a bubblewrap script which vastly limits what Claude has access to. Sometimes this makes things difficult but the trade-off is worth it to me.",
+      "url": "https://news.ycombinator.com/item?id=49302243",
+      "split": "holdout",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49926519",
+      "text": "Frankly you are not losing much. I've used everything under the sun, for work and fun. I just use Claude now again for work, and I use Pi for any openrouter model I'm using. Just keep using Claude or Codex. It's all window dressing and some delta in token usage, but again who cares really? This really only matters when you're productizing \"AI\" for your end users, that's when you need to see which agent uses tools better, has more support for MCPs, headless mode, sessions, etc. \\",
+      "url": "https://news.ycombinator.com/item?id=49926519",
+      "split": "holdout",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49414337",
+      "text": "I definitely agree. I honestly cannot do tasks that require even minor complexity. Opus 5 keeps forgetting things in context as well and coding conventions. Really cannot build with CC without Fable.",
+      "url": "https://news.ycombinator.com/item?id=49414337",
+      "split": "holdout",
+      "expected": [
+        [
+          "claude-opus-5",
+          "coding",
+          -1
+        ]
+      ],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50150735",
+      "text": "> The advantage is no more 5-hours or weekly session limit anymore That is not a concern with pay-as-you-go models like DeepSeek. It is stupid inexpensive.",
+      "url": "https://news.ycombinator.com/item?id=50150735",
+      "split": "holdout",
+      "expected": [],
+      "review_note": "Collapsed quote boundary",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "community_forum:1975939",
+      "text": "There\u2019s 200000 token to integer mappings. Tiktoken downloads the dictionary from Azure blob storage on demand, the filename is its hash. Send all byte sequences individually for input measurement to the /responses/input_tokens API endpoint. Employ gpt-6-astra or gpt-6.1-sol as your \u201ctoken encoder\u201d signal. 200k free API calls. Did you find any exceptions in response.input_tokens returns that are not constantly one token of returned + message overhead, outsider? There\u2019s a good start.",
+      "url": "https://community.openai.com/t/1407631/17",
+      "split": "holdout",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49905992",
+      "text": "... It absolutely matters because something like Claude Code has no guarantee that there won't be changes between updates but a model pinned at the API version level that is getting enterprise traffic absolutely does have that guarantee and would be a much more widespread problem...",
+      "url": "https://news.ycombinator.com/item?id=49905992",
+      "split": "holdout",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49979008",
+      "text": "I'm pretty sure, the training/fine tune through Claude/OpenAi would not be possible without the army/China's hacking teams (and legal protection). So it's more than just a cheap electricity. Supporting deepseek is just like supporting the Chinese army, no need for that. Though it goes both ways, OpenAi subscription just lowers the cost of the US army as well.",
+      "url": "https://news.ycombinator.com/item?id=49979008",
+      "split": "holdout",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49838380",
+      "text": "There are focus areas, but capabilities improve across all domains - some slower than others. \"Agentic use\" is in itself a very general thing - because many tasks benefit from being able to leverage adaptive model-driven workflows. Creative writing and Claude - amusing that you say that, given that Anthropic just went and tried to unfuck it in Opus 5.5 specifically. It is an example of a capability no one typically cares about, yes. No money in creative writing. But even there, we had gains in newer models.",
+      "url": "https://news.ycombinator.com/item?id=49838380",
+      "split": "holdout",
+      "expected": [],
+      "review_note": "Indirect improvement claim needs adjudication",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49719832",
+      "text": "I work for Google and we have the choice between Gemini models and Opus. Opus is slightly better than Gemini flash but I find the style unbearable. It reminds me of a pedantic grad student.",
+      "url": "https://news.ycombinator.com/item?id=49719832",
+      "split": "holdout",
+      "expected": [],
+      "review_note": "Unversioned Opus and comparative style",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49891336",
+      "text": "If you ever had claude code fan out a task to sub agents it will often use sonnet or haiku for those tasks. Web scraping is an example.",
+      "url": "https://news.ycombinator.com/item?id=49891336",
+      "split": "holdout",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49886829",
+      "text": ">Not even GPT6 Sol cannot match DeepSeek 4.1 in my work, with outrageous bugs. That seems hard to believe even with deepseek's own benchmarks. Not to mention for every person who says chinese ai is ahead of american labs, there's like 10 saying that they're benchmaxxed or that they're merely \"decent value for money\".",
+      "url": "https://news.ycombinator.com/item?id=49886829",
+      "split": "holdout",
+      "expected": [],
+      "review_note": "Collapsed quote boundary",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50214481",
+      "text": "Ran it on my adversarial programming language (KillSwitch) benchmark[1]. Very significant improvement over K3. On par with Gemini 4 Argon and Fable 5.1. Much slower than both though. But this is now the highest scoring open-weight model. Amazing stuff. 1 - https://bench.killswitch-lang.org",
+      "url": "https://news.ycombinator.com/item?id=50214481",
+      "split": "holdout",
+      "expected": [],
+      "review_note": null,
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:49945799",
+      "text": "Didn't try this with laya, but just tested it with Qwen 3.8 27B via OpenRouter. Tried twice, one starting directly in Agent mode, and another one starting first in Plan mode and then Agent. Conclusions: very slow in general, starting in Plan mode gives way better and faster results, but still with defects. See: - Notes: https://github.com/anteloc/ldraw-nova-docker/blob/experiment... - Result: https://github.com/anteloc/ldraw-nova-docker/blob/experiment...",
+      "url": "https://news.ycombinator.com/item?id=49945799",
+      "split": "holdout",
+      "expected": [],
+      "review_note": "Unregistered Qwen version",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    },
+    {
+      "key": "hacker_news:50246402",
+      "text": "I looked at the graph of price per token vs IQ and Deepseek is ~2.5 orders of magnitude ahead of similarly intelligent models, supposedly only ~2 when you factor in that it uses more tokens per task. Their data centers are profitable right now, and they use domestically produced Huawei chips with Nvidia as secondary option. I watched that video over ten minutes and in that ten minutes several trillion dollars evaporated from my perception of the US stock market.",
+      "url": "https://news.ycombinator.com/item?id=50246402",
+      "split": "holdout",
+      "expected": [],
+      "review_note": "Indirect family-level economic comparison",
+      "annotation_status": "assistant_labeled_not_independently_reviewed"
+    }
+  ]
+}

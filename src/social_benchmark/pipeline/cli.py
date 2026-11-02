@@ -5,10 +5,12 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-from social_benchmark.pipeline.analysis import write_observation_report
+from social_benchmark.pipeline.analysis import write_observation_report, write_source_yield_report
 from social_benchmark.pipeline.active_learning import export_active_learning_queue, write_fixed_model_evaluation, write_threshold_report
+from social_benchmark.pipeline.auto_review import auto_review_labels, auto_review_observations
 from social_benchmark.pipeline.clients.github import GitHubClient
 from social_benchmark.pipeline.clients.hackernews import HackerNewsClient
+from social_benchmark.pipeline.clients.reddit import RedditClient
 from social_benchmark.pipeline.collection import collect_from_config, load_source_config
 from social_benchmark.pipeline.classifier_experiments import DEFAULT_EMBEDDING_MODELS, run_frozen_embedding_bakeoff
 from social_benchmark.pipeline.embeddings import cluster_embedding_jsonl, write_embeddings_jsonl
@@ -78,6 +80,25 @@ def main() -> None:
     gh_repo_parser.add_argument("--include-comments", action="store_true")
     gh_repo_parser.add_argument("--out", required=True)
 
+    reddit_subreddit_parser = subparsers.add_parser("fetch-reddit-subreddit", help="Fetch Reddit subreddit posts")
+    reddit_subreddit_parser.add_argument("--subreddit", required=True)
+    reddit_subreddit_parser.add_argument("--sort", choices=["hot", "new", "top", "rising", "controversial"], default="top")
+    reddit_subreddit_parser.add_argument("--time", default="month", choices=["hour", "day", "week", "month", "year", "all"])
+    reddit_subreddit_parser.add_argument("--limit", type=int, default=50)
+    reddit_subreddit_parser.add_argument("--comments", type=int, default=0, help="Fetch up to this many comments per post")
+    reddit_subreddit_parser.add_argument("--max-depth", type=int, default=6, help="Maximum comment depth to fetch")
+    reddit_subreddit_parser.add_argument("--out", required=True)
+
+    reddit_search_parser = subparsers.add_parser("fetch-reddit-search", help="Search Reddit posts in one subreddit")
+    reddit_search_parser.add_argument("--subreddit", required=True)
+    reddit_search_parser.add_argument("--query", required=True)
+    reddit_search_parser.add_argument("--sort", choices=["relevance", "hot", "top", "new", "comments"], default="relevance")
+    reddit_search_parser.add_argument("--time", default="month", choices=["hour", "day", "week", "month", "year", "all"])
+    reddit_search_parser.add_argument("--limit", type=int, default=50)
+    reddit_search_parser.add_argument("--comments", type=int, default=0, help="Fetch up to this many comments per post")
+    reddit_search_parser.add_argument("--max-depth", type=int, default=6, help="Maximum comment depth to fetch")
+    reddit_search_parser.add_argument("--out", required=True)
+
     config_parser = subparsers.add_parser("fetch-config", help="Fetch sources listed in a JSON config")
     config_parser.add_argument("--config", default="config/sources.json")
     config_parser.add_argument("--out", required=True)
@@ -102,6 +123,15 @@ def main() -> None:
     report_parser.add_argument("--observations", required=True)
     report_parser.add_argument("--out", required=True)
 
+    source_yield_parser = subparsers.add_parser("report-source-yield", help="Measure collection-to-benchmark yield for one source")
+    source_yield_parser.add_argument("--source-platform", default="reddit")
+    source_yield_parser.add_argument("--raw", help="Raw source JSONL")
+    source_yield_parser.add_argument("--observations", help="Processed observation JSONL")
+    source_yield_parser.add_argument("--review-queue", help="Exported review queue CSV")
+    source_yield_parser.add_argument("--training", action="append", default=[], help="Reviewed training JSONL; may repeat")
+    source_yield_parser.add_argument("--snapshot", help="Score snapshot JSON with corpus.source_mix")
+    source_yield_parser.add_argument("--out", required=True)
+
     training_parser = subparsers.add_parser("build-training-data", help="Convert reviewed label CSV into JSONL")
     training_parser.add_argument("--labels", required=True)
     training_parser.add_argument("--out", required=True)
@@ -115,6 +145,33 @@ def main() -> None:
     eval_labels_parser = subparsers.add_parser("evaluate-labels", help="Compare machine labels with reviewed CSV labels")
     eval_labels_parser.add_argument("--labels", required=True)
     eval_labels_parser.add_argument("--out", required=True)
+
+    auto_review_parser = subparsers.add_parser("auto-review-labels", help="Strictly auto-review a label queue with a trained model")
+    auto_review_parser.add_argument("--labels", required=True, help="Exported review queue CSV")
+    auto_review_parser.add_argument("--out", required=True, help="Auto-reviewed CSV output")
+    auto_review_parser.add_argument("--report-out", required=True, help="JSON report with accepted/excluded counts")
+    auto_review_parser.add_argument("--model", help="Trained classifier model; defaults to the strongest local model found")
+    auto_review_parser.add_argument("--context", help="Optional review-context JSONL matched by review_id")
+    auto_review_parser.add_argument("--source-platform", default="reddit")
+    auto_review_parser.add_argument("--min-extractor-confidence", type=float, default=0.72)
+    auto_review_parser.add_argument("--min-model-confidence", type=float, default=0.0)
+    auto_review_parser.add_argument("--max-iterations", type=int, default=3)
+    auto_review_parser.add_argument("--accept-neutral", action="store_true")
+
+    auto_review_observations_parser = subparsers.add_parser(
+        "auto-review-observations",
+        help="Strictly auto-review processed observations with a trained model",
+    )
+    auto_review_observations_parser.add_argument("--observations", required=True, help="Processed observation JSONL")
+    auto_review_observations_parser.add_argument("--out", required=True, help="Auto-reviewed CSV output")
+    auto_review_observations_parser.add_argument("--report-out", required=True, help="JSON report with accepted/excluded counts")
+    auto_review_observations_parser.add_argument("--model", help="Trained classifier model; defaults to the strongest local model found")
+    auto_review_observations_parser.add_argument("--context", help="Optional review-context JSONL matched by review_id")
+    auto_review_observations_parser.add_argument("--source-platform", default="reddit")
+    auto_review_observations_parser.add_argument("--min-extractor-confidence", type=float, default=0.72)
+    auto_review_observations_parser.add_argument("--min-model-confidence", type=float, default=0.0)
+    auto_review_observations_parser.add_argument("--max-iterations", type=int, default=3)
+    auto_review_observations_parser.add_argument("--accept-neutral", action="store_true")
 
     apply_labels_parser = subparsers.add_parser("apply-labels", help="Apply reviewed CSV labels to observation JSONL")
     apply_labels_parser.add_argument("--observations", required=True)
@@ -315,6 +372,10 @@ def main() -> None:
         _fetch_github_search(args)
     elif args.command == "fetch-github-repo":
         _fetch_github_repo(args)
+    elif args.command == "fetch-reddit-subreddit":
+        _fetch_reddit_subreddit(args)
+    elif args.command == "fetch-reddit-search":
+        _fetch_reddit_search(args)
     elif args.command == "fetch-config":
         _fetch_config(args)
     elif args.command == "process-jsonl":
@@ -323,12 +384,18 @@ def main() -> None:
         _export_labels(args)
     elif args.command == "report-observations":
         _report_observations(args)
+    elif args.command == "report-source-yield":
+        _report_source_yield(args)
     elif args.command == "build-training-data":
         _build_training_data(args)
     elif args.command == "merge-training-data":
         _merge_training_data(args)
     elif args.command == "evaluate-labels":
         _evaluate_labels(args)
+    elif args.command == "auto-review-labels":
+        _auto_review_labels(args)
+    elif args.command == "auto-review-observations":
+        _auto_review_observations(args)
     elif args.command == "apply-labels":
         _apply_labels(args)
     elif args.command == "train-local-classifier":
@@ -453,6 +520,35 @@ def _fetch_github_repo(args: argparse.Namespace) -> None:
     print(json.dumps({"written": count, "out": args.out}))
 
 
+def _fetch_reddit_subreddit(args: argparse.Namespace) -> None:
+    raw_items = RedditClient().fetch_subreddit_posts(
+        args.subreddit,
+        sort=args.sort,
+        time_filter=args.time,
+        limit=args.limit,
+        include_comments=bool(args.comments),
+        max_comments=args.comments,
+        max_depth=args.max_depth,
+    )
+    count = write_jsonl(args.out, raw_items)
+    print(json.dumps({"written": count, "out": args.out, "subreddit": args.subreddit}))
+
+
+def _fetch_reddit_search(args: argparse.Namespace) -> None:
+    raw_items = RedditClient().search_subreddit_posts(
+        args.subreddit,
+        args.query,
+        sort=args.sort,
+        time_filter=args.time,
+        limit=args.limit,
+        include_comments=bool(args.comments),
+        max_comments=args.comments,
+        max_depth=args.max_depth,
+    )
+    count = write_jsonl(args.out, raw_items)
+    print(json.dumps({"written": count, "out": args.out, "subreddit": args.subreddit, "query": args.query}))
+
+
 def _fetch_config(args: argparse.Namespace) -> None:
     config = load_source_config(args.config)
     raw_items = collect_from_config(config)
@@ -516,6 +612,30 @@ def _report_observations(args: argparse.Namespace) -> None:
     print(json.dumps({"observations": report.get("observations", 0), "out": args.out}))
 
 
+def _report_source_yield(args: argparse.Namespace) -> None:
+    report = write_source_yield_report(
+        source_platform=args.source_platform,
+        raw_items_path=args.raw,
+        observations_path=args.observations,
+        review_queue_path=args.review_queue,
+        training_paths=args.training,
+        snapshot_path=args.snapshot,
+        output_path=args.out,
+    )
+    print(
+        json.dumps(
+            {
+                "source_platform": report["source_platform"],
+                "raw_items": report["raw_items"]["source"],
+                "observations": report["observations"]["source"],
+                "reviewed_training": report["reviewed_training"]["source"],
+                "benchmark_share_pct": report["benchmark"]["source_share_pct"],
+                "out": args.out,
+            }
+        )
+    )
+
+
 def _build_training_data(args: argparse.Namespace) -> None:
     count = build_training_jsonl(args.labels, args.out, context_jsonl=args.context)
     print(json.dumps({"written": count, "out": args.out}))
@@ -529,6 +649,62 @@ def _merge_training_data(args: argparse.Namespace) -> None:
 def _evaluate_labels(args: argparse.Namespace) -> None:
     metrics = write_label_evaluation(args.labels, args.out)
     print(json.dumps({"rows": metrics.get("rows", 0), "out": args.out}))
+
+
+def _auto_review_labels(args: argparse.Namespace) -> None:
+    report = auto_review_labels(
+        labels_csv=args.labels,
+        output_csv=args.out,
+        report_path=args.report_out,
+        model_path=args.model,
+        context_jsonl=args.context,
+        source_platform=args.source_platform,
+        min_extractor_confidence=args.min_extractor_confidence,
+        min_model_confidence=args.min_model_confidence,
+        max_iterations=args.max_iterations,
+        accept_neutral=args.accept_neutral,
+    )
+    print(
+        json.dumps(
+            {
+                "rows": report["rows"],
+                "accepted": report["accepted"],
+                "excluded": report["excluded"],
+                "acceptance_rate_pct": report["acceptance_rate_pct"],
+                "stable": report["stable"],
+                "out": args.out,
+                "report_out": args.report_out,
+            }
+        )
+    )
+
+
+def _auto_review_observations(args: argparse.Namespace) -> None:
+    report = auto_review_observations(
+        observations_jsonl=args.observations,
+        output_csv=args.out,
+        report_path=args.report_out,
+        model_path=args.model,
+        context_jsonl=args.context,
+        source_platform=args.source_platform,
+        min_extractor_confidence=args.min_extractor_confidence,
+        min_model_confidence=args.min_model_confidence,
+        max_iterations=args.max_iterations,
+        accept_neutral=args.accept_neutral,
+    )
+    print(
+        json.dumps(
+            {
+                "rows": report["rows"],
+                "accepted": report["accepted"],
+                "excluded": report["excluded"],
+                "acceptance_rate_pct": report["acceptance_rate_pct"],
+                "stable": report["stable"],
+                "out": args.out,
+                "report_out": args.report_out,
+            }
+        )
+    )
 
 
 def _apply_labels(args: argparse.Namespace) -> None:

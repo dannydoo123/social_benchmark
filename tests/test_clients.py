@@ -2,6 +2,7 @@ import unittest
 
 from social_benchmark.pipeline.clients.github import github_comment_to_raw_item, github_issue_to_raw_item
 from social_benchmark.pipeline.clients.hackernews import HackerNewsClient, hn_item_to_raw_item
+from social_benchmark.pipeline.clients.reddit import reddit_post_to_raw_item, reddit_thread_to_raw_items
 from social_benchmark.pipeline.extractors.rules import RuleBasedExtractor
 from social_benchmark.pipeline.models import RawItem, SourcePlatform
 
@@ -71,6 +72,105 @@ class ClientMappingTest(unittest.TestCase):
         self.assertIsNone(raw_issue.parent_id)
         self.assertEqual(raw_comment.parent_id, "10")
         self.assertEqual(raw_comment.thread_id, "7")
+
+    def test_reddit_post_mapping(self):
+        raw = reddit_post_to_raw_item(
+            {
+                "id": "abc123",
+                "name": "t3_abc123",
+                "subreddit": "ClaudeAI",
+                "author": "alice",
+                "created_utc": 1710000000,
+                "title": "Claude vs GPT-4 for coding",
+                "selftext": "I used both and Claude was better for refactors.",
+                "permalink": "/r/ClaudeAI/comments/abc123/claude_vs_gpt4/",
+                "score": 42,
+                "ups": 50,
+                "num_comments": 7,
+                "upvote_ratio": 0.9,
+                "link_flair_text": "Discussion",
+                "is_self": True,
+            }
+        )
+
+        self.assertEqual(raw.platform, SourcePlatform.REDDIT)
+        self.assertEqual(raw.source_id, "t3_abc123")
+        self.assertEqual(raw.thread_id, "t3_abc123")
+        self.assertEqual(raw.community_id, "r/ClaudeAI")
+        self.assertEqual(raw.url, "https://www.reddit.com/r/ClaudeAI/comments/abc123/claude_vs_gpt4/")
+        self.assertEqual(raw.engagement["score"], 42)
+        self.assertEqual(raw.metadata["link_flair_text"], "Discussion")
+
+    def test_reddit_thread_mapping_flattens_comments(self):
+        payload = [
+            {
+                "data": {
+                    "children": [
+                        {
+                            "kind": "t3",
+                            "data": {
+                                "id": "abc123",
+                                "name": "t3_abc123",
+                                "subreddit": "LocalLLaMA",
+                                "author": "alice",
+                                "created_utc": 1710000000,
+                                "title": "Llama and Qwen for tool use",
+                                "selftext": "Which local model is good?",
+                                "permalink": "/r/LocalLLaMA/comments/abc123/thread/",
+                                "score": 10,
+                            },
+                        }
+                    ]
+                }
+            },
+            {
+                "data": {
+                    "children": [
+                        {
+                            "kind": "t1",
+                            "data": {
+                                "id": "c1",
+                                "name": "t1_c1",
+                                "subreddit": "LocalLLaMA",
+                                "author": "bob",
+                                "created_utc": 1710000100,
+                                "body": "I tested Qwen and it worked well for tool calls.",
+                                "parent_id": "t3_abc123",
+                                "permalink": "/r/LocalLLaMA/comments/abc123/thread/c1/",
+                                "score": 5,
+                                "replies": {
+                                    "data": {
+                                        "children": [
+                                            {
+                                                "kind": "t1",
+                                                "data": {
+                                                    "id": "c2",
+                                                    "name": "t1_c2",
+                                                    "subreddit": "LocalLLaMA",
+                                                    "author": "carol",
+                                                    "created_utc": 1710000200,
+                                                    "body": "Claude was still better for planning.",
+                                                    "parent_id": "t1_c1",
+                                                    "permalink": "/r/LocalLLaMA/comments/abc123/thread/c2/",
+                                                    "score": 3,
+                                                },
+                                            }
+                                        ]
+                                    }
+                                },
+                            },
+                        }
+                    ]
+                }
+            },
+        ]
+
+        raw_items = reddit_thread_to_raw_items(payload, max_comments=10, max_depth=1)
+
+        self.assertEqual([item.source_id for item in raw_items], ["t3_abc123", "t1_c1", "t1_c2"])
+        self.assertEqual(raw_items[1].thread_id, "t3_abc123")
+        self.assertEqual(raw_items[1].parent_id, "t3_abc123")
+        self.assertEqual(raw_items[2].metadata["depth"], 1)
 
     def test_hackernews_comment_fetch_respects_depth_and_metadata(self):
         items = {

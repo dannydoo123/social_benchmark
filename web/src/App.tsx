@@ -1,3 +1,4 @@
+import { CommunityDashboard } from './CommunityDashboard';
 import { useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
 import {
@@ -113,7 +114,8 @@ const exclusionGuide = [
   ['other', 'Use for an edge case and explain it in notes.'],
 ] as const;
 
-export function App() {
+export function App({ initialResearch = true }: { initialResearch?: boolean } = {}) {
+  const [research, setResearch] = useState(initialResearch);
   const [rows, setRows] = useState<LabelRow[]>(() => sampleRows.map(withReviewDefaults));
   const [activeIndex, setActiveIndex] = useState(0);
   const [view, setView] = useState<'review' | 'benchmark'>('review');
@@ -238,9 +240,11 @@ export function App() {
     downloadFile('label_queue_reviewed.json', JSON.stringify(rows, null, 2), 'application/json');
   }
 
+  if (research) return <CommunityDashboard onLegacy={() => setResearch(false)} />;
   return (
     <main className="app-shell">
       <aside className="sidebar">
+        <button onClick={() => setResearch(true)}>Return to community observatory</button>
         <div className="brand">
           <ClipboardList size={24} aria-hidden="true" />
           <div>

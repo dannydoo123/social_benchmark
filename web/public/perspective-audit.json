@@ -1,0 +1,1425 @@
+{
+  "generated_at": "2026-10-30T21:35:25.403571+00:00",
+  "rows": 1114,
+  "scope": "Coverage audit of the supplied corpus; not a representative public-opinion estimate.",
+  "models": [
+    {
+      "model": "",
+      "observations": 27,
+      "threads": 8,
+      "sources": {
+        "hacker_news": 27
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 27,
+        "community_id": 27,
+        "parent_id": 27,
+        "author_id_hash": 27,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude",
+      "observations": 469,
+      "threads": 148,
+      "sources": {
+        "hacker_news": 469
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 469,
+        "community_id": 469,
+        "parent_id": 469,
+        "author_id_hash": 469,
+        "context_text": 193
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude-haiku-4.5",
+      "observations": 4,
+      "threads": 4,
+      "sources": {
+        "hacker_news": 4
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 4,
+        "community_id": 4,
+        "parent_id": 4,
+        "author_id_hash": 4,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude-opus",
+      "observations": 12,
+      "threads": 10,
+      "sources": {
+        "hacker_news": 12
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 12,
+        "community_id": 12,
+        "parent_id": 12,
+        "author_id_hash": 12,
+        "context_text": 4
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude-opus-4",
+      "observations": 3,
+      "threads": 3,
+      "sources": {
+        "hacker_news": 3
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 3,
+        "community_id": 3,
+        "parent_id": 3,
+        "author_id_hash": 3,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude-opus-4.5",
+      "observations": 22,
+      "threads": 16,
+      "sources": {
+        "hacker_news": 22
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 22,
+        "community_id": 22,
+        "parent_id": 22,
+        "author_id_hash": 22,
+        "context_text": 4
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude-opus-4.7",
+      "observations": 40,
+      "threads": 15,
+      "sources": {
+        "hacker_news": 40
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 40,
+        "community_id": 40,
+        "parent_id": 40,
+        "author_id_hash": 40,
+        "context_text": 20
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude-opus-4.8",
+      "observations": 39,
+      "threads": 15,
+      "sources": {
+        "hacker_news": 39
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 39,
+        "community_id": 39,
+        "parent_id": 39,
+        "author_id_hash": 39,
+        "context_text": 28
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude-sonnet",
+      "observations": 8,
+      "threads": 6,
+      "sources": {
+        "hacker_news": 8
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 8,
+        "community_id": 8,
+        "parent_id": 8,
+        "author_id_hash": 8,
+        "context_text": 2
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude-sonnet-3.5",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude-sonnet-3.7",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude-sonnet-4.5",
+      "observations": 7,
+      "threads": 5,
+      "sources": {
+        "hacker_news": 7
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 7,
+        "community_id": 7,
+        "parent_id": 7,
+        "author_id_hash": 7,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "claude-sonnet-4.6",
+      "observations": 12,
+      "threads": 10,
+      "sources": {
+        "hacker_news": 12
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 12,
+        "community_id": 12,
+        "parent_id": 12,
+        "author_id_hash": 12,
+        "context_text": 2
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "deepseek",
+      "observations": 63,
+      "threads": 24,
+      "sources": {
+        "hacker_news": 63
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 63,
+        "community_id": 63,
+        "parent_id": 63,
+        "author_id_hash": 63,
+        "context_text": 39
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "deepseek-coder-6.7b",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "deepseek-r1",
+      "observations": 4,
+      "threads": 4,
+      "sources": {
+        "hacker_news": 4
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 4,
+        "community_id": 4,
+        "parent_id": 4,
+        "author_id_hash": 4,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "deepseek-r1-distill-qwen-1.5b",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "deepseek-r1-distill-qwen-32b",
+      "observations": 2,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 2
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 2,
+        "community_id": 2,
+        "parent_id": 2,
+        "author_id_hash": 2,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "deepseek-v3",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "deepseek-v4",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "deepseek-v4-flash",
+      "observations": 4,
+      "threads": 4,
+      "sources": {
+        "hacker_news": 4
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 4,
+        "community_id": 4,
+        "parent_id": 4,
+        "author_id_hash": 4,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "deepseek-v4-pro",
+      "observations": 3,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 3
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 3,
+        "community_id": 3,
+        "parent_id": 3,
+        "author_id_hash": 3,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini",
+      "observations": 100,
+      "threads": 58,
+      "sources": {
+        "hacker_news": 100
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 100,
+        "community_id": 100,
+        "parent_id": 100,
+        "author_id_hash": 100,
+        "context_text": 21
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-2.0",
+      "observations": 3,
+      "threads": 3,
+      "sources": {
+        "hacker_news": 3
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 3,
+        "community_id": 3,
+        "parent_id": 3,
+        "author_id_hash": 3,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-2.0-flash",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-2.0-pro",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-2.5",
+      "observations": 6,
+      "threads": 3,
+      "sources": {
+        "hacker_news": 6
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 6,
+        "community_id": 6,
+        "parent_id": 6,
+        "author_id_hash": 6,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "observations": 3,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 3
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 3,
+        "community_id": 3,
+        "parent_id": 3,
+        "author_id_hash": 3,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-2.5-pro",
+      "observations": 10,
+      "threads": 7,
+      "sources": {
+        "hacker_news": 10
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 10,
+        "community_id": 10,
+        "parent_id": 10,
+        "author_id_hash": 10,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-3",
+      "observations": 10,
+      "threads": 8,
+      "sources": {
+        "hacker_news": 10
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 10,
+        "community_id": 10,
+        "parent_id": 10,
+        "author_id_hash": 10,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-3-flash",
+      "observations": 6,
+      "threads": 4,
+      "sources": {
+        "hacker_news": 6
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 6,
+        "community_id": 6,
+        "parent_id": 6,
+        "author_id_hash": 6,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-3-pro",
+      "observations": 3,
+      "threads": 3,
+      "sources": {
+        "hacker_news": 3
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 3,
+        "community_id": 3,
+        "parent_id": 3,
+        "author_id_hash": 3,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-3.0",
+      "observations": 2,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 2
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 2,
+        "community_id": 2,
+        "parent_id": 2,
+        "author_id_hash": 2,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-3.0-flash",
+      "observations": 2,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 2
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 2,
+        "community_id": 2,
+        "parent_id": 2,
+        "author_id_hash": 2,
+        "context_text": 1
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-3.0-pro",
+      "observations": 2,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 2
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 2,
+        "community_id": 2,
+        "parent_id": 2,
+        "author_id_hash": 2,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-3.1",
+      "observations": 2,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 2
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 2,
+        "community_id": 2,
+        "parent_id": 2,
+        "author_id_hash": 2,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "observations": 2,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 2
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 2,
+        "community_id": 2,
+        "parent_id": 2,
+        "author_id_hash": 2,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-3.1-pro",
+      "observations": 3,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 3
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 3,
+        "community_id": 3,
+        "parent_id": 3,
+        "author_id_hash": 3,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "observations": 4,
+      "threads": 3,
+      "sources": {
+        "hacker_news": 4
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 4,
+        "community_id": 4,
+        "parent_id": 4,
+        "author_id_hash": 4,
+        "context_text": 1
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gemini-3.5-pro",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-3.5",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-4",
+      "observations": 12,
+      "threads": 8,
+      "sources": {
+        "hacker_news": 12
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 12,
+        "community_id": 12,
+        "parent_id": 12,
+        "author_id_hash": 12,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-4.1",
+      "observations": 4,
+      "threads": 3,
+      "sources": {
+        "hacker_news": 4
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 4,
+        "community_id": 4,
+        "parent_id": 4,
+        "author_id_hash": 4,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-4o",
+      "observations": 20,
+      "threads": 11,
+      "sources": {
+        "hacker_news": 20
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 20,
+        "community_id": 20,
+        "parent_id": 20,
+        "author_id_hash": 20,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-5",
+      "observations": 21,
+      "threads": 16,
+      "sources": {
+        "hacker_news": 21
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 21,
+        "community_id": 21,
+        "parent_id": 21,
+        "author_id_hash": 21,
+        "context_text": 2
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-5.1",
+      "observations": 5,
+      "threads": 4,
+      "sources": {
+        "hacker_news": 5
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 5,
+        "community_id": 5,
+        "parent_id": 5,
+        "author_id_hash": 5,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-5.2",
+      "observations": 2,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 2
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 2,
+        "community_id": 2,
+        "parent_id": 2,
+        "author_id_hash": 2,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-5.3",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-5.3-codex",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-5.4",
+      "observations": 9,
+      "threads": 5,
+      "sources": {
+        "hacker_news": 9
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 9,
+        "community_id": 9,
+        "parent_id": 9,
+        "author_id_hash": 9,
+        "context_text": 1
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-5.4-nano",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-5.5",
+      "observations": 24,
+      "threads": 9,
+      "sources": {
+        "hacker_news": 24
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 24,
+        "community_id": 24,
+        "parent_id": 24,
+        "author_id_hash": 24,
+        "context_text": 13
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "gpt-6-astra",
+      "observations": 0,
+      "threads": 0,
+      "sources": {},
+      "communities": {},
+      "missing": {
+        "published_at": 0,
+        "community_id": 0,
+        "parent_id": 0,
+        "author_id_hash": 0,
+        "context_text": 0
+      },
+      "status": "no_evidence",
+      "public_score": null
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "observations": 0,
+      "threads": 0,
+      "sources": {},
+      "communities": {},
+      "missing": {
+        "published_at": 0,
+        "community_id": 0,
+        "parent_id": 0,
+        "author_id_hash": 0,
+        "context_text": 0
+      },
+      "status": "no_evidence",
+      "public_score": null
+    },
+    {
+      "model": "gpt-oss-120b",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "grok",
+      "observations": 19,
+      "threads": 11,
+      "sources": {
+        "hacker_news": 19
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 19,
+        "community_id": 19,
+        "parent_id": 19,
+        "author_id_hash": 19,
+        "context_text": 5
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "grok-3",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "grok-4",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "kimi",
+      "observations": 18,
+      "threads": 12,
+      "sources": {
+        "hacker_news": 18
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 18,
+        "community_id": 18,
+        "parent_id": 18,
+        "author_id_hash": 18,
+        "context_text": 6
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "kimi-2.5",
+      "observations": 2,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 2
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 2,
+        "community_id": 2,
+        "parent_id": 2,
+        "author_id_hash": 2,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "kimi-2.6",
+      "observations": 8,
+      "threads": 5,
+      "sources": {
+        "hacker_news": 8
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 8,
+        "community_id": 8,
+        "parent_id": 8,
+        "author_id_hash": 8,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "llama",
+      "observations": 9,
+      "threads": 6,
+      "sources": {
+        "hacker_news": 9
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 9,
+        "community_id": 9,
+        "parent_id": 9,
+        "author_id_hash": 9,
+        "context_text": 4
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "llama-3.1",
+      "observations": 2,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 2
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 2,
+        "community_id": 2,
+        "parent_id": 2,
+        "author_id_hash": 2,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "llama-3.2",
+      "observations": 2,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 2
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 2,
+        "community_id": 2,
+        "parent_id": 2,
+        "author_id_hash": 2,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "llama-3.3-70b",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "llama-4",
+      "observations": 4,
+      "threads": 2,
+      "sources": {
+        "hacker_news": 4
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 4,
+        "community_id": 4,
+        "parent_id": 4,
+        "author_id_hash": 4,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "llama-4-scout",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "mistral",
+      "observations": 3,
+      "threads": 3,
+      "sources": {
+        "hacker_news": 3
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 3,
+        "community_id": 3,
+        "parent_id": 3,
+        "author_id_hash": 3,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "mistral-7b",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "mistral-small-3.2",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "nano-banana-pro",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "o3",
+      "observations": 9,
+      "threads": 5,
+      "sources": {
+        "hacker_news": 9
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 9,
+        "community_id": 9,
+        "parent_id": 9,
+        "author_id_hash": 9,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "o3-pro",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "o4-mini",
+      "observations": 4,
+      "threads": 3,
+      "sources": {
+        "hacker_news": 4
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 4,
+        "community_id": 4,
+        "parent_id": 4,
+        "author_id_hash": 4,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "qwen",
+      "observations": 32,
+      "threads": 21,
+      "sources": {
+        "hacker_news": 32
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 32,
+        "community_id": 32,
+        "parent_id": 32,
+        "author_id_hash": 32,
+        "context_text": 7
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "qwen-2.5-coder",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "qwen-3.5",
+      "observations": 3,
+      "threads": 3,
+      "sources": {
+        "hacker_news": 3
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 3,
+        "community_id": 3,
+        "parent_id": 3,
+        "author_id_hash": 3,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "qwen-3.6",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    },
+    {
+      "model": "qwen3-coder",
+      "observations": 1,
+      "threads": 1,
+      "sources": {
+        "hacker_news": 1
+      },
+      "communities": {},
+      "missing": {
+        "published_at": 1,
+        "community_id": 1,
+        "parent_id": 1,
+        "author_id_hash": 1,
+        "context_text": 0
+      },
+      "status": "coverage_unvalidated",
+      "public_score": null
+    }
+  ]
+}

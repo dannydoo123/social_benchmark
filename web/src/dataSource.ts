@@ -90,6 +90,8 @@ export type Snapshot = {
     providers?: number;
     unspecified_observations?: number;
     threads: number;
+    source_platforms?: number;
+    source_mix?: Record<string, number>;
   };
   overall: OverallRow[];
   providers: ProviderRow[];

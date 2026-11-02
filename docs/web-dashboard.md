@@ -12,7 +12,7 @@ Last updated: 2026-06-13.
 ## 1. What this is
 
 A React (Vite) dashboard that presents the human-perceived LLM benchmark from
-reviewed Hacker News evidence. It reads a versioned **score snapshot** from
+reviewed community evidence. It reads a versioned **score snapshot** from
 Supabase (live) and falls back to a static snapshot file when Supabase is
 unreachable. It is read-only to the public; all writes happen offline.
 
@@ -35,16 +35,16 @@ landing page because the per-model corpus is still thin.
 | **Methodology** | Pipeline, classifier-evolution timeline, calibrated gated-precision table, **registry-coverage band**, ranking rules. | "What technological effort went in." |
 
 A persistent **data-health band** (corpus size, providers, threads, unversioned
-share, single-source caveat) sits above every page.
+share, source mix) sits above every page.
 
 ---
 
 ## 3. Data flow
 
 ```
-HN Algolia/Firebase API
+HN Algolia/Firebase API + Reddit Data API after review
   → rule extraction (span + raw model/product/profile mention)
-  → human-reviewed training corpus (datasets/training/*_merged.jsonl)
+  → human-reviewed training corpus (datasets/training/*_merged.jsonl, optional reviewed Reddit JSONL)
   → scripts/rebuild_snapshot.py   (resolve identity, score, roll up, tier)
        → web/public/snapshot.json        (static fallback)
        → web/public/observations.json    (evidence-explorer fallback)
@@ -106,7 +106,7 @@ model to appear; registry entries add the official display name and mark it
 - **Overall tier uses the entity's TOTAL evidence**, not its weakest aspect.
   (The old UI took `Math.min` across aspects, which made every model look
   "insufficient" — fixed.)
-- **Tiers recalibrated for the current single-source corpus** (in
+- **Tiers recalibrated for the current small reviewed corpus** (in
   `scripts/rebuild_snapshot.py`): `ranked` ESS ≥ 50, `provisional` ESS ≥ 15,
   else `insufficient`. The original 30/150 cutoffs were for a much larger
   multi-platform corpus and left everything insufficient. Insufficient rows are
@@ -152,19 +152,43 @@ or the Supabase MCP (privileged). Never add a public write policy.
 ## 8. How to refresh after new data or a registry change
 
 ```bash
-# 1. Re-score (human-only, fast — no classifier/embeddings).
+# 1. Auto-review Reddit, then re-score reviewed/accepted rows.
+python -m social_benchmark.pipeline.cli auto-review-labels \
+  --labels datasets/queues/reddit_review_queue.csv \
+  --context datasets/queues/reddit_context.jsonl \
+  --out datasets/queues/reddit_auto_reviewed.csv \
+  --report-out data/processed/reddit_auto_review_report.json \
+  --source-platform reddit \
+  --max-iterations 3
+
+python -m social_benchmark.pipeline.cli build-training-data \
+  --labels datasets/queues/reddit_auto_reviewed.csv \
+  --context datasets/queues/reddit_context.jsonl \
+  --out datasets/training/<reviewed_reddit>.jsonl
+
 python scripts/rebuild_snapshot.py \
   datasets/training/<latest>_merged.jsonl \
-  --out web/public/snapshot.json
-# (also regenerate web/public/observations.json with resolved providers — see
-#  the snippet in scripts/ history, or extend rebuild_snapshot to emit it.)
+  datasets/training/<reviewed_reddit>.jsonl \
+  --out web/public/snapshot.json \
+  --observations-out web/public/observations.json
+
+python -m social_benchmark.pipeline.cli report-source-yield \
+  --source-platform reddit \
+  --raw data/raw/reddit_pilot.jsonl \
+  --observations data/processed/reddit_observations.jsonl \
+  --review-queue datasets/queues/reddit_review_queue.csv \
+  --training datasets/training/<latest>_merged.jsonl \
+  --training datasets/training/<reviewed_reddit>.jsonl \
+  --snapshot web/public/snapshot.json \
+  --out data/processed/reddit_yield_post_review.json
 
 # 2. Load Supabase with a service-role key (bypasses RLS, no context cost).
 export SUPABASE_URL=https://urnnulxipkmkwpkhqkip.supabase.co
 export SUPABASE_SERVICE_ROLE_KEY=<service-role-key>
 python -m social_benchmark.pipeline.cli load-supabase \
   --snapshot web/public/snapshot.json \
-  --observations datasets/training/<latest>_merged.jsonl
+  --observations datasets/training/<latest>_merged.jsonl \
+  --observations datasets/training/<reviewed_reddit>.jsonl
 
 # 3. Verify + ship.
 cd web && npm run build
@@ -178,9 +202,9 @@ disposable and git-ignored/removed after use).
 
 ## 9. Known limitations / TODO
 
-- **Single source (Hacker News).** All scores carry a single-source caveat;
-  regression claims need a second platform family (per `claude.md`). Highest-value
-  next step alongside more volume.
+- **Source coverage.** Hacker News is the validated baseline. Reddit rows should
+  be merged only after human review and yield checks; source mix is surfaced in
+  the dashboard corpus band.
 - **Per-model board is thin** — provisional at best. Provider rollup is the
   usable board today; the HN historical backfill + a second source are the path
   to ranked individual models.

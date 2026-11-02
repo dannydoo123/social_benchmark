@@ -4,7 +4,7 @@ from collections.abc import Iterable
 
 from social_benchmark.pipeline.clients.base import HttpJsonClient
 from social_benchmark.pipeline.models import RawItem, SourcePlatform, utc_from_unix
-from social_benchmark.pipeline.normalization import hash_identifier, normalize_text
+from social_benchmark.pipeline.normalization import hash_identifier, normalize_evidence_text, normalize_text
 
 
 class HackerNewsClient:
@@ -135,7 +135,7 @@ def hn_item_to_raw_item(
     parent_id = str(payload["parent"]) if payload.get("parent") is not None else None
     resolved_thread_id = thread_id or (source_id if item_type == "story" else parent_id)
     title = normalize_text(payload.get("title") or "")
-    body = normalize_text(payload.get("text") or "")
+    body = normalize_evidence_text(payload.get("text") or "")
     url = payload.get("url") or f"https://news.ycombinator.com/item?id={source_id}"
     return RawItem(
         platform=SourcePlatform.HACKER_NEWS,

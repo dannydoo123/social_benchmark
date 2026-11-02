@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import csv
 import json
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -74,6 +74,7 @@ def build_score_snapshot(
     )
     pool = [_to_observation(row) for row in human_rows] + [_to_observation(row) for row, _ in machine_rows]
     task_trusted_flags = [True] * len(human_rows) + [details["task_trusted"] for _, details in machine_rows]
+    source_counts = Counter(row.source_platform.value for row in pool)
 
     aggregator = ScoreAggregator()
     leaderboard = _leaderboard_rows(aggregator, pool)
@@ -93,6 +94,8 @@ def build_score_snapshot(
             "training_examples": len(training_rows),
             "models": len({row.model_id for row in pool}),
             "threads": len({row.thread_id for row in pool if row.thread_id}),
+            "source_platforms": len(source_counts),
+            "source_mix": dict(source_counts),
         },
         "overall": [
             {"model_id": model_id, "score": round(score, 2)}
@@ -402,7 +405,7 @@ def _methodology_block(
         "training_examples": training_examples,
         "gated_precision_artifacts": artifacts,
         "pipeline": [
-            "Official Hacker News API collection (Algolia + Firebase)",
+            "Official community API collection (Hacker News, Reddit when configured)",
             "Rule-based span extraction with model/product/profile identity resolution",
             "Human-reviewed training corpus labeled against docs/labeling-guide.md",
             "Multi-encoder classifier with leakage-safe isotonic confidence calibration",

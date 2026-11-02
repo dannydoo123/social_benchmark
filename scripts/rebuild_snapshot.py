@@ -8,7 +8,7 @@ observation through :mod:`model_resolver` so unversioned mentions ("Claude")
 roll up to the provider instead of fragmenting the per-model board.
 
 Usage:
-    python scripts/rebuild_snapshot.py [training.jsonl] [--out web/public/snapshot.json]
+    python scripts/rebuild_snapshot.py [training.jsonl ...] [--out web/public/snapshot.json]
 """
 
 from __future__ import annotations
@@ -36,9 +36,9 @@ from social_benchmark.pipeline.scoring import (
     effective_sample_size,
 )
 
-# Recalibrated for the current single-source corpus (~1.1k reviewed obs). The
-# original 30/150 cutoffs were tuned for a much larger multi-platform corpus and
-# left every model "insufficient"; these let well-evidenced providers/models rank.
+# Recalibrated for the current small reviewed corpus. The original 30/150
+# cutoffs were tuned for a much larger multi-platform corpus and left every
+# model "insufficient"; these let well-evidenced providers/models rank.
 RANKED_ESS = 50.0
 PROVISIONAL_ESS = 15.0
 
@@ -66,7 +66,7 @@ def to_observations(rows: list[dict]) -> tuple[list[Observation], dict, Counter]
         coverage[res.status] += 1
         data = dict(row)
         data["provider_id"] = res.provider_id
-        data["human_labeled_flag"] = True
+        data["human_labeled_flag"] = not str(row.get("human_notes") or row.get("review_method") or "").startswith("auto") and row.get("human_labeled_flag") is not False
         data["evidence_text"] = row.get("evidence_text") or row.get("text") or ""
         data["model_id"] = res.model_id or UNSPECIFIED_MODEL
         observation = _to_observation(data)  # provider_id already set on data above
@@ -83,6 +83,20 @@ def to_observations(rows: list[dict]) -> tuple[list[Observation], dict, Counter]
         "unregistered_versioned": dict(unregistered.most_common(40)),
     }
     return model_pool, model_provider, coverage_block
+
+
+def load_training_rows(paths: list[str]) -> list[dict]:
+    rows_by_key: dict[tuple[str, str, str, str], dict] = {}
+    for path in paths:
+        for row in _read_jsonl(path):
+            key = (
+                str(row.get("source_platform") or ""),
+                str(row.get("source_item_id") or ""),
+                str(row.get("model_id") or ""),
+                str(row.get("evidence_text") or row.get("text") or ""),
+            )
+            rows_by_key[key] = row
+    return list(rows_by_key.values())
 
 
 def overall_with_tiers(
@@ -209,6 +223,32 @@ def evidence_samples(pool: list[Observation]) -> dict[str, list[dict]]:
     return samples
 
 
+def web_observation_rows(pool: list[Observation]) -> list[dict]:
+    return [
+        {
+            "source_platform": obs.source_platform.value,
+            "source_item_id": obs.source_item_id,
+            "thread_id": obs.thread_id or "",
+            "url": obs.url,
+            "model_id": obs.model_id,
+            "provider_id": obs.provider_id,
+            "product_id": obs.product_id or "",
+            "inference_profile": obs.inference_profile or "",
+            "task_category": obs.task_category.value,
+            "aspect_category": obs.aspect_category.value,
+            "evidence_type": obs.evidence_type.value,
+            "polarity_score": obs.polarity_score,
+            "firsthand_flag": obs.firsthand_flag,
+            "evidence_text": obs.evidence_text,
+        }
+        for obs in pool
+    ]
+
+
+def source_mix(pool: list[Observation]) -> dict[str, int]:
+    return dict(Counter(obs.source_platform.value for obs in pool))
+
+
 def task_rows(aggregator: ScoreAggregator, pool: list[Observation]) -> dict[str, list[dict]]:
     by_task: dict[str, list[Observation]] = defaultdict(list)
     for obs in pool:
@@ -233,17 +273,19 @@ def task_rows(aggregator: ScoreAggregator, pool: list[Observation]) -> dict[str,
 def main() -> None:
     global RANKED_ESS, PROVISIONAL_ESS
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("training", nargs="?", default=DEFAULT_TRAINING)
+    parser.add_argument("training", nargs="*", default=[DEFAULT_TRAINING])
     parser.add_argument("--out", default="web/public/snapshot.json")
+    parser.add_argument("--observations-out", help="Optional static evidence explorer JSON output")
     parser.add_argument("--ranked-ess", type=float, default=RANKED_ESS)
     parser.add_argument("--provisional-ess", type=float, default=PROVISIONAL_ESS)
     args = parser.parse_args()
 
     RANKED_ESS, PROVISIONAL_ESS = args.ranked_ess, args.provisional_ess
 
-    rows = _read_jsonl(args.training)
+    rows = load_training_rows(args.training or [DEFAULT_TRAINING])
     full_pool, provider_of, coverage = to_observations(rows)
     model_pool = [obs for obs in full_pool if obs.model_id != UNSPECIFIED_MODEL]
+    sources = source_mix(full_pool)
 
     aggregator = ScoreAggregator()
     leaderboard = leaderboard_rows(aggregator, model_pool, provider_of)
@@ -267,6 +309,8 @@ def main() -> None:
             "providers": len({o.provider_id for o in full_pool}),
             "unspecified_observations": sum(coverage["unspecified_by_provider"].values()),
             "threads": len({o.thread_id for o in full_pool if o.thread_id}),
+            "source_platforms": len(sources),
+            "source_mix": sources,
         },
         "overall": overall,
         "providers": providers,
@@ -280,6 +324,10 @@ def main() -> None:
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(snapshot), encoding="utf-8")
+    if args.observations_out:
+        observations_out = Path(args.observations_out)
+        observations_out.parent.mkdir(parents=True, exist_ok=True)
+        observations_out.write_text(json.dumps(web_observation_rows(full_pool)), encoding="utf-8")
 
     print(
         json.dumps(
@@ -287,6 +335,7 @@ def main() -> None:
                 "snapshot_id": snapshot["snapshot_id"],
                 "models": snapshot["corpus"]["models"],
                 "providers": snapshot["corpus"]["providers"],
+                "sources": sources,
                 "unspecified_obs": snapshot["corpus"]["unspecified_observations"],
                 "coverage": coverage["by_status"],
                 "provider_top": [
@@ -294,6 +343,7 @@ def main() -> None:
                     for p in providers[:6]
                 ],
                 "out": str(out),
+                "observations_out": str(args.observations_out or ""),
             },
             indent=1,
         )

@@ -27,6 +27,12 @@ class InferenceProfileAlias:
 
 
 DEFAULT_ALIASES: tuple[ModelAlias, ...] = (
+    ModelAlias("gpt-6 astra", "gpt-6-astra", "openai"),
+    ModelAlias("gpt-6.1 sol", "gpt-6.1-sol", "openai"),
+    ModelAlias("gpt-6-astra", "gpt-6-astra", "openai"),
+    ModelAlias("gpt 6 astra", "gpt-6-astra", "openai"),
+    ModelAlias("gpt-6.1-sol", "gpt-6.1-sol", "openai"),
+    ModelAlias("gpt 6.1 sol", "gpt-6.1-sol", "openai"),
     ModelAlias("gpt-5.5", "gpt-5.5", "openai"),
     ModelAlias("gpt-5.4-mini", "gpt-5.4-mini", "openai"),
     ModelAlias("gpt-5.4-nano", "gpt-5.4-nano", "openai"),

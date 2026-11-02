@@ -8,7 +8,7 @@ Start with rows from:
 data/processed/label_queue_publishability.csv
 ```
 
-This workflow currently assumes Hacker News-derived rows only.
+This workflow supports Hacker News and Reddit-derived rows. Reddit rows should be reviewed before they are merged into the public benchmark snapshot.
 
 Prioritize:
 
@@ -44,6 +44,22 @@ $env:PYTHONPATH='src'
 python -m social_benchmark.pipeline.cli export-labels --observations data/processed/combined_observations_publishability.jsonl --out data/processed/label_queue_publishability.csv --max-rows 200
 ```
 
+Generate a Reddit pilot queue with source context:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli fetch-config --config config/reddit_sources.json --out data/raw/reddit_pilot.jsonl
+python -m social_benchmark.pipeline.cli process-jsonl --raw data/raw/reddit_pilot.jsonl --observations-out data/processed/reddit_observations.jsonl --scores-out data/processed/reddit_scores.json
+python -m social_benchmark.pipeline.cli export-labels --observations data/processed/reddit_observations.jsonl --raw data/raw/reddit_pilot.jsonl --out datasets/queues/reddit_review_queue.csv --context-out datasets/queues/reddit_context.jsonl --max-rows 300
+python -m social_benchmark.pipeline.cli auto-review-labels --labels datasets/queues/reddit_review_queue.csv --context datasets/queues/reddit_context.jsonl --out datasets/queues/reddit_auto_reviewed.csv --report-out data/processed/reddit_auto_review_report.json --source-platform reddit --max-iterations 3
+python -m social_benchmark.pipeline.cli report-source-yield --source-platform reddit --raw data/raw/reddit_pilot.jsonl --observations data/processed/reddit_observations.jsonl --review-queue datasets/queues/reddit_review_queue.csv --out data/processed/reddit_yield_pre_review.json
+```
+
+If `reddit_auto_review_report.json` shows `accepted: 0`, stop there and do not
+merge Reddit into the benchmark. The auto-reviewer is intentionally strict; a
+zero-row result means the current extractor/model agreement is not reliable
+enough for unattended inclusion.
+
 Run the review UI:
 
 ```powershell
@@ -59,4 +75,14 @@ $env:PYTHONPATH='src'
 python -m social_benchmark.pipeline.cli evaluate-labels --labels data/processed/label_queue_reviewed.csv --out data/processed/label_eval.json
 python -m social_benchmark.pipeline.cli build-training-data --labels data/processed/label_queue_reviewed.csv --out data/training/extractor_training.jsonl
 python -m social_benchmark.pipeline.cli train-local-classifier --training data/training/extractor_training.jsonl --model-out data/training/local_nb_model.json
+```
+
+After Reddit review, merge it into the benchmark and rebuild the static dashboard artifacts:
+
+```powershell
+$env:PYTHONPATH='src'
+python -m social_benchmark.pipeline.cli build-training-data --labels datasets/queues/reddit_auto_reviewed.csv --context datasets/queues/reddit_context.jsonl --out datasets/training/reddit_reviewed.jsonl
+python -m social_benchmark.pipeline.cli merge-training-data --input datasets/training/hn_manual_training_threaded_round8_2026-06-12_merged.jsonl --input datasets/training/reddit_reviewed.jsonl --out datasets/training/benchmark_reviewed_with_reddit.jsonl
+python scripts/rebuild_snapshot.py datasets/training/benchmark_reviewed_with_reddit.jsonl --out web/public/snapshot.json --observations-out web/public/observations.json
+python -m social_benchmark.pipeline.cli report-source-yield --source-platform reddit --raw data/raw/reddit_pilot.jsonl --observations data/processed/reddit_observations.jsonl --review-queue datasets/queues/reddit_review_queue.csv --training datasets/training/benchmark_reviewed_with_reddit.jsonl --snapshot web/public/snapshot.json --out data/processed/reddit_yield_post_review.json
 ```

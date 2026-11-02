@@ -1,0 +1,120 @@
+{
+  "reddit_searches": [
+    {
+      "name": "comparative_better_than",
+      "subreddits": [
+        "ChatGPT",
+        "OpenAI",
+        "ClaudeAI",
+        "LocalLLaMA",
+        "Bard",
+        "GeminiAI",
+        "perplexity_ai",
+        "ClaudeCode",
+        "cursor",
+        "GithubCopilot",
+        "ChatGPTCoding",
+        "ollama"
+      ],
+      "query": "\"better than\"",
+      "sort": "relevance",
+      "time": "month",
+      "limit": 10,
+      "comments": 100,
+      "max_depth": 5
+    },
+    {
+      "name": "comparative_vs",
+      "subreddits": [
+        "ChatGPT",
+        "OpenAI",
+        "ClaudeAI",
+        "LocalLLaMA",
+        "GeminiAI",
+        "perplexity_ai",
+        "ClaudeCode",
+        "cursor",
+        "GithubCopilot",
+        "ChatGPTCoding",
+        "ollama"
+      ],
+      "query": "vs",
+      "sort": "relevance",
+      "time": "month",
+      "limit": 10,
+      "comments": 100,
+      "max_depth": 5
+    },
+    {
+      "name": "regression_stability",
+      "subreddits": [
+        "ChatGPT",
+        "OpenAI",
+        "ClaudeAI",
+        "LocalLLaMA",
+        "GeminiAI",
+        "ClaudeCode",
+        "cursor",
+        "GithubCopilot"
+      ],
+      "query": "regression",
+      "sort": "relevance",
+      "time": "month",
+      "limit": 10,
+      "comments": 100,
+      "max_depth": 5
+    },
+    {
+      "name": "hallucination_refusal",
+      "subreddits": [
+        "ChatGPT",
+        "OpenAI",
+        "ClaudeAI",
+        "LocalLLaMA",
+        "GeminiAI",
+        "perplexity_ai"
+      ],
+      "query": "hallucinated",
+      "sort": "relevance",
+      "time": "month",
+      "limit": 10,
+      "comments": 100,
+      "max_depth": 5
+    },
+    {
+      "name": "coding_agents",
+      "subreddits": [
+        "ClaudeCode",
+        "cursor",
+        "GithubCopilot",
+        "ChatGPTCoding",
+        "ollama",
+        "LocalLLaMA"
+      ],
+      "query": "agent coding",
+      "sort": "relevance",
+      "time": "month",
+      "limit": 10,
+      "comments": 100,
+      "max_depth": 5
+    },
+    {
+      "name": "value_limits",
+      "subreddits": [
+        "ChatGPT",
+        "OpenAI",
+        "ClaudeAI",
+        "perplexity_ai",
+        "ClaudeCode",
+        "cursor",
+        "GithubCopilot"
+      ],
+      "query": "\"worth it\"",
+      "sort": "relevance",
+      "time": "month",
+      "limit": 10,
+      "comments": 100,
+      "max_depth": 5
+    }
+  ]
+}

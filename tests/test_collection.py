@@ -1,7 +1,8 @@
 import time
 import unittest
+from unittest.mock import patch
 
-from social_benchmark.pipeline.collection import _collect_hn
+from social_benchmark.pipeline.collection import _collect_hn, collect_from_config
 from social_benchmark.pipeline.models import RawItem, SourcePlatform
 
 
@@ -32,6 +33,66 @@ class HackerNewsCollectionTest(unittest.TestCase):
         )
 
         self.assertEqual([row.source_id for row in rows], ["100", "200"])
+
+    def test_config_collects_reddit_subreddits_and_searches(self):
+        class FakeRedditClient:
+            def fetch_subreddit_posts(
+                self,
+                subreddit,
+                sort,
+                time_filter,
+                limit,
+                include_comments,
+                max_comments,
+                max_depth,
+            ):
+                return [
+                    RawItem(
+                        platform=SourcePlatform.REDDIT,
+                        source_id=f"t3_{subreddit.lower()}",
+                        community_id=f"r/{subreddit}",
+                    )
+                ]
+
+            def search_subreddit_posts(
+                self,
+                subreddit,
+                query,
+                sort,
+                time_filter,
+                limit,
+                include_comments,
+                max_comments,
+                max_depth,
+            ):
+                return [
+                    RawItem(
+                        platform=SourcePlatform.REDDIT,
+                        source_id=f"t3_{subreddit.lower()}_search",
+                        community_id=f"r/{subreddit}",
+                    )
+                ]
+
+        config = {
+            "reddit_subreddits": [
+                {"name": "ClaudeAI", "sort": "top", "time": "month", "limit": 10, "comments": 20}
+            ],
+            "reddit_searches": [
+                {"subreddits": ["LocalLLaMA", "ChatGPT"], "query": "Claude vs GPT", "limit": 5}
+            ],
+        }
+
+        with patch("social_benchmark.pipeline.collection.RedditClient", FakeRedditClient):
+            rows = collect_from_config(config)
+
+        self.assertEqual(
+            [(row.source_id, row.community_id) for row in rows],
+            [
+                ("t3_claudeai", "r/ClaudeAI"),
+                ("t3_localllama_search", "r/LocalLLaMA"),
+                ("t3_chatgpt_search", "r/ChatGPT"),
+            ],
+        )
 
 
 if __name__ == "__main__":

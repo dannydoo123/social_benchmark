@@ -12,3 +12,5 @@ data/raw/
 data/processed/
 data/training/
 *.log
+
+data/live/

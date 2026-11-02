@@ -1,0 +1,2321 @@
+{
+  "generated_at": "2026-11-02T05:47:09.469280+00:00",
+  "reprocessed_only": false,
+  "refresh_hours": 4,
+  "next_refresh_at": "2026-11-02T09:47:09.469280+00:00",
+  "window_days": 30,
+  "sources": [
+    {
+      "source": "HN / GPT-6 Astra",
+      "status": "ok",
+      "items": 122
+    },
+    {
+      "source": "HN / GPT-6.1 Sol",
+      "status": "ok",
+      "items": 123
+    },
+    {
+      "source": "HN / Claude",
+      "status": "ok",
+      "items": 19
+    },
+    {
+      "source": "HN / Gemini",
+      "status": "ok",
+      "items": 44
+    },
+    {
+      "source": "HN / vibe coding",
+      "status": "ok",
+      "items": 38
+    }
+  ],
+  "classifier_error": null,
+  "raw_items": 94501,
+  "models": [
+    {
+      "model": "claude",
+      "category": "agents",
+      "observations": 5,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-11-01T21:44:21+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50289122",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:55:40+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50288966",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:45:55+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "developer_ergonomics"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50288966",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:45:55+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289650",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:26:43+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50330213",
+          "community": "hacker_news",
+          "published_at": "2026-11-01T21:44:21+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "claude",
+      "category": "all",
+      "observations": 61,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-11-02T04:25:07+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50304912",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T15:03:03+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50284714",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T04:54:13+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50281040",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T21:19:18+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50278082",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:59:19+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50277556",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:36:37+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50278746",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T18:34:26+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50304970",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T15:06:54+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50304915",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T15:03:09+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "claude",
+      "category": "coding",
+      "observations": 20,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-11-01T19:28:49+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50304970",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T15:06:54+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50305218",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T15:23:11+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289122",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:55:40+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50317913",
+          "community": "hacker_news",
+          "published_at": "2026-10-31T17:05:00+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50295028",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T20:06:33+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50288966",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:45:55+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "developer_ergonomics"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50288966",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:45:55+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289650",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:26:43+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "claude",
+      "category": "cost_efficiency",
+      "observations": 9,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-11-01T17:42:42+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50284714",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T04:54:13+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50281040",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T21:19:18+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50278082",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:59:19+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50277556",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:36:37+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50304915",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T15:03:09+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50290172",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:57:43+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50327798",
+          "community": "hacker_news",
+          "published_at": "2026-11-01T17:42:42+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50167441",
+          "community": "hacker_news",
+          "published_at": "2026-10-20T14:59:53+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "claude",
+      "category": "design",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-30T15:06:54+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50304912",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T15:03:03+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50304970",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T15:06:54+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "claude",
+      "category": "general",
+      "observations": 31,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-11-02T04:25:07+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50278746",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T18:34:26+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50313220",
+          "community": "hacker_news",
+          "published_at": "2026-10-31T04:29:53+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50312582",
+          "community": "hacker_news",
+          "published_at": "2026-10-31T02:09:19+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50311568",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T23:37:47+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50307060",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T17:18:06+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "regression_stability"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50321522",
+          "community": "hacker_news",
+          "published_at": "2026-11-01T00:10:30+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50322673",
+          "community": "hacker_news",
+          "published_at": "2026-11-01T04:17:32+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "refusal_acceptance"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50320457",
+          "community": "hacker_news",
+          "published_at": "2026-10-31T21:34:31+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "trust_reliability"
+        }
+      ]
+    },
+    {
+      "model": "claude",
+      "category": "research",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-20T14:59:53+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50167441",
+          "community": "hacker_news",
+          "published_at": "2026-10-20T14:59:53+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50060489",
+          "community": "hacker_news",
+          "published_at": "2026-10-12T18:16:28+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "claude",
+      "category": "writing",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T18:04:31+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50293335",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T18:04:31+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "task_fit"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50065233",
+          "community": "hacker_news",
+          "published_at": "2026-10-13T01:02:37+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "claude-haiku",
+      "category": "all",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T05:21:10+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50284856",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T05:21:10+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "claude-haiku",
+      "category": "general",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T05:21:10+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50284856",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T05:21:10+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "claude-opus",
+      "category": "all",
+      "observations": 3,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-30T15:32:31+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50305365",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T15:32:31+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50060489",
+          "community": "hacker_news",
+          "published_at": "2026-10-12T18:16:28+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49967408",
+          "community": "hacker_news",
+          "published_at": "2026-10-05T16:58:47+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "claude-opus",
+      "category": "cost_efficiency",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-05T16:58:47+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=49967408",
+          "community": "hacker_news",
+          "published_at": "2026-10-05T16:58:47+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "claude-opus",
+      "category": "general",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-30T15:32:31+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50305365",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T15:32:31+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "claude-opus",
+      "category": "research",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-12T18:16:28+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50060489",
+          "community": "hacker_news",
+          "published_at": "2026-10-12T18:16:28+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "claude-sonnet",
+      "category": "all",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T05:21:10+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50243565",
+          "community": "hacker_news",
+          "published_at": "2026-10-26T13:43:07+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "task_fit"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50284856",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T05:21:10+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "claude-sonnet",
+      "category": "coding",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-26T13:43:07+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50243565",
+          "community": "hacker_news",
+          "published_at": "2026-10-26T13:43:07+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "task_fit"
+        }
+      ]
+    },
+    {
+      "model": "claude-sonnet",
+      "category": "general",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T05:21:10+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50284856",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T05:21:10+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "deepseek",
+      "category": "agents",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-30T22:37:34+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50311029",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T22:37:34+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "deepseek",
+      "category": "all",
+      "observations": 11,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-30T22:37:34+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50277556",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:36:37+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50277556",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:36:37+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50288524",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:17:29+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "hallucination_safety"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289012",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:49:21+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "task_fit"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50291961",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T16:43:10+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289068",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:52:24+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289920",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:44:08+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "hallucination_safety"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50290536",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T15:22:55+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "deepseek",
+      "category": "coding",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T16:43:10+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50289012",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:49:21+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "task_fit"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50291961",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T16:43:10+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "deepseek",
+      "category": "cost_efficiency",
+      "observations": 4,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-30T22:37:34+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50277556",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:36:37+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289068",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:52:24+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50167441",
+          "community": "hacker_news",
+          "published_at": "2026-10-20T14:59:53+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50311029",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T22:37:34+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "deepseek",
+      "category": "general",
+      "observations": 5,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T16:50:36+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50277556",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:36:37+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50288524",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:17:29+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "hallucination_safety"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289920",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:44:08+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "hallucination_safety"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50290536",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T15:22:55+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50292107",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T16:50:36+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "developer_ergonomics"
+        }
+      ]
+    },
+    {
+      "model": "deepseek",
+      "category": "writing",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T16:43:10+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50291961",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T16:43:10+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gemini",
+      "category": "agents",
+      "observations": 5,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-30T22:37:34+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50277268",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:25:33+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "task_fit"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50279185",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T19:05:46+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50276995",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:13:18+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50288698",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:27:30+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "task_fit"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50311029",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T22:37:34+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "gemini",
+      "category": "all",
+      "observations": 45,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-11-01T19:25:25+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50277362",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:28:47+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50277268",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:25:33+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "task_fit"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50284714",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T04:54:13+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50281040",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T21:19:18+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50279185",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T19:05:46+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50278780",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T18:36:34+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50278983",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T18:50:23+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50278493",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T18:20:44+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gemini",
+      "category": "coding",
+      "observations": 10,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-11-01T19:25:25+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50277268",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:25:33+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "task_fit"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50288966",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:45:55+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289546",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:20:29+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "developer_ergonomics"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50291961",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T16:43:10+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289153",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:57:52+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289153",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:57:52+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50290795",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T15:38:24+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50188964",
+          "community": "hacker_news",
+          "published_at": "2026-10-21T23:15:40+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gemini",
+      "category": "cost_efficiency",
+      "observations": 8,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-30T22:37:34+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50284714",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T04:54:13+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50281040",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T21:19:18+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50278780",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T18:36:34+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50276995",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:13:18+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289153",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:57:52+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50290172",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:57:43+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50311029",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T22:37:34+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50310650",
+          "community": "hacker_news",
+          "published_at": "2026-10-30T21:53:31+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "gemini",
+      "category": "general",
+      "observations": 23,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-11-01T14:45:27+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50277362",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:28:47+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50278983",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T18:50:23+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50278493",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T18:20:44+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50285168",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T06:22:33+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "developer_ergonomics"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50277040",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T17:15:43+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50276379",
+          "community": "hacker_news",
+          "published_at": "2026-10-28T16:32:12+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50288524",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:17:29+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "hallucination_safety"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50291976",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T16:44:09+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gemini",
+      "category": "research",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T14:13:44+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50289425",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:13:44+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gemini",
+      "category": "writing",
+      "observations": 4,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-11-01T19:25:25+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50288741",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:31:01+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50291961",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T16:43:10+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50328797",
+          "community": "hacker_news",
+          "published_at": "2026-11-01T19:25:25+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "trust_reliability"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50318903",
+          "community": "hacker_news",
+          "published_at": "2026-10-31T18:53:39+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gemini-2.5",
+      "category": "all",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T14:41:46+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50288840",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:38:18+00:00",
+          "review_status": "rejected",
+          "aspect": "value"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289886",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:41:46+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gemini-2.5",
+      "category": "cost_efficiency",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T13:38:18+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50288840",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:38:18+00:00",
+          "review_status": "rejected",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "gemini-2.5",
+      "category": "general",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T14:41:46+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50289886",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:41:46+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gemini-3.1-pro",
+      "category": "all",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T14:04:38+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50289257",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:04:38+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gemini-3.1-pro",
+      "category": "general",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T14:04:38+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50289257",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:04:38+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "category": "all",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T20:06:33+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50295028",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T20:06:33+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "category": "coding",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T20:06:33+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50295028",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T20:06:33+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gpt-5",
+      "category": "all",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-13T01:19:25+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50064961",
+          "community": "hacker_news",
+          "published_at": "2026-10-13T00:26:39+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50065361",
+          "community": "hacker_news",
+          "published_at": "2026-10-13T01:19:25+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gpt-5",
+      "category": "coding",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-13T01:19:25+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50064961",
+          "community": "hacker_news",
+          "published_at": "2026-10-13T00:26:39+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50065361",
+          "community": "hacker_news",
+          "published_at": "2026-10-13T01:19:25+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gpt-5",
+      "category": "writing",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-13T00:26:39+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50064961",
+          "community": "hacker_news",
+          "published_at": "2026-10-13T00:26:39+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gpt-6-astra",
+      "category": "all",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-21T23:15:40+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50188964",
+          "community": "hacker_news",
+          "published_at": "2026-10-21T23:15:40+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50065361",
+          "community": "hacker_news",
+          "published_at": "2026-10-13T01:19:25+00:00",
+          "review_status": "rejected",
+          "aspect": "trust_reliability"
+        }
+      ]
+    },
+    {
+      "model": "gpt-6-astra",
+      "category": "coding",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-21T23:15:40+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50188964",
+          "community": "hacker_news",
+          "published_at": "2026-10-21T23:15:40+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50065361",
+          "community": "hacker_news",
+          "published_at": "2026-10-13T01:19:25+00:00",
+          "review_status": "rejected",
+          "aspect": "trust_reliability"
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "category": "all",
+      "observations": 4,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-20T14:44:40+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50167220",
+          "community": "hacker_news",
+          "published_at": "2026-10-20T14:44:40+00:00",
+          "review_status": "rejected",
+          "aspect": "developer_ergonomics"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50099581",
+          "community": "hacker_news",
+          "published_at": "2026-10-15T05:31:11+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50060489",
+          "community": "hacker_news",
+          "published_at": "2026-10-12T18:16:28+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49967408",
+          "community": "hacker_news",
+          "published_at": "2026-10-05T16:58:47+00:00",
+          "review_status": "rejected",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "category": "cost_efficiency",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-20T14:44:40+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50167220",
+          "community": "hacker_news",
+          "published_at": "2026-10-20T14:44:40+00:00",
+          "review_status": "rejected",
+          "aspect": "developer_ergonomics"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49967408",
+          "community": "hacker_news",
+          "published_at": "2026-10-05T16:58:47+00:00",
+          "review_status": "rejected",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "category": "design",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-15T05:31:11+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50099581",
+          "community": "hacker_news",
+          "published_at": "2026-10-15T05:31:11+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "gpt-6.1-sol",
+      "category": "research",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-12T18:16:28+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50060489",
+          "community": "hacker_news",
+          "published_at": "2026-10-12T18:16:28+00:00",
+          "review_status": "rejected",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "grok",
+      "category": "agents",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-11-01T21:44:21+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50330213",
+          "community": "hacker_news",
+          "published_at": "2026-11-01T21:44:21+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "grok",
+      "category": "all",
+      "observations": 5,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-11-01T21:44:21+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50318648",
+          "community": "hacker_news",
+          "published_at": "2026-10-31T18:30:45+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "refusal_acceptance"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50288966",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:45:55+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289188",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:00:16+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50065573",
+          "community": "hacker_news",
+          "published_at": "2026-10-13T01:50:23+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "refusal_acceptance"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50330213",
+          "community": "hacker_news",
+          "published_at": "2026-11-01T21:44:21+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "grok",
+      "category": "coding",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T13:45:55+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50288966",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:45:55+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        }
+      ]
+    },
+    {
+      "model": "grok",
+      "category": "general",
+      "observations": 3,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-31T18:30:45+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50318648",
+          "community": "hacker_news",
+          "published_at": "2026-10-31T18:30:45+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "refusal_acceptance"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50289188",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T14:00:16+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50065573",
+          "community": "hacker_news",
+          "published_at": "2026-10-13T01:50:23+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "refusal_acceptance"
+        }
+      ]
+    },
+    {
+      "model": "kimi",
+      "category": "all",
+      "observations": 3,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-31T21:40:36+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50320516",
+          "community": "hacker_news",
+          "published_at": "2026-10-31T21:40:36+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50292107",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T16:50:36+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "developer_ergonomics"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=49967408",
+          "community": "hacker_news",
+          "published_at": "2026-10-05T16:58:47+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "kimi",
+      "category": "cost_efficiency",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-05T16:58:47+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=49967408",
+          "community": "hacker_news",
+          "published_at": "2026-10-05T16:58:47+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "value"
+        }
+      ]
+    },
+    {
+      "model": "kimi",
+      "category": "general",
+      "observations": 2,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-31T21:40:36+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50320516",
+          "community": "hacker_news",
+          "published_at": "2026-10-31T21:40:36+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "satisfaction"
+        },
+        {
+          "url": "https://news.ycombinator.com/item?id=50292107",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T16:50:36+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "developer_ergonomics"
+        }
+      ]
+    },
+    {
+      "model": "qwen",
+      "category": "all",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T13:49:21+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50289012",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:49:21+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "task_fit"
+        }
+      ]
+    },
+    {
+      "model": "qwen",
+      "category": "coding",
+      "observations": 1,
+      "accepted": 0,
+      "threads": 0,
+      "authors": 0,
+      "communities": [],
+      "score": null,
+      "status": "insufficient_evidence",
+      "reasons": [
+        "fewer than 30 independent threads",
+        "fewer than 30 independent authors",
+        "fewer than 3 communities",
+        "fewer than 2 platforms",
+        "fresh-domain classifier validation pending"
+      ],
+      "latest_evidence_at": "2026-10-29T13:49:21+00:00",
+      "evidence": [
+        {
+          "url": "https://news.ycombinator.com/item?id=50289012",
+          "community": "hacker_news",
+          "published_at": "2026-10-29T13:49:21+00:00",
+          "review_status": "ambiguous_model",
+          "aspect": "task_fit"
+        }
+      ]
+    }
+  ],
+  "methodology": "Training corpus excluded. Equal community and thread weighting; author/thread and exact-text deduplication. Keyword category tags are exploratory. Scores withheld pending independent fresh-domain validation."
+}

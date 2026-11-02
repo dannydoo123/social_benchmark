@@ -79,8 +79,11 @@ def load_snapshot_to_supabase(
                 "generated_at": snapshot.get("generated_at"),
                 "is_current": bool(make_current),
                 "gates": snapshot.get("gates", {}),
+                "tier_thresholds": snapshot.get("tier_thresholds", {}),
                 "corpus": snapshot.get("corpus", {}),
                 "overall": snapshot.get("overall", []),
+                "providers": snapshot.get("providers", []),
+                "coverage": snapshot.get("coverage", {}),
                 "methodology": snapshot.get("methodology", {}),
             }
         ],

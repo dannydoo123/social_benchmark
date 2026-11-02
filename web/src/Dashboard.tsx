@@ -1,3 +1,4 @@
+import { LivePerspective } from './LivePerspective';
 import { useEffect, useMemo, useState } from 'react';
 import {
   AlertTriangle,
@@ -46,6 +47,44 @@ function providerName(id: string) {
   return providerNames[id] ?? id;
 }
 
+const sourceNames: Record<string, string> = {
+  hacker_news: 'Hacker News',
+  reddit: 'Reddit',
+  github: 'GitHub',
+  stack_exchange: 'Stack Exchange',
+  hugging_face: 'Hugging Face',
+};
+
+function sourceName(id: string) {
+  return sourceNames[id] ?? id;
+}
+
+function sourceEntries(snapshot: Snapshot): [string, number][] {
+  const mix = snapshot.corpus.source_mix;
+  if (mix && Object.keys(mix).length > 0) {
+    return Object.entries(mix).filter(([, count]) => count > 0);
+  }
+  return snapshot.corpus.human_reviewed_included > 0 ? [['hacker_news', snapshot.corpus.human_reviewed_included]] : [];
+}
+
+function sourceSummary(snapshot: Snapshot) {
+  const entries = sourceEntries(snapshot);
+  if (entries.length === 0) return 'sources pending';
+  const names = entries.map(([sourceId]) => sourceName(sourceId));
+  if (entries.length === 1) return `single source (${names[0]})`;
+  return `${entries.length} sources (${names.join(' + ')})`;
+}
+
+function sourceMixSummary(snapshot: Snapshot) {
+  const entries = sourceEntries(snapshot);
+  const total = entries.reduce((sum, [, count]) => sum + count, 0);
+  if (!total) return '';
+  return entries
+    .sort((a, b) => b[1] - a[1])
+    .map(([sourceId, count]) => `${sourceName(sourceId)} ${Math.round((count / total) * 100)}%`)
+    .join(', ');
+}
+
 const aspectLabels: Record<string, string> = {
   overall: 'Overall',
   satisfaction: 'Satisfaction',
@@ -78,13 +117,13 @@ const tierLabels: Record<Tier, string> = {
   ranked: 'ranked',
 };
 
-type Page = 'providers' | 'leaderboard' | 'fields' | 'evidence' | 'methodology';
+type Page = 'live' | 'perspective' | 'providers' | 'leaderboard' | 'fields' | 'evidence' | 'methodology';
 
 export function Dashboard() {
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [source, setSource] = useState<'supabase' | 'static' | ''>('');
   const [error, setError] = useState('');
-  const [page, setPage] = useState<Page>('providers');
+  const [page, setPage] = useState<Page>('live');
 
   useEffect(() => {
     getSnapshot()
@@ -108,7 +147,7 @@ export function Dashboard() {
         <div>
           <p className="eyebrow">
             Snapshot {snapshot.snapshot_id} · {snapshot.corpus.models} models · {snapshot.corpus.threads} threads ·
-            single source (Hacker News)
+            {sourceSummary(snapshot)}
           </p>
           <h2>Community Model Benchmark</h2>
         </div>
@@ -118,6 +157,8 @@ export function Dashboard() {
             {source === 'supabase' ? 'live · Supabase' : 'static snapshot'}
           </span>
           <nav className="view-switch wide" aria-label="Dashboard page">
+            <button className={page === 'live' ? 'selected' : ''} onClick={() => setPage('live')}>Fresh perspective</button>
+            <button className={page === 'perspective' ? 'selected' : ''} onClick={() => setPage('perspective')}>Perspective audit</button>
             <button className={page === 'providers' ? 'selected' : ''} onClick={() => setPage('providers')}>
               <Building2 size={15} aria-hidden="true" /> Providers
             </button>
@@ -137,7 +178,10 @@ export function Dashboard() {
         </div>
       </header>
 
-      <DataHealthBand snapshot={snapshot} />
+      {page !== 'live' ? <DataHealthBand snapshot={snapshot} /> : null}
+      {page === 'live' ? <LivePerspective /> : null}
+      <p role="note">Scores describe the collected evidence, not a representative survey of the public. Check Perspective audit for model coverage and missing metadata.</p>
+      {page === 'perspective' ? <PerspectiveAudit /> : null}
 
       {page === 'providers' ? <ProvidersPage snapshot={snapshot} /> : null}
       {page === 'leaderboard' ? <LeaderboardPage snapshot={snapshot} /> : null}
@@ -151,6 +195,8 @@ export function Dashboard() {
 function DataHealthBand({ snapshot }: { snapshot: Snapshot }) {
   const reviewed = snapshot.corpus.human_reviewed_included;
   const machine = snapshot.corpus.machine_included;
+  const sourceCount = sourceEntries(snapshot).length;
+  const sourceMix = sourceMixSummary(snapshot);
   return (
     <section className="health-band" aria-label="Data health">
       <div className="health-metric">
@@ -171,10 +217,10 @@ function DataHealthBand({ snapshot }: { snapshot: Snapshot }) {
       </div>
       <p className="health-note">
         <AlertTriangle size={14} aria-hidden="true" />
-        Single-source (Hacker News) corpus. {snapshot.corpus.unspecified_observations ?? 0} of {reviewed} mentions name
-        only a provider (e.g. “Claude”) with no version — those roll up to the <strong>provider</strong> board, not a
-        specific model. Per-model evidence is thin, so models cap at <em>provisional</em>; treat low-n cells as
-        directional.
+        {sourceCount > 1 ? `Multi-source reviewed corpus (${sourceMix}).` : `${sourceSummary(snapshot)} corpus.`}{' '}
+        {snapshot.corpus.unspecified_observations ?? 0} of {reviewed} mentions name only a provider (e.g. "Claude") with
+        no version; those roll up to the <strong>provider</strong> board, not a specific model. Per-model evidence is
+        thin, so models cap at <em>provisional</em>; treat low-n cells as directional.
       </p>
     </section>
   );
@@ -881,7 +927,7 @@ function Methodology({ snapshot }: { snapshot: Snapshot }) {
             <li>Effective sample size (ESS) below 30 → unranked, shown as insufficient data.</li>
             <li>ESS 30–150 → provisional badge with a visible confidence interval.</li>
             <li>ESS 150+ → fully ranked. Thread, author, and community caps stop any single discussion from dominating.</li>
-            <li>Hacker News is currently the only source, so all scores carry a single-source caveat until more platforms are added.</li>
+            <li>{sourceSummary(snapshot)} corpus; source mix is shown in the data-health band and concentration caps limit any one platform, community, or thread.</li>
           </ul>
         </article>
       </div>
@@ -1000,4 +1046,26 @@ function bestThreshold(thresholds: Record<string, { precision: number; coverage:
     .map(([threshold, value]) => ({ threshold, ...value }))
     .sort((a, b) => Number(a.threshold) - Number(b.threshold));
   return entries.find((entry) => entry.precision >= 0.8) ?? null;
+}
+
+
+type AuditModel = { model: string; observations: number; threads: number; sources: Record<string, number>; communities: Record<string, number>; missing: Record<string, number>; status: string };
+function PerspectiveAudit() {
+  const [audit, setAudit] = useState<{rows: number; generated_at: string; models: AuditModel[]} | null>(null);
+  const [error, setError] = useState('');
+  const [query, setQuery] = useState('');
+  useEffect(() => { fetch('/perspective-audit.json').then(r => { if (!r.ok) throw new Error('Audit unavailable'); return r.json(); }).then(setAudit).catch(e => setError(String(e))); }, []);
+  if (error) return <p role="alert">{error}</p>;
+  if (!audit) return <p>Loading corpus audit?</p>;
+  return <section className="methodology" aria-label="Public perspective audit">
+    <h2>Can this corpus describe public perspective?</h2>
+    <p>{audit.rows.toLocaleString()} observations audited. This report audits the bundled training corpus independently of the live leaderboard. Audit generated {new Date(audit.generated_at).toLocaleDateString()}; this is not the evidence collection date.</p>
+    <p>A missing score means insufficient validated evidence. Generic OpenAI, ChatGPT, or GPT mentions must never be assigned to Astra or Sol automatically.</p>
+    <label>Find an exact model <input value={query} onChange={e => setQuery(e.target.value)} placeholder="gpt-6-astra or gpt-6.1-sol" /></label>
+    <div style={{overflowX: 'auto'}}><table><thead><tr><th>Model / recorded label</th><th>Observations / threads</th><th>Platforms</th><th>Known communities</th><th>Missing metadata</th><th>Public score</th></tr></thead><tbody>
+    {audit.models.filter(m => m.model.includes(query.toLowerCase())).map(m => <tr key={m.model}><td>{m.model}</td><td>{m.observations} / {m.threads}</td><td>{Object.entries(m.sources).map(([k,v]) => `${k}: ${v}`).join(', ') || 'None'}</td><td>{Object.keys(m.communities).length}</td><td>{Object.entries(m.missing).filter(([,v]) => v > 0).map(([k,v]) => `${k}: ${v}`).join('; ') || '?'}</td><td>{m.status === 'no_evidence' ? 'No evidence' : 'Not validated'}</td></tr>)}
+    </tbody></table></div>
+    <h3>Required before a public-perspective score</h3>
+    <p>Preserve post, parent comment, conversation, timestamp, community, product and reasoning mode. Separate firsthand quality, pricing and access complaints. Sample multiple communities and time windows; deduplicate authors and conversations; validate attribution and sentiment against independently reviewed threads. Report community-specific scores and uncertainty before combining them.</p>
+  </section>;
 }

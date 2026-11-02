@@ -8,6 +8,8 @@ from typing import Any
 
 class SourcePlatform(str, Enum):
     HACKER_NEWS = "hacker_news"
+    COMMUNITY_FORUM = "community_forum"
+    LEMMY = "lemmy"
     GITHUB = "github"
     STACK_EXCHANGE = "stack_exchange"
     REDDIT = "reddit"
